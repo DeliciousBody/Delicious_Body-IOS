@@ -1,0 +1,22 @@
+PODS:
+  - RangeSeekSlider (1.8.0)
+
+DEPENDENCIES:
+  - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider.git`, branch `swift_4`)
+
+EXTERNAL SOURCES:
+  RangeSeekSlider:
+    :branch: swift_4
+    :git: https://github.com/WorldDownTown/RangeSeekSlider.git
+
+CHECKOUT OPTIONS:
+  RangeSeekSlider:
+    :commit: 77c29321a97c7f029e878e1479ab5ed5e4b2edb2
+    :git: https://github.com/WorldDownTown/RangeSeekSlider.git
+
+SPEC CHECKSUMS:
+  RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
+
+PODFILE CHECKSUM: 6025d0377e042818cc7d022ae33d57b1a9f8694a
+
+COCOAPODS: 1.5.0

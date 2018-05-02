@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50AC54271F597D56587360DF /* Pods_DeliciousBodyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E0B7A9D952DF050B6EAC66 /* Pods_DeliciousBodyTests.framework */; };
+		B0720BFBE2B4D7E1C5EF376B /* Pods_DeliciousBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */; };
+		ED10950C20835E6200B0B2A7 /* sample2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950920835E6100B0B2A7 /* sample2.mp4 */; };
+		ED10950D20835E6200B0B2A7 /* sample3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950A20835E6100B0B2A7 /* sample3.mp4 */; };
+		ED10950E20835E6200B0B2A7 /* sample1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950B20835E6200B0B2A7 /* sample1.mp4 */; };
 		ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED218EFE2081CDD20082366F /* DBVideoViewController.swift */; };
 		ED218F082081DD240082366F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED218F062081DD240082366F /* AVKit.framework */; };
 		ED218F092081DD240082366F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED218F072081DD240082366F /* AVFoundation.framework */; };
+		ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47159620997C6500F3C251 /* DBAlarmViewController.swift */; };
 		ED8757052081DE5900B91100 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED8757042081DE5900B91100 /* sample.mp4 */; };
 		ED8757082081F33B00B91100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8757072081F33B00B91100 /* Main.storyboard */; };
 		ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8757092081FAC400B91100 /* DBExerCell.swift */; };
 		ED87570C2081FAC400B91100 /* DBExerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED87570A2081FAC400B91100 /* DBExerCell.xib */; };
 		ED87570E208205F400B91100 /* DBVideoSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED87570D208205F400B91100 /* DBVideoSectionHeader.xib */; };
 		ED87571620820A2300B91100 /* DBMainViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87571520820A2300B91100 /* DBMainViewExtension.swift */; };
+		ED999A4B209A2A720058FE0B /* DBFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED999A4A209A2A720058FE0B /* DBFonts.swift */; };
+		ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED999A4C209A2AD40058FE0B /* DBColors.swift */; };
+		EDBE9AD2209950A40090EF2B /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBE9AD1209950A40090EF2B /* Alarm.storyboard */; };
+		EDC9FBBD2098511D00A61BAA /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */; };
+		EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */; };
 		EDE8AB52207CA24500A6D180 /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8AB51207CA24500A6D180 /* DBMainViewController.swift */; };
 		EDE8AB54207CA4FA00A6D180 /* DBMainCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8AB53207CA4FA00A6D180 /* DBMainCardCell.swift */; };
 		EDF721D9206BF78700CCAFEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721D8206BF78700CCAFEC /* AppDelegate.swift */; };
@@ -39,15 +50,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		075C6EDD0BFE5846E74A6C1B /* Pods-DeliciousBody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliciousBody.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody.release.xcconfig"; sourceTree = "<group>"; };
+		0A5DB88DDA24D99C1FB57C4A /* Pods-DeliciousBodyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliciousBodyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeliciousBodyTests/Pods-DeliciousBodyTests.release.xcconfig"; sourceTree = "<group>"; };
+		4CD9687ABA8FFB2F0BD2C15F /* Pods-DeliciousBodyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliciousBodyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliciousBodyTests/Pods-DeliciousBodyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		75E0B7A9D952DF050B6EAC66 /* Pods_DeliciousBodyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliciousBodyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2C085F8346AC0D738ED3D24 /* Pods-DeliciousBody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliciousBody.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody.debug.xcconfig"; sourceTree = "<group>"; };
+		C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliciousBody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED10950920835E6100B0B2A7 /* sample2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample2.mp4; sourceTree = "<group>"; };
+		ED10950A20835E6100B0B2A7 /* sample3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample3.mp4; sourceTree = "<group>"; };
+		ED10950B20835E6200B0B2A7 /* sample1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample1.mp4; sourceTree = "<group>"; };
 		ED218EFE2081CDD20082366F /* DBVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewController.swift; sourceTree = "<group>"; };
 		ED218F062081DD240082366F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		ED218F072081DD240082366F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		ED47159620997C6500F3C251 /* DBAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAlarmViewController.swift; sourceTree = "<group>"; };
 		ED8757042081DE5900B91100 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		ED8757072081F33B00B91100 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ED8757092081FAC400B91100 /* DBExerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBExerCell.swift; sourceTree = "<group>"; };
 		ED87570A2081FAC400B91100 /* DBExerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBExerCell.xib; sourceTree = "<group>"; };
 		ED87570D208205F400B91100 /* DBVideoSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBVideoSectionHeader.xib; sourceTree = "<group>"; };
 		ED87571520820A2300B91100 /* DBMainViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewExtension.swift; sourceTree = "<group>"; };
+		ED999A4A209A2A720058FE0B /* DBFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFonts.swift; sourceTree = "<group>"; };
+		ED999A4C209A2AD40058FE0B /* DBColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBColors.swift; sourceTree = "<group>"; };
+		EDBE9AD1209950A40090EF2B /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
+		EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoList.storyboard; sourceTree = "<group>"; };
+		EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoListViewController.swift; sourceTree = "<group>"; };
 		EDE8AB51207CA24500A6D180 /* DBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
 		EDE8AB53207CA4FA00A6D180 /* DBMainCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainCardCell.swift; sourceTree = "<group>"; };
 		EDF721D5206BF78700CCAFEC /* DeliciousBody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliciousBody.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +97,7 @@
 			files = (
 				ED218F082081DD240082366F /* AVKit.framework in Frameworks */,
 				ED218F092081DD240082366F /* AVFoundation.framework in Frameworks */,
+				B0720BFBE2B4D7E1C5EF376B /* Pods_DeliciousBody.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,17 +105,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AC54271F597D56587360DF /* Pods_DeliciousBodyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		278DB71356A7744EE1F7275D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2C085F8346AC0D738ED3D24 /* Pods-DeliciousBody.debug.xcconfig */,
+				075C6EDD0BFE5846E74A6C1B /* Pods-DeliciousBody.release.xcconfig */,
+				4CD9687ABA8FFB2F0BD2C15F /* Pods-DeliciousBodyTests.debug.xcconfig */,
+				0A5DB88DDA24D99C1FB57C4A /* Pods-DeliciousBodyTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ED218F052081DD240082366F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED218F072081DD240082366F /* AVFoundation.framework */,
 				ED218F062081DD240082366F /* AVKit.framework */,
+				C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */,
+				75E0B7A9D952DF050B6EAC66 /* Pods_DeliciousBodyTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				ED8757042081DE5900B91100 /* sample.mp4 */,
+				ED10950B20835E6200B0B2A7 /* sample1.mp4 */,
+				ED10950920835E6100B0B2A7 /* sample2.mp4 */,
+				ED10950A20835E6100B0B2A7 /* sample3.mp4 */,
 			);
 			path = Resouce;
 			sourceTree = "<group>";
@@ -114,8 +158,10 @@
 			isa = PBXGroup;
 			children = (
 				EDF721E1206BF78700CCAFEC /* LaunchScreen.storyboard */,
-				EDF721DC206BF78700CCAFEC /* Home.storyboard */,
 				ED8757072081F33B00B91100 /* Main.storyboard */,
+				EDF721DC206BF78700CCAFEC /* Home.storyboard */,
+				EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */,
+				EDBE9AD1209950A40090EF2B /* Alarm.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -152,6 +198,7 @@
 				EDF721EC206BF78800CCAFEC /* DeliciousBodyTests */,
 				EDF721D6206BF78700CCAFEC /* Products */,
 				ED218F052081DD240082366F /* Frameworks */,
+				278DB71356A7744EE1F7275D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +221,10 @@
 				EDE8AB51207CA24500A6D180 /* DBMainViewController.swift */,
 				ED87571520820A2300B91100 /* DBMainViewExtension.swift */,
 				ED218EFE2081CDD20082366F /* DBVideoViewController.swift */,
+				EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */,
+				ED47159620997C6500F3C251 /* DBAlarmViewController.swift */,
+				ED999A4A209A2A720058FE0B /* DBFonts.swift */,
+				ED999A4C209A2AD40058FE0B /* DBColors.swift */,
 				ED875711208208C500B91100 /* CustomViews */,
 				ED875710208208B400B91100 /* StoryBoards */,
 				ED87570F208208A900B91100 /* XIBs */,
@@ -200,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF721F2206BF78800CCAFEC /* Build configuration list for PBXNativeTarget "DeliciousBody" */;
 			buildPhases = (
+				17566292731571010941BD69 /* [CP] Check Pods Manifest.lock */,
 				EDF721D1206BF78700CCAFEC /* Sources */,
 				EDF721D2206BF78700CCAFEC /* Frameworks */,
 				EDF721D3206BF78700CCAFEC /* Resources */,
+				F301FAE9B4D57A97B1093D2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +270,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF721F5206BF78800CCAFEC /* Build configuration list for PBXNativeTarget "DeliciousBodyTests" */;
 			buildPhases = (
+				0ACE98CC493E7F0C639576AB /* [CP] Check Pods Manifest.lock */,
 				EDF721E5206BF78800CCAFEC /* Sources */,
 				EDF721E6206BF78800CCAFEC /* Frameworks */,
 				EDF721E7206BF78800CCAFEC /* Resources */,
@@ -276,13 +330,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBE9AD2209950A40090EF2B /* Alarm.storyboard in Resources */,
 				EDF721E3206BF78700CCAFEC /* LaunchScreen.storyboard in Resources */,
 				ED87570E208205F400B91100 /* DBVideoSectionHeader.xib in Resources */,
+				ED10950D20835E6200B0B2A7 /* sample3.mp4 in Resources */,
 				ED8757082081F33B00B91100 /* Main.storyboard in Resources */,
 				EDF721E0206BF78700CCAFEC /* Assets.xcassets in Resources */,
+				EDC9FBBD2098511D00A61BAA /* VideoList.storyboard in Resources */,
 				EDF721DE206BF78700CCAFEC /* Home.storyboard in Resources */,
 				ED8757052081DE5900B91100 /* sample.mp4 in Resources */,
+				ED10950C20835E6200B0B2A7 /* sample2.mp4 in Resources */,
 				ED87570C2081FAC400B91100 /* DBExerCell.xib in Resources */,
+				ED10950E20835E6200B0B2A7 /* sample1.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,11 +354,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0ACE98CC493E7F0C639576AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeliciousBodyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17566292731571010941BD69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeliciousBody-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F301FAE9B4D57A97B1093D2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDF721D1206BF78700CCAFEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED999A4B209A2A720058FE0B /* DBFonts.swift in Sources */,
+				ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */,
+				EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */,
 				ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */,
 				EDE8AB52207CA24500A6D180 /* DBMainViewController.swift in Sources */,
 				ED87571620820A2300B91100 /* DBMainViewExtension.swift in Sources */,
@@ -308,6 +427,7 @@
 				EDF721DB206BF78700CCAFEC /* ViewController.swift in Sources */,
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
 				EDF721FD206C01CA00CCAFEC /* MNFunction.swift in Sources */,
+				ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */,
 				EDF721D9206BF78700CCAFEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +579,7 @@
 		};
 		EDF721F3206BF78800CCAFEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2C085F8346AC0D738ED3D24 /* Pods-DeliciousBody.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -474,6 +595,7 @@
 		};
 		EDF721F4206BF78800CCAFEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 075C6EDD0BFE5846E74A6C1B /* Pods-DeliciousBody.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -489,6 +611,7 @@
 		};
 		EDF721F6206BF78800CCAFEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CD9687ABA8FFB2F0BD2C15F /* Pods-DeliciousBodyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +629,7 @@
 		};
 		EDF721F7206BF78800CCAFEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A5DB88DDA24D99C1FB57C4A /* Pods-DeliciousBodyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
