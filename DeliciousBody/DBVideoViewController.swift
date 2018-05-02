@@ -61,7 +61,7 @@ class DBVideoViewController: UIViewController {
     func setVideoUI() {
         togetherButton.layer.cornerRadius = 5
         
-        let path = Bundle.main.path(forResource: "sample", ofType: "mp4")!
+        let path = Bundle.main.path(forResource: "sample3", ofType: "mp4")!
         let url = URL(fileURLWithPath: path)
         
         player = AVPlayer(url: url)
