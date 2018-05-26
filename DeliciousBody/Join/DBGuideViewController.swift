@@ -1,5 +1,5 @@
 //
-//  DBGuideVC.swift
+//  DBGuideViewController.swift
 //  DeliciousBody
 //
 //  Created by changmin lee on 2018. 3. 29..
@@ -9,7 +9,7 @@
 import UIKit
 import CHIPageControl
 
-class DBGuideVC: UIViewController {
+class DBGuideViewController: UIViewController {
     
     @IBOutlet var guideScrollView: UIScrollView!
     @IBOutlet weak var pageControl: CHIPageControlJaloro!
@@ -44,14 +44,22 @@ class DBGuideVC: UIViewController {
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
 }
 
-extension DBGuideVC: UIScrollViewDelegate {
+extension DBGuideViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
         let page = x / maxScrollViewWidth * 5
         pageControl.progress = Double(page)
         v.frame = CGRect(x: SCREEN_WIDTH + SCREEN_WIDTH - x, y: 100, width: SCREEN_WIDTH, height: 60)
         vv.frame = CGRect(x: SCREEN_WIDTH*2 + SCREEN_WIDTH*2 - x, y: 100, width: SCREEN_WIDTH, height: 60)
+    }
+}
+
+extension DBGuideViewController {
+    @IBAction func back(segue: UIStoryboardSegue) {
+        
     }
 }
