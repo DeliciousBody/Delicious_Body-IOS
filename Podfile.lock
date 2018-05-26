@@ -1,8 +1,17 @@
 PODS:
+  - CHIPageControl/Jaloro (0.1.4)
   - RangeSeekSlider (1.8.0)
+  - SkyFloatingLabelTextField (3.4.0)
 
 DEPENDENCIES:
+  - CHIPageControl/Jaloro
   - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider.git`, branch `swift_4`)
+  - SkyFloatingLabelTextField (~> 3.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CHIPageControl
+    - SkyFloatingLabelTextField
 
 EXTERNAL SOURCES:
   RangeSeekSlider:
@@ -15,8 +24,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/WorldDownTown/RangeSeekSlider.git
 
 SPEC CHECKSUMS:
+  CHIPageControl: 032b5ab68506c00711d5a61bd83e9fdf2a7ecb22
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
+  SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
 
-PODFILE CHECKSUM: 6025d0377e042818cc7d022ae33d57b1a9f8694a
+PODFILE CHECKSUM: 44d9181b51a142c8a75885db394c30f40fa19734
 
 COCOAPODS: 1.5.0
