@@ -6,34 +6,48 @@
 //  Copyright © 2018년 changmin. All rights reserved.
 //
 
-
 import UIKit
+import CHIPageControl
 
 class DBGuideVC: UIViewController {
     @IBOutlet var guideScrollView: UIScrollView!
-    
+    @IBOutlet weak var pageControl: CHIPageControlJaloro!
+    let maxScrollViewWidth = SCREEN_WIDTH * 5
+    let v = UIView(frame: CGRect(x: SCREEN_WIDTH, y: 100, width: SCREEN_WIDTH, height: 60))
+    let vv = UIView(frame: CGRect(x: SCREEN_WIDTH * 2, y: 100, width: SCREEN_WIDTH, height: 60))
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupGuideView()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     func setupGuideView() {
         
-        guideScrollView.contentSize = CGSize(width: SCREEN_WIDTH * 2, height: SCREEN_HEIGHT - 60)
+        guideScrollView.contentSize = CGSize(width: maxScrollViewWidth, height: SCREEN_HEIGHT - 60)
         
-        for i in 0...1 {
-            let imageV = UIImageView(frame: CGRect(x: SCREEN_WIDTH * CGFloat(i), y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 60))
-            imageV.image = UIImage(named: "guide\(i)")
-            guideScrollView.addSubview(imageV)
+        let colorArr: [UIColor] = [.red, .blue, .black, .orange, .green]
+        for i in 0...4 {
+            let v = UIView(frame: CGRect(x: SCREEN_WIDTH * CGFloat(i), y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 60))
+            v.backgroundColor = colorArr[i]
+            guideScrollView.addSubview(v)
         }
+        
+        v.backgroundColor = UIColor.white
+        guideScrollView.addSubview(v)
+        vv.backgroundColor = UIColor.gray
+        guideScrollView.addSubview(vv)
         
     }
     
+}
+
+extension DBGuideVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let page = x / maxScrollViewWidth * 5
+        pageControl.progress = Double(page)
+        v.frame = CGRect(x: SCREEN_WIDTH + SCREEN_WIDTH - x, y: 100, width: SCREEN_WIDTH, height: 60)
+        vv.frame = CGRect(x: SCREEN_WIDTH*2 + SCREEN_WIDTH*2 - x, y: 100, width: SCREEN_WIDTH, height: 60)
+    }
 }
