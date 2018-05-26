@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
-        <!--GuideVC-->
+        <!--Guide View Controller-->
         <scene sceneID="zwu-rA-8wJ">
             <objects>
-                <viewController restorationIdentifier="DBGuideVC" storyboardIdentifier="DBGuideVC" id="QLq-gv-sjA" customClass="DBGuideVC" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DBGuideViewController" storyboardIdentifier="DBGuideViewController" id="QLq-gv-sjA" customClass="DBGuideViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Oy-tW-eYz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

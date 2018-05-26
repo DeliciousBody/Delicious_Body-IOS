@@ -88,7 +88,7 @@
                                         <rect key="frame" x="24" y="95" width="327" height="65"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfb-Mp-BfU">
-                                                <rect key="frame" x="14" y="0.0" width="26" height="21"/>
+                                                <rect key="frame" x="14" y="44" width="26" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Cli-oj-r1e"/>
                                                 </constraints>
@@ -97,7 +97,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie0-Xp-70r">
-                                                <rect key="frame" x="289" y="0.0" width="24" height="21"/>
+                                                <rect key="frame" x="289" y="44" width="24" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="SLY-M0-bZ8"/>
                                                 </constraints>

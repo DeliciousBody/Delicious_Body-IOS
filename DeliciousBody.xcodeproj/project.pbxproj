@@ -24,6 +24,7 @@
 		ED999A4B209A2A720058FE0B /* DBFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED999A4A209A2A720058FE0B /* DBFonts.swift */; };
 		ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED999A4C209A2AD40058FE0B /* DBColors.swift */; };
 		EDBE9AD2209950A40090EF2B /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBE9AD1209950A40090EF2B /* Alarm.storyboard */; };
+		EDC0295420B9BAC900A2E2D0 /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0295320B9BAC900A2E2D0 /* DBViewController.swift */; };
 		EDC9FBBD2098511D00A61BAA /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */; };
 		EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */; };
 		EDDB787320A937AD0086DDDB /* Sample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDB787220A937AD0086DDDB /* Sample.storyboard */; };
@@ -36,7 +37,7 @@
 		EDF721E0206BF78700CCAFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF721DF206BF78700CCAFEC /* Assets.xcassets */; };
 		EDF721E3206BF78700CCAFEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF721E1206BF78700CCAFEC /* LaunchScreen.storyboard */; };
 		EDF721EE206BF78800CCAFEC /* DeliciousBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721ED206BF78800CCAFEC /* DeliciousBodyTests.swift */; };
-		EDF721F9206C001000CCAFEC /* DBGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721F8206C001000CCAFEC /* DBGuideVC.swift */; };
+		EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */; };
 		EDF721FD206C01CA00CCAFEC /* MNFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721FC206C01C900CCAFEC /* MNFunction.swift */; };
 		EDFB0F8C20B523C600175138 /* DBTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDFB0F8B20B523C600175138 /* DBTextField.xib */; };
 		EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0F8D20B5253A00175138 /* DBTextField.swift */; };
@@ -74,6 +75,7 @@
 		ED999A4A209A2A720058FE0B /* DBFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFonts.swift; sourceTree = "<group>"; };
 		ED999A4C209A2AD40058FE0B /* DBColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBColors.swift; sourceTree = "<group>"; };
 		EDBE9AD1209950A40090EF2B /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
+		EDC0295320B9BAC900A2E2D0 /* DBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBViewController.swift; sourceTree = "<group>"; };
 		EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoList.storyboard; sourceTree = "<group>"; };
 		EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoListViewController.swift; sourceTree = "<group>"; };
 		EDDB787220A937AD0086DDDB /* Sample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sample.storyboard; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		EDF721E9206BF78800CCAFEC /* DeliciousBodyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliciousBodyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF721ED206BF78800CCAFEC /* DeliciousBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliciousBodyTests.swift; sourceTree = "<group>"; };
 		EDF721EF206BF78800CCAFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF721F8206C001000CCAFEC /* DBGuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGuideVC.swift; sourceTree = "<group>"; };
+		EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGuideViewController.swift; sourceTree = "<group>"; };
 		EDF721FC206C01C900CCAFEC /* MNFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFunction.swift; sourceTree = "<group>"; };
 		EDFB0F8B20B523C600175138 /* DBTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBTextField.xib; sourceTree = "<group>"; };
 		EDFB0F8D20B5253A00175138 /* DBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTextField.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				ED999A4A209A2A720058FE0B /* DBFonts.swift */,
 				ED999A4C209A2AD40058FE0B /* DBColors.swift */,
 				EDF721D8206BF78700CCAFEC /* AppDelegate.swift */,
+				EDC0295320B9BAC900A2E2D0 /* DBViewController.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -206,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF721DA206BF78700CCAFEC /* ViewController.swift */,
-				EDF721F8206C001000CCAFEC /* DBGuideVC.swift */,
+				EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */,
 				EDFB0F8F20B56E0C00175138 /* DBJoinViewController.swift */,
 			);
 			path = Join;
@@ -459,9 +462,10 @@
 				EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */,
 				ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */,
 				EDE8AB52207CA24500A6D180 /* DBMainViewController.swift in Sources */,
+				EDC0295420B9BAC900A2E2D0 /* DBViewController.swift in Sources */,
 				EDFB0F9020B56E0C00175138 /* DBJoinViewController.swift in Sources */,
 				ED87571620820A2300B91100 /* DBMainViewExtension.swift in Sources */,
-				EDF721F9206C001000CCAFEC /* DBGuideVC.swift in Sources */,
+				EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */,
 				EDE8AB54207CA4FA00A6D180 /* DBMainCardCell.swift in Sources */,
 				EDF721DB206BF78700CCAFEC /* ViewController.swift in Sources */,
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
