@@ -86,6 +86,9 @@ import SkyFloatingLabelTextField
         
         textField.placeholderFont = UIFont.textFieldFont
         textField.font = UIFont.textFieldFont
+        
+        textField.lineHeight = 2
+        textField.selectedLineHeight = 2
     }
 
     func setCheck(check: Bool) {
