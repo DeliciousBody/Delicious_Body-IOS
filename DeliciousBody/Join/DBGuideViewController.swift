@@ -9,7 +9,7 @@
 import UIKit
 import CHIPageControl
 
-class DBGuideViewController: UIViewController {
+class DBGuideViewController: DBViewController {
     
     @IBOutlet var guideScrollView: UIScrollView!
     @IBOutlet weak var pageControl: CHIPageControlJaloro!
@@ -58,8 +58,3 @@ extension DBGuideViewController: UIScrollViewDelegate {
     }
 }
 
-extension DBGuideViewController {
-    @IBAction func back(segue: UIStoryboardSegue) {
-        
-    }
-}
