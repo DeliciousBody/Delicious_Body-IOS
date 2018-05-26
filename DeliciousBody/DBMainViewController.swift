@@ -36,6 +36,10 @@ class DBMainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         showImage(false)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .default
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
