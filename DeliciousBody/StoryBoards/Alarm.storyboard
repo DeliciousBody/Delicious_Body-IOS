@@ -49,6 +49,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42M-sn-kiK">
                                         <rect key="frame" x="288" y="30" width="51" height="31"/>
                                         <color key="onTintColor" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="masterAlarmOnOff:" destination="C9F-qq-1Ee" eventType="valueChanged" id="GYN-pE-OHu"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,6 +80,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FYR-6D-14z">
                                         <rect key="frame" x="288" y="40" width="51" height="31"/>
                                         <color key="onTintColor" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="optionAlarmOnOff:" destination="C9F-qq-1Ee" eventType="valueChanged" id="MDu-UF-sxv"/>
+                                        </connections>
                                     </switch>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diT-f0-JLx" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
                                         <rect key="frame" x="24" y="95" width="327" height="65"/>
@@ -102,9 +108,9 @@
                                         </subviews>
                                         <color key="tintColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="cfb-Mp-BfU" firstAttribute="top" secondItem="diT-f0-JLx" secondAttribute="top" id="0v3-UR-Bdd"/>
-                                            <constraint firstItem="ie0-Xp-70r" firstAttribute="top" secondItem="diT-f0-JLx" secondAttribute="top" id="Fyn-xP-Jy5"/>
                                             <constraint firstAttribute="height" constant="65" id="NAF-Gd-6X6"/>
+                                            <constraint firstAttribute="bottom" secondItem="cfb-Mp-BfU" secondAttribute="bottom" id="Z9C-jK-vPg"/>
+                                            <constraint firstAttribute="bottom" secondItem="ie0-Xp-70r" secondAttribute="bottom" id="oLa-UP-b27"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="minValue">
@@ -127,9 +133,6 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
                                                 <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="labelPadding">
-                                                <real key="value" value="-48"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="handleBorderColor">
                                                 <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -182,6 +185,7 @@
                     <navigationItem key="navigationItem" title="알람" id="BEw-b3-nfj"/>
                     <connections>
                         <outlet property="slider_Weekend" destination="diT-f0-JLx" id="oAK-pE-sts"/>
+                        <outlet property="view_Weekend" destination="DCg-18-mSq" id="hK8-8A-Nru"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmr-Ve-1Kl" userLabel="First Responder" sceneMemberID="firstResponder"/>
