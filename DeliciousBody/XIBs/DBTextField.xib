@@ -18,12 +18,12 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" misplaced="YES" id="y6J-zM-Cnz">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+        <view contentMode="scaleToFill" id="y6J-zM-Cnz">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f7C-CL-6Yz" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="0.0" y="17" width="320" height="40"/>
+                    <rect key="frame" x="0.0" y="-5" width="320" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="8WO-sL-Y4t"/>
                     </constraints>
@@ -39,7 +39,7 @@
                     </connections>
                 </textField>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield_check" translatesAutoresizingMaskIntoConstraints="NO" id="5cn-dd-sev">
-                    <rect key="frame" x="292" y="23" width="28" height="28"/>
+                    <rect key="frame" x="292" y="1" width="28" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="15t-Y3-vzE"/>
                         <constraint firstAttribute="width" secondItem="5cn-dd-sev" secondAttribute="height" multiplier="1:1" id="z8f-l4-dxF"/>
@@ -54,9 +54,11 @@
                 <constraint firstItem="2iH-NL-Ib6" firstAttribute="trailing" secondItem="f7C-CL-6Yz" secondAttribute="trailing" id="f3k-7s-pdE"/>
                 <constraint firstItem="5cn-dd-sev" firstAttribute="centerY" secondItem="f7C-CL-6Yz" secondAttribute="centerY" id="t54-HB-CgT"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="2iH-NL-Ib6"/>
-            <point key="canvasLocation" x="275" y="-529"/>
+            <point key="canvasLocation" x="274.5" y="-529.5"/>
         </view>
     </objects>
     <resources>
