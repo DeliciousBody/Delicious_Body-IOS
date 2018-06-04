@@ -8,23 +8,19 @@
 
 import UIKit
 
-class DBJoinViewController: UIViewController {
+class DBJoin1ViewController: UIViewController {
 
     @IBOutlet weak var mainTextField: DBTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTextFields()
-
+        guard let navigationBar = self.navigationController?.navigationBar else { return }
+        navigationBar.shadowImage = UIImage()
+        
     }
     
     func setTextFields() {
         mainTextField.changeHandler = { [weak self] text in
-            if text.contains("@"){
-                self?.mainTextField.setCheck(check: true)
-            } else {
-                self?.mainTextField.setCheck(check: false)
-            }
         }
     }
     
