@@ -34,14 +34,6 @@
                                     <segue destination="jAX-F4-HpB" kind="presentation" animates="NO" id="IeB-2Y-aSJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDG-ax-rWL">
-                                <rect key="frame" x="140" y="443" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="텍스트필드 샘플"/>
-                                <connections>
-                                    <segue destination="wbg-KZ-Kby" kind="presentation" id="24t-R9-XFK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8Rm-4R-Nla"/>
@@ -58,39 +50,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gi5-ek-kgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="996" y="61"/>
-        </scene>
-        <!--Join View Controller-->
-        <scene sceneID="7Sq-Uy-a1q">
-            <objects>
-                <viewController id="wbg-KZ-Kby" customClass="DBJoinViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a2P-yt-2T6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOP-1R-pdW" customClass="DBTextField" customModule="DeliciousBody" customModuleProvider="target">
-                                <rect key="frame" x="52" y="107" width="270" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQ5-ue-l5C">
-                                <rect key="frame" x="169" y="20" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="close"/>
-                                <connections>
-                                    <action selector="closeButtonPressed:" destination="wbg-KZ-Kby" eventType="touchUpInside" id="fBa-OX-NvK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="zSk-3C-x3f"/>
-                    </view>
-                    <connections>
-                        <outlet property="mainTextField" destination="YOP-1R-pdW" id="mxa-3W-jV9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pFR-C8-DFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1164" y="723.68815592203907"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Fdo-54-GP4">

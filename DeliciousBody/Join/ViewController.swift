@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var dotView: UIView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(back))
@@ -26,7 +25,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dotView.frame = view.frame
-        UIView.animate(withDuration: 0.2, delay: 1, options: .curveEaseIn, animations: {
+        
+        
+        UIView.animate(withDuration: 0.4, delay: 1, usingSpringWithDamping: 0.72, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             self.dotView.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
             self.dotView.center = self.view.center
             self.dotView.layer.cornerRadius = 5
