@@ -29,6 +29,8 @@
 		ED87571620820A2300B91100 /* DBMainViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED87571520820A2300B91100 /* DBMainViewExtension.swift */; };
 		ED999A4B209A2A720058FE0B /* DBFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED999A4A209A2A720058FE0B /* DBFonts.swift */; };
 		ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED999A4C209A2AD40058FE0B /* DBColors.swift */; };
+		EDA383522125400700A39574 /* DBStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA383512125400700A39574 /* DBStartViewController.swift */; };
+		EDA38354212542F000A39574 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA38353212542F000A39574 /* DBUser.swift */; };
 		EDBE9AD2209950A40090EF2B /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBE9AD1209950A40090EF2B /* Alarm.storyboard */; };
 		EDC0295420B9BAC900A2E2D0 /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0295320B9BAC900A2E2D0 /* DBViewController.swift */; };
 		EDC9FBBD2098511D00A61BAA /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */; };
@@ -88,6 +90,8 @@
 		ED87571520820A2300B91100 /* DBMainViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewExtension.swift; sourceTree = "<group>"; };
 		ED999A4A209A2A720058FE0B /* DBFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFonts.swift; sourceTree = "<group>"; };
 		ED999A4C209A2AD40058FE0B /* DBColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBColors.swift; sourceTree = "<group>"; };
+		EDA383512125400700A39574 /* DBStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBStartViewController.swift; sourceTree = "<group>"; };
+		EDA38353212542F000A39574 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		EDBE9AD1209950A40090EF2B /* Alarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
 		EDC0295320B9BAC900A2E2D0 /* DBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBViewController.swift; sourceTree = "<group>"; };
 		EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoList.storyboard; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				EDF721D8206BF78700CCAFEC /* AppDelegate.swift */,
 				EDC0295320B9BAC900A2E2D0 /* DBViewController.swift */,
 				ED2C03CD20BBE19200980783 /* DBConstants.swift */,
+				EDA38353212542F000A39574 /* DBUser.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			children = (
 				EDE8AB51207CA24500A6D180 /* DBMainViewController.swift */,
 				ED87571520820A2300B91100 /* DBMainViewExtension.swift */,
+				EDA383512125400700A39574 /* DBStartViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 				ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */,
 				ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */,
 				EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */,
+				EDA38354212542F000A39574 /* DBUser.swift in Sources */,
 				EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */,
 				ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */,
 				EDE8AB52207CA24500A6D180 /* DBMainViewController.swift in Sources */,
@@ -498,6 +505,7 @@
 				EDF721DB206BF78700CCAFEC /* ViewController.swift in Sources */,
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
 				ED2C03C820BBE00D00980783 /* DBJoin2ViewController.swift in Sources */,
+				EDA383522125400700A39574 /* DBStartViewController.swift in Sources */,
 				EDF721FD206C01CA00CCAFEC /* MNFunction.swift in Sources */,
 				ED2C03CC20BBE03D00980783 /* DBJoinEmbededViewController.swift in Sources */,
 				ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */,
