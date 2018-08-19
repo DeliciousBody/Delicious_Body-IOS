@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B0720BFBE2B4D7E1C5EF376B /* Pods_DeliciousBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */; };
+		ED07CEB32129A26D00C7CAF0 /* DBMainContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB22129A26D00C7CAF0 /* DBMainContentCell.swift */; };
+		ED07CEB52129A28000C7CAF0 /* DBMainFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB42129A28000C7CAF0 /* DBMainFooterCell.swift */; };
 		ED10950C20835E6200B0B2A7 /* sample2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950920835E6100B0B2A7 /* sample2.mp4 */; };
 		ED10950D20835E6200B0B2A7 /* sample3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950A20835E6100B0B2A7 /* sample3.mp4 */; };
 		ED10950E20835E6200B0B2A7 /* sample1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950B20835E6200B0B2A7 /* sample1.mp4 */; };
@@ -69,6 +71,8 @@
 		75E0B7A9D952DF050B6EAC66 /* Pods_DeliciousBodyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliciousBodyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C085F8346AC0D738ED3D24 /* Pods-DeliciousBody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliciousBody.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody.debug.xcconfig"; sourceTree = "<group>"; };
 		C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliciousBody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED07CEB22129A26D00C7CAF0 /* DBMainContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainContentCell.swift; sourceTree = "<group>"; };
+		ED07CEB42129A28000C7CAF0 /* DBMainFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainFooterCell.swift; sourceTree = "<group>"; };
 		ED10950920835E6100B0B2A7 /* sample2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample2.mp4; sourceTree = "<group>"; };
 		ED10950A20835E6100B0B2A7 /* sample3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample3.mp4; sourceTree = "<group>"; };
 		ED10950B20835E6200B0B2A7 /* sample1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample1.mp4; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				EDE8AB53207CA4FA00A6D180 /* DBMainCardCell.swift */,
+				ED07CEB22129A26D00C7CAF0 /* DBMainContentCell.swift */,
+				ED07CEB42129A28000C7CAF0 /* DBMainFooterCell.swift */,
 				ED8757092081FAC400B91100 /* DBExerCell.swift */,
 				EDFB0F8D20B5253A00175138 /* DBTextField.swift */,
 				EDEBB22020C4F6560024DE36 /* DBBodyView.swift */,
@@ -373,7 +379,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = changmin;
 				TargetAttributes = {
 					EDF721D4206BF78700CCAFEC = {
@@ -487,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED07CEB32129A26D00C7CAF0 /* DBMainContentCell.swift in Sources */,
 				ED999A4B209A2A720058FE0B /* DBFonts.swift in Sources */,
 				ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */,
 				ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */,
@@ -501,6 +508,7 @@
 				EDFB0F9020B56E0C00175138 /* DBJoin1ViewController.swift in Sources */,
 				ED87571620820A2300B91100 /* DBMainViewExtension.swift in Sources */,
 				EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */,
+				ED07CEB52129A28000C7CAF0 /* DBMainFooterCell.swift in Sources */,
 				EDE8AB54207CA4FA00A6D180 /* DBMainCardCell.swift in Sources */,
 				EDF721DB206BF78700CCAFEC /* ViewController.swift in Sources */,
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
@@ -567,6 +575,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -574,6 +583,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -601,7 +611,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -624,6 +634,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -631,6 +642,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -652,7 +664,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -668,6 +680,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				INFOPLIST_FILE = DeliciousBody/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = changmin.DeliciousBody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -684,6 +697,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				INFOPLIST_FILE = DeliciousBody/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = changmin.DeliciousBody;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -11,16 +11,23 @@ import UIKit
 class DBMainCardCell: UITableViewCell {
 
     @IBOutlet var cardView: UIView!
-    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        cardView.layer.cornerRadius = 15
+        let corners: UIRectCorner = [.topRight, .topLeft, .bottomLeft, .bottomRight]
+        let path = UIBezierPath(roundedRect:cardView.bounds,
+                                byRoundingCorners:corners,
+                                cornerRadii: CGSize(width: 15, height:  15))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        cardView.layer.mask = maskLayer
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setCorner(selected: Bool) {
+        let corners: UIRectCorner = !selected ? [.topRight, .topLeft] : [.topRight, .topLeft, .bottomLeft, .bottomRight]
+        let path = UIBezierPath(roundedRect:cardView.bounds,
+                                byRoundingCorners:corners,
+                                cornerRadii: CGSize(width: 15, height:  15))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        
+        self.cardView.layer.mask = maskLayer
     }
-
 }
