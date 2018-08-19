@@ -8,14 +8,8 @@
 
 import UIKit
 
-struct CardData {
-    var opened = false
-    var title = ""
-    var subtitles = [String]()
-}
-
 class DBMainViewController: UIViewController {
-    var tableViewData = [CardData]()
+    var tableViewModel = CardViewModel()
     
     let ImageSizeForLargeState: CGFloat = 60
     let ImageSizeForSmallState: CGFloat = 32
@@ -25,6 +19,10 @@ class DBMainViewController: UIViewController {
     let NavBarHeightSmallState: CGFloat = 44
     let NavBarHeightLargeState: CGFloat = 96.5
     
+    let subCellHeight: CGFloat = 100
+    let cardHeight: CGFloat = 180
+    let closeHeight: CGFloat = 24
+    
     @IBOutlet var tableView: UITableView!
     var titleLabel = UILabel()
     
@@ -32,11 +30,6 @@ class DBMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableViewData = [
-            CardData(opened: false, title: "title1", subtitles: ["sub1","sub2"]),
-            CardData(opened: false, title: "title2", subtitles: ["sub1","sub2"]),
-            CardData(opened: false, title: "title3", subtitles: ["sub1","sub2"])]
         setupUI()
     }
     
@@ -64,7 +57,7 @@ class DBMainViewController: UIViewController {
     }
     
     func setupUI() {
-        titleLabel.text = "길동님,\n초콜릿복근 가즈아🔥"
+        titleLabel.text = "창민님,\n초콜릿복근 가즈아🔥"
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 24)
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -90,9 +83,9 @@ class DBMainViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             titleLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor,
-                                            constant:ImageRightMargin),
+                                             constant:ImageRightMargin),
             titleLabel.topAnchor.constraint(equalTo: navigationBar.topAnchor,
-                                           constant: ImageTopMarginForLargeState),
+                                            constant: ImageTopMarginForLargeState),
             titleLabel.heightAnchor.constraint(equalToConstant: ImageSizeForLargeState),
             ])
     }
@@ -100,26 +93,22 @@ class DBMainViewController: UIViewController {
 
 extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tableViewData.count
+        return tableViewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableViewData[section].opened {
-            return tableViewData[section].subtitles.count + 2
-        } else {
-            return 1
-        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if !tableViewModel.items[indexPath.section].opened {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DBMainCardCell
             return cell
-        } else if indexPath.row == tableViewData[indexPath.section].subtitles.count + 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath)
-            return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! DBMainCardExtendCell
+            cell.tableView.tag = indexPath.section
+            cell.tableView.dataSource = tableViewModel
+            cell.tableView.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")
             return cell
         }
     }
@@ -129,29 +118,23 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
             performSegue(withIdentifier: "pushVideo", sender: nil)
             return
         }
-        tableViewData[indexPath.section].opened = !tableViewData[indexPath.section].opened
-        
-        let cell = tableView.cellForRow(at: indexPath) as! DBMainCardCell
-        
-        let sections = IndexSet.init(integer: indexPath.section)
+        tableViewModel.items[indexPath.section].opened = !tableViewModel.items[indexPath.section].opened
         
         tableView.beginUpdates()
-        tableView.reloadSections(sections, with: .none)
-        
+        tableView.reloadRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()
-        cell.setCorner(selected: tableViewData[indexPath.section].opened)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 200
-        } else if indexPath.row == tableViewData[indexPath.section].subtitles.count {
-            return 30
+        if tableViewModel.items[indexPath.section].opened {
+            var height = cardHeight
+            height += CGFloat(tableViewModel.items[indexPath.section].rowCount) * subCellHeight
+            height += closeHeight + 20
+            return height
         } else {
-            return 50
+            return cardHeight + 20
         }
     }
-
 }
 
 extension DBMainViewController: UIScrollViewDelegate {
@@ -159,4 +142,3 @@ extension DBMainViewController: UIScrollViewDelegate {
         moveAndResizeImageForPortrait()
     }
 }
-
