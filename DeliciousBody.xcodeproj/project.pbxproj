@@ -10,6 +10,7 @@
 		B0720BFBE2B4D7E1C5EF376B /* Pods_DeliciousBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */; };
 		ED07CEB52129A28000C7CAF0 /* DBMainCardExtendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB42129A28000C7CAF0 /* DBMainCardExtendCell.swift */; };
 		ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB62129B58B00C7CAF0 /* DBCardViewModel.swift */; };
+		ED07CEB9212A98F300C7CAF0 /* DBRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */; };
 		ED10950C20835E6200B0B2A7 /* sample2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950920835E6100B0B2A7 /* sample2.mp4 */; };
 		ED10950D20835E6200B0B2A7 /* sample3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950A20835E6100B0B2A7 /* sample3.mp4 */; };
 		ED10950E20835E6200B0B2A7 /* sample1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950B20835E6200B0B2A7 /* sample1.mp4 */; };
@@ -38,6 +39,9 @@
 		EDC9FBBD2098511D00A61BAA /* VideoList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */; };
 		EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */; };
 		EDDB787320A937AD0086DDDB /* Sample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDDB787220A937AD0086DDDB /* Sample.storyboard */; };
+		EDE14E95212C01F500083181 /* DBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE14E94212C01F500083181 /* DBLoginViewController.swift */; };
+		EDE14E97212C0FC000083181 /* DBPasswdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE14E96212C0FC000083181 /* DBPasswdViewController.swift */; };
+		EDE14E99212C10A600083181 /* DBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE14E98212C10A600083181 /* DBExtensions.swift */; };
 		EDE8AB52207CA24500A6D180 /* DBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8AB51207CA24500A6D180 /* DBMainViewController.swift */; };
 		EDE8AB54207CA4FA00A6D180 /* DBMainCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8AB53207CA4FA00A6D180 /* DBMainCardCell.swift */; };
 		EDEBB21F20C4F5D90024DE36 /* DBBodyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDEBB21E20C4F5D90024DE36 /* DBBodyView.xib */; };
@@ -73,6 +77,7 @@
 		C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliciousBody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED07CEB42129A28000C7CAF0 /* DBMainCardExtendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainCardExtendCell.swift; sourceTree = "<group>"; };
 		ED07CEB62129B58B00C7CAF0 /* DBCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCardViewModel.swift; sourceTree = "<group>"; };
+		ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRoundButton.swift; sourceTree = "<group>"; };
 		ED10950920835E6100B0B2A7 /* sample2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample2.mp4; sourceTree = "<group>"; };
 		ED10950A20835E6100B0B2A7 /* sample3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample3.mp4; sourceTree = "<group>"; };
 		ED10950B20835E6200B0B2A7 /* sample1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample1.mp4; sourceTree = "<group>"; };
@@ -101,6 +106,9 @@
 		EDC9FBBC2098511D00A61BAA /* VideoList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoList.storyboard; sourceTree = "<group>"; };
 		EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoListViewController.swift; sourceTree = "<group>"; };
 		EDDB787220A937AD0086DDDB /* Sample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sample.storyboard; sourceTree = "<group>"; };
+		EDE14E94212C01F500083181 /* DBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBLoginViewController.swift; sourceTree = "<group>"; };
+		EDE14E96212C0FC000083181 /* DBPasswdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBPasswdViewController.swift; sourceTree = "<group>"; };
+		EDE14E98212C10A600083181 /* DBExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBExtensions.swift; sourceTree = "<group>"; };
 		EDE8AB51207CA24500A6D180 /* DBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainViewController.swift; sourceTree = "<group>"; };
 		EDE8AB53207CA4FA00A6D180 /* DBMainCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainCardCell.swift; sourceTree = "<group>"; };
 		EDEBB21E20C4F5D90024DE36 /* DBBodyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBBodyView.xib; sourceTree = "<group>"; };
@@ -208,6 +216,7 @@
 				ED8757092081FAC400B91100 /* DBExerCell.swift */,
 				EDFB0F8D20B5253A00175138 /* DBTextField.swift */,
 				EDEBB22020C4F6560024DE36 /* DBBodyView.swift */,
+				ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 				EDF721D8206BF78700CCAFEC /* AppDelegate.swift */,
 				EDC0295320B9BAC900A2E2D0 /* DBViewController.swift */,
 				ED2C03CD20BBE19200980783 /* DBConstants.swift */,
+				EDE14E98212C10A600083181 /* DBExtensions.swift */,
 				EDA38353212542F000A39574 /* DBUser.swift */,
 			);
 			path = ETC;
@@ -238,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				EDF721DA206BF78700CCAFEC /* ViewController.swift */,
+				EDE14E94212C01F500083181 /* DBLoginViewController.swift */,
+				EDE14E96212C0FC000083181 /* DBPasswdViewController.swift */,
 				EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */,
 				EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */,
 				ED2C03C720BBE00D00980783 /* DBJoin2ViewController.swift */,
@@ -497,6 +509,7 @@
 				ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */,
 				ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */,
 				EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */,
+				ED07CEB9212A98F300C7CAF0 /* DBRoundButton.swift in Sources */,
 				EDA38354212542F000A39574 /* DBUser.swift in Sources */,
 				EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */,
 				ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */,
@@ -513,10 +526,13 @@
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
 				ED2C03C820BBE00D00980783 /* DBJoin2ViewController.swift in Sources */,
 				ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */,
+				EDE14E95212C01F500083181 /* DBLoginViewController.swift in Sources */,
 				EDA383522125400700A39574 /* DBStartViewController.swift in Sources */,
+				EDE14E99212C10A600083181 /* DBExtensions.swift in Sources */,
 				EDF721FD206C01CA00CCAFEC /* MNFunction.swift in Sources */,
 				ED2C03CC20BBE03D00980783 /* DBJoinEmbededViewController.swift in Sources */,
 				ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */,
+				EDE14E97212C0FC000083181 /* DBPasswdViewController.swift in Sources */,
 				ED2C03CA20BBE01900980783 /* DBJoin3ViewController.swift in Sources */,
 				ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */,
 				EDF721D9206BF78700CCAFEC /* AppDelegate.swift in Sources */,

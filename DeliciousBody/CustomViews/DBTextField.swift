@@ -71,8 +71,27 @@ import SkyFloatingLabelTextField
     }
     
     @IBAction func textFieldDidChanged(_ textField: UITextField) {
+        if textField.text != nil && textField.text != "" {
+            innerTextField.lineColor = UIColor.themeBlue
+        } else {
+            innerTextField.lineColor = UIColor.lightGray
+        }
         self.changeHandler?(textField.text ?? "")
     }
+    
+    @IBAction func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
+                if(text.count < 3 || !text.contains("@")) {
+                    floatingLabelTextField.errorMessage = "Invalid email"
+                }
+                else {
+                    floatingLabelTextField.errorMessage = ""
+                }
+            }
+        }
+    }
+    
     
     func applySkyscannerTheme(textField: SkyFloatingLabelTextField) {
         textField.tintColor = UIColor.lightGray
@@ -83,14 +102,14 @@ import SkyFloatingLabelTextField
         
         textField.selectedTitleColor = UIColor.clear
         textField.selectedLineColor = UIColor.themeBlue
-        
+        textField.errorColor = UIColor.red
         textField.placeholderFont = UIFont.textFieldFont
         textField.font = UIFont.textFieldFont
         
-        textField.lineHeight = 2
-        textField.selectedLineHeight = 2
+        textField.lineHeight = 1
+        textField.selectedLineHeight = 1
     }
-
+    
     func setCheck(check: Bool) {
         self.isCheck = check
     }
