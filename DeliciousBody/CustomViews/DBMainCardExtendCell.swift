@@ -10,7 +10,7 @@ import UIKit
 extension CALayer {
     func applyMainShadow() {
         shadowColor = UIColor.black.cgColor
-        shadowOpacity = 0.3
+        shadowOpacity = 0.25
         shadowOffset = CGSize(width: 0, height: 2)
         shadowRadius = 5
         cornerRadius = 15
