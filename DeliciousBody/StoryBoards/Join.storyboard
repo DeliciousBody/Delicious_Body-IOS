@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eBQ-3L-tKS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cu7-lO-PId">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -70,38 +70,35 @@
                                     <constraint firstItem="ctO-Ev-xyo" firstAttribute="leading" secondItem="idZ-s8-bqX" secondAttribute="trailing" id="ylW-FQ-p05"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJH-Yz-U5M">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
-                                <connections>
-                                    <outlet property="delegate" destination="cu7-lO-PId" id="uPh-Tx-8RN"/>
-                                </connections>
-                            </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-UP-0Kt">
-                                <rect key="frame" x="152" y="553" width="71" height="37"/>
+                                <rect key="frame" x="137.5" y="553" width="100" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="aTm-cN-WSP"/>
+                                    <constraint firstAttribute="width" constant="100" id="aTm-cN-WSP"/>
                                     <constraint firstAttribute="height" constant="37" id="aeB-iW-y9o"/>
                                 </constraints>
                                 <color key="pageIndicatorTintColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.32941176470588235" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iq-Lv-NLg">
+                                <rect key="frame" x="313" y="42" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="back:" destination="cu7-lO-PId" eventType="touchUpInside" id="KpV-zk-aJD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="idZ-s8-bqX" firstAttribute="top" secondItem="HDL-UP-0Kt" secondAttribute="bottom" constant="17" id="6WS-qn-wN3"/>
                             <constraint firstItem="HDL-UP-0Kt" firstAttribute="centerX" secondItem="kfv-3N-y6S" secondAttribute="centerX" id="L7t-rM-LhC"/>
-                            <constraint firstItem="eJH-Yz-U5M" firstAttribute="top" secondItem="kfv-3N-y6S" secondAttribute="top" id="NdO-Xk-vlX"/>
-                            <constraint firstItem="vTm-IW-tyb" firstAttribute="top" secondItem="eJH-Yz-U5M" secondAttribute="bottom" id="UMS-kr-h5K"/>
                             <constraint firstItem="vTm-IW-tyb" firstAttribute="leading" secondItem="tjV-bB-1hb" secondAttribute="leading" id="VKx-VG-VaX"/>
                             <constraint firstAttribute="bottom" secondItem="vTm-IW-tyb" secondAttribute="bottom" id="XNX-is-4Yb"/>
-                            <constraint firstItem="eJH-Yz-U5M" firstAttribute="trailing" secondItem="tjV-bB-1hb" secondAttribute="trailing" id="q4f-E9-VU8"/>
-                            <constraint firstItem="eJH-Yz-U5M" firstAttribute="leading" secondItem="tjV-bB-1hb" secondAttribute="leading" id="qdm-JX-Gpg"/>
                             <constraint firstItem="vTm-IW-tyb" firstAttribute="trailing" secondItem="tjV-bB-1hb" secondAttribute="trailing" id="xnz-fZ-81l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tjV-bB-1hb"/>
                     </view>
                     <connections>
-                        <outlet property="guideScrollView" destination="eJH-Yz-U5M" id="JF9-4Y-LO5"/>
                         <outlet property="pageControl" destination="HDL-UP-0Kt" id="t12-xW-bta"/>
                     </connections>
                 </viewController>
