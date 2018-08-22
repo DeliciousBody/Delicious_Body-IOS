@@ -312,6 +312,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="L64-rp-GxH"/>
+                                    <constraint firstAttribute="width" constant="305" id="Xfv-E2-7sO"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value=" 이메일"/>
@@ -382,11 +383,10 @@
                             <constraint firstItem="0us-H0-zg3" firstAttribute="centerY" secondItem="Y85-Ee-gut" secondAttribute="centerY" id="X6g-fD-sMs"/>
                             <constraint firstItem="RG5-VK-wc8" firstAttribute="top" secondItem="LD9-je-IeZ" secondAttribute="bottom" constant="12" id="Y95-z5-BBh"/>
                             <constraint firstItem="RG5-VK-wc8" firstAttribute="centerX" secondItem="MXo-xN-6Id" secondAttribute="centerX" id="YlS-Yj-laI"/>
-                            <constraint firstItem="MXo-xN-6Id" firstAttribute="trailing" secondItem="4sl-gl-QeP" secondAttribute="trailing" constant="35" id="eCK-Sc-Kff"/>
                             <constraint firstItem="LD9-je-IeZ" firstAttribute="top" secondItem="4sl-gl-QeP" secondAttribute="bottom" constant="28" id="gdo-Ut-4Ap"/>
                             <constraint firstItem="LD9-je-IeZ" firstAttribute="centerX" secondItem="sZu-z6-2gd" secondAttribute="centerX" id="i6I-nY-y8k"/>
-                            <constraint firstItem="4sl-gl-QeP" firstAttribute="leading" secondItem="MXo-xN-6Id" secondAttribute="leading" constant="35" id="oLh-fo-MIU"/>
                             <constraint firstItem="WeW-Hp-Dgb" firstAttribute="bottom" secondItem="MXo-xN-6Id" secondAttribute="bottom" id="sOk-De-E4A"/>
+                            <constraint firstItem="4sl-gl-QeP" firstAttribute="centerX" secondItem="MXo-xN-6Id" secondAttribute="centerX" id="tmS-S1-7bA"/>
                             <constraint firstItem="WeW-Hp-Dgb" firstAttribute="leading" secondItem="MXo-xN-6Id" secondAttribute="leading" id="vhB-ki-Ir8"/>
                             <constraint firstItem="Y85-Ee-gut" firstAttribute="centerX" secondItem="sZu-z6-2gd" secondAttribute="centerX" id="xxX-lB-G0d"/>
                             <constraint firstItem="Y85-Ee-gut" firstAttribute="top" secondItem="SMp-UV-hMq" secondAttribute="bottom" constant="27" id="zhK-E7-gyO"/>
@@ -398,8 +398,11 @@
                         <outlet property="confirmLabel" destination="0us-H0-zg3" id="Rvu-FG-ugu"/>
                         <outlet property="imageView1" destination="SMp-UV-hMq" id="h8s-HA-SVX"/>
                         <outlet property="imageView2" destination="cRW-yd-CzT" id="JeG-ZW-sgf"/>
+                        <outlet property="loginLabel" destination="RG5-VK-wc8" id="5l8-Zd-qJg"/>
                         <outlet property="resetButton" destination="LD9-je-IeZ" id="lSx-D7-Wdp"/>
                         <outlet property="resetLabel" destination="Y85-Ee-gut" id="Gb9-Ri-Fqy"/>
+                        <outlet property="textField" destination="4sl-gl-QeP" id="65v-mc-RBf"/>
+                        <outlet property="textFieldWidth" destination="Xfv-E2-7sO" id="KE1-pE-8oE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rb-di-xuF" userLabel="First Responder" sceneMemberID="firstResponder"/>

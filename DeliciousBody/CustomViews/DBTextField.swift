@@ -43,6 +43,23 @@ import SkyFloatingLabelTextField
         }
     }
     
+    
+    var isValidateEmail: Bool {
+        get{
+            if let text = innerTextField.text {
+                if(text.count < 3 || !text.contains("@")) {
+                    return false
+                }
+                else {
+                    return true
+                }
+                
+            } else {
+                return false
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -56,7 +73,6 @@ import SkyFloatingLabelTextField
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-        
         addSubview(view)
         
         applySkyscannerTheme(textField: innerTextField)
@@ -92,7 +108,6 @@ import SkyFloatingLabelTextField
         }
     }
     
-    
     func applySkyscannerTheme(textField: SkyFloatingLabelTextField) {
         textField.tintColor = UIColor.lightGray
         
@@ -112,5 +127,16 @@ import SkyFloatingLabelTextField
     
     func setCheck(check: Bool) {
         self.isCheck = check
+    }
+    
+    func animate() {
+        UIView.animate(withDuration: 0.3) {
+            self.innerTextField.textAlignment = .center
+        }
+    }
+    func hideLine() {
+        innerTextField.lineColor = UIColor.clear
+        innerTextField.selectedLineColor = UIColor.clear
+        innerTextField.isUserInteractionEnabled = false
     }
 }

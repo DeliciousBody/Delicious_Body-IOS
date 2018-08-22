@@ -17,6 +17,9 @@ class DBPasswdViewController: DBViewController {
     @IBOutlet weak var resetButton: DBRoundButton!
     @IBOutlet weak var buttonWidthConst: NSLayoutConstraint!
     
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var textFieldWidth: NSLayoutConstraint!
+    @IBOutlet weak var textField: DBTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setKeyboardHide()
@@ -27,20 +30,32 @@ class DBPasswdViewController: DBViewController {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
+        guard textField.isValidateEmail else { return }
         imageView1.FadeOutWithrotate()
         imageView2.FadeIntWithrotate()
         
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations: {
+        
+        let emailStr = textField.innerTextField.text! as NSString
+        let size = emailStr.size(withAttributes: [NSAttributedStringKey.font: UIFont.textFieldFont]).width + 10
+        
+        UIView.animate(withDuration: 0.08, delay: 0, options: .curveEaseIn, animations: {
             self.buttonWidthConst.constant = 180
             sender.setTitle("로그인으로 돌아가기", for: .normal)
+        }) { (success) in }
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+            self.textFieldWidth.constant = size
+            self.textField.innerTextField.selectedLineColor = UIColor.clear
             self.view.layoutIfNeeded()
-        }) { (success) in
+        }) { (finish) in
+            self.textField.hideLine()
+            self.view.endEditing(true)
         }
+        
         UIView.animate(withDuration: 0.13, delay: 0, options: .curveEaseIn, animations: {
+            self.loginLabel.alpha = 0
             self.resetLabel.alpha = 0
             self.confirmLabel.alpha = 1
-        }) { (success) in
-        }
+        }) { (success) in }
     }
 }
