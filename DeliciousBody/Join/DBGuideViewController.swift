@@ -11,10 +11,11 @@ import Foundation
 class DBGuideViewController: DBViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet var guideViews: [UIView]!
     
-    let maxScrollViewWidth = SCREEN_WIDTH * 5
-    let guideImageHeight: CGFloat = 330
-    let guideImageY: CGFloat = 200
+    let guideImageHeight: CGFloat = SCREEN_WIDTH * 0.88
+    let guideImageY: CGFloat = SCREEN_WIDTH * 188/375 + 15
     
     var imageViews = [UIImageView]()
     var currentPage = 0 {
@@ -38,28 +39,50 @@ class DBGuideViewController: DBViewController {
         guard currentPage < 4 else { return }
         let front = self.imageViews[currentPage]
         let back = self.imageViews[currentPage + 1]
-        currentPage += 1
+        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: .curveEaseIn, animations: {
             front.frame.origin.x = -100
             front.alpha = 0
             back.frame.origin.x = 0
             back.alpha = 1
-        }) { (finish) in
+        }) { (finish) in }
+        
+        if currentPage == 0 {
+            UIView.animate(withDuration: 0.3) {
+                self.backgroundImageView.alpha = 1
+            }
         }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.guideViews[self.currentPage].alpha = 0
+            self.guideViews[self.currentPage + 1].alpha = 1
+        }
+        currentPage += 1
     }
     
     @objc func rightSwipe(gesture: UISwipeGestureRecognizer) {
         guard currentPage > 0  else { return }
         let front = self.imageViews[currentPage - 1]
         let back = self.imageViews[currentPage]
-        currentPage -= 1
+        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: .curveEaseIn, animations: {
             front.frame.origin.x = 0
             front.alpha = 1
             back.frame.origin.x = SCREEN_WIDTH
             back.alpha = 0
-        }) { (finish) in
+        }) { (finish) in }
+        
+        if currentPage == 1 {
+            UIView.animate(withDuration: 0.3) {
+                self.backgroundImageView.alpha = 0
+            }
         }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.guideViews[self.currentPage - 1].alpha = 1
+            self.guideViews[self.currentPage].alpha = 0
+        }
+        currentPage -= 1
     }
     
     func setupGuideView() {

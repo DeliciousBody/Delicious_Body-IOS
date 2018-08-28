@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,6 +80,12 @@
                                 <color key="pageIndicatorTintColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.32941176470588235" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guideBg" translatesAutoresizingMaskIntoConstraints="NO" id="7kT-rR-kc5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7kT-rR-kc5" secondAttribute="height" multiplier="375:188" id="pC2-aJ-3yh"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iq-Lv-NLg">
                                 <rect key="frame" x="313" y="42" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -87,24 +94,442 @@
                                     <action selector="back:" destination="cu7-lO-PId" eventType="touchUpInside" id="KpV-zk-aJD"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peh-EA-mL8">
+                                <rect key="frame" x="111.5" y="70" width="151" height="135"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guideLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aFC-qW-Pyf">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="SuT-hE-icz"/>
+                                            <constraint firstAttribute="height" constant="27" id="V9m-bl-bNk"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtO-oZ-hWi">
+                                        <rect key="frame" x="0.0" y="48" width="151" height="87"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="87" id="qu6-XQ-NKq"/>
+                                        </constraints>
+                                        <string key="text">몸에 좋은 
+맛있는 운동을 
+추천해드립니다.</string>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qtO-oZ-hWi" firstAttribute="leading" secondItem="peh-EA-mL8" secondAttribute="leading" id="02f-S6-PPh"/>
+                                    <constraint firstAttribute="height" constant="135" id="1QJ-lf-RKk"/>
+                                    <constraint firstAttribute="bottom" secondItem="qtO-oZ-hWi" secondAttribute="bottom" id="Ddo-n4-VoL"/>
+                                    <constraint firstItem="aFC-qW-Pyf" firstAttribute="leading" secondItem="peh-EA-mL8" secondAttribute="leading" id="Eww-9g-OR2"/>
+                                    <constraint firstAttribute="trailing" secondItem="qtO-oZ-hWi" secondAttribute="trailing" id="HxZ-kq-DNg"/>
+                                    <constraint firstItem="aFC-qW-Pyf" firstAttribute="top" secondItem="peh-EA-mL8" secondAttribute="top" id="LR7-qQ-OHV"/>
+                                    <constraint firstAttribute="width" constant="151" id="pOe-3J-Rt6"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZt-zy-1uw">
+                                <rect key="frame" x="47" y="68" width="281" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="5L4-0T-ngl"/>
+                                    <constraint firstAttribute="width" constant="281" id="sHQ-ux-UqJ"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">딜리셔스 바디는 사용자가 입력한 
+간단한 정보를 분석해 </string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="알맞은 운동">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="NSColor" red="0.32941176470588235" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-SemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">을 
+제안해주는 피트니스 서비스입니다.</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wf-FD-33I" userLabel="딜리셔스 바디는 사용자가 입력한  간단한 정보를 분석해 알맞은 운동을  제안해주는 피트니스 서비스입니다.">
+                                <rect key="frame" x="47" y="68" width="281" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="281" id="En5-qc-iWB"/>
+                                    <constraint firstAttribute="height" constant="84" id="U02-HG-JID"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="추천받은 운동을 입맛에 맞게 수행  가능하며 ">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="좋아요">
+                                        <attributes>
+                                            <color key="NSColor" red="0.32941176470588235" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-SemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="를 누르면 다음 추천 되는 운동의 정확도가 올라갑니다.">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rER-x1-CJx">
+                                <rect key="frame" x="47" y="68" width="281" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="A3O-sV-OMu"/>
+                                    <constraint firstAttribute="width" constant="281" id="cK3-bZ-dCK"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">딜리셔스 바디는 사용자가 입력한 
+간단한 정보를 분석해 </string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="알맞은 운동">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="NSColor" red="0.32940999999999998" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-SemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">을 
+제안해주는 피트니스 서비스입니다.</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-a1-RIh">
+                                <rect key="frame" x="47" y="68" width="281" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="281" id="NG5-TF-gag"/>
+                                    <constraint firstAttribute="height" constant="84" id="tMY-rG-sLe"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="추천받은 운동을 입맛에 맞게 수행  가능하며 ">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="좋아요">
+                                        <attributes>
+                                            <color key="NSColor" red="0.32940999999999998" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-SemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="를 누르면 다음 추천 되는 운동의 정확도가 올라갑니다.">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="28" maximumLineHeight="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2wf-FD-33I" firstAttribute="centerX" secondItem="wZt-zy-1uw" secondAttribute="centerX" id="0qZ-ad-d1s"/>
+                            <constraint firstItem="7kT-rR-kc5" firstAttribute="top" secondItem="kfv-3N-y6S" secondAttribute="top" id="2c8-gv-TzV"/>
+                            <constraint firstItem="7kT-rR-kc5" firstAttribute="leading" secondItem="tjV-bB-1hb" secondAttribute="leading" id="6Fp-Yi-JSt"/>
                             <constraint firstItem="idZ-s8-bqX" firstAttribute="top" secondItem="HDL-UP-0Kt" secondAttribute="bottom" constant="17" id="6WS-qn-wN3"/>
+                            <constraint firstItem="7kT-rR-kc5" firstAttribute="trailing" secondItem="tjV-bB-1hb" secondAttribute="trailing" id="8hU-rz-jhQ"/>
+                            <constraint firstItem="7kT-rR-kc5" firstAttribute="top" secondItem="kfv-3N-y6S" secondAttribute="top" id="8r2-d4-5y3"/>
+                            <constraint firstItem="yNs-a1-RIh" firstAttribute="centerX" secondItem="wZt-zy-1uw" secondAttribute="centerX" id="9BI-K2-0YF"/>
+                            <constraint firstItem="peh-EA-mL8" firstAttribute="centerX" secondItem="kfv-3N-y6S" secondAttribute="centerX" id="EFV-ds-Jff"/>
                             <constraint firstItem="HDL-UP-0Kt" firstAttribute="centerX" secondItem="kfv-3N-y6S" secondAttribute="centerX" id="L7t-rM-LhC"/>
+                            <constraint firstItem="rER-x1-CJx" firstAttribute="centerY" secondItem="wZt-zy-1uw" secondAttribute="centerY" id="PpV-be-fXU"/>
                             <constraint firstItem="vTm-IW-tyb" firstAttribute="leading" secondItem="tjV-bB-1hb" secondAttribute="leading" id="VKx-VG-VaX"/>
                             <constraint firstAttribute="bottom" secondItem="vTm-IW-tyb" secondAttribute="bottom" id="XNX-is-4Yb"/>
+                            <constraint firstItem="wZt-zy-1uw" firstAttribute="centerX" secondItem="kfv-3N-y6S" secondAttribute="centerX" id="bs3-gW-Be8"/>
+                            <constraint firstItem="rER-x1-CJx" firstAttribute="centerX" secondItem="wZt-zy-1uw" secondAttribute="centerX" id="ehU-eM-BJm"/>
+                            <constraint firstItem="yNs-a1-RIh" firstAttribute="centerY" secondItem="wZt-zy-1uw" secondAttribute="centerY" id="j1X-fG-Dp1"/>
+                            <constraint firstItem="peh-EA-mL8" firstAttribute="top" secondItem="tjV-bB-1hb" secondAttribute="top" constant="50" id="kvh-Qj-QZ1"/>
+                            <constraint firstItem="wZt-zy-1uw" firstAttribute="top" secondItem="7kT-rR-kc5" secondAttribute="bottom" constant="-120" id="lRV-VF-1GX"/>
+                            <constraint firstItem="2wf-FD-33I" firstAttribute="centerY" secondItem="wZt-zy-1uw" secondAttribute="centerY" id="v6s-ox-PtX"/>
                             <constraint firstItem="vTm-IW-tyb" firstAttribute="trailing" secondItem="tjV-bB-1hb" secondAttribute="trailing" id="xnz-fZ-81l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tjV-bB-1hb"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="7kT-rR-kc5" id="XyA-Te-u4e"/>
                         <outlet property="pageControl" destination="HDL-UP-0Kt" id="t12-xW-bta"/>
+                        <outletCollection property="guideViews" destination="peh-EA-mL8" collectionClass="NSMutableArray" id="Bf0-Hn-f0j"/>
+                        <outletCollection property="guideViews" destination="wZt-zy-1uw" collectionClass="NSMutableArray" id="x4d-0v-rpU"/>
+                        <outletCollection property="guideViews" destination="2wf-FD-33I" collectionClass="NSMutableArray" id="ris-hr-kbp"/>
+                        <outletCollection property="guideViews" destination="rER-x1-CJx" collectionClass="NSMutableArray" id="xJK-jU-OFZ"/>
+                        <outletCollection property="guideViews" destination="yNs-a1-RIh" collectionClass="NSMutableArray" id="3ho-6z-GDO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYm-oz-ngn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1793" y="68"/>
+            <point key="canvasLocation" x="1792.8" y="67.916041979010501"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="FE5-jQ-uH5">
@@ -888,11 +1313,13 @@
     </scenes>
     <resources>
         <image name="fulllogo200" width="100" height="103"/>
+        <image name="guideBg" width="375" height="188"/>
+        <image name="guideLogo" width="100" height="27"/>
         <image name="icon_check" width="54" height="38"/>
         <image name="icon_pw" width="63" height="64"/>
         <image name="logo60" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LPs-S2-6yl"/>
+        <segue reference="dvP-p8-8V9"/>
     </inferredMetricsTieBreakers>
 </document>
