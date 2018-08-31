@@ -15,7 +15,7 @@ class DBGuideViewController: DBViewController {
     @IBOutlet var guideViews: [UIView]!
     
     let guideImageHeight: CGFloat = SCREEN_WIDTH * 0.88
-    let guideImageY: CGFloat = SCREEN_WIDTH * 188/375 + 15
+    let guideImageY: CGFloat = SCREEN_WIDTH * 188 / 375 + 15
     
     var imageViews = [UIImageView]()
     var currentPage = 0 {
@@ -48,15 +48,25 @@ class DBGuideViewController: DBViewController {
         }) { (finish) in }
         
         if currentPage == 0 {
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.3, delay: 0.25, options: .curveLinear, animations: {
                 self.backgroundImageView.alpha = 1
+            }, completion: nil)
+            
+            UIView.animate(withDuration: 0.4) {
+                self.guideViews[self.currentPage].alpha = 0
+            }
+            UIView.animate(withDuration: 0.4, delay: 0.25, options: .curveLinear, animations: {
+                self.guideViews[self.currentPage + 1].alpha = 1
+            }, completion: nil)
+        } else {
+            
+            UIView.animate(withDuration: 0.4) {
+                self.guideViews[self.currentPage].alpha = 0
+                self.guideViews[self.currentPage + 1].alpha = 1
             }
         }
         
-        UIView.animate(withDuration: 0.5) {
-            self.guideViews[self.currentPage].alpha = 0
-            self.guideViews[self.currentPage + 1].alpha = 1
-        }
+        
         currentPage += 1
     }
     
@@ -73,9 +83,9 @@ class DBGuideViewController: DBViewController {
         }) { (finish) in }
         
         if currentPage == 1 {
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
                 self.backgroundImageView.alpha = 0
-            }
+            }, completion: nil)
         }
         
         UIView.animate(withDuration: 0.5) {
