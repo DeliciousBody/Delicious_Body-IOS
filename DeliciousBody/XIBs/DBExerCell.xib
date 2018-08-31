@@ -50,11 +50,11 @@
                         <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be9-M0-qZb">
-                        <rect key="frame" x="273" y="37.5" width="23" height="25"/>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be9-M0-qZb" customClass="DBButton" customModule="DeliciousBody" customModuleProvider="target">
+                        <rect key="frame" x="271" y="36.5" width="27" height="27"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="fch-zg-F31"/>
-                            <constraint firstAttribute="width" constant="23" id="xP4-Qh-lMT"/>
+                            <constraint firstAttribute="height" constant="27" id="fch-zg-F31"/>
+                            <constraint firstAttribute="width" constant="27" id="xP4-Qh-lMT"/>
                         </constraints>
                         <state key="normal" image="cellLike"/>
                         <connections>
@@ -73,7 +73,7 @@
                     <constraint firstItem="R5J-GG-Z5x" firstAttribute="height" secondItem="ffp-t4-7L0" secondAttribute="height" id="dH6-IA-Qxw"/>
                     <constraint firstItem="R5J-GG-Z5x" firstAttribute="width" secondItem="ffp-t4-7L0" secondAttribute="width" id="exH-Mg-sbx"/>
                     <constraint firstItem="be9-M0-qZb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gt5-aZ-wkc"/>
-                    <constraint firstAttribute="trailing" secondItem="be9-M0-qZb" secondAttribute="trailing" constant="24" id="nMS-bg-Rgi"/>
+                    <constraint firstAttribute="trailing" secondItem="be9-M0-qZb" secondAttribute="trailing" constant="22" id="nMS-bg-Rgi"/>
                     <constraint firstItem="HEJ-Bh-r2A" firstAttribute="top" secondItem="52k-if-YoQ" secondAttribute="bottom" id="vXy-r6-QSc"/>
                 </constraints>
             </tableViewCellContentView>
