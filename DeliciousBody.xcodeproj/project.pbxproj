@@ -24,6 +24,7 @@
 		ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47159620997C6500F3C251 /* DBAlarmViewController.swift */; };
 		ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */; };
 		ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */; };
+		ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C182137B4A80095CB39 /* DBTransition.swift */; };
 		ED8757052081DE5900B91100 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED8757042081DE5900B91100 /* sample.mp4 */; };
 		ED8757082081F33B00B91100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8757072081F33B00B91100 /* Main.storyboard */; };
 		ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8757092081FAC400B91100 /* DBExerCell.swift */; };
@@ -91,6 +92,7 @@
 		ED47159620997C6500F3C251 /* DBAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAlarmViewController.swift; sourceTree = "<group>"; };
 		ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin4ViewController.swift; sourceTree = "<group>"; };
 		ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin5ViewController.swift; sourceTree = "<group>"; };
+		ED607C182137B4A80095CB39 /* DBTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransition.swift; sourceTree = "<group>"; };
 		ED8757042081DE5900B91100 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		ED8757072081F33B00B91100 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ED8757092081FAC400B91100 /* DBExerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBExerCell.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				ED2C03CD20BBE19200980783 /* DBConstants.swift */,
 				EDE14E98212C10A600083181 /* DBExtensions.swift */,
 				EDA38353212542F000A39574 /* DBUser.swift */,
+				ED607C182137B4A80095CB39 /* DBTransition.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				EDE14E97212C0FC000083181 /* DBPasswdViewController.swift in Sources */,
 				ED2C03CA20BBE01900980783 /* DBJoin3ViewController.swift in Sources */,
 				ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */,
+				ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */,
 				EDF721D9206BF78700CCAFEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

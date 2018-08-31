@@ -30,4 +30,46 @@ extension UIView {
         }
   
     }
+    
+    func takeSnapshot() -> UIImageView {
+        let imageView = UIImageView(frame: self.frame)
+        
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
+        
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        
+        // old style: layer.renderInContext(UIGraphicsGetCurrentContext())
+        
+        imageView.image =  UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return imageView
+    }
+}
+
+extension CALayer {
+    func applyMainShadow() {
+        shadowColor = UIColor.black.cgColor
+        shadowOpacity = 0.25
+        shadowOffset = CGSize(width: 0, height: 2)
+        shadowRadius = 5
+        cornerRadius = 15
+    }
+    
+    func applyCornerRadius(corners: UIRectCorner) {
+        let path = UIBezierPath(roundedRect: bounds,
+                                byRoundingCorners:corners,
+                                cornerRadii: CGSize(width: 15, height: 15))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        mask = maskLayer
+    }
+    
+    func resetCornerRadius(corners: UIRectCorner) {
+        let path = UIBezierPath(roundedRect: bounds,
+                                byRoundingCorners:corners,
+                                cornerRadii: CGSize(width: 0, height: 0))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        mask = maskLayer
+    }
 }

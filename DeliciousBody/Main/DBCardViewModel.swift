@@ -36,16 +36,20 @@ class CardViewModelItem {
 
 class CardViewModel: NSObject {
     var items = [CardViewModelItem]()
+    var handler: ((IndexPath, Exercise) -> Void)?
     
     override init() {
         super.init()
         items.append(CardViewModelItem(exercises: [Exercise(),Exercise()]))
         items.append(CardViewModelItem(exercises: [Exercise()]))
         items.append(CardViewModelItem(exercises: [Exercise(),Exercise()]))
+        items.append(CardViewModelItem(exercises: [Exercise()]))
+        items.append(CardViewModelItem(exercises: [Exercise(),Exercise()]))
+        items.append(CardViewModelItem(exercises: [Exercise()]))
     }
 }
 
-extension CardViewModel: UITableViewDataSource {
+extension CardViewModel: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items[tableView.tag].rowCount
     }
@@ -56,5 +60,9 @@ extension CardViewModel: UITableViewDataSource {
 //        let exercise = item.exercises[indexPath.row]
 //        cell.textLabel?.text = exercise.name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.handler?(IndexPath(row: indexPath.row, section: tableView.tag), items[tableView.tag].exercises[indexPath.row])
     }
 }

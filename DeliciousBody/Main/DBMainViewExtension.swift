@@ -63,3 +63,20 @@ extension DBMainViewController {
         }
     }
 }
+
+extension DBMainViewController: UIViewControllerTransitioningDelegate {
+    /*
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        switch operation {
+        case .push:
+            return CardTransition(snapShot: self.snapShot, originFrame: self.originFrame, isPushing: true)
+        default:
+            return CardTransition(snapShot: self.snapShot, originFrame: self.originFrame, isPushing: false)
+        }
+    }*/
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CardTransition(snapShot: self.snapShot, originFrame: self.originFrame, isPushing: true)
+    }
+}
+

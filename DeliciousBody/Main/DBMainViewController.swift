@@ -27,9 +27,23 @@ class DBMainViewController: UIViewController {
     var titleLabel = UILabel()
     
     let imageView = UIImageView(image: UIImage(named: "image_name"))
-    
+    var snapShot = UIView()
+    var originFrame = CGRect()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewModel.handler = { indexPath, exercise in
+            guard let tableView = self.tableView else { return }
+//            self.navigationController?.delegate = self
+            let index = IndexPath(row: 0, section: indexPath.section)
+            let cell = tableView.cellForRow(at: index) as! DBMainCardExtendCell
+            let cellFrame = tableView.rectForRow(at: index)
+            self.snapShot = self.tabBarController!.tabBar.takeSnapshot()
+            self.snapShot.frame = CGRect(x: 0, y: SCREEN_HEIGHT - 49, width: SCREEN_WIDTH, height: 49)
+            self.originFrame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
+            
+            self.performSegue(withIdentifier: "pushVideo", sender: nil)
+            
+        }
         setupUI()
     }
     
@@ -89,6 +103,11 @@ class DBMainViewController: UIViewController {
             titleLabel.heightAnchor.constraint(equalToConstant: ImageSizeForLargeState),
             ])
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! DBVideoViewController
+            destinationViewController.transitioningDelegate = self
+    }
 }
 
 extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
@@ -108,14 +127,22 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! DBMainCardExtendCell
             cell.tableView.tag = indexPath.section
             cell.tableView.dataSource = tableViewModel
+            cell.tableView.delegate = tableViewModel
+            cell.tableView.reloadData()
             cell.tableView.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
+        if indexPath.section == 10 {
+            let cell = tableView.cellForRow(at: indexPath) as! DBMainCardCell
+            let cellFrame = tableView.rectForRow(at: indexPath)
+            self.snapShot = cell.cardView.snapshotView(afterScreenUpdates: true)!
+            self.snapShot.frame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
+            
             performSegue(withIdentifier: "pushVideo", sender: nil)
+            
             return
         }
         tableViewModel.items[indexPath.section].opened = !tableViewModel.items[indexPath.section].opened
