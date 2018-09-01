@@ -249,6 +249,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="4Sm-tK-bEg" secondAttribute="bottom" id="Nie-zS-gQu"/>
                                                                 <constraint firstItem="4Sm-tK-bEg" firstAttribute="top" secondItem="9DM-4E-C0g" secondAttribute="top" id="Sko-ib-Ep8"/>
                                                             </constraints>
+                                                            <viewLayoutGuide key="safeArea" id="s2H-o1-kDj"/>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DHy-2S-v8F">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="180"/>
@@ -380,7 +381,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33677113060000002" green="0.38131809230000002" blue="0.86278921369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.28627450980000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2RY-4Z-EQg" secondAttribute="bottom" constant="15" id="0fM-9C-J2H"/>
                                     <constraint firstItem="idm-o2-sby" firstAttribute="centerX" secondItem="usu-Ys-y2g" secondAttribute="centerX" id="3cc-fy-eXn"/>
@@ -393,7 +394,7 @@
                                     <constraint firstAttribute="trailing" secondItem="2RY-4Z-EQg" secondAttribute="trailing" constant="15" id="jCR-0F-jpS"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cyy-J3-3eF">
+                            <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cyy-J3-3eF">
                                 <rect key="frame" x="0.0" y="211" width="375" height="456"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Onh-g9-Bz2">

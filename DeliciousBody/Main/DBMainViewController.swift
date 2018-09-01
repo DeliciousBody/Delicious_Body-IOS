@@ -37,9 +37,9 @@ class DBMainViewController: UIViewController {
             let index = IndexPath(row: 0, section: indexPath.section)
             let cell = tableView.cellForRow(at: index) as! DBMainCardExtendCell
             let cellFrame = tableView.rectForRow(at: index)
-            self.snapShot = self.tabBarController!.tabBar.takeSnapshot()
-            self.snapShot.frame = CGRect(x: 0, y: SCREEN_HEIGHT - 49, width: SCREEN_WIDTH, height: 49)
             self.originFrame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
+            self.snapShot = cell.tableView.takeSnapshot()
+            self.snapShot.frame = self.view.convert(cell.tableView.frame, from: cell)
             
             self.performSegue(withIdentifier: "pushVideo", sender: nil)
             
