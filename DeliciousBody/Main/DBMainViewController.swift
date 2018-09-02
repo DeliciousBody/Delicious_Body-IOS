@@ -9,6 +9,7 @@
 import UIKit
 
 class DBMainViewController: UIViewController {
+    var tableViewModel = CardViewModel()
     
     let ImageSizeForLargeState: CGFloat = 60
     let ImageSizeForSmallState: CGFloat = 32
@@ -18,16 +19,31 @@ class DBMainViewController: UIViewController {
     let NavBarHeightSmallState: CGFloat = 44
     let NavBarHeightLargeState: CGFloat = 96.5
     
+    let subCellHeight: CGFloat = 100
+    let cardHeight: CGFloat = 180
+    let closeHeight: CGFloat = 24
+    
     @IBOutlet var tableView: UITableView!
     var titleLabel = UILabel()
     
     let imageView = UIImageView(image: UIImage(named: "image_name"))
-    
-    var selectedRow = -1
-    var selectedRows = Set<Int>()
-    
+    var snapShot = UIView()
+    var nameSnapShot = UIView()
+    var originFrame = CGRect()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewModel.handler = { indexPath, exercise in
+            guard let tableView = self.tableView else { return }
+//            self.navigationController?.delegate = self
+            let index = IndexPath(row: 0, section: indexPath.section)
+            let cell = tableView.cellForRow(at: index) as! DBMainCardExtendCell
+            let cellFrame = tableView.rectForRow(at: index)
+            self.originFrame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
+            self.snapShot = cell.tableView.takeSnapshot()
+            self.nameSnapShot = cell.nameLabel.takeSnapshot()
+            self.performSegue(withIdentifier: "pushVideo", sender: nil)
+            
+        }
         setupUI()
     }
     
@@ -55,7 +71,7 @@ class DBMainViewController: UIViewController {
     }
     
     func setupUI() {
-        titleLabel.text = "길동님,\n초콜릿복근 가즈아🔥"
+        titleLabel.text = "창민님,\n초콜릿복근 가즈아🔥"
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 24)
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -81,54 +97,69 @@ class DBMainViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             titleLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor,
-                                            constant:ImageRightMargin),
+                                             constant:ImageRightMargin),
             titleLabel.topAnchor.constraint(equalTo: navigationBar.topAnchor,
-                                           constant: ImageTopMarginForLargeState),
+                                            constant: ImageTopMarginForLargeState),
             titleLabel.heightAnchor.constraint(equalToConstant: ImageSizeForLargeState),
             ])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! DBVideoViewController
+            destinationViewController.transitioningDelegate = self
     }
 }
 
 extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tableViewModel.items.count
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DBMainCardCell
-        
-        return cell
+        if !tableViewModel.items[indexPath.section].opened {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DBMainCardCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! DBMainCardExtendCell
+            cell.tableView.tag = indexPath.section
+            cell.tableView.dataSource = tableViewModel
+            cell.tableView.delegate = tableViewModel
+            cell.tableView.reloadData()
+            cell.tableView.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.section == 10 {
+            let cell = tableView.cellForRow(at: indexPath) as! DBMainCardCell
+            let cellFrame = tableView.rectForRow(at: indexPath)
+            self.snapShot = cell.cardView.snapshotView(afterScreenUpdates: true)!
+            self.snapShot.frame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
+            
             performSegue(withIdentifier: "pushVideo", sender: nil)
+            
             return
         }
-        if selectedRows.contains(indexPath.row){
-            selectedRows.remove(indexPath.row)
-        } else {
-            selectedRows.insert(indexPath.row)
-//            let numberOfWide = selectedRows.filter({return $0 <= indexPath.row}).count
-//            let needY = CGFloat(numberOfWide * 400 + (indexPath.row + 1 - numberOfWide) * 200) - tableView.frame.height
-//            let current = tableView.contentOffset.y
-//
-//            print(current, needY)
-//            if  current < CGFloat(needY) {
-//              tableView.contentOffset = CGPoint(x: 0, y: needY)
-//            }
-        }
+        tableViewModel.items[indexPath.section].opened = !tableViewModel.items[indexPath.section].opened
         
         tableView.beginUpdates()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if selectedRows.contains(indexPath.row){
-            return 400
+        if tableViewModel.items[indexPath.section].opened {
+            var height = cardHeight
+            height += CGFloat(tableViewModel.items[indexPath.section].rowCount) * subCellHeight
+            height += closeHeight + 20
+            return height
         } else {
-            return 200
+            return cardHeight + 20
         }
     }
 }
@@ -136,7 +167,5 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
 extension DBMainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         moveAndResizeImageForPortrait()
-        print(scrollView.contentOffset.y)
     }
 }
-

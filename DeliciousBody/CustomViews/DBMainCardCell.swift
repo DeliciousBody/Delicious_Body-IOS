@@ -11,16 +11,7 @@ import UIKit
 class DBMainCardCell: UITableViewCell {
 
     @IBOutlet var cardView: UIView!
-    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        cardView.layer.cornerRadius = 15
+        cardView.layer.applyMainShadow(withCorner: true)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

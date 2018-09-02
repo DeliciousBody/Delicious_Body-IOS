@@ -43,6 +43,23 @@ import SkyFloatingLabelTextField
         }
     }
     
+    
+    var isValidateEmail: Bool {
+        get{
+            if let text = innerTextField.text {
+                if(text.count < 3 || !text.contains("@")) {
+                    return false
+                }
+                else {
+                    return true
+                }
+                
+            } else {
+                return false
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -56,7 +73,6 @@ import SkyFloatingLabelTextField
         view = loadViewFromNib()
         view.frame = bounds
         view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-        
         addSubview(view)
         
         applySkyscannerTheme(textField: innerTextField)
@@ -71,7 +87,25 @@ import SkyFloatingLabelTextField
     }
     
     @IBAction func textFieldDidChanged(_ textField: UITextField) {
+        if textField.text != nil && textField.text != "" {
+            innerTextField.lineColor = UIColor.themeBlue
+        } else {
+            innerTextField.lineColor = UIColor.lightGray
+        }
         self.changeHandler?(textField.text ?? "")
+    }
+    
+    @IBAction func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
+                if(text.count < 3 || !text.contains("@")) {
+                    floatingLabelTextField.errorMessage = "Invalid email"
+                }
+                else {
+                    floatingLabelTextField.errorMessage = ""
+                }
+            }
+        }
     }
     
     func applySkyscannerTheme(textField: SkyFloatingLabelTextField) {
@@ -83,15 +117,26 @@ import SkyFloatingLabelTextField
         
         textField.selectedTitleColor = UIColor.clear
         textField.selectedLineColor = UIColor.themeBlue
-        
+        textField.errorColor = UIColor.red
         textField.placeholderFont = UIFont.textFieldFont
         textField.font = UIFont.textFieldFont
         
-        textField.lineHeight = 2
-        textField.selectedLineHeight = 2
+        textField.lineHeight = 1
+        textField.selectedLineHeight = 1
     }
-
+    
     func setCheck(check: Bool) {
         self.isCheck = check
+    }
+    
+    func animate() {
+        UIView.animate(withDuration: 0.3) {
+            self.innerTextField.textAlignment = .center
+        }
+    }
+    func hideLine() {
+        innerTextField.lineColor = UIColor.clear
+        innerTextField.selectedLineColor = UIColor.clear
+        innerTextField.isUserInteractionEnabled = false
     }
 }

@@ -63,3 +63,18 @@ extension DBMainViewController {
         }
     }
 }
+
+extension DBMainViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CardTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: self.originFrame)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let _ = dismissed as? DBVideoViewController else {
+            return nil
+        }
+        return CardDismissTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: originFrame)
+    }
+    
+}
+

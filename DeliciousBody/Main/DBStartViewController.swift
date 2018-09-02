@@ -13,7 +13,6 @@ class DBStartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(DBStartViewController.appDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        
     }
     
     @objc func appDidBecomeActive() {

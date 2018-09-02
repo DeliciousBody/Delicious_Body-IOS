@@ -13,6 +13,7 @@ class DBVideoViewController: UIViewController {
 
     @IBOutlet var togetherButton: UIButton!
     @IBOutlet var playButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet var videoView: UIView!
     @IBOutlet var touchView: UIView!
     
@@ -68,9 +69,10 @@ class DBVideoViewController: UIViewController {
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = .resizeAspect
         
-        videoView.layer.addSublayer(playerLayer)
+//        videoView.layer.addSublayer(playerLayer)
         videoView.bringSubview(toFront: playButton)
         videoView.bringSubview(toFront: togetherButton)
+        videoView.bringSubview(toFront: backButton)
         let touchReco = UITapGestureRecognizer(target: self, action: #selector(self.playerTouched))
         touchView.addGestureRecognizer(touchReco)
     }
@@ -83,11 +85,14 @@ class DBVideoViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.playButton.isEnabled = isShow
             self?.playButton.alpha = isShow ? 1.0 : 0.0
+            self?.backButton.isEnabled = isShow
+            self?.backButton.alpha = isShow ? 1.0 : 0.0
         }) { [weak self] _ in
-            
             self?.isShowing = isShow
         }
     }
+    
+    
 }
 
 extension DBVideoViewController {
@@ -97,6 +102,11 @@ extension DBVideoViewController {
     }
     
     @IBAction func togetherButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+     
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func playerTouched() {

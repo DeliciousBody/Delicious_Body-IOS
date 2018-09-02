@@ -5,56 +5,110 @@
 //  Created by changmin lee on 2018. 3. 29..
 //  Copyright © 2018년 changmin. All rights reserved.
 //
-
 import UIKit
 import CHIPageControl
-
+import Foundation
 class DBGuideViewController: DBViewController {
     
-    @IBOutlet var guideScrollView: UIScrollView!
-    @IBOutlet weak var pageControl: CHIPageControlJaloro!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet var guideViews: [UIView]!
     
-    let maxScrollViewWidth = SCREEN_WIDTH * 5
+    let guideImageHeight: CGFloat = SCREEN_WIDTH * 0.88
+    let guideImageY: CGFloat = SCREEN_WIDTH * 188 / 375 + 15
     
-    let v = UIView(frame: CGRect(x: SCREEN_WIDTH, y: 100, width: SCREEN_WIDTH, height: 60))
-    let vv = UIView(frame: CGRect(x: SCREEN_WIDTH * 2, y: 100, width: SCREEN_WIDTH, height: 60))
-    
+    var imageViews = [UIImageView]()
+    var currentPage = 0 {
+        didSet {
+            pageControl.currentPage = currentPage
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(DBGuideViewController.leftSwipe(gesture:)))
+        leftSwipeGesture.direction = .left
+        let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(DBGuideViewController.rightSwipe(gesture:)))
+        rightSwipeGesture.direction = .right
+        view.addGestureRecognizer(leftSwipeGesture)
+        view.addGestureRecognizer(rightSwipeGesture)
         setupGuideView()
     }
     
-    func setupGuideView() {
-        guideScrollView.contentSize = CGSize(width: maxScrollViewWidth, height: SCREEN_HEIGHT - 60)
+    @objc func leftSwipe(gesture: UISwipeGestureRecognizer) {
+        guard currentPage < 4 else { return }
+        let front = self.imageViews[currentPage]
+        let back = self.imageViews[currentPage + 1]
         
-        let colorArr: [UIColor] = [ #colorLiteral(red: 0.4977830052, green: 0.6442263126, blue: 0.8744952679, alpha: 1),#colorLiteral(red: 0.3292618096, green: 0.3982263505, blue: 1, alpha: 1),#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1),#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1),#colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)]
-        for i in 0...4 {
-            let v = UIView(frame: CGRect(x: SCREEN_WIDTH * CGFloat(i), y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 60))
-            v.backgroundColor = colorArr[i]
-            guideScrollView.addSubview(v)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: .curveEaseIn, animations: {
+            front.frame.origin.x = -100
+            front.alpha = 0
+            back.frame.origin.x = 0
+            back.alpha = 1
+        }) { (finish) in }
+        
+        if currentPage == 0 {
+            UIView.animate(withDuration: 0.3, delay: 0.25, options: .curveLinear, animations: {
+                self.backgroundImageView.alpha = 1
+            }, completion: nil)
+            
+            UIView.animate(withDuration: 0.4) {
+                self.guideViews[self.currentPage].alpha = 0
+            }
+            UIView.animate(withDuration: 0.4, delay: 0.25, options: .curveLinear, animations: {
+                self.guideViews[self.currentPage + 1].alpha = 1
+            }, completion: nil)
+        } else {
+            
+            UIView.animate(withDuration: 0.4) {
+                self.guideViews[self.currentPage].alpha = 0
+                self.guideViews[self.currentPage + 1].alpha = 1
+            }
         }
         
-        v.backgroundColor = UIColor.white
-        guideScrollView.addSubview(v)
-        vv.backgroundColor = UIColor.gray
-        guideScrollView.addSubview(vv)
         
+        currentPage += 1
+    }
+    
+    @objc func rightSwipe(gesture: UISwipeGestureRecognizer) {
+        guard currentPage > 0  else { return }
+        let front = self.imageViews[currentPage - 1]
+        let back = self.imageViews[currentPage]
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: .curveEaseIn, animations: {
+            front.frame.origin.x = 0
+            front.alpha = 1
+            back.frame.origin.x = SCREEN_WIDTH
+            back.alpha = 0
+        }) { (finish) in }
+        
+        if currentPage == 1 {
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+                self.backgroundImageView.alpha = 0
+            }, completion: nil)
+        }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.guideViews[self.currentPage - 1].alpha = 1
+            self.guideViews[self.currentPage].alpha = 0
+        }
+        currentPage -= 1
+    }
+    
+    func setupGuideView() {
+        
+        let imageArr: [UIImage] = [#imageLiteral(resourceName: "guide1"),#imageLiteral(resourceName: "guide2"),#imageLiteral(resourceName: "guide3"),#imageLiteral(resourceName: "guide4"),#imageLiteral(resourceName: "guide5")]
+        for i in 0...4 {
+            let imageView = UIImageView(frame: CGRect(x: i == 0 ? 0 : SCREEN_WIDTH, y: guideImageY, width: SCREEN_WIDTH, height: guideImageHeight))
+            imageView.alpha = i == 0 ? 1 : 0
+            imageView.image = imageArr[i]
+            imageView.contentMode = .center
+            imageViews.append(imageView)
+            self.view.addSubview(imageView)
+        }
     }
     
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }
-
-extension DBGuideViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let x = scrollView.contentOffset.x
-        let page = x / maxScrollViewWidth * 5
-        pageControl.progress = Double(page)
-        v.frame = CGRect(x: SCREEN_WIDTH + SCREEN_WIDTH - x, y: 100, width: SCREEN_WIDTH, height: 60)
-        vv.frame = CGRect(x: SCREEN_WIDTH*2 + SCREEN_WIDTH*2 - x, y: 100, width: SCREEN_WIDTH, height: 60)
-    }
-}
-
