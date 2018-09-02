@@ -304,6 +304,7 @@
                                         <connections>
                                             <outlet property="cardView" destination="WgN-pf-XTe" id="514-j8-wwO"/>
                                             <outlet property="closeButton" destination="18B-f5-1Mb" id="JhS-lO-DS5"/>
+                                            <outlet property="nameLabel" destination="Bie-1u-Z3L" id="lVc-Tw-ceh"/>
                                             <outlet property="shadowView" destination="fom-lM-SHB" id="9c2-uM-oAa"/>
                                             <outlet property="tableView" destination="4Sm-tK-bEg" id="SLU-QY-TM2"/>
                                             <outlet property="thumbnailView" destination="DHy-2S-v8F" id="KNA-kb-Wd9"/>
@@ -361,6 +362,23 @@
                                             <action selector="playButtonPressed:" destination="tWI-iN-Ss8" eventType="touchUpInside" id="ivS-v1-bTG"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aue-5b-Gzs">
+                                        <rect key="frame" x="327" y="34" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="9yA-rO-Ofd"/>
+                                            <constraint firstAttribute="height" constant="32" id="Ne7-5K-32f"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="cancle_btn">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" title="STOP">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="tWI-iN-Ss8" eventType="touchUpInside" id="Npu-2F-xHi"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RY-4Z-EQg">
                                         <rect key="frame" x="277" y="170" width="83" height="26"/>
                                         <color key="backgroundColor" red="0.28827553989999999" green="0.35192441940000002" blue="0.88710510730000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -385,6 +403,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2RY-4Z-EQg" secondAttribute="bottom" constant="15" id="0fM-9C-J2H"/>
                                     <constraint firstItem="idm-o2-sby" firstAttribute="centerX" secondItem="usu-Ys-y2g" secondAttribute="centerX" id="3cc-fy-eXn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aue-5b-Gzs" secondAttribute="trailing" constant="16" id="7VZ-Bf-WRE"/>
                                     <constraint firstAttribute="width" secondItem="usu-Ys-y2g" secondAttribute="height" multiplier="16:9" id="Gu6-mK-rdj"/>
                                     <constraint firstItem="JDz-4I-kcf" firstAttribute="top" secondItem="usu-Ys-y2g" secondAttribute="top" id="Ouz-KQ-dBy"/>
                                     <constraint firstItem="JDz-4I-kcf" firstAttribute="leading" secondItem="usu-Ys-y2g" secondAttribute="leading" id="Oy2-iE-RDp"/>
@@ -392,6 +411,7 @@
                                     <constraint firstAttribute="trailing" secondItem="JDz-4I-kcf" secondAttribute="trailing" id="XnN-ML-9Ch"/>
                                     <constraint firstAttribute="bottom" secondItem="JDz-4I-kcf" secondAttribute="bottom" id="ceV-vz-cAh"/>
                                     <constraint firstAttribute="trailing" secondItem="2RY-4Z-EQg" secondAttribute="trailing" constant="15" id="jCR-0F-jpS"/>
+                                    <constraint firstItem="Aue-5b-Gzs" firstAttribute="top" secondItem="usu-Ys-y2g" secondAttribute="top" constant="34" id="ltX-2s-9s5"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cyy-J3-3eF">
@@ -479,6 +499,7 @@
                         <viewLayoutGuide key="safeArea" id="Fpg-lc-Rrz"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="Aue-5b-Gzs" id="Kc5-VA-zQX"/>
                         <outlet property="playButton" destination="idm-o2-sby" id="AEx-oY-7a2"/>
                         <outlet property="tableView" destination="Cyy-J3-3eF" id="Xss-8G-H3C"/>
                         <outlet property="togetherButton" destination="2RY-4Z-EQg" id="snG-xd-0Yd"/>
@@ -514,6 +535,7 @@
     </scenes>
     <resources>
         <image name="bodyLogo" width="94" height="29"/>
+        <image name="cancle_btn" width="24" height="24"/>
         <image name="cardClose" width="24" height="24"/>
         <image name="deliciousLogo" width="167" height="32"/>
         <image name="smallLogo" width="74" height="76"/>

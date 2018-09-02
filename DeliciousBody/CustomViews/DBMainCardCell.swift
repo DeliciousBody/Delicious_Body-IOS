@@ -12,6 +12,6 @@ class DBMainCardCell: UITableViewCell {
 
     @IBOutlet var cardView: UIView!
     override func awakeFromNib() {
-        cardView.layer.applyMainShadow()
+        cardView.layer.applyMainShadow(withCorner: true)
     }
 }

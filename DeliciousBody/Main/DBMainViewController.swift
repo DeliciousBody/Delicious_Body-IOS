@@ -28,6 +28,7 @@ class DBMainViewController: UIViewController {
     
     let imageView = UIImageView(image: UIImage(named: "image_name"))
     var snapShot = UIView()
+    var nameSnapShot = UIView()
     var originFrame = CGRect()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,7 @@ class DBMainViewController: UIViewController {
             let cellFrame = tableView.rectForRow(at: index)
             self.originFrame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
             self.snapShot = cell.tableView.takeSnapshot()
-            self.snapShot.frame = self.view.convert(cell.tableView.frame, from: cell)
-            
+            self.nameSnapShot = cell.nameLabel.takeSnapshot()
             self.performSegue(withIdentifier: "pushVideo", sender: nil)
             
         }

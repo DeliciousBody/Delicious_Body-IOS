@@ -47,12 +47,12 @@ extension UIView {
 }
 
 extension CALayer {
-    func applyMainShadow() {
+    func applyMainShadow(withCorner: Bool = false) {
         shadowColor = UIColor.black.cgColor
         shadowOpacity = 0.25
         shadowOffset = CGSize(width: 0, height: 2)
         shadowRadius = 5
-        cornerRadius = 15
+        cornerRadius = withCorner ? 15 : 0
     }
     
     func applyCornerRadius(corners: UIRectCorner) {
