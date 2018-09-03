@@ -131,11 +131,11 @@
                         <subviews>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3qY-Kj-JRK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="741"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="TGE-8C-jgv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="200" id="lqx-k3-JZL" customClass="DBMainCardCell" customModule="DeliciousBody" customModuleProvider="target">
@@ -242,7 +242,6 @@
                                                                     </prototypes>
                                                                 </tableView>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="4Sm-tK-bEg" firstAttribute="leading" secondItem="9DM-4E-C0g" secondAttribute="leading" id="1Pb-9q-Z2w"/>
                                                                 <constraint firstAttribute="trailing" secondItem="4Sm-tK-bEg" secondAttribute="trailing" id="4hk-NG-eP7"/>
@@ -270,7 +269,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.33677113060000002" green="0.38131809230000002" blue="0.86278921369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="18B-f5-1Mb" firstAttribute="leading" secondItem="WgN-pf-XTe" secondAttribute="leading" id="2eC-9P-uIn"/>
@@ -439,10 +437,21 @@
                                             <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGD-su-4TU" customClass="DBButton" customModule="DeliciousBody" customModuleProvider="target">
+                                            <rect key="frame" x="327" y="18.5" width="27" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="Y7p-AT-DpN"/>
+                                                <constraint firstAttribute="width" constant="27" id="ccZ-kZ-4li"/>
+                                            </constraints>
+                                            <state key="normal" image="cellLike_unselected"/>
+                                            <state key="selected" image="cellLike_selected"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="UGD-su-4TU" firstAttribute="centerY" secondItem="ZD4-FG-ivn" secondAttribute="centerY" id="FJp-p9-4Lw"/>
                                         <constraint firstItem="UNn-nV-EBi" firstAttribute="top" secondItem="ZD4-FG-ivn" secondAttribute="bottom" constant="6" id="dz5-Cb-k3D"/>
+                                        <constraint firstAttribute="trailing" secondItem="UGD-su-4TU" secondAttribute="trailing" constant="21" id="jeD-cx-JZs"/>
                                         <constraint firstItem="UNn-nV-EBi" firstAttribute="leading" secondItem="ZD4-FG-ivn" secondAttribute="leading" id="joj-pE-nDT"/>
                                         <constraint firstItem="ZD4-FG-ivn" firstAttribute="top" secondItem="Onh-g9-Bz2" secondAttribute="top" constant="20" id="qed-Ib-TVI"/>
                                         <constraint firstItem="ZD4-FG-ivn" firstAttribute="leading" secondItem="Onh-g9-Bz2" secondAttribute="leading" constant="24" id="r7x-3d-c8n"/>
@@ -515,7 +524,7 @@
         <scene sceneID="ZKq-PK-rax">
             <objects>
                 <navigationController restorationIdentifier="MainNav" storyboardIdentifier="MainNav" automaticallyAdjustsScrollViewInsets="NO" id="FjI-lu-QWJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="chL-bK-QCf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="tabbar_home_unselected" selectedImage="tabbar_home_selected" id="chL-bK-QCf"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bas-bS-l9Y">
@@ -537,7 +546,11 @@
         <image name="bodyLogo" width="94" height="29"/>
         <image name="cancle_btn" width="24" height="24"/>
         <image name="cardClose" width="24" height="24"/>
+        <image name="cellLike_selected" width="24" height="24"/>
+        <image name="cellLike_unselected" width="24" height="24"/>
         <image name="deliciousLogo" width="167" height="32"/>
         <image name="smallLogo" width="74" height="76"/>
+        <image name="tabbar_home_selected" width="26" height="26"/>
+        <image name="tabbar_home_unselected" width="26" height="26"/>
     </resources>
 </document>
