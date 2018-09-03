@@ -107,14 +107,17 @@ class CardTransition: NSObject, UIViewControllerAnimatedTransitioning {
 class CardDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
     private let tableViewSnap: UIView
     private let nameSnap: UIView
-    private let originFrame: CGRect
+    private var originFrame: CGRect
     
     private var removeViews = [UIView]()
     
-    init(snapShots: [UIView], originFrame: CGRect) {
+    init(snapShots: [UIView], originFrame: CGRect, isScrolled: Bool = true) {
         self.tableViewSnap = snapShots[0]
         self.nameSnap = snapShots[1]
         self.originFrame = originFrame
+        if !isScrolled {
+            self.originFrame.origin.y -= 52
+        }
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -183,6 +186,9 @@ class CardDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 self.nameSnap.alpha = 1
             })
             
+            UIView.addKeyframe(withRelativeStartTime: 4/5, relativeDuration: 1/5, animations: {
+                shadowView.layer.shadowOpacity = 0
+            })
         }) { (finish) in
             for view in self.removeViews {
                 view.removeFromSuperview()

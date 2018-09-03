@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-SemiBold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,8 +15,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_fitness" translatesAutoresizingMaskIntoConstraints="NO" id="Koy-M5-jsq">
+                    <rect key="frame" x="24" y="3" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="29A-nE-BO1"/>
+                        <constraint firstAttribute="height" constant="24" id="nZg-Fh-DyY"/>
+                    </constraints>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="같이하면 좋은 운동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN4-Nz-c1R">
-                    <rect key="frame" x="24" y="7" width="104.5" height="17"/>
+                    <rect key="frame" x="56" y="6.5" width="104.5" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="DyK-Qn-WUb"/>
                     </constraints>
@@ -34,11 +35,16 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="rN4-Nz-c1R" firstAttribute="centerY" secondItem="5py-xW-5ju" secondAttribute="centerY" id="7HM-lM-ROj"/>
-                <constraint firstItem="rN4-Nz-c1R" firstAttribute="leading" secondItem="NOu-gG-mSl" secondAttribute="leading" constant="24" id="fnn-WO-3Rv"/>
+                <constraint firstItem="Koy-M5-jsq" firstAttribute="centerY" secondItem="5py-xW-5ju" secondAttribute="centerY" id="Bku-iA-9ff"/>
+                <constraint firstItem="Koy-M5-jsq" firstAttribute="leading" secondItem="5py-xW-5ju" secondAttribute="leading" constant="24" id="ayN-N9-wOp"/>
+                <constraint firstItem="rN4-Nz-c1R" firstAttribute="leading" secondItem="Koy-M5-jsq" secondAttribute="trailing" constant="8" id="eSC-Ld-ikl"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="NOu-gG-mSl"/>
             <point key="canvasLocation" x="215" y="-120"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_fitness" width="24" height="24"/>
+    </resources>
 </document>
