@@ -135,13 +135,12 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 10 {
-            let cell = tableView.cellForRow(at: indexPath) as! DBMainCardCell
-            let cellFrame = tableView.rectForRow(at: indexPath)
-            self.snapShot = cell.cardView.snapshotView(afterScreenUpdates: true)!
-            self.snapShot.frame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
+        if indexPath.section == 1 {
             
-            performSegue(withIdentifier: "pushVideo", sender: nil)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: .curveEaseOut, animations: {
+                    self.tableView.contentOffset.y += 30
+                
+            }, completion: nil)
             
             return
         }

@@ -25,11 +25,11 @@
             </objects>
             <point key="canvasLocation" x="414" y="-138"/>
         </scene>
-        <!--Alarm-->
+        <!--My-->
         <scene sceneID="b21-Fb-ffS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gU1-Eh-5TT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alarm" image="tabbar_my_unselected" selectedImage="tabbar_my_selected" id="5KP-0P-j24"/>
+                    <tabBarItem key="tabBarItem" title="My" image="tabbar_my_unselected" selectedImage="tabbar_my_selected" id="5KP-0P-j24"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="8Ie-4h-RjT">

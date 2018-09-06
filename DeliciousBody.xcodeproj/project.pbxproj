@@ -24,8 +24,11 @@
 		ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47159620997C6500F3C251 /* DBAlarmViewController.swift */; };
 		ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */; };
 		ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */; };
+		ED557696213FD69700F22CBC /* DBVideoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED557695213FD69700F22CBC /* DBVideoSearchViewController.swift */; };
+		ED557698213FD70200F22CBC /* DBVideoSearchTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED557697213FD70200F22CBC /* DBVideoSearchTransition.swift */; };
 		ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C182137B4A80095CB39 /* DBTransition.swift */; };
 		ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED607C1A213D406B0095CB39 /* Setting.storyboard */; };
+		ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */; };
 		ED8757052081DE5900B91100 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED8757042081DE5900B91100 /* sample.mp4 */; };
 		ED8757082081F33B00B91100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8757072081F33B00B91100 /* Main.storyboard */; };
 		ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8757092081FAC400B91100 /* DBExerCell.swift */; };
@@ -93,8 +96,11 @@
 		ED47159620997C6500F3C251 /* DBAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAlarmViewController.swift; sourceTree = "<group>"; };
 		ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin4ViewController.swift; sourceTree = "<group>"; };
 		ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin5ViewController.swift; sourceTree = "<group>"; };
+		ED557695213FD69700F22CBC /* DBVideoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoSearchViewController.swift; sourceTree = "<group>"; };
+		ED557697213FD70200F22CBC /* DBVideoSearchTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoSearchTransition.swift; sourceTree = "<group>"; };
 		ED607C182137B4A80095CB39 /* DBTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransition.swift; sourceTree = "<group>"; };
 		ED607C1A213D406B0095CB39 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewModel.swift; sourceTree = "<group>"; };
 		ED8757042081DE5900B91100 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		ED8757072081F33B00B91100 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ED8757092081FAC400B91100 /* DBExerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBExerCell.swift; sourceTree = "<group>"; };
@@ -279,6 +285,9 @@
 			isa = PBXGroup;
 			children = (
 				EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */,
+				ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */,
+				ED557695213FD69700F22CBC /* DBVideoSearchViewController.swift */,
+				ED557697213FD70200F22CBC /* DBVideoSearchTransition.swift */,
 			);
 			path = VideoList;
 			sourceTree = "<group>";
@@ -517,8 +526,11 @@
 				ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */,
 				EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */,
 				ED07CEB9212A98F300C7CAF0 /* DBRoundButton.swift in Sources */,
+				ED557698213FD70200F22CBC /* DBVideoSearchTransition.swift in Sources */,
+				ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */,
 				EDA38354212542F000A39574 /* DBUser.swift in Sources */,
 				EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */,
+				ED557696213FD69700F22CBC /* DBVideoSearchViewController.swift in Sources */,
 				ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */,
 				EDE8AB52207CA24500A6D180 /* DBMainViewController.swift in Sources */,
 				EDEBB22120C4F6560024DE36 /* DBBodyView.swift in Sources */,
