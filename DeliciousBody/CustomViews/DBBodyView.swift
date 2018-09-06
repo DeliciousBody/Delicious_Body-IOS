@@ -45,8 +45,6 @@ class DBBodyView: UIView {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        bodyImageViews[sender.tag].isHidden = !sender.isSelected
-        
+        bodyImageViews[sender.tag].isHidden = sender.isSelected
     }
-    
 }

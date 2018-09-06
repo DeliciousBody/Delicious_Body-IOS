@@ -14,3 +14,7 @@ let kJoinTitles = ["join2":"맞춤 운동을 추천받으시려면\n저에게 �
                    "join5":"이제 마지막입니다! 동기부여가\n될 수 있는 한마디를 적어보세요 :) ",
                    "none":""
 ]
+
+enum BodyType {
+    case neck, chest, abdomen, thigh, calf, arm, back, hip
+}
