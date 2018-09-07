@@ -32,42 +32,42 @@
                         <constraint firstAttribute="width" constant="200" id="OGb-9x-oF3"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body1" translatesAutoresizingMaskIntoConstraints="NO" id="YeK-IE-O6C">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body1" translatesAutoresizingMaskIntoConstraints="NO" id="YeK-IE-O6C">
                     <rect key="frame" x="50" y="0.0" width="200" height="377"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="0By-Jf-bWM"/>
                         <constraint firstAttribute="height" constant="377" id="81Y-Z0-n1L"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body2" translatesAutoresizingMaskIntoConstraints="NO" id="171-ow-LHf">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body2" translatesAutoresizingMaskIntoConstraints="NO" id="171-ow-LHf">
                     <rect key="frame" x="50" y="0.0" width="200" height="377"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="sBE-Dd-beM"/>
                         <constraint firstAttribute="height" constant="377" id="tQk-hW-H64"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body3" translatesAutoresizingMaskIntoConstraints="NO" id="WtD-Bh-80y">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body3" translatesAutoresizingMaskIntoConstraints="NO" id="WtD-Bh-80y">
                     <rect key="frame" x="50" y="0.0" width="200" height="377"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="1fe-oR-Ogb"/>
                         <constraint firstAttribute="height" constant="377" id="bre-Ru-x5T"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body4" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-Un-RfQ">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body4" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-Un-RfQ">
                     <rect key="frame" x="50" y="0.0" width="200" height="377"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="377" id="HS7-o9-ulm"/>
                         <constraint firstAttribute="width" constant="200" id="gw9-dp-Q5I"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body5" translatesAutoresizingMaskIntoConstraints="NO" id="yPc-gy-sjB">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body5" translatesAutoresizingMaskIntoConstraints="NO" id="yPc-gy-sjB">
                     <rect key="frame" x="50" y="0.0" width="200" height="377"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="Ifl-Gr-uWF"/>
                         <constraint firstAttribute="height" constant="377" id="YbI-f7-jcR"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body6" translatesAutoresizingMaskIntoConstraints="NO" id="kdt-ro-h4h">
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body6" translatesAutoresizingMaskIntoConstraints="NO" id="kdt-ro-h4h">
                     <rect key="frame" x="50" y="0.0" width="200" height="377"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="f3V-zN-Qqr"/>

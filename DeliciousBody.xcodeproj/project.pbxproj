@@ -26,6 +26,7 @@
 		ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */; };
 		ED557696213FD69700F22CBC /* DBVideoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED557695213FD69700F22CBC /* DBVideoSearchViewController.swift */; };
 		ED557698213FD70200F22CBC /* DBVideoSearchTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED557697213FD70200F22CBC /* DBVideoSearchTransition.swift */; };
+		ED55769A214233E400F22CBC /* DBVideoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED557699214233E400F22CBC /* DBVideoFilterViewController.swift */; };
 		ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C182137B4A80095CB39 /* DBTransition.swift */; };
 		ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED607C1A213D406B0095CB39 /* Setting.storyboard */; };
 		ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */; };
@@ -98,6 +99,7 @@
 		ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin5ViewController.swift; sourceTree = "<group>"; };
 		ED557695213FD69700F22CBC /* DBVideoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoSearchViewController.swift; sourceTree = "<group>"; };
 		ED557697213FD70200F22CBC /* DBVideoSearchTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoSearchTransition.swift; sourceTree = "<group>"; };
+		ED557699214233E400F22CBC /* DBVideoFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoFilterViewController.swift; sourceTree = "<group>"; };
 		ED607C182137B4A80095CB39 /* DBTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransition.swift; sourceTree = "<group>"; };
 		ED607C1A213D406B0095CB39 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewModel.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				EDC9FBBE2098525B00A61BAA /* DBVideoListViewController.swift */,
 				ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */,
 				ED557695213FD69700F22CBC /* DBVideoSearchViewController.swift */,
+				ED557699214233E400F22CBC /* DBVideoFilterViewController.swift */,
 				ED557697213FD70200F22CBC /* DBVideoSearchTransition.swift */,
 			);
 			path = VideoList;
@@ -547,6 +550,7 @@
 				ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */,
 				EDE14E95212C01F500083181 /* DBLoginViewController.swift in Sources */,
 				EDA383522125400700A39574 /* DBStartViewController.swift in Sources */,
+				ED55769A214233E400F22CBC /* DBVideoFilterViewController.swift in Sources */,
 				EDE14E99212C10A600083181 /* DBExtensions.swift in Sources */,
 				EDF721FD206C01CA00CCAFEC /* MNFunction.swift in Sources */,
 				ED2C03CC20BBE03D00980783 /* DBJoinEmbededViewController.swift in Sources */,

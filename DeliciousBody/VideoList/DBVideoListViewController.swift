@@ -100,10 +100,6 @@ extension DBVideoListViewController: UIScrollViewDelegate {
         tabbarLine.center.x = allButton.center.x  + (likeButton.center.x - allButton.center.x) * ratio
     }
     
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        
-    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         option = Int(round(scrollView.contentOffset.x / SCREEN_WIDTH))
     }

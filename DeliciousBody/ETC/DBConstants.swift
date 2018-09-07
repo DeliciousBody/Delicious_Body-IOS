@@ -15,6 +15,6 @@ let kJoinTitles = ["join2":"맞춤 운동을 추천받으시려면\n저에게 �
                    "none":""
 ]
 
-enum BodyType {
-    case neck, chest, abdomen, thigh, calf, arm, back, hip
+enum BodyType: Int {
+    case neck = 1, chest, abdomen, thigh, calf, arm, back, hip
 }

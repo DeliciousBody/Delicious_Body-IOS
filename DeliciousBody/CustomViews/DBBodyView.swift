@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 class DBBodyView: UIView {
     
-    
-    
     @IBOutlet var bodyImageViews: [UIImageView]!
-    
+    var filter: [BodyType] = []
     
     var view:UIView!
     let NibName: String = "DBBodyView"
+    
+    var handler: (([BodyType]) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,6 +45,15 @@ class DBBodyView: UIView {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        bodyImageViews[sender.tag].isHidden = sender.isSelected
+        if sender.isSelected {
+            self.filter.append(BodyType(rawValue: sender.tag)!)
+        } else {
+            self.filter.remove(at: self.filter.index(of: BodyType(rawValue: sender.tag)!)!)
+        }
+        self.handler?(self.filter)
+        
+        UIView.animate(withDuration: 0.15, animations: {
+            self.bodyImageViews[sender.tag].alpha = sender.isSelected ? 1 : 0
+        })
     }
 }
