@@ -61,7 +61,7 @@ class DBVideoSearchViewController: UIViewController {
 extension DBVideoSearchViewController: UITextFieldDelegate {
     @objc func textfieldDidChanging(sender: UITextField) {
         keywordLabel.text = sender.text
-        if (sender.text?.count)! > 5 {
+        if (sender.text?.count)! == 5 {
             result = [Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise()]
         }
     }
@@ -89,7 +89,7 @@ extension DBVideoSearchViewController: UITableViewDataSource, UITableViewDelegat
         return cell
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         inputTextField.resignFirstResponder()
     }
 }

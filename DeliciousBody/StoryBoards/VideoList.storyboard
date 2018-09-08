@@ -221,6 +221,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-41-TBo">
                                         <rect key="frame" x="24" y="7.5" width="0.0" height="20"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="7nl-Ym-W4I"/>
                                             <constraint firstAttribute="height" constant="20" id="Zsz-hL-pOp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
@@ -373,7 +374,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JFQ-zH-w65"/>
                     </view>
-                    <navigationItem key="navigationItem" title="필터" id="5ov-NF-wwj"/>
+                    <navigationItem key="navigationItem" title="필터" id="5ov-NF-wwj">
+                        <barButtonItem key="rightBarButtonItem" image="barbutton_refresh" id="bq6-0D-j4v">
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="I0j-pi-RGW" id="MFe-do-V2m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bodyView" destination="IlA-WX-rut" id="KRv-1R-Alu"/>
                     </connections>
@@ -410,6 +417,7 @@
     </scenes>
     <resources>
         <image name="barbutton_filter" width="24" height="24"/>
+        <image name="barbutton_refresh" width="24" height="24"/>
         <image name="barbutton_search" width="24" height="24"/>
         <image name="cellLike_selected" width="24" height="24"/>
         <image name="cellLike_unselected" width="24" height="24"/>

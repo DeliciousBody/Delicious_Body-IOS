@@ -9,6 +9,12 @@
 import UIKit
 
 class DBRoundButton: UIButton {
+    
+    override var isSelected: Bool {
+        didSet {
+            self.backgroundColor = isSelected ? UIColor.themeBlue84102255 : UIColor.subGray190
+        }
+    }
     override func draw(_ rect: CGRect) {
         layer.cornerRadius = 4
         layer.masksToBounds = true

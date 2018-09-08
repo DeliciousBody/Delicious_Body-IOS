@@ -18,4 +18,7 @@ class DBVideoFilterViewController: UIViewController {
             print(filter)
         } 
     }
+    @IBAction func refreshButtonPressed(_ sender: Any) {
+        bodyView.reset()
+    }
 }

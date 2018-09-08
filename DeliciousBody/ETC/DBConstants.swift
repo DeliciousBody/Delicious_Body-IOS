@@ -17,4 +17,24 @@ let kJoinTitles = ["join2":"맞춤 운동을 추천받으시려면\n저에게 �
 
 enum BodyType: Int {
     case neck = 1, chest, abdomen, thigh, calf, arm, back, hip
+    func description() -> String {
+        switch self {
+        case .neck:
+            return "어깨, 목"
+        case .chest:
+            return "가슴"
+        case .abdomen:
+            return "복부, 허리"
+        case .thigh:
+            return "허벅지, 무릎"
+        case .calf:
+            return "종아리, 발목"
+        case .arm:
+            return "손목, 팔"
+        case .back:
+            return "등"
+        case .hip:
+            return "엉덩이"
+        }
+    }
 }

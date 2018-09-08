@@ -11,6 +11,8 @@ import UIKit
 class DBBodyView: UIView {
     
     @IBOutlet var bodyImageViews: [UIImageView]!
+    
+    @IBOutlet var bodyLabelButtons: [UIButton]!
     var filter: [BodyType] = []
     
     var view:UIView!
@@ -43,17 +45,28 @@ class DBBodyView: UIView {
         return view
     }
     
+    func reset() {
+        for btn in bodyLabelButtons.filter({ (button) -> Bool in
+            return button.isSelected
+        }) {
+            buttonPressed(btn)
+        }
+    }
+    
     @IBAction func buttonPressed(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            self.filter.append(BodyType(rawValue: sender.tag)!)
+        let tag = sender.tag
+        guard tag < bodyImageViews.count else { return }
+        let labelButton = bodyLabelButtons[tag - 1]
+        labelButton.isSelected = !labelButton.isSelected
+        if labelButton.isSelected {
+            self.filter.append(BodyType(rawValue: tag)!)
         } else {
-            self.filter.remove(at: self.filter.index(of: BodyType(rawValue: sender.tag)!)!)
+            self.filter.remove(at: self.filter.index(of: BodyType(rawValue: tag)!)!)
         }
         self.handler?(self.filter)
         
         UIView.animate(withDuration: 0.15, animations: {
-            self.bodyImageViews[sender.tag].alpha = sender.isSelected ? 1 : 0
+            self.bodyImageViews[tag].alpha = labelButton.isSelected ? 1 : 0
         })
     }
 }
