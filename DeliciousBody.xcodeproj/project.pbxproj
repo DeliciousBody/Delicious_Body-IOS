@@ -27,6 +27,8 @@
 		ED557696213FD69700F22CBC /* DBVideoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED557695213FD69700F22CBC /* DBVideoSearchViewController.swift */; };
 		ED557698213FD70200F22CBC /* DBVideoSearchTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED557697213FD70200F22CBC /* DBVideoSearchTransition.swift */; };
 		ED55769A214233E400F22CBC /* DBVideoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED557699214233E400F22CBC /* DBVideoFilterViewController.swift */; };
+		ED55769C21440E8F00F22CBC /* DBSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55769B21440E8F00F22CBC /* DBSettingViewController.swift */; };
+		ED55769F214419FC00F22CBC /* DBRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55769E214419FC00F22CBC /* DBRecordCell.swift */; };
 		ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C182137B4A80095CB39 /* DBTransition.swift */; };
 		ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED607C1A213D406B0095CB39 /* Setting.storyboard */; };
 		ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */; };
@@ -100,6 +102,8 @@
 		ED557695213FD69700F22CBC /* DBVideoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoSearchViewController.swift; sourceTree = "<group>"; };
 		ED557697213FD70200F22CBC /* DBVideoSearchTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoSearchTransition.swift; sourceTree = "<group>"; };
 		ED557699214233E400F22CBC /* DBVideoFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoFilterViewController.swift; sourceTree = "<group>"; };
+		ED55769B21440E8F00F22CBC /* DBSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingViewController.swift; sourceTree = "<group>"; };
+		ED55769E214419FC00F22CBC /* DBRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRecordCell.swift; sourceTree = "<group>"; };
 		ED607C182137B4A80095CB39 /* DBTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransition.swift; sourceTree = "<group>"; };
 		ED607C1A213D406B0095CB39 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewModel.swift; sourceTree = "<group>"; };
@@ -184,6 +188,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED55769D21440E9400F22CBC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ED55769B21440E8F00F22CBC /* DBSettingViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		ED8757062081DE5D00B91100 /* Resouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +242,7 @@
 				EDFB0F8D20B5253A00175138 /* DBTextField.swift */,
 				EDEBB22020C4F6560024DE36 /* DBBodyView.swift */,
 				ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */,
+				ED55769E214419FC00F22CBC /* DBRecordCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -343,6 +356,7 @@
 				EDEE0C6F20B9A3D8001BB163 /* VideoList */,
 				EDEE0C6E20B9A3D0001BB163 /* Alarm */,
 				EDEE0C6D20B9A3C5001BB163 /* Join */,
+				ED55769D21440E9400F22CBC /* Settings */,
 				ED875711208208C500B91100 /* CustomViews */,
 				ED875710208208B400B91100 /* StoryBoards */,
 				ED87570F208208A900B91100 /* XIBs */,
@@ -528,6 +542,7 @@
 				ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */,
 				ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */,
 				EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */,
+				ED55769F214419FC00F22CBC /* DBRecordCell.swift in Sources */,
 				ED07CEB9212A98F300C7CAF0 /* DBRoundButton.swift in Sources */,
 				ED557698213FD70200F22CBC /* DBVideoSearchTransition.swift in Sources */,
 				ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */,
@@ -544,6 +559,7 @@
 				EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */,
 				ED07CEB52129A28000C7CAF0 /* DBMainCardExtendCell.swift in Sources */,
 				EDE8AB54207CA4FA00A6D180 /* DBMainCardCell.swift in Sources */,
+				ED55769C21440E8F00F22CBC /* DBSettingViewController.swift in Sources */,
 				EDF721DB206BF78700CCAFEC /* ViewController.swift in Sources */,
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
 				ED2C03C820BBE00D00980783 /* DBJoin2ViewController.swift in Sources */,
