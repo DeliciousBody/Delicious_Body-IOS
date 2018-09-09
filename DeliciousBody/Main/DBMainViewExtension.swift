@@ -66,7 +66,7 @@ extension DBMainViewController {
 
 extension DBMainViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return CardTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: self.originFrame)
+        return CardTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: self.originFrame, thumbnailImage: self.selectedImage)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {

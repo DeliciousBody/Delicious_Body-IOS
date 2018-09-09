@@ -26,21 +26,22 @@ class DBMainViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var titleLabel = UILabel()
     
-    let imageView = UIImageView(image: UIImage(named: "image_name"))
+    let imageView = DBProfileImageView(image: UIImage(named: "sample"))
     var snapShot = UIView()
     var nameSnapShot = UIView()
     var originFrame = CGRect()
+    var selectedImage = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewModel.handler = { indexPath, exercise in
             guard let tableView = self.tableView else { return }
-//            self.navigationController?.delegate = self
             let index = IndexPath(row: 0, section: indexPath.section)
             let cell = tableView.cellForRow(at: index) as! DBMainCardExtendCell
             let cellFrame = tableView.rectForRow(at: index)
             self.originFrame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
             self.snapShot = cell.tableView.takeSnapshot()
             self.nameSnapShot = cell.nameLabel.takeSnapshot()
+            self.selectedImage = cell.thumbnailView.image ?? UIImage()
             self.performSegue(withIdentifier: "pushVideo", sender: nil)
             
         }

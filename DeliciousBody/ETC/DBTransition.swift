@@ -13,13 +13,15 @@ class CardTransition: NSObject, UIViewControllerAnimatedTransitioning {
     private let tableViewSnap: UIView
     private let nameSnap: UIView
     private let originFrame: CGRect
+    private let thumbnailImage: UIImage
     
     private var removeViews = [UIView]()
     
-    init(snapShots: [UIView], originFrame: CGRect) {
+    init(snapShots: [UIView], originFrame: CGRect, thumbnailImage: UIImage) {
         self.tableViewSnap = snapShots[0]
         self.nameSnap = snapShots[1]
         self.originFrame = originFrame
+        self.thumbnailImage = thumbnailImage
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -55,8 +57,12 @@ class CardTransition: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(maskView)
         
         let imageV = UIImageView(frame: CGRect(x: 0, y: 0, width: originFrame.width, height: 180))
-        imageV.backgroundColor = UIColor.debugRed
+        imageV.image = thumbnailImage
         maskView.addSubview(imageV)
+        
+        let filterView = UIView(frame: CGRect(x: 0, y: 0, width: originFrame.width, height: 180))
+        filterView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.26)
+        maskView.addSubview(filterView)
         
         tableViewSnap.frame = CGRect(x: 0, y: 180, width: originFrame.width, height: tableViewSnap.frame.height)
         maskView.addSubview(tableViewSnap)
@@ -65,7 +71,7 @@ class CardTransition: NSObject, UIViewControllerAnimatedTransitioning {
         maskView.addSubview(nameSnap)
         
         
-        removeViews = [shadowView, maskView, imageV, tableViewSnap, toVCSnap]
+        removeViews = [shadowView, maskView, imageV, filterView, tableViewSnap, toVCSnap]
       
         let duration = transitionDuration(using: transitionContext)
         
@@ -79,6 +85,7 @@ class CardTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 self.tableViewSnap.frame.origin = CGPoint(x: 0, y: SCREEN_WIDTH * 9 / 16)
                 self.nameSnap.frame.origin.y = 115
                 imageV.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH * 9 / 16)
+                filterView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH * 9 / 16)
             })
             
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1/3, animations: {

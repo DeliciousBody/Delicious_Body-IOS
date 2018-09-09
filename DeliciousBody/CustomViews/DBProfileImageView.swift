@@ -16,4 +16,11 @@ class DBProfileImageView: UIImageView {
         self.layer.borderColor = UIColor.subGray190.cgColor
         self.layer.borderWidth = 1
     }
+    override init(image: UIImage?) {
+        super.init(image: image)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
