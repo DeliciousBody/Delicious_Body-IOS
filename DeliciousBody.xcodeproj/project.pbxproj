@@ -30,6 +30,7 @@
 		ED55769C21440E8F00F22CBC /* DBSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55769B21440E8F00F22CBC /* DBSettingViewController.swift */; };
 		ED55769F214419FC00F22CBC /* DBRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55769E214419FC00F22CBC /* DBRecordCell.swift */; };
 		ED5576A12144258900F22CBC /* DBProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A02144258900F22CBC /* DBProfileImageView.swift */; };
+		ED5576A3214541EB00F22CBC /* DBHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A2214541EB00F22CBC /* DBHistoryViewModel.swift */; };
 		ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C182137B4A80095CB39 /* DBTransition.swift */; };
 		ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED607C1A213D406B0095CB39 /* Setting.storyboard */; };
 		ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */; };
@@ -106,6 +107,7 @@
 		ED55769B21440E8F00F22CBC /* DBSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingViewController.swift; sourceTree = "<group>"; };
 		ED55769E214419FC00F22CBC /* DBRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRecordCell.swift; sourceTree = "<group>"; };
 		ED5576A02144258900F22CBC /* DBProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProfileImageView.swift; sourceTree = "<group>"; };
+		ED5576A2214541EB00F22CBC /* DBHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHistoryViewModel.swift; sourceTree = "<group>"; };
 		ED607C182137B4A80095CB39 /* DBTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransition.swift; sourceTree = "<group>"; };
 		ED607C1A213D406B0095CB39 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				ED55769B21440E8F00F22CBC /* DBSettingViewController.swift */,
+				ED5576A2214541EB00F22CBC /* DBHistoryViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -311,12 +314,12 @@
 			path = VideoList;
 			sourceTree = "<group>";
 		};
-		EDEE0C7020B9A3DE001BB163 /* VIdeoView */ = {
+		EDEE0C7020B9A3DE001BB163 /* VideoView */ = {
 			isa = PBXGroup;
 			children = (
 				ED218EFE2081CDD20082366F /* DBVideoViewController.swift */,
 			);
-			path = VIdeoView;
+			path = VideoView;
 			sourceTree = "<group>";
 		};
 		EDEE0C7120B9A3E9001BB163 /* Main */ = {
@@ -355,7 +358,7 @@
 			children = (
 				ED8757132082092100B91100 /* ETC */,
 				EDEE0C7120B9A3E9001BB163 /* Main */,
-				EDEE0C7020B9A3DE001BB163 /* VIdeoView */,
+				EDEE0C7020B9A3DE001BB163 /* VideoView */,
 				EDEE0C6F20B9A3D8001BB163 /* VideoList */,
 				EDEE0C6E20B9A3D0001BB163 /* Alarm */,
 				EDEE0C6D20B9A3C5001BB163 /* Join */,
@@ -564,6 +567,7 @@
 				EDE8AB54207CA4FA00A6D180 /* DBMainCardCell.swift in Sources */,
 				ED55769C21440E8F00F22CBC /* DBSettingViewController.swift in Sources */,
 				EDF721DB206BF78700CCAFEC /* ViewController.swift in Sources */,
+				ED5576A3214541EB00F22CBC /* DBHistoryViewModel.swift in Sources */,
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
 				ED2C03C820BBE00D00980783 /* DBJoin2ViewController.swift in Sources */,
 				ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */,
