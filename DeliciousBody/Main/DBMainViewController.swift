@@ -56,6 +56,7 @@ class DBMainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .default
+        refreshLabels()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,7 +73,9 @@ class DBMainViewController: UIViewController {
     }
     
     func setupUI() {
-        titleLabel.text = "창민님,\n초콜릿복근 가즈아🔥"
+        guard let me = User.me else { return }
+        let title = "\(me.name ?? "")님,\n\(me.slogan ?? "초콜릿복근 가즈아")"
+        titleLabel.text = title
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 24)
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -103,6 +106,12 @@ class DBMainViewController: UIViewController {
                                             constant: ImageTopMarginForLargeState),
             titleLabel.heightAnchor.constraint(equalToConstant: ImageSizeForLargeState),
             ])
+    }
+    
+    func refreshLabels() {
+        guard let me = User.me else { return }
+        let title = "\(me.name ?? "")님,\n\(me.slogan ?? "딜리셔스바디 화이팅!")"
+        titleLabel.text = title
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -137,13 +146,13 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: .curveEaseOut, animations: {
-                    self.tableView.contentOffset.y += 30
-                
-            }, completion: nil)
-            
-            return
+//
+//            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: .curveEaseOut, animations: {
+//                    self.tableView.contentOffset.y += 30
+//
+//            }, completion: nil)
+//
+//            return
         }
         tableViewModel.items[indexPath.section].opened = !tableViewModel.items[indexPath.section].opened
         

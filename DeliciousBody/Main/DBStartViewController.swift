@@ -29,9 +29,9 @@ class DBStartViewController: UIViewController {
          }*/
         
         if User.fetchToken() != nil {
-            self.animateSegue("Login", sender: nil)
-        } else {
             self.animateSegue("Main", sender: nil)
+        } else {
+            self.animateSegue("Login", sender: nil)
         }
     }
     

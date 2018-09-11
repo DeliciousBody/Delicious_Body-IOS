@@ -19,6 +19,7 @@ open class User : NSObject {
     open var seq: Int
     open var countryCode: String?
     open var name: String?
+    open var slogan: String?
     open var isAuth: Bool?
     open var phoneType: Int?
     open var photoUrl: String?
@@ -33,6 +34,15 @@ open class User : NSObject {
     open let adEmail: String?
     open let adAcceptDate: String?
     
+    public convenience override init() {
+        self.init(withDic:  ["id" : "sampleID" as AnyObject,
+                             "password" : "samplePW" as AnyObject,
+                             "seq" : 1 as AnyObject,
+                             "name" : "창민" as AnyObject,
+                             "token" : "sampleTOKEN" as AnyObject])
+        
+    }
+    
     public init (withDic dic: [String : AnyObject]) {
         id = dic["id"] as! String
         
@@ -41,7 +51,7 @@ open class User : NSObject {
         seq  = dic["seq"] as! Int
         
         countryCode = dic["countryCode"] as? String
-        name = dic["firstName"] as? String
+        name = dic["name"] as? String
         if let isAuthBool = dic["isAuth"] as? Bool {
             isAuth = isAuthBool
         }
@@ -70,6 +80,7 @@ open class User : NSObject {
         adAccept = dic["adAccept"] as? String
         adEmail = dic["email"] as? String
         adAcceptDate = dic["adAcceptDate"] as? String
+        slogan = dic["slogan"] as? String
     }
     
     func save() {
@@ -151,26 +162,27 @@ open class User : NSObject {
         data["password"] = self.password as AnyObject
         data["seq"] = self.seq as AnyObject
         
-        data["countryCode"] = self.countryCode as AnyObject
-        data["firstName"] = self.name as AnyObject
-        data["isAuth"] = { ()->AnyObject in
-            if self.isAuth != nil && self.isAuth!{
-                return "Y" as AnyObject
-            }else{
-                return "N" as AnyObject
-            }
-        }()
-        data["phoneType"] = self.phoneType as AnyObject
-        data["photoUrl"] = self.photoUrl as AnyObject
+//        data["countryCode"] = self.countryCode as AnyObject
+        data["name"] = self.name as AnyObject
+//        data["isAuth"] = { ()->AnyObject in
+//            if self.isAuth != nil && self.isAuth!{
+//                return "Y" as AnyObject
+//            }else{
+//                return "N" as AnyObject
+//            }
+//        }()
+//        data["phoneType"] = self.phoneType as AnyObject
+//        data["photoUrl"] = self.photoUrl as AnyObject
         
         data["token"] = self.token as AnyObject
-        data["joinPath"] = self.joinPath as AnyObject
-        
-        data["appPushId"] = self.appPushID as AnyObject
-        
-        data["adAccept"] = self.adAccept as AnyObject
-        data["email"] = self.adEmail as AnyObject
-        data["adAcceptDate"] = self.adAcceptDate as AnyObject
+//        data["joinPath"] = self.joinPath as AnyObject
+//
+//        data["appPushId"] = self.appPushID as AnyObject
+//
+//        data["adAccept"] = self.adAccept as AnyObject
+//        data["email"] = self.adEmail as AnyObject
+//        data["adAcceptDate"] = self.adAcceptDate as AnyObject
+        data["slogan"] = self.slogan as AnyObject
         
         UserDefaults.standard.set(data, forKey: kSavedUserData)
         UserDefaults.standard.synchronize()

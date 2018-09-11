@@ -427,12 +427,11 @@
                                             <action selector="togetherButtonPressed:" destination="tWI-iN-Ss8" eventType="touchUpInside" id="KHd-uz-MSG"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDz-4I-kcf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDz-4I-kcf">
+                                        <rect key="frame" x="1" y="-2" width="375" height="211"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89019607840000003" green="0.28627450980000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="2RY-4Z-EQg" secondAttribute="bottom" constant="15" id="0fM-9C-J2H"/>
                                     <constraint firstItem="idm-o2-sby" firstAttribute="centerX" secondItem="usu-Ys-y2g" secondAttribute="centerX" id="3cc-fy-eXn"/>
