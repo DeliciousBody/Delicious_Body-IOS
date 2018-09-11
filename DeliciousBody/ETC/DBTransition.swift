@@ -115,13 +115,15 @@ class CardDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
     private let tableViewSnap: UIView
     private let nameSnap: UIView
     private var originFrame: CGRect
+    private let thumbnailImage: UIImage
     
     private var removeViews = [UIView]()
     
-    init(snapShots: [UIView], originFrame: CGRect, isScrolled: Bool = true) {
+    init(snapShots: [UIView], originFrame: CGRect, thumbnailImage: UIImage, isScrolled: Bool = true) {
         self.tableViewSnap = snapShots[0]
         self.nameSnap = snapShots[1]
         self.originFrame = originFrame
+        self.thumbnailImage = thumbnailImage
         if !isScrolled {
             self.originFrame.origin.y -= 52
         }
@@ -153,7 +155,7 @@ class CardDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(maskView)
         
         let imageV = UIImageView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH * 9 / 16))
-        imageV.backgroundColor = UIColor.debugRed
+        imageV.image = thumbnailImage
         maskView.addSubview(imageV)
         
         let maskLayer = CAShapeLayer()

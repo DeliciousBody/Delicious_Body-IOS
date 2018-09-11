@@ -74,11 +74,10 @@ extension DBMainViewController: UIViewControllerTransitioningDelegate {
             return nil
         }
         if tableView.contentOffset.y == -116.0 {
-            return CardDismissTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: originFrame, isScrolled: false)
+            return CardDismissTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: originFrame, thumbnailImage: self.selectedImage, isScrolled: false)
         } else {
-            return CardDismissTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: originFrame)
+            return CardDismissTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: originFrame, thumbnailImage: self.selectedImage)
         }
     }
-    
 }
 
