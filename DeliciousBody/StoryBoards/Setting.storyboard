@@ -50,6 +50,9 @@
                                     <constraint firstAttribute="width" constant="36" id="FLR-PB-8pu"/>
                                 </constraints>
                                 <state key="normal" image="edit_btn"/>
+                                <connections>
+                                    <segue destination="PmE-gb-TOR" kind="show" id="bUM-n0-YoG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOl-Gw-Cw8" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
                                 <rect key="frame" x="195" y="88" width="160" height="33"/>
@@ -293,15 +296,186 @@
                     <navigationItem key="navigationItem" id="viG-k7-XdV">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="barbutton_setting" style="plain" id="z2V-LY-Irg">
                             <color key="tintColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="ORC-cp-3fh" kind="show" id="Y3g-o2-fho"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="historyCollectionView" destination="sMj-xe-vs2" id="OIW-Qb-pmy"/>
+                        <outlet property="nameLabel" destination="ooS-WD-6Bi" id="VSO-BE-7CF"/>
+                        <outlet property="sloganLabel" destination="1Nr-D4-hpW" id="aH1-TL-ddM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tge-7Q-pla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="413.60000000000002" y="-138.0809595202399"/>
+        </scene>
+        <!--Setting Slogan View Controller-->
+        <scene sceneID="8O3-GI-K3k">
+            <objects>
+                <viewController id="PmE-gb-TOR" customClass="DBSettingSloganViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pe5-XD-bcn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slogun" translatesAutoresizingMaskIntoConstraints="NO" id="CnY-AB-Jsj">
+                                <rect key="frame" x="164.5" y="0.0" width="46" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="VuZ-MW-TnM"/>
+                                    <constraint firstAttribute="height" constant="55" id="ggH-s0-d6g"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZU-3V-6tc">
+                                <rect key="frame" x="61.5" y="65" width="252" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ALn-6Y-Psv"/>
+                                    <constraint firstAttribute="width" constant="252" id="RWq-Gq-baF"/>
+                                </constraints>
+                                <string key="text">모두에게 동기부여가 될 수 있는 
+한마디를 적어보세요 :) </string>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtI-Zv-VqB" customClass="DBTextField" customModule="DeliciousBody" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="243" width="300" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Gtz-k6-6a1"/>
+                                    <constraint firstAttribute="height" constant="40" id="Syd-hO-G5x"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value=" 예) 얼른 일어나!"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작성하신 한 마디는 다른 유저들과 공유하게 됩니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DU-wL-Ij0">
+                                <rect key="frame" x="37.5" y="297" width="240" height="14.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TtI-Zv-VqB" firstAttribute="top" secondItem="dZU-3V-6tc" secondAttribute="bottom" constant="130" id="IR1-5h-5RJ"/>
+                            <constraint firstItem="CnY-AB-Jsj" firstAttribute="top" secondItem="pL2-oA-cON" secondAttribute="top" id="KLa-wa-Ra6"/>
+                            <constraint firstItem="TtI-Zv-VqB" firstAttribute="centerX" secondItem="pe5-XD-bcn" secondAttribute="centerX" id="POA-xM-r0g"/>
+                            <constraint firstItem="5DU-wL-Ij0" firstAttribute="leading" secondItem="TtI-Zv-VqB" secondAttribute="leading" id="RXj-27-d69"/>
+                            <constraint firstItem="5DU-wL-Ij0" firstAttribute="top" secondItem="TtI-Zv-VqB" secondAttribute="bottom" constant="13.5" id="T4g-Xf-V7m"/>
+                            <constraint firstItem="dZU-3V-6tc" firstAttribute="centerX" secondItem="pe5-XD-bcn" secondAttribute="centerX" id="UsK-q7-DNO"/>
+                            <constraint firstItem="CnY-AB-Jsj" firstAttribute="centerX" secondItem="pe5-XD-bcn" secondAttribute="centerX" id="gIo-ZU-nnZ"/>
+                            <constraint firstItem="dZU-3V-6tc" firstAttribute="top" secondItem="CnY-AB-Jsj" secondAttribute="bottom" constant="10" id="nPe-Po-V76"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pL2-oA-cON"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Be1-8G-MyW">
+                        <barButtonItem key="leftBarButtonItem" image="barbutton_back" id="jCQ-SY-IA8">
+                            <color key="tintColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backbuttonPressed:" destination="PmE-gb-TOR" id="DG4-ud-Eah"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="barbutton_check" id="PgP-Je-AzT">
+                            <color key="tintColor" red="0.25882352941176467" green="0.28235294117647058" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="checkbuttonPressed:" destination="PmE-gb-TOR" id="jnT-Ln-qKs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputTextField" destination="TtI-Zv-VqB" id="Mmv-SC-lCh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="32X-oU-YNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103" y="-138"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="Gh7-ZU-CQw">
+            <objects>
+                <viewController id="ORC-cp-3fh" customClass="DBSettingInfoViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbT-oJ-pGg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GYG-bg-eeM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="45" id="Z0v-xr-r7A" customClass="DBSettingCell" customModule="DeliciousBody" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z0v-xr-r7A" id="Iv4-A1-cAW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOU-Dg-ZqE">
+                                                    <rect key="frame" x="25" y="13" width="36.5" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="nQC-Ix-7Wt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                    <color key="textColor" red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next_btn" translatesAutoresizingMaskIntoConstraints="NO" id="U06-RB-U73">
+                                                    <rect key="frame" x="335" y="10.5" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="DGI-fb-7HD"/>
+                                                        <constraint firstAttribute="height" constant="24" id="ErK-dc-yHN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdD-Vu-11N">
+                                                    <rect key="frame" x="350" y="13.5" width="0.0" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="hNA-7E-lMl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U06-RB-U73" firstAttribute="centerY" secondItem="Iv4-A1-cAW" secondAttribute="centerY" id="49g-PL-ZGt"/>
+                                                <constraint firstItem="hOU-Dg-ZqE" firstAttribute="leading" secondItem="Iv4-A1-cAW" secondAttribute="leading" constant="25" id="9yw-Ys-h9k"/>
+                                                <constraint firstItem="hdD-Vu-11N" firstAttribute="centerY" secondItem="Iv4-A1-cAW" secondAttribute="centerY" id="F0p-4e-PKU"/>
+                                                <constraint firstAttribute="trailing" secondItem="U06-RB-U73" secondAttribute="trailing" constant="16" id="JVT-Z2-kM8"/>
+                                                <constraint firstItem="hOU-Dg-ZqE" firstAttribute="centerY" secondItem="Iv4-A1-cAW" secondAttribute="centerY" id="ckf-6q-BC2"/>
+                                                <constraint firstAttribute="trailing" secondItem="hdD-Vu-11N" secondAttribute="trailing" constant="25" id="gqu-H6-2iP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="hdD-Vu-11N" id="U2M-YM-yfb"/>
+                                            <outlet property="nextButton" destination="U06-RB-U73" id="7wG-34-z9Q"/>
+                                            <outlet property="titleLabel" destination="hOU-Dg-ZqE" id="FUE-iE-6ab"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ORC-cp-3fh" id="iRw-yC-9AL"/>
+                                    <outlet property="delegate" destination="ORC-cp-3fh" id="anQ-4C-W0W"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4DE-l5-HMb" firstAttribute="bottom" secondItem="GYG-bg-eeM" secondAttribute="bottom" id="6K5-wZ-3eU"/>
+                            <constraint firstItem="GYG-bg-eeM" firstAttribute="top" secondItem="4DE-l5-HMb" secondAttribute="top" id="JeP-mW-t6U"/>
+                            <constraint firstItem="4DE-l5-HMb" firstAttribute="trailing" secondItem="GYG-bg-eeM" secondAttribute="trailing" id="N7F-AM-GVV"/>
+                            <constraint firstItem="GYG-bg-eeM" firstAttribute="leading" secondItem="4DE-l5-HMb" secondAttribute="leading" id="vkm-MY-WGu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4DE-l5-HMb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="설정" id="Ox7-sL-0Tf">
+                        <barButtonItem key="backBarButtonItem" title=" " id="hZt-R1-akU"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="GYG-bg-eeM" id="Ni4-8p-iba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWV-Zl-k4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="523"/>
         </scene>
         <!--My-->
         <scene sceneID="b21-Fb-ffS">
@@ -329,12 +503,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="barbutton_back" width="24" height="24"/>
+        <image name="barbutton_check" width="24" height="24"/>
         <image name="barbutton_setting" width="24" height="24"/>
         <image name="cellLike_selected_s" width="20" height="20"/>
         <image name="cellLike_unselected_s" width="20" height="20"/>
         <image name="edit_btn" width="24" height="24"/>
         <image name="icon_fitness" width="24" height="24"/>
         <image name="icon_history" width="24" height="24"/>
+        <image name="icon_slogun" width="46" height="55"/>
+        <image name="next_btn" width="24" height="24"/>
         <image name="sample" width="70" height="70"/>
         <image name="sample_history" width="201" height="120"/>
         <image name="tabbar_my_selected" width="26" height="26"/>

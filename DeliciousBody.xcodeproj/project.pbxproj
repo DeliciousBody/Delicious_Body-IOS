@@ -31,6 +31,9 @@
 		ED55769F214419FC00F22CBC /* DBRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED55769E214419FC00F22CBC /* DBRecordCell.swift */; };
 		ED5576A12144258900F22CBC /* DBProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A02144258900F22CBC /* DBProfileImageView.swift */; };
 		ED5576A3214541EB00F22CBC /* DBHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A2214541EB00F22CBC /* DBHistoryViewModel.swift */; };
+		ED5576A5214605A000F22CBC /* DBSettingSloganViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A4214605A000F22CBC /* DBSettingSloganViewController.swift */; };
+		ED5576A72148243100F22CBC /* DBSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A62148243100F22CBC /* DBSettingCell.swift */; };
+		ED5576A92148288800F22CBC /* DBSettingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */; };
 		ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C182137B4A80095CB39 /* DBTransition.swift */; };
 		ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED607C1A213D406B0095CB39 /* Setting.storyboard */; };
 		ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */; };
@@ -108,6 +111,9 @@
 		ED55769E214419FC00F22CBC /* DBRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRecordCell.swift; sourceTree = "<group>"; };
 		ED5576A02144258900F22CBC /* DBProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProfileImageView.swift; sourceTree = "<group>"; };
 		ED5576A2214541EB00F22CBC /* DBHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHistoryViewModel.swift; sourceTree = "<group>"; };
+		ED5576A4214605A000F22CBC /* DBSettingSloganViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingSloganViewController.swift; sourceTree = "<group>"; };
+		ED5576A62148243100F22CBC /* DBSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingCell.swift; sourceTree = "<group>"; };
+		ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingInfoViewController.swift; sourceTree = "<group>"; };
 		ED607C182137B4A80095CB39 /* DBTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransition.swift; sourceTree = "<group>"; };
 		ED607C1A213D406B0095CB39 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewModel.swift; sourceTree = "<group>"; };
@@ -197,6 +203,8 @@
 			children = (
 				ED55769B21440E8F00F22CBC /* DBSettingViewController.swift */,
 				ED5576A2214541EB00F22CBC /* DBHistoryViewModel.swift */,
+				ED5576A4214605A000F22CBC /* DBSettingSloganViewController.swift */,
+				ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */,
 				ED55769E214419FC00F22CBC /* DBRecordCell.swift */,
 				ED5576A02144258900F22CBC /* DBProfileImageView.swift */,
+				ED5576A62148243100F22CBC /* DBSettingCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -551,6 +560,7 @@
 				ED55769F214419FC00F22CBC /* DBRecordCell.swift in Sources */,
 				ED07CEB9212A98F300C7CAF0 /* DBRoundButton.swift in Sources */,
 				ED557698213FD70200F22CBC /* DBVideoSearchTransition.swift in Sources */,
+				ED5576A92148288800F22CBC /* DBSettingInfoViewController.swift in Sources */,
 				ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */,
 				EDA38354212542F000A39574 /* DBUser.swift in Sources */,
 				EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */,
@@ -558,6 +568,7 @@
 				ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */,
 				EDE8AB52207CA24500A6D180 /* DBMainViewController.swift in Sources */,
 				EDEBB22120C4F6560024DE36 /* DBBodyView.swift in Sources */,
+				ED5576A72148243100F22CBC /* DBSettingCell.swift in Sources */,
 				EDC0295420B9BAC900A2E2D0 /* DBViewController.swift in Sources */,
 				ED2C03CE20BBE19200980783 /* DBConstants.swift in Sources */,
 				EDFB0F9020B56E0C00175138 /* DBJoin1ViewController.swift in Sources */,
@@ -571,6 +582,7 @@
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
 				ED2C03C820BBE00D00980783 /* DBJoin2ViewController.swift in Sources */,
 				ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */,
+				ED5576A5214605A000F22CBC /* DBSettingSloganViewController.swift in Sources */,
 				EDE14E95212C01F500083181 /* DBLoginViewController.swift in Sources */,
 				EDA383522125400700A39574 /* DBStartViewController.swift in Sources */,
 				ED55769A214233E400F22CBC /* DBVideoFilterViewController.swift in Sources */,

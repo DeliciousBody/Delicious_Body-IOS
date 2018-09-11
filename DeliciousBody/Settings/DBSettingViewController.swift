@@ -5,7 +5,6 @@
 //  Created by changmin lee on 2018. 9. 8..
 //  Copyright © 2018년 changmin. All rights reserved.
 //
-
 import UIKit
 
 class DBSettingViewController: UIViewController {
@@ -14,6 +13,8 @@ class DBSettingViewController: UIViewController {
     var max = 20
     let historyViewModel = HistroyViewModel()
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var historyCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -23,6 +24,18 @@ class DBSettingViewController: UIViewController {
         
         historyCollectionView.dataSource = historyViewModel
         historyCollectionView.delegate = historyViewModel
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .default
+        setupUI()
+    }
+    
+    func setupUI() {
+        guard let me = User.me else { return }
+        nameLabel.text = me.name
+        sloganLabel.text = me.slogan
     }
 }
 
