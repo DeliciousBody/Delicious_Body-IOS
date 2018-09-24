@@ -17,6 +17,8 @@ class DBSettingViewController: UIViewController {
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var historyCollectionView: UICollectionView!
     
+    @IBOutlet weak var editInfoBtn: UIButton!
+    @IBOutlet weak var editTypeBtn : UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
@@ -24,11 +26,15 @@ class DBSettingViewController: UIViewController {
         
         historyCollectionView.dataSource = historyViewModel
         historyCollectionView.delegate = historyViewModel
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .default
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         setupUI()
     }
     
@@ -36,6 +42,9 @@ class DBSettingViewController: UIViewController {
         guard let me = User.me else { return }
         nameLabel.text = me.name
         sloganLabel.text = me.slogan
+        
+        editInfoBtn.makeRound()
+        editTypeBtn.makeRound()
     }
 }
 

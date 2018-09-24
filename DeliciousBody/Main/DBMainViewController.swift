@@ -24,6 +24,8 @@ class DBMainViewController: UIViewController {
     let closeHeight: CGFloat = 24
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
     var titleLabel = UILabel()
     
     let imageView = DBProfileImageView(image: UIImage(named: "sample"))
@@ -81,7 +83,14 @@ class DBMainViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         guard let navigationBar = self.navigationController?.navigationBar else { return }
+        
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        v.backgroundColor = UIColor.blue
+//        view.addSubview(v)
+//        view.bringSubview(toFront: tableView)
+        v.translatesAutoresizingMaskIntoConstraints = false
         navigationBar.shadowImage = UIImage()
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.addSubview(imageView)
         navigationBar.addSubview(titleLabel)
         

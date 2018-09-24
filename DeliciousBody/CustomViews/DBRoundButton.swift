@@ -9,7 +9,6 @@
 import UIKit
 
 class DBRoundButton: UIButton {
-    
     override var isSelected: Bool {
         didSet {
             self.backgroundColor = isSelected ? UIColor.themeBlue84102255 : UIColor.subGray190
@@ -18,6 +17,38 @@ class DBRoundButton: UIButton {
     override func draw(_ rect: CGRect) {
         layer.cornerRadius = 4
         layer.masksToBounds = true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }, completion: nil)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
+            self.transform = CGAffineTransform.identity
+        })
+    }
+}
+
+extension UIButton {
+    func makeRound() {
+        layer.cornerRadius = 15
+        clipsToBounds = true
+        
+//        layer.shadowPath =
+//            UIBezierPath(roundedRect: bounds,
+//                         cornerRadius: layer.cornerRadius).cgPath
+//        layer.shadowColor = UIColor.black.cgColor
+//        layer.shadowOpacity = 0.15
+//        layer.shadowOffset = CGSize(width: 0, height: 1)
+//        layer.shadowRadius = 8
+//        layer.masksToBounds = false
     }
 }
 

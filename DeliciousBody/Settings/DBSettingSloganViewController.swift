@@ -11,20 +11,27 @@ import UIKit
 class DBSettingSloganViewController: UIViewController {
     @IBOutlet weak var inputTextField: DBTextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .default
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        inputTextField.innerTextField.becomeFirstResponder()
+    }
+    
     @IBAction func backbuttonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func checkbuttonPressed(_ sender: Any) {
-        if let slogan = inputTextField.innerTextField.text {
-            User.me?.slogan = slogan
-            User.me?.save()
-            navigationController?.popViewController(animated: true)
-        } else {
-            
+        if let slogan = inputTextField.innerTextField.text{
+            if slogan.count > 0 {
+                User.me?.slogan = slogan
+                User.me?.save()
+                navigationController?.popViewController(animated: true)
+            }
         }
     }
 }

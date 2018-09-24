@@ -35,6 +35,11 @@ class DBGuideViewController: DBViewController {
         setupGuideView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .default
+    }
+    
     @objc func leftSwipe(gesture: UISwipeGestureRecognizer) {
         guard currentPage < 4 else { return }
         let front = self.imageViews[currentPage]

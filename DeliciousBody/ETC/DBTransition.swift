@@ -70,7 +70,6 @@ class CardTransition: NSObject, UIViewControllerAnimatedTransitioning {
         nameSnap.frame.origin = CGPoint(x: 16, y: 116)
         maskView.addSubview(nameSnap)
         
-        
         removeViews = [shadowView, maskView, imageV, filterView, tableViewSnap, toVCSnap]
       
         let duration = transitionDuration(using: transitionContext)

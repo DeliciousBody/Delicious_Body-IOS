@@ -69,7 +69,7 @@ class DBVideoViewController: UIViewController {
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = .resizeAspect
         
-//        videoView.layer.addSublayer(playerLayer)
+        videoView.layer.addSublayer(playerLayer)
         videoView.bringSubview(toFront: playButton)
         videoView.bringSubview(toFront: togetherButton)
         videoView.bringSubview(toFront: backButton)
