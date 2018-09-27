@@ -11,9 +11,6 @@
 		ED07CEB52129A28000C7CAF0 /* DBMainCardExtendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB42129A28000C7CAF0 /* DBMainCardExtendCell.swift */; };
 		ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB62129B58B00C7CAF0 /* DBCardViewModel.swift */; };
 		ED07CEB9212A98F300C7CAF0 /* DBRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */; };
-		ED10950C20835E6200B0B2A7 /* sample2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950920835E6100B0B2A7 /* sample2.mp4 */; };
-		ED10950D20835E6200B0B2A7 /* sample3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950A20835E6100B0B2A7 /* sample3.mp4 */; };
-		ED10950E20835E6200B0B2A7 /* sample1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED10950B20835E6200B0B2A7 /* sample1.mp4 */; };
 		ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED218EFE2081CDD20082366F /* DBVideoViewController.swift */; };
 		ED218F082081DD240082366F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED218F062081DD240082366F /* AVKit.framework */; };
 		ED218F092081DD240082366F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED218F072081DD240082366F /* AVFoundation.framework */; };
@@ -35,10 +32,11 @@
 		ED5576A72148243100F22CBC /* DBSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A62148243100F22CBC /* DBSettingCell.swift */; };
 		ED5576A92148288800F22CBC /* DBSettingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */; };
 		ED5576AB21589B0700F22CBC /* DBSettingFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576AA21589B0700F22CBC /* DBSettingFilterViewController.swift */; };
+		ED5576AD215B562800F22CBC /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5576AC215B562800F22CBC /* KakaoOpenSDK.framework */; };
+		ED5576AF215C8D3400F22CBC /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED5576AE215C8D3400F22CBC /* sample.mp4 */; };
 		ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C182137B4A80095CB39 /* DBTransition.swift */; };
 		ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED607C1A213D406B0095CB39 /* Setting.storyboard */; };
 		ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */; };
-		ED8757052081DE5900B91100 /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED8757042081DE5900B91100 /* sample.mp4 */; };
 		ED8757082081F33B00B91100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8757072081F33B00B91100 /* Main.storyboard */; };
 		ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8757092081FAC400B91100 /* DBExerCell.swift */; };
 		ED87570C2081FAC400B91100 /* DBExerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED87570A2081FAC400B91100 /* DBExerCell.xib */; };
@@ -92,9 +90,6 @@
 		ED07CEB42129A28000C7CAF0 /* DBMainCardExtendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainCardExtendCell.swift; sourceTree = "<group>"; };
 		ED07CEB62129B58B00C7CAF0 /* DBCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCardViewModel.swift; sourceTree = "<group>"; };
 		ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRoundButton.swift; sourceTree = "<group>"; };
-		ED10950920835E6100B0B2A7 /* sample2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample2.mp4; sourceTree = "<group>"; };
-		ED10950A20835E6100B0B2A7 /* sample3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample3.mp4; sourceTree = "<group>"; };
-		ED10950B20835E6200B0B2A7 /* sample1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample1.mp4; sourceTree = "<group>"; };
 		ED218EFE2081CDD20082366F /* DBVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewController.swift; sourceTree = "<group>"; };
 		ED218F062081DD240082366F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		ED218F072081DD240082366F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -116,10 +111,11 @@
 		ED5576A62148243100F22CBC /* DBSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingCell.swift; sourceTree = "<group>"; };
 		ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingInfoViewController.swift; sourceTree = "<group>"; };
 		ED5576AA21589B0700F22CBC /* DBSettingFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingFilterViewController.swift; sourceTree = "<group>"; };
+		ED5576AC215B562800F22CBC /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		ED5576AE215C8D3400F22CBC /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		ED607C182137B4A80095CB39 /* DBTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransition.swift; sourceTree = "<group>"; };
 		ED607C1A213D406B0095CB39 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewModel.swift; sourceTree = "<group>"; };
-		ED8757042081DE5900B91100 /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		ED8757072081F33B00B91100 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ED8757092081FAC400B91100 /* DBExerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBExerCell.swift; sourceTree = "<group>"; };
 		ED87570A2081FAC400B91100 /* DBExerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBExerCell.xib; sourceTree = "<group>"; };
@@ -165,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED218F082081DD240082366F /* AVKit.framework in Frameworks */,
+				ED5576AD215B562800F22CBC /* KakaoOpenSDK.framework in Frameworks */,
 				ED218F092081DD240082366F /* AVFoundation.framework in Frameworks */,
 				B0720BFBE2B4D7E1C5EF376B /* Pods_DeliciousBody.framework in Frameworks */,
 			);
@@ -192,6 +189,7 @@
 		ED218F052081DD240082366F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED5576AC215B562800F22CBC /* KakaoOpenSDK.framework */,
 				ED218F072081DD240082366F /* AVFoundation.framework */,
 				ED218F062081DD240082366F /* AVKit.framework */,
 				C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */,
@@ -215,10 +213,7 @@
 		ED8757062081DE5D00B91100 /* Resouce */ = {
 			isa = PBXGroup;
 			children = (
-				ED8757042081DE5900B91100 /* sample.mp4 */,
-				ED10950B20835E6200B0B2A7 /* sample1.mp4 */,
-				ED10950920835E6100B0B2A7 /* sample2.mp4 */,
-				ED10950A20835E6100B0B2A7 /* sample3.mp4 */,
+				ED5576AE215C8D3400F22CBC /* sample.mp4 */,
 			);
 			path = Resouce;
 			sourceTree = "<group>";
@@ -268,10 +263,10 @@
 		ED8757132082092100B91100 /* ETC */ = {
 			isa = PBXGroup;
 			children = (
+				EDF721D8206BF78700CCAFEC /* AppDelegate.swift */,
 				EDF721FC206C01C900CCAFEC /* MNFunction.swift */,
 				ED999A4A209A2A720058FE0B /* DBFonts.swift */,
 				ED999A4C209A2AD40058FE0B /* DBColors.swift */,
-				EDF721D8206BF78700CCAFEC /* AppDelegate.swift */,
 				EDC0295320B9BAC900A2E2D0 /* DBViewController.swift */,
 				ED2C03CD20BBE19200980783 /* DBConstants.swift */,
 				EDE14E98212C10A600083181 /* DBExtensions.swift */,
@@ -479,23 +474,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5576AF215C8D3400F22CBC /* sample.mp4 in Resources */,
 				ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */,
 				EDBE9AD2209950A40090EF2B /* Alarm.storyboard in Resources */,
 				EDF721E3206BF78700CCAFEC /* LaunchScreen.storyboard in Resources */,
 				ED87570E208205F400B91100 /* DBVideoSectionHeader.xib in Resources */,
 				EDFB0F8C20B523C600175138 /* DBTextField.xib in Resources */,
-				ED10950D20835E6200B0B2A7 /* sample3.mp4 in Resources */,
 				ED8757082081F33B00B91100 /* Main.storyboard in Resources */,
 				EDDB787320A937AD0086DDDB /* Sample.storyboard in Resources */,
 				EDF721E0206BF78700CCAFEC /* Assets.xcassets in Resources */,
 				EDC9FBBD2098511D00A61BAA /* VideoList.storyboard in Resources */,
 				EDEE0C7320B9A49B001BB163 /* Join.storyboard in Resources */,
 				EDF721DE206BF78700CCAFEC /* Home.storyboard in Resources */,
-				ED8757052081DE5900B91100 /* sample.mp4 in Resources */,
-				ED10950C20835E6200B0B2A7 /* sample2.mp4 in Resources */,
 				ED87570C2081FAC400B91100 /* DBExerCell.xib in Resources */,
 				EDEBB21F20C4F5D90024DE36 /* DBBodyView.xib in Resources */,
-				ED10950E20835E6200B0B2A7 /* sample1.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,13 +526,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CHIPageControl/CHIPageControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHIPageControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 			);
@@ -759,9 +751,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47RZ4GF77T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DeliciousBody/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"RangeSeekSlider\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = changmin.DeliciousBody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -776,9 +780,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47RZ4GF77T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DeliciousBody/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"RangeSeekSlider\"",
+					"-framework",
+					"\"SkyFloatingLabelTextField\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = changmin.DeliciousBody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -63,4 +63,23 @@ extension DBSettingInfoViewController: UITableViewDataSource, UITableViewDelegat
         footer.backgroundColor = UIColor(red: 239.0 / 255.0, green: 239.0 / 255.0, blue: 244.0 / 255.0, alpha: 1)
         return footer
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        if section == 0 {
+            
+        } else if section == 1 {
+            
+        } else {
+            if row == 0 {
+                User.removeSavedUser()
+                self.performSegue(withIdentifier: "Join", sender: nil)
+//                self.dismiss(animated: true) {
+//                    NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: kDidLogoutNotification), object: nil)
+//                }
+            }
+        }
+    }
 }

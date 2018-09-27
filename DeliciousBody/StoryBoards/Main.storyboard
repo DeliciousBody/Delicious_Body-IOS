@@ -31,7 +31,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="9Pz-RY-e6A">
             <objects>
-                <tabBarController id="w5N-ig-gwW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="DBMainTabbarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w5N-ig-gwW" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fbj-Rc-Rg8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,7 +48,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHC-57-tsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-956" y="45"/>
+            <point key="canvasLocation" x="-721" y="45"/>
         </scene>
         <!--Join-->
         <scene sceneID="jOR-v6-eHb">

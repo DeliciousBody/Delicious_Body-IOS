@@ -38,8 +38,9 @@ open class User : NSObject {
         self.init(withDic:  ["id" : "sampleID" as AnyObject,
                              "password" : "samplePW" as AnyObject,
                              "seq" : 1 as AnyObject,
-                             "name" : "창민" as AnyObject,
-                             "token" : "sampleTOKEN" as AnyObject])
+                             "name" : "창맨" as AnyObject,
+                             "token" : "sampleTOKEN" as AnyObject,
+                             "slogan" : "" as AnyObject])
         
     }
     
@@ -162,7 +163,6 @@ open class User : NSObject {
         data["password"] = self.password as AnyObject
         data["seq"] = self.seq as AnyObject
         
-//        data["countryCode"] = self.countryCode as AnyObject
         data["name"] = self.name as AnyObject
 //        data["isAuth"] = { ()->AnyObject in
 //            if self.isAuth != nil && self.isAuth!{
@@ -172,7 +172,7 @@ open class User : NSObject {
 //            }
 //        }()
 //        data["phoneType"] = self.phoneType as AnyObject
-//        data["photoUrl"] = self.photoUrl as AnyObject
+        
         
         data["token"] = self.token as AnyObject
 //        data["joinPath"] = self.joinPath as AnyObject
@@ -184,6 +184,9 @@ open class User : NSObject {
 //        data["adAcceptDate"] = self.adAcceptDate as AnyObject
         data["slogan"] = self.slogan as AnyObject
         
+        if let url = self.photoUrl {
+            data["photoUrl"] = url as AnyObject
+        }
         UserDefaults.standard.set(data, forKey: kSavedUserData)
         UserDefaults.standard.synchronize()
         

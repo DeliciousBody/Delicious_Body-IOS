@@ -45,6 +45,13 @@ class DBVideoListViewController: UIViewController {
         tableViewAll.dataSource = tableViewModel
         tableViewLike.delegate = tableViewModel
         tableViewLike.dataSource = tableViewModel
+        
+        tableViewModel.handler = { exercise in
+            let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+            let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBVideoViewController") as! DBVideoViewController
+            mainViewController.exercise = exercise
+            self.present(mainViewController, animated: true, completion: nil)
+        }
     }
     
     func setupUI() {

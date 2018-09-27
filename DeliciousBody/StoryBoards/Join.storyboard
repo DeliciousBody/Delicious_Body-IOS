@@ -89,14 +89,6 @@
                                     <constraint firstAttribute="width" secondItem="7kT-rR-kc5" secondAttribute="height" multiplier="375:188" id="pC2-aJ-3yh"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iq-Lv-NLg">
-                                <rect key="frame" x="313" y="42" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="back:" destination="cu7-lO-PId" eventType="touchUpInside" id="KpV-zk-aJD"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peh-EA-mL8">
                                 <rect key="frame" x="111.5" y="70" width="151" height="135"/>
                                 <subviews>
@@ -360,11 +352,23 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUg-f3-OCr">
-                                <rect key="frame" x="112" y="422" width="150" height="33"/>
+                                <rect key="frame" x="87" y="422" width="200" height="33"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX6-Lr-iGU" customClass="KOLoginButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="33"/>
+                                        <connections>
+                                            <action selector="kakaoLoginButtonPressed:" destination="xfF-k2-0DA" eventType="touchUpInside" id="QAb-Vc-bB6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.85098039215686272" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="EX6-Lr-iGU" firstAttribute="leading" secondItem="iUg-f3-OCr" secondAttribute="leading" id="0Ej-5L-vfd"/>
                                     <constraint firstAttribute="height" constant="33" id="S9f-kp-wL5"/>
-                                    <constraint firstAttribute="width" constant="150" id="uHm-Xc-Wa5"/>
+                                    <constraint firstAttribute="trailing" secondItem="EX6-Lr-iGU" secondAttribute="trailing" id="eSy-e6-xET"/>
+                                    <constraint firstItem="EX6-Lr-iGU" firstAttribute="top" secondItem="iUg-f3-OCr" secondAttribute="top" id="rtN-eJ-jZD"/>
+                                    <constraint firstAttribute="width" constant="200" id="uHm-Xc-Wa5"/>
+                                    <constraint firstAttribute="bottom" secondItem="EX6-Lr-iGU" secondAttribute="bottom" id="wnr-BB-zAd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -391,13 +395,13 @@
                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAi-7j-Y3V">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAi-7j-Y3V">
                                 <rect key="frame" x="325" y="34" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="93W-Y8-ApP"/>
                                     <constraint firstAttribute="height" constant="30" id="F6W-JX-Bhe"/>
                                 </constraints>
-                                <state key="normal" title="닫기"/>
+                                <state key="normal" image="barbutton_cancel"/>
                                 <connections>
                                     <segue destination="FAc-0o-gY2" kind="unwind" unwindAction="backWithSegue:" id="eIs-nn-QNa"/>
                                 </connections>
@@ -410,16 +414,19 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-x3-URe" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
-                                <rect key="frame" x="112.5" y="377" width="150" height="33"/>
+                                <rect key="frame" x="87.5" y="377" width="200" height="33"/>
                                 <color key="backgroundColor" red="0.28827553989999999" green="0.35192441940000002" blue="0.88710510730000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Aek-6s-KBE"/>
+                                    <constraint firstAttribute="width" constant="200" id="Aek-6s-KBE"/>
                                     <constraint firstAttribute="height" constant="33" id="Hk5-gh-ihx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
                                 <state key="normal" title="로그인하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="xfF-k2-0DA" eventType="touchUpInside" id="pko-vG-8nB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -432,7 +439,7 @@
                             <constraint firstItem="nAi-7j-Y3V" firstAttribute="top" secondItem="PpS-9U-ung" secondAttribute="top" constant="14" id="Hmr-3S-fgW"/>
                             <constraint firstItem="ddU-EG-1cC" firstAttribute="top" secondItem="NlF-wa-Ur6" secondAttribute="bottom" constant="21" id="KDb-8J-dHe"/>
                             <constraint firstItem="NlF-wa-Ur6" firstAttribute="top" secondItem="PpS-9U-ung" secondAttribute="top" constant="40" id="Lvn-ae-451"/>
-                            <constraint firstItem="Pfd-bx-Kki" firstAttribute="leading" secondItem="iUg-f3-OCr" secondAttribute="leading" constant="6" id="PJo-BC-YM3"/>
+                            <constraint firstItem="Pfd-bx-Kki" firstAttribute="leading" secondItem="iUg-f3-OCr" secondAttribute="leading" constant="31" id="PJo-BC-YM3"/>
                             <constraint firstItem="SRJ-nk-Gcy" firstAttribute="top" secondItem="bPt-Fd-2qh" secondAttribute="bottom" constant="12" id="Sfg-SQ-E5c"/>
                             <constraint firstItem="bPt-Fd-2qh" firstAttribute="leading" secondItem="PpS-9U-ung" secondAttribute="leading" constant="35" id="alB-j5-fmf"/>
                             <constraint firstItem="SRJ-nk-Gcy" firstAttribute="centerX" secondItem="Ow2-hs-cMk" secondAttribute="centerX" id="dXN-dJ-3cn"/>
@@ -483,13 +490,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFt-km-K7p">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFt-km-K7p">
                                 <rect key="frame" x="325" y="34" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="DMW-JJ-J3h"/>
                                     <constraint firstAttribute="width" constant="30" id="DyV-VA-gd4"/>
                                 </constraints>
-                                <state key="normal" title="닫기"/>
+                                <state key="normal" image="barbutton_cancel"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="eBQ-3L-tKS" eventType="touchUpInside" id="gN6-p4-MO0"/>
                                 </connections>
@@ -717,16 +724,16 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="x1F-Yp-UGr" kind="show" id="lxI-KE-xPy"/>
+                                    <action selector="confirmButtonPressed:" destination="DqJ-fX-5d0" eventType="touchUpInside" id="TJ0-FM-HXz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dz-7b-1J5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dz-7b-1J5">
                                 <rect key="frame" x="325" y="34" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qBd-3J-FtY"/>
                                     <constraint firstAttribute="width" constant="30" id="zeP-zS-Ky1"/>
                                 </constraints>
-                                <state key="normal" title="닫기"/>
+                                <state key="normal" image="barbutton_cancel"/>
                                 <connections>
                                     <segue destination="cun-oD-tXd" kind="unwind" unwindAction="backWithSegue:" id="ue5-sW-if5"/>
                                 </connections>
@@ -787,6 +794,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="4G1-9W-5Nq" id="Gp1-5j-k9v"/>
+                        <outlet property="nameTextField" destination="48u-UI-m6M" id="FDB-CP-9JU"/>
+                        <outlet property="passwdTextField" destination="CKq-ID-8UY" id="EhU-9n-kCm"/>
+                        <segue destination="x1F-Yp-UGr" kind="show" identifier="next" id="y91-pE-27I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vT0-Zy-RXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cun-oD-tXd" userLabel="Exit" sceneMemberID="exit"/>
@@ -868,11 +881,11 @@
                                         <color key="textColor" red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eNj-6j-H9O">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eNj-6j-H9O">
                                         <rect key="frame" x="89.5" y="11.5" width="80" height="24"/>
                                         <color key="textColor" red="0.3294117647" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -951,8 +964,8 @@
                                         <color key="textColor" red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="join_hard" translatesAutoresizingMaskIntoConstraints="NO" id="7M9-J5-69w">
-                                        <rect key="frame" x="78" y="32" width="116" height="125"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="join_low" translatesAutoresizingMaskIntoConstraints="NO" id="7M9-J5-69w">
+                                        <rect key="frame" x="70" y="32" width="132" height="124"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4b-YJ-52R">
                                         <rect key="frame" x="59" y="164" width="154" height="24"/>
@@ -1119,7 +1132,7 @@
                                     <constraint firstAttribute="height" constant="50" id="qAj-9X-zph"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
-                                <state key="normal" title="계정 만들기">
+                                <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1194,7 +1207,7 @@
                                     <constraint firstAttribute="height" constant="50" id="mBg-zL-sJi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
-                                <state key="normal" title="계정 만들기">
+                                <state key="normal" title="다음">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1467,7 +1480,7 @@
                                     <constraint firstAttribute="height" constant="50" id="ZXO-8r-bUB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
-                                <state key="normal" title="계정 만들기">
+                                <state key="normal" title="완료">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1519,20 +1532,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngc-bd-Gty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6096.8000000000002" y="757.87106446776613"/>
+            <point key="canvasLocation" x="6146" y="758"/>
         </scene>
     </scenes>
     <resources>
         <image name="barbutton_back" width="24" height="24"/>
+        <image name="barbutton_cancel" width="24" height="24"/>
         <image name="fulllogo200" width="100" height="103"/>
         <image name="guideBg" width="375" height="188"/>
         <image name="guideLogo" width="100" height="27"/>
         <image name="icon_check" width="54" height="38"/>
         <image name="icon_pw" width="63" height="64"/>
-        <image name="join_hard" width="116" height="125"/>
+        <image name="join_low" width="132" height="124"/>
         <image name="logo60" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6zP-Md-Xvi"/>
+        <segue reference="LPs-S2-6yl"/>
     </inferredMetricsTieBreakers>
 </document>

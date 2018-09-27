@@ -341,6 +341,7 @@
                         <outlet property="editTypeBtn" destination="MOl-Gw-Cw8" id="lJu-cr-FE4"/>
                         <outlet property="historyCollectionView" destination="sMj-xe-vs2" id="OIW-Qb-pmy"/>
                         <outlet property="nameLabel" destination="ooS-WD-6Bi" id="VSO-BE-7CF"/>
+                        <outlet property="profileImageView" destination="T6i-sG-BaT" id="Wfo-ZI-pNK"/>
                         <outlet property="sloganLabel" destination="1Nr-D4-hpW" id="aH1-TL-ddM"/>
                     </connections>
                 </viewController>
@@ -513,11 +514,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="GYG-bg-eeM" id="Ni4-8p-iba"/>
+                        <segue destination="SCp-5S-zG4" kind="presentation" identifier="Join" modalPresentationStyle="fullScreen" id="hgU-Uz-YXT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWV-Zl-k4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1810" y="-843"/>
+        </scene>
+        <!--Join-->
+        <scene sceneID="jBx-1Y-urd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Join" id="SCp-5S-zG4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yp5-jR-onQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2350" y="-844"/>
         </scene>
         <!--My-->
         <scene sceneID="b21-Fb-ffS">

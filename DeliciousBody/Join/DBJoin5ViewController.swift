@@ -8,19 +8,30 @@
 
 import UIKit
 
-class DBJoin5ViewController: UIViewController {
+class DBJoin5ViewController: DBViewController {
 
     @IBOutlet weak var inputTextField: DBTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setKeyboardHide()
         inputTextField.changeHandler = { [weak self] text in
             self?.inputTextField.setCheck(check: text.count > 0)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.inputTextField.becomeFirstResponder()
+    }
 
     @IBAction func confirmButtonPressed(_ sender: Any) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        User.me?.slogan = inputTextField.innerTextField.text
+        User.me?.save()
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
+        self.present(mainViewController, animated: true, completion: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let id = segue.identifier else {

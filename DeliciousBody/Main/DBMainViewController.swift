@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class DBMainViewController: UIViewController {
     var tableViewModel = CardViewModel()
     
@@ -44,7 +44,7 @@ class DBMainViewController: UIViewController {
             self.snapShot = cell.tableView.takeSnapshot()
             self.nameSnapShot = cell.nameLabel.takeSnapshot()
             self.selectedImage = cell.thumbnailView.image ?? UIImage()
-            self.performSegue(withIdentifier: "pushVideo", sender: nil)
+            self.performSegue(withIdentifier: "pushVideo", sender: exercise)
             
         }
         setupUI()
@@ -86,8 +86,6 @@ class DBMainViewController: UIViewController {
         
         let v = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         v.backgroundColor = UIColor.blue
-//        view.addSubview(v)
-//        view.bringSubview(toFront: tableView)
         v.translatesAutoresizingMaskIntoConstraints = false
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -97,6 +95,11 @@ class DBMainViewController: UIViewController {
         imageView.layer.cornerRadius =  ImageSizeForLargeState / 2
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let urlStr = me.photoUrl , let url = URL(string: urlStr) {
+            imageView.kf.setImage(with: url)
+        }
+        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -125,7 +128,8 @@ class DBMainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationViewController = segue.destination as! DBVideoViewController
-            destinationViewController.transitioningDelegate = self
+        destinationViewController.transitioningDelegate = self
+        destinationViewController.exercise = sender as? Exercise
     }
 }
 

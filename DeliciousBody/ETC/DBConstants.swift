@@ -16,7 +16,7 @@ let kJoinTitles = ["join2":"맞춤 운동을 추천받으시려면\n저에게 �
 ]
 
 let kJoinDescStrings = ["이동시간 이외의 활동량이 거의 없으며\n같은 자세로 오래 계시는분", "약간의 신체활동은 있으나 주기적인\n운동은 안하시는 분", "오래 서 계시거나, 반복적인 신체활동을\n해야하는 일을 하시는분"]
-
+let kDidLogoutNotification = "kDidLogoutNotification"
 enum BodyType: Int {
     case neck = 1, chest, abdomen, thigh, calf, arm, back, hip
     func description() -> String {
@@ -43,4 +43,8 @@ enum BodyType: Int {
 
 enum Gender: Int {
     case male = 0, female
+}
+
+enum TextFieldType {
+    case email, passwd, etc
 }

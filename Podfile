@@ -3,6 +3,7 @@ target 'DeliciousBody' do
   
   pod 'RangeSeekSlider', :git => 'https://github.com/WorldDownTown/RangeSeekSlider.git', :branch => 'swift_4'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'Kingfisher', '~> 4.0'
 
 end
 

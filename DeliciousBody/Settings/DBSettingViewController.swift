@@ -6,6 +6,7 @@
 //  Copyright © 2018년 changmin. All rights reserved.
 //
 import UIKit
+import Kingfisher
 
 class DBSettingViewController: UIViewController {
     
@@ -13,6 +14,7 @@ class DBSettingViewController: UIViewController {
     var max = 20
     let historyViewModel = HistroyViewModel()
     
+    @IBOutlet weak var profileImageView: DBProfileImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var historyCollectionView: UICollectionView!
@@ -40,6 +42,9 @@ class DBSettingViewController: UIViewController {
     
     func setupUI() {
         guard let me = User.me else { return }
+        if let urlStr = me.photoUrl , let url = URL(string: urlStr) {
+            profileImageView.kf.setImage(with: url)
+        }
         nameLabel.text = me.name
         sloganLabel.text = me.slogan
         

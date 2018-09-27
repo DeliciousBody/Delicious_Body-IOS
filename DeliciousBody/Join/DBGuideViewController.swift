@@ -6,7 +6,6 @@
 //  Copyright © 2018년 changmin. All rights reserved.
 //
 import UIKit
-import CHIPageControl
 import Foundation
 class DBGuideViewController: DBViewController {
     

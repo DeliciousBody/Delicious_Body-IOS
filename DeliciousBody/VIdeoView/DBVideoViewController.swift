@@ -17,6 +17,10 @@ class DBVideoViewController: UIViewController {
     @IBOutlet var videoView: UIView!
     @IBOutlet var touchView: UIView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    
+    @IBOutlet weak var descLabel: UITextViewFixed!
     @IBOutlet var tableView: UITableView!
     var isPlaying: Bool = false {
         didSet {
@@ -32,10 +36,11 @@ class DBVideoViewController: UIViewController {
     var player: AVPlayer!
     var playerLayer: AVPlayerLayer!
     
+    var exercise: Exercise?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setVideoUI()
-        setUI()
     }
     
     override func viewDidLayoutSubviews() {
@@ -51,6 +56,7 @@ class DBVideoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setNaviBar(isShow: true)
+        setUI()
     }
     
     func setNaviBar(isShow: Bool) {
@@ -62,7 +68,7 @@ class DBVideoViewController: UIViewController {
     func setVideoUI() {
         togetherButton.layer.cornerRadius = 5
         
-        let path = Bundle.main.path(forResource: "sample3", ofType: "mp4")!
+        let path = Bundle.main.path(forResource: "sample", ofType: "mp4")!
         let url = URL(fileURLWithPath: path)
         
         player = AVPlayer(url: url)
@@ -79,6 +85,8 @@ class DBVideoViewController: UIViewController {
     
     func setUI() {
         tableView.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")
+        guard let exer = exercise else { return }
+        titleLabel.text = exer.name
     }
     
     func showPlayButton(isShow: Bool) {

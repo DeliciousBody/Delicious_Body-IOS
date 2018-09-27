@@ -381,7 +381,7 @@
         <!--Video View Controller-->
         <scene sceneID="Jak-0K-CZX">
             <objects>
-                <viewController id="tWI-iN-Ss8" customClass="DBVideoViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DBVideoViewController" id="tWI-iN-Ss8" customClass="DBVideoViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="anJ-Vz-dRw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,7 +410,7 @@
                                             <constraint firstAttribute="height" constant="32" id="Ne7-5K-32f"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="cancle_btn">
+                                        <state key="normal" image="cancel_white_btn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="selected" title="STOP">
@@ -552,7 +552,9 @@
                     <connections>
                         <outlet property="backButton" destination="Aue-5b-Gzs" id="Kc5-VA-zQX"/>
                         <outlet property="playButton" destination="idm-o2-sby" id="AEx-oY-7a2"/>
+                        <outlet property="subtitleLabel" destination="UNn-nV-EBi" id="dnz-PX-Wvf"/>
                         <outlet property="tableView" destination="Cyy-J3-3eF" id="Xss-8G-H3C"/>
+                        <outlet property="titleLabel" destination="ZD4-FG-ivn" id="y9Q-jp-c9W"/>
                         <outlet property="togetherButton" destination="2RY-4Z-EQg" id="snG-xd-0Yd"/>
                         <outlet property="touchView" destination="JDz-4I-kcf" id="X3M-zk-gil"/>
                         <outlet property="videoView" destination="usu-Ys-y2g" id="wDA-cW-yb6"/>
@@ -587,7 +589,7 @@
     <resources>
         <image name="background_home" width="375" height="536"/>
         <image name="bodyLogo" width="94" height="29"/>
-        <image name="cancle_btn" width="24" height="24"/>
+        <image name="cancel_white_btn" width="24" height="24"/>
         <image name="cardClose" width="24" height="24"/>
         <image name="cellLike_selected" width="24" height="24"/>
         <image name="cellLike_unselected" width="24" height="24"/>

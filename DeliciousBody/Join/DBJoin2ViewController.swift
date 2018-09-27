@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DBJoin2ViewController: UIViewController {
+class DBJoin2ViewController: DBViewController {
 
     
     var currentAge: Int = 20
@@ -26,7 +26,7 @@ class DBJoin2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setKeyboardHide()
     }
     
     override func viewWillAppear(_ animated: Bool) {

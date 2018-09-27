@@ -20,6 +20,8 @@ import SkyFloatingLabelTextField
         }
     }
     
+    var textFieldType: TextFieldType = TextFieldType.etc
+    
     var changeHandler: ((String)->Void)?
     var view:UIView!
     let NibName: String = "DBTextField"
@@ -98,11 +100,13 @@ import SkyFloatingLabelTextField
     @IBAction func textFieldDidEndEditing(_ textField: UITextField) {
         if let text = textField.text {
             if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
-                if(text.count < 3 || !text.contains("@")) {
-                    floatingLabelTextField.errorMessage = "Invalid email"
-                }
-                else {
-                    floatingLabelTextField.errorMessage = ""
+                if textFieldType == .email{
+                    if(text.count < 3 || !text.contains("@")) {
+                        floatingLabelTextField.errorMessage = "Invalid email"
+                    }
+                    else {
+                        floatingLabelTextField.errorMessage = ""
+                    }
                 }
             }
         }
