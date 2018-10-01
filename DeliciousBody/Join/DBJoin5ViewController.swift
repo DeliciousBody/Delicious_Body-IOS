@@ -26,13 +26,19 @@ class DBJoin5ViewController: DBViewController {
     }
 
     @IBAction func confirmButtonPressed(_ sender: Any) {
-        User.me?.slogan = inputTextField.innerTextField.text
-        User.me?.save()
-        
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
-        self.present(mainViewController, animated: true, completion: nil)
+        guard let me = User.me else { return }
+        me.slogan = inputTextField.innerTextField.text
+        DBNetworking.updateUserInfo(user: me) { (result) in
+            if result == 200 {
+                User.me?.save()
+                
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
+                self.present(mainViewController, animated: true, completion: nil)
+            }
+        }
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let id = segue.identifier else {
             return

@@ -23,14 +23,34 @@ class DBPasswdViewController: DBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setKeyboardHide()
+        self.setTextField()
+    }
+    
+    func setTextField() {
+        textField.changeHandler = { [weak self] text in
+            if(!(self?.textField.isValidateEmail)! && text.count > 3) {
+                self?.textField.innerTextField.errorMessage = "올바른 이메일 주소를 입력하십시오."
+            } else {
+                self?.textField.innerTextField.errorMessage = ""
+            }
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        guard textField.isValidateEmail else { return }
+    @IBAction func buttonPressed(_ sender: DBRoundButton) {
+        guard textField.isValidateEmail else {
+            sender.shake()
+            return
+        }
+        
+        if sender.titleLabel?.text == "로그인으로 돌아가기" {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+        
         imageView1.FadeOutWithrotate()
         imageView2.FadeIntWithrotate()
         

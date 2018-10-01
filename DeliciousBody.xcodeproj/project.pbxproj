@@ -18,6 +18,9 @@
 		ED2C03CA20BBE01900980783 /* DBJoin3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C03C920BBE01900980783 /* DBJoin3ViewController.swift */; };
 		ED2C03CC20BBE03D00980783 /* DBJoinEmbededViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C03CB20BBE03D00980783 /* DBJoinEmbededViewController.swift */; };
 		ED2C03CE20BBE19200980783 /* DBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C03CD20BBE19200980783 /* DBConstants.swift */; };
+		ED3135A7215DF6A90080B159 /* DBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135A6215DF6A90080B159 /* DBNetworking.swift */; };
+		ED3135A92161CFE30080B159 /* DBValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135A82161CFE30080B159 /* DBValidator.swift */; };
+		ED3135AB2161D5650080B159 /* DBDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AA2161D5650080B159 /* DBDescViewController.swift */; };
 		ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47159620997C6500F3C251 /* DBAlarmViewController.swift */; };
 		ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */; };
 		ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */; };
@@ -97,6 +100,9 @@
 		ED2C03C920BBE01900980783 /* DBJoin3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin3ViewController.swift; sourceTree = "<group>"; };
 		ED2C03CB20BBE03D00980783 /* DBJoinEmbededViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoinEmbededViewController.swift; sourceTree = "<group>"; };
 		ED2C03CD20BBE19200980783 /* DBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBConstants.swift; sourceTree = "<group>"; };
+		ED3135A6215DF6A90080B159 /* DBNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNetworking.swift; sourceTree = "<group>"; };
+		ED3135A82161CFE30080B159 /* DBValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValidator.swift; sourceTree = "<group>"; };
+		ED3135AA2161D5650080B159 /* DBDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDescViewController.swift; sourceTree = "<group>"; };
 		ED47159620997C6500F3C251 /* DBAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAlarmViewController.swift; sourceTree = "<group>"; };
 		ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin4ViewController.swift; sourceTree = "<group>"; };
 		ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin5ViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +278,8 @@
 				EDE14E98212C10A600083181 /* DBExtensions.swift */,
 				EDA38353212542F000A39574 /* DBUser.swift */,
 				ED607C182137B4A80095CB39 /* DBTransition.swift */,
+				ED3135A6215DF6A90080B159 /* DBNetworking.swift */,
+				ED3135A82161CFE30080B159 /* DBValidator.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 				EDE14E94212C01F500083181 /* DBLoginViewController.swift */,
 				EDE14E96212C0FC000083181 /* DBPasswdViewController.swift */,
 				EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */,
+				ED3135AA2161D5650080B159 /* DBDescViewController.swift */,
 				EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */,
 				ED2C03C720BBE00D00980783 /* DBJoin2ViewController.swift */,
 				ED2C03C920BBE01900980783 /* DBJoin3ViewController.swift */,
@@ -526,12 +535,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
@@ -570,9 +581,12 @@
 				ED87571620820A2300B91100 /* DBMainViewExtension.swift in Sources */,
 				EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */,
 				ED07CEB52129A28000C7CAF0 /* DBMainCardExtendCell.swift in Sources */,
+				ED3135AB2161D5650080B159 /* DBDescViewController.swift in Sources */,
 				EDE8AB54207CA4FA00A6D180 /* DBMainCardCell.swift in Sources */,
 				ED55769C21440E8F00F22CBC /* DBSettingViewController.swift in Sources */,
+				ED3135A92161CFE30080B159 /* DBValidator.swift in Sources */,
 				EDF721DB206BF78700CCAFEC /* ViewController.swift in Sources */,
+				ED3135A7215DF6A90080B159 /* DBNetworking.swift in Sources */,
 				ED5576A3214541EB00F22CBC /* DBHistoryViewModel.swift in Sources */,
 				ED87570B2081FAC400B91100 /* DBExerCell.swift in Sources */,
 				ED5576AB21589B0700F22CBC /* DBSettingFilterViewController.swift in Sources */,

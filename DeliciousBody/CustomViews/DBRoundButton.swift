@@ -14,6 +14,7 @@ class DBRoundButton: UIButton {
             self.backgroundColor = isSelected ? UIColor.themeBlue84102255 : UIColor.subGray190
         }
     }
+    
     override func draw(_ rect: CGRect) {
         layer.cornerRadius = 4
         layer.masksToBounds = true
@@ -33,6 +34,19 @@ class DBRoundButton: UIButton {
         UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseOut, animations: {
             self.transform = CGAffineTransform.identity
         })
+    }
+    
+    func shake() {
+        let midX = center.x
+        let midY = center.y
+        
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.04
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = CGPoint(x: midX - 5, y: midY)
+        animation.toValue = CGPoint(x: midX + 5, y: midY)
+        layer.add(animation, forKey: "position")
     }
 }
 

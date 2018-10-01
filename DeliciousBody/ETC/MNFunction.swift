@@ -19,7 +19,6 @@ func getHeightOfStatusNNaviBar(_ vc: UIViewController) -> CGFloat {
     return height + 20
 }
 
-
 func stringToAttrStringInHTML(_ str: String) -> NSAttributedString {
     var attrString = NSMutableAttributedString()
     
@@ -81,7 +80,7 @@ func showAlertWithString(_ title: String , message: String, sender:UIViewControl
     sender.present(alert, animated: true, completion: nil)
 }
 
-var isBlockUserInteract:Bool = false {
+var isBlockUserInteract: Bool = false {
     didSet {
         if isBlockUserInteract != oldValue {
             isBlockUserInteract ? UIApplication.shared.beginIgnoringInteractionEvents() : UIApplication.shared.endIgnoringInteractionEvents()

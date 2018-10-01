@@ -1,9 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
 target 'DeliciousBody' do
-  use_frameworks!
+  
   
   pod 'RangeSeekSlider', :git => 'https://github.com/WorldDownTown/RangeSeekSlider.git', :branch => 'swift_4'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Kingfisher', '~> 4.0'
+  pod 'Alamofire'
 
 end
 

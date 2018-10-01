@@ -49,13 +49,7 @@ import SkyFloatingLabelTextField
     var isValidateEmail: Bool {
         get{
             if let text = innerTextField.text {
-                if(text.count < 3 || !text.contains("@")) {
-                    return false
-                }
-                else {
-                    return true
-                }
-                
+                return DBValidater.isValidEmail(testStr: text)  
             } else {
                 return false
             }
@@ -98,18 +92,18 @@ import SkyFloatingLabelTextField
     }
     
     @IBAction func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text {
-            if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
-                if textFieldType == .email{
-                    if(text.count < 3 || !text.contains("@")) {
-                        floatingLabelTextField.errorMessage = "Invalid email"
-                    }
-                    else {
-                        floatingLabelTextField.errorMessage = ""
-                    }
-                }
-            }
-        }
+//        if let text = textField.text {
+//            if let floatingLabelTextField = textField as? SkyFloatingLabelTextField {
+//                if textFieldType == .email{
+//                    if(!DBValidater.isValidEmail(testStr: text)) {
+//                        floatingLabelTextField.errorMessage = "올바른 이메일 주소를 입력하십시오."
+//                    }
+//                    else {
+//                        floatingLabelTextField.errorMessage = ""
+//                    }
+//                }
+//            }
+//        }
     }
     
     func applySkyscannerTheme(textField: SkyFloatingLabelTextField) {

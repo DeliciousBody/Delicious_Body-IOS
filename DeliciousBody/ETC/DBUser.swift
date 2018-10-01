@@ -15,28 +15,23 @@ open class User : NSObject {
     open static var me: User? = nil
     
     open var id: String
-    open var password: String
     open var seq: Int
     open var countryCode: String?
     open var name: String?
+    open var age: Int?
+    open var sex: Bool?
     open var slogan: String?
     open var isAuth: Bool?
     open var phoneType: Int?
     open var photoUrl: String?
     open var token: String
+    open var isSubscribe: Bool?
     
     let appPushID: String?
     
-    //KAKAOTALK, APP
-    open let joinPath: String?
-    
-    open let adAccept: String?
-    open let adEmail: String?
-    open let adAcceptDate: String?
     
     public convenience override init() {
         self.init(withDic:  ["id" : "sampleID" as AnyObject,
-                             "password" : "samplePW" as AnyObject,
                              "seq" : 1 as AnyObject,
                              "name" : "창맨" as AnyObject,
                              "token" : "sampleTOKEN" as AnyObject,
@@ -46,9 +41,6 @@ open class User : NSObject {
     
     public init (withDic dic: [String : AnyObject]) {
         id = dic["id"] as! String
-        
-        let pwStr = dic["password"] as? String
-        password = pwStr != nil ? pwStr! : ""
         seq  = dic["seq"] as! Int
         
         countryCode = dic["countryCode"] as? String
@@ -74,14 +66,11 @@ open class User : NSObject {
             self.token = "InvalidToken"
         }
         
-        joinPath = dic["joinPath"] as? String
-        
         appPushID = dic["appPushId"] as? String
         
-        adAccept = dic["adAccept"] as? String
-        adEmail = dic["email"] as? String
-        adAcceptDate = dic["adAcceptDate"] as? String
+        
         slogan = dic["slogan"] as? String
+        isSubscribe = dic["isSubscribe"] as? Bool
     }
     
     func save() {
@@ -142,14 +131,6 @@ open class User : NSObject {
     }
     
     open func getID() -> String {
-        if let joinPath = self.joinPath {
-            if joinPath == "KAKAOTALK" {
-                return "via Kakaotalk"
-            }
-            if joinPath == "APP" {
-                return "via APP"
-            }
-        }
         return self.id
     }
     
@@ -160,7 +141,6 @@ open class User : NSObject {
         var data = [String:AnyObject]()
         
         data["id"] = self.id as AnyObject
-        data["password"] = self.password as AnyObject
         data["seq"] = self.seq as AnyObject
         
         data["name"] = self.name as AnyObject
@@ -198,11 +178,33 @@ open class User : NSObject {
         var defaultHeaders = [String:String]()
         
         if let token = User.fetchToken() {
-            defaultHeaders["x-token"] = token
+            defaultHeaders["Authorization"] = "token " + token
         }
         defaultHeaders["app_push_id"] = User.fetchDeviceKey()
         
         return defaultHeaders
+    }
+    
+    func toJSON() -> [String : Any] {
+        var jsonDict = [String : Any]()
+        
+        jsonDict["name"] = name ?? ""
+        jsonDict["age"] = age ?? 0
+        jsonDict["is_man"] = sex
+        jsonDict["interested_part"] = ""
+        jsonDict["activity_level"] = 1
+        jsonDict["weekdays_start"] = 2
+        jsonDict["weekdays_end"] = 2
+        jsonDict["weekdays_start"] = 2
+        jsonDict["weekend_start"] = 2
+        jsonDict["weekend_end"] = 2
+        jsonDict["comment"] = slogan ?? ""
+//        jsonDict["avatar"] = slogan ?? ""
+        jsonDict["favorite_list"] = slogan ?? ""
+        jsonDict["is_push"] = true
+        jsonDict["is_subscription"] = true
+        
+        return jsonDict
     }
 }
 
