@@ -11,7 +11,6 @@ import UIKit
 class DBJoin2ViewController: DBViewController {
 
     
-    var currentAge: Int = 20
     var currentGender: Gender = .male
     var currentLevel: Int = 0
     
@@ -19,6 +18,7 @@ class DBJoin2ViewController: DBViewController {
     
     @IBOutlet weak var maleButton: DBRoundButton!
     @IBOutlet weak var femaleButton: DBRoundButton!
+    @IBOutlet weak var ageTextField: UITextField!
     
     @IBOutlet var levelButtons: [DBRoundButton]!
     @IBOutlet weak var thumbnailView: UIImageView!
@@ -73,4 +73,18 @@ class DBJoin2ViewController: DBViewController {
         
     }
     
+    @IBAction func confirmButtonPressed(_ sender: Any) {
+        guard let me = User.me ,
+            let ageStr = ageTextField.text else { return }
+        if let age = Int(ageStr) {
+            me.age = age
+        } else {
+            return
+        }
+        
+        me.sex = currentGender == .male
+        me.activity_level = currentLevel
+        
+        performSegue(withIdentifier: "next", sender: nil)
+    }
 }

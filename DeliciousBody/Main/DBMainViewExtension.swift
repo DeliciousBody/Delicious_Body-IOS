@@ -10,57 +10,61 @@ import UIKit
 
 extension DBMainViewController {
     func moveAndResizeImageForPortrait() {
-        guard let height = navigationController?.navigationBar.frame.height else { return }
+        let offset = self.tableView.contentOffset.y
+        let minOffset: CGFloat = 10
+        let maxOffset: CGFloat = 50
         
         let coeff: CGFloat = {
-            let delta = height - NavBarHeightSmallState
-            let heightDifferenceBetweenStates = (NavBarHeightLargeState - NavBarHeightSmallState)
-            return delta / heightDifferenceBetweenStates
+            if offset < minOffset { return 1 }
+            let coef = 1 - (offset - minOffset) / (maxOffset - minOffset)
+            
+            return max(0, coef)
         }()
+        print(coeff)
+        let yTrans: CGFloat = {
+            if offset < minOffset { return 0 }
+            return -(offset - minOffset)
+        }()
+        titleLabel.transform = CGAffineTransform.identity
+            .scaledBy(x: 1, y: 1)
+            .translatedBy(x:0, y: yTrans)
+        titleLabel.alpha = coeff
         
         let factor = ImageSizeForSmallState / ImageSizeForLargeState
-        
         let scale: CGFloat = {
             let sizeAddendumFactor = coeff * (1.0 - factor)
             return min(1.0, sizeAddendumFactor + factor)
         }()
         
         let sizeDiff = ImageSizeForLargeState * (1.0 - factor)
-        
+        let xTranslation = min(0, coeff * sizeDiff - sizeDiff)
         let yTranslation: CGFloat = {
             let minY = ImageTopMarginForSmallState - ImageTopMarginForLargeState - ImageSizeForLargeState
             
             return max(minY, min(0,minY + coeff * -minY))
         }()
         
-        let xTranslation = min(0, coeff * sizeDiff - sizeDiff)
         imageView.transform = CGAffineTransform.identity
             .scaledBy(x: scale, y: scale)
             .translatedBy(x: xTranslation, y: yTranslation)
-        
-        titleLabel.transform = CGAffineTransform.identity
-            .scaledBy(x: 1, y: 1)
-            .translatedBy(x:0, y: yTranslation)
-        
-        titleLabel.alpha = coeff
     }
     
     func showImage(_ show: Bool) {
-        guard let height = navigationController?.navigationBar.frame.height else { return }
-        if show {
-            navigationController?.navigationBar.layer.zPosition = 0
-        }
-        
-        let coeff: CGFloat = {
-            let delta = height - NavBarHeightSmallState
-            let diff = (NavBarHeightLargeState - NavBarHeightSmallState)
-            return delta / diff
-        }()
-        
-        UIView.animate(withDuration: 0.3) {
-            self.imageView.alpha = show ? 1.0 : 0.0
-            self.titleLabel.alpha = coeff
-        }
+//        guard let height = navigationController?.navigationBar.frame.height else { return }
+//        if show {
+//            navigationController?.navigationBar.layer.zPosition = 0
+//        }
+//
+//        let coeff: CGFloat = {
+//            let delta = height - NavBarHeightSmallState
+//            let diff = (NavBarHeightLargeState - NavBarHeightSmallState)
+//            return delta / diff
+//        }()
+//
+//        UIView.animate(withDuration: 0.3) {
+//            self.imageView.alpha = show ? 1.0 : 0.0
+//            self.titleLabel.alpha = coeff
+//        }
     }
 }
 
@@ -80,4 +84,3 @@ extension DBMainViewController: UIViewControllerTransitioningDelegate {
         }
     }
 }
-

@@ -64,7 +64,7 @@ class DBJoin1ViewController: DBViewController, UITextFieldDelegate{
         passwdTextField.innerTextField.delegate = self
         passwdTextField.innerTextField.isSecureTextEntry = true
         passwdTextField.changeHandler = { [weak self] text in
-            self?.passwdTextField.setCheck(check: text.count > 4)
+            self?.passwdTextField.setCheck(check: text.count > 7)
         }
         
         nameTextField.innerTextField.delegate = self
@@ -109,7 +109,11 @@ class DBJoin1ViewController: DBViewController, UITextFieldDelegate{
             DBNetworking.register(email, password: passwd) { (result, data) in
                 if result == 200, let token = data{
                     user.token = token
-                    self.performSegue(withIdentifier: "next", sender: nil)
+                    DBNetworking.updateUserInfo(token: token, params: ["name" : user.name!], completion: { (result) in
+                        if result == 200 {
+                            self.performSegue(withIdentifier: "next", sender: nil)
+                        }
+                    })
                 }
             }
             

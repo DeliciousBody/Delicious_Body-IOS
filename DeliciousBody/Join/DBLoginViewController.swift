@@ -49,13 +49,19 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonPressed(_ sender: DBRoundButton) {
-        DBNetworking.login("", password: "") { (result, data) in
-            if true {//result == 200 {
-                if true {//let user = data {
-                User().save()
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
-                    self.present(mainViewController, animated: true, completion: nil)
+        DBNetworking.login("", password: "") { (result, token) in
+            if result == 200 {
+                if let JWTtoken = token {
+                    DBNetworking.getUserInfo(token: JWTtoken, completion: { (result, user) in
+                        if let user = user {
+                            User.me = user
+                            user.token = JWTtoken
+                            user.save()
+                            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                            let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
+                            self.present(mainViewController, animated: true, completion: nil)
+                        }
+                    })
                 } else {
                     sender.shake()
                     self.emailTextField.innerTextField.errorMessage = "이메일 또는 비밀번호가 올바르지 않습니다."
@@ -74,20 +80,41 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
         KOSession.shared().open { (error) in
             if KOSession.shared().isOpen() {
                 let token = KOSession.shared().token.accessToken
-                print("token : ", token)
                 let user = User()
-                KOSessionTask.talkProfileTask(completionHandler: { (data, error) in
-                    if let profile = data as? KOTalkProfile {
-                        user.photoUrl = profile.profileImageURL
-                        user.name = profile.nickName
-                        user.token = token
-                        user.save()
-                        
-                        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
-                        self.present(mainViewController, animated: true, completion: nil)
-                    } else {
-                        print(error.debugDescription)
+                DBNetworking.kakaologin(token, completion: { (result, token) in
+                    if let jwtToken = token {
+                        DBNetworking.getUserInfo(token: jwtToken, completion: { (result, user) in
+                            guard result == 200 else { return }
+                            if let user = user {
+                                User.me = user
+                                user.token = jwtToken
+                                user.save()
+                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
+                                self.present(mainViewController, animated: true, completion: nil)
+                            } else {
+                                let user = User()
+                                user.token = jwtToken
+                                KOSessionTask.talkProfileTask(completionHandler: { (data, error) in
+                                    if let profile = data as? KOTalkProfile {
+                                        user.photoUrl = profile.profileImageURL
+                                        user.name = profile.nickName
+                                        DBNetworking.createUserInfo(token: user.token!, user: user, completion: { (result) in
+                                            if result == 200 {
+                                                User.me = user
+                                                user.save()
+                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                                                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
+                                                self.present(mainViewController, animated: true, completion: nil)
+                                            }
+                                        })
+                                        
+                                    } else {
+                                        print(error.debugDescription)
+                                    }
+                                })
+                            }
+                        })
                     }
                 })
             } else {

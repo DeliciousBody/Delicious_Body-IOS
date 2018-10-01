@@ -28,7 +28,7 @@ class DBJoin5ViewController: DBViewController {
     @IBAction func confirmButtonPressed(_ sender: Any) {
         guard let me = User.me else { return }
         me.slogan = inputTextField.innerTextField.text
-        DBNetworking.updateUserInfo(user: me) { (result) in
+        DBNetworking.updateUserInfo(token: me.token!, params: me.toJSON()) { (result) in
             if result == 200 {
                 User.me?.save()
                 

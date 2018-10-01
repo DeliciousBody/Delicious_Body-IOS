@@ -48,7 +48,7 @@ extension DBSettingInfoViewController: UITableViewDataSource, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DBSettingCell
         let option = data[indexPath.section][indexPath.row]
         if option == .email {
-            cell.configure(option: option, email: "email@email.com")
+            cell.configure(option: option, email: User.me?.id)
         } else {
             cell.configure(option: option)
         }

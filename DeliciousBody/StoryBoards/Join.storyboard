@@ -975,7 +975,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Vwe-R4-wkf" kind="show" id="cIW-d6-adZ"/>
+                                    <action selector="confirmButtonPressed:" destination="6qB-Wd-XSf" eventType="touchUpInside" id="FXd-7i-6zX"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-U8-iar">
@@ -1192,6 +1192,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="4Gm-wS-e9I"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="ageTextField" destination="eNj-6j-H9O" id="8Mj-9a-AR7"/>
                         <outlet property="descLabel" destination="x4b-YJ-52R" id="LQ4-ZN-AjA"/>
                         <outlet property="femaleButton" destination="C2T-x6-RLd" id="6aF-yA-CXB"/>
                         <outlet property="maleButton" destination="wWL-Cs-RQt" id="Fph-zQ-aaT"/>
@@ -1199,6 +1200,7 @@
                         <outletCollection property="levelButtons" destination="o2p-yz-Kyf" collectionClass="NSMutableArray" id="A6X-G8-obX"/>
                         <outletCollection property="levelButtons" destination="EO5-ev-K2u" collectionClass="NSMutableArray" id="MDS-p6-5WH"/>
                         <outletCollection property="levelButtons" destination="bE9-Hk-TtF" collectionClass="NSMutableArray" id="aIy-dy-ZYf"/>
+                        <segue destination="Vwe-R4-wkf" kind="show" identifier="next" id="Vyv-C2-JFa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRq-bl-11e" userLabel="First Responder" sceneMemberID="firstResponder"/>

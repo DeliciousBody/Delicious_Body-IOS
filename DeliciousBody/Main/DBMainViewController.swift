@@ -14,10 +14,8 @@ class DBMainViewController: UIViewController {
     let ImageSizeForLargeState: CGFloat = 60
     let ImageSizeForSmallState: CGFloat = 32
     let ImageTopMarginForLargeState: CGFloat = 40
-    let ImageTopMarginForSmallState: CGFloat = 8
+    let ImageTopMarginForSmallState: CGFloat = 40
     let ImageRightMargin: CGFloat = 20
-    let NavBarHeightSmallState: CGFloat = 44
-    let NavBarHeightLargeState: CGFloat = 96.5
     
     let subCellHeight: CGFloat = 100
     let cardHeight: CGFloat = 180
@@ -33,6 +31,7 @@ class DBMainViewController: UIViewController {
     var nameSnapShot = UIView()
     var originFrame = CGRect()
     var selectedImage = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewModel.handler = { indexPath, exercise in
@@ -76,21 +75,13 @@ class DBMainViewController: UIViewController {
     
     func setupUI() {
         guard let me = User.me else { return }
-        let title = "\(me.name ?? "")님,\n\(me.slogan ?? "초콜릿복근 가즈아")"
+        let title = "\(me.name ?? "")님,\n\(me.slogan ?? "")"
         titleLabel.text = title
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 24)
-        navigationController?.navigationBar.prefersLargeTitles = true
         
-        guard let navigationBar = self.navigationController?.navigationBar else { return }
-        
-        let v = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        v.backgroundColor = UIColor.blue
-        v.translatesAutoresizingMaskIntoConstraints = false
-        navigationBar.shadowImage = UIImage()
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.addSubview(imageView)
-        navigationBar.addSubview(titleLabel)
+        view.addSubview(imageView)
+        view.addSubview(titleLabel)
         
         imageView.layer.cornerRadius =  ImageSizeForLargeState / 2
         imageView.clipsToBounds = true
@@ -103,9 +94,9 @@ class DBMainViewController: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            imageView.leftAnchor.constraint(equalTo: navigationBar.leftAnchor,
+            imageView.leftAnchor.constraint(equalTo: view.leftAnchor,
                                             constant:ImageRightMargin),
-            imageView.topAnchor.constraint(equalTo: navigationBar.topAnchor,
+            imageView.topAnchor.constraint(equalTo: view.topAnchor,
                                            constant: ImageTopMarginForLargeState),
             imageView.heightAnchor.constraint(equalToConstant: ImageSizeForLargeState),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
@@ -114,7 +105,7 @@ class DBMainViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor,
                                              constant:ImageRightMargin),
-            titleLabel.topAnchor.constraint(equalTo: navigationBar.topAnchor,
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor,
                                             constant: ImageTopMarginForLargeState),
             titleLabel.heightAnchor.constraint(equalToConstant: ImageSizeForLargeState),
             ])
@@ -122,7 +113,7 @@ class DBMainViewController: UIViewController {
     
     func refreshLabels() {
         guard let me = User.me else { return }
-        let title = "\(me.name ?? "")님,\n\(me.slogan ?? "딜리셔스바디 화이팅!")"
+        let title = "\(me.name ?? "")님,\n\(me.slogan ?? "")"
         titleLabel.text = title
     }
     

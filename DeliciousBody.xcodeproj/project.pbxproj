@@ -21,6 +21,7 @@
 		ED3135A7215DF6A90080B159 /* DBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135A6215DF6A90080B159 /* DBNetworking.swift */; };
 		ED3135A92161CFE30080B159 /* DBValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135A82161CFE30080B159 /* DBValidator.swift */; };
 		ED3135AB2161D5650080B159 /* DBDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AA2161D5650080B159 /* DBDescViewController.swift */; };
+		ED3135AD21625D010080B159 /* DBSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AC21625D010080B159 /* DBSecret.swift */; };
 		ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47159620997C6500F3C251 /* DBAlarmViewController.swift */; };
 		ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */; };
 		ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */; };
@@ -103,6 +104,7 @@
 		ED3135A6215DF6A90080B159 /* DBNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBNetworking.swift; sourceTree = "<group>"; };
 		ED3135A82161CFE30080B159 /* DBValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValidator.swift; sourceTree = "<group>"; };
 		ED3135AA2161D5650080B159 /* DBDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDescViewController.swift; sourceTree = "<group>"; };
+		ED3135AC21625D010080B159 /* DBSecret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSecret.swift; sourceTree = "<group>"; };
 		ED47159620997C6500F3C251 /* DBAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAlarmViewController.swift; sourceTree = "<group>"; };
 		ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin4ViewController.swift; sourceTree = "<group>"; };
 		ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin5ViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				ED607C182137B4A80095CB39 /* DBTransition.swift */,
 				ED3135A6215DF6A90080B159 /* DBNetworking.swift */,
 				ED3135A82161CFE30080B159 /* DBValidator.swift */,
+				ED3135AC21625D010080B159 /* DBSecret.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				EDFB0F9020B56E0C00175138 /* DBJoin1ViewController.swift in Sources */,
 				ED87571620820A2300B91100 /* DBMainViewExtension.swift in Sources */,
 				EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */,
+				ED3135AD21625D010080B159 /* DBSecret.swift in Sources */,
 				ED07CEB52129A28000C7CAF0 /* DBMainCardExtendCell.swift in Sources */,
 				ED3135AB2161D5650080B159 /* DBDescViewController.swift in Sources */,
 				EDE8AB54207CA4FA00A6D180 /* DBMainCardCell.swift in Sources */,
