@@ -1,12 +1,14 @@
 PODS:
   - Alamofire (4.5.1)
   - Kingfisher (4.3.1)
+  - Player (0.8.4)
   - RangeSeekSlider (1.8.0)
   - SkyFloatingLabelTextField (3.4.0)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher (~> 4.0)
+  - Player
   - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider.git`, branch `swift_4`)
   - SkyFloatingLabelTextField (~> 3.0)
 
@@ -14,6 +16,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Kingfisher
+    - Player
     - SkyFloatingLabelTextField
 
 EXTERNAL SOURCES:
@@ -29,9 +32,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  Player: e45514e9e5fb8ff18f50eb2ba6f84dac9b6a0024
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
 
-PODFILE CHECKSUM: d5111d741d8b939ef980ddea8af46c4b34a2a58f
+PODFILE CHECKSUM: b0ab45f8e342606a4c9bbe4a14052ab10bd9918a
 
 COCOAPODS: 1.5.0

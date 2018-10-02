@@ -8,6 +8,7 @@ target 'DeliciousBody' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Kingfisher', '~> 4.0'
   pod 'Alamofire'
+  pod 'Player'
 
 end
 
