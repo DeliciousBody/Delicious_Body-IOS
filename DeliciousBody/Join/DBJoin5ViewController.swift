@@ -35,6 +35,8 @@ class DBJoin5ViewController: DBViewController {
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
                 self.present(mainViewController, animated: true, completion: nil)
+            } else {
+                print("error")
             }
         }
     }

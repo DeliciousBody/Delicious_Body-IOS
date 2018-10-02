@@ -49,7 +49,18 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonPressed(_ sender: DBRoundButton) {
-        DBNetworking.login("", password: "") { (result, token) in
+        guard let email = emailTextField.innerTextField.text,
+            let password = pwTextField.innerTextField.text else {
+                sender.shake()
+                return
+        }
+        
+        guard DBValidater.isValidEmail(testStr: email) else {
+            sender.shake()
+            return
+        }
+            
+        DBNetworking.login(email, password: password) { (result, token) in
             if result == 200 {
                 if let JWTtoken = token {
                     DBNetworking.getUserInfo(token: JWTtoken, completion: { (result, user) in
@@ -100,7 +111,7 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                                         user.photoUrl = profile.profileImageURL
                                         user.name = profile.nickName
                                         DBNetworking.createUserInfo(token: user.token!, user: user, completion: { (result) in
-                                            if result == 200 {
+                                            if result == 201 {
                                                 User.me = user
                                                 user.save()
                                                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)

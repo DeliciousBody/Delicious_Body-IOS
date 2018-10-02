@@ -107,8 +107,9 @@ class DBJoin1ViewController: DBViewController, UITextFieldDelegate{
             let passwd = passwdTextField.innerTextField.text {
             
             DBNetworking.register(email, password: passwd) { (result, data) in
-                if result == 200, let token = data{
+                if result == 201, let token = data{
                     user.token = token
+                   
                     DBNetworking.updateUserInfo(token: token, params: ["name" : user.name!], completion: { (result) in
                         if result == 200 {
                             self.performSegue(withIdentifier: "next", sender: nil)

@@ -7,22 +7,12 @@
 //
 
 import Foundation
+import Kingfisher
 import UIKit
 
-
-class VideoViewModelItem {
-    var count: Int {
-        return exercises.count
-    }
-    var exercises: [Exercise]
-    init(exercises: [Exercise]) {
-        self.exercises = exercises
-    }
-}
-
 class VideoViewModel: NSObject {
-    var allItems = VideoViewModelItem(exercises: [Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise()])
-    var likeItems = VideoViewModelItem(exercises: [Exercise(),Exercise()])
+    var allItems: [Exercise] = []
+    var likeItems:  [Exercise] = []
     var handler: ((Exercise) -> Void)?
     
     override init() {
@@ -38,14 +28,15 @@ extension VideoViewModel: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let option = tableView.tag
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerCell", for: indexPath) as! DBExerCell
-//        let item = option == 0 ? allItems[indexPath.row] : likeItems[indexPath.row]
-        
+        let item = option == 0 ? allItems[indexPath.row] : likeItems[indexPath.row]
+        cell.exerTitleLabel.text = item.video_name
+        cell.exerImageView.kf.setImage(with: URL(string: item.video_thumbnail!))
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let option = tableView.tag
-        let item = option == 0 ? allItems.exercises[indexPath.row] : likeItems.exercises[indexPath.row]
+        let item = option == 0 ? allItems[indexPath.row] : likeItems[indexPath.row]
         self.handler?(item)
     }
 }

@@ -51,6 +51,30 @@ class DBSettingViewController: UIViewController {
         editInfoBtn.makeRound()
         editTypeBtn.makeRound()
     }
+    
+    @IBAction func editInfoButtonPressed(_ sender: Any) {
+        guard let token = User.me?.token, let me = User.me else { return }
+        let sampleImage = #imageLiteral(resourceName: "image_name")
+        let str = UIImagePNGRepresentation(sampleImage)?.base64EncodedString()
+//        DBNetworking.updateUserInfo(token: token, params: ["avatar" : str!], completion: { (result) in
+//            if result == 200 {
+//                print("image changed")
+//            } else {
+//                print("error")
+//            }
+//        })
+        DBNetworking.updateUserInfo(token: token, params: me.toJSON()) { (result) in
+            if result == 200 || result == 201 {
+//                me.save()
+                    print("success")
+//                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
+//                self.present(mainViewController, animated: true, completion: nil)
+            } else {
+                print("error")
+            }
+        }
+    }
 }
 
 extension DBSettingViewController: UICollectionViewDataSource {

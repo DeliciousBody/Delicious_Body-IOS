@@ -12,7 +12,7 @@ class DBJoin2ViewController: DBViewController {
 
     
     var currentGender: Gender = .male
-    var currentLevel: Int = 0
+    var currentLevel: Int = 1
     
     let thumbnailNames = ["join_low", "join_mid", "join_hard"]
     
@@ -62,8 +62,8 @@ class DBJoin2ViewController: DBViewController {
             self.thumbnailView.alpha = 0.3
             self.descLabel.alpha = 0.3
         }) { (complete) in
-            self.thumbnailView.image = UIImage(named: self.thumbnailNames[self.currentLevel])
-            self.descLabel.text = kJoinDescStrings[self.currentLevel]
+            self.thumbnailView.image = UIImage(named: self.thumbnailNames[self.currentLevel - 1])
+            self.descLabel.text = kJoinDescStrings[self.currentLevel - 1]
             UIView.animate(withDuration: 0.1, animations: {
                 self.thumbnailView.alpha = 1
                 self.descLabel.alpha = 1

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Player
 
 class DBVideoViewController: UIViewController {
 
@@ -25,16 +26,19 @@ class DBVideoViewController: UIViewController {
     var isPlaying: Bool = false {
         didSet {
             if isPlaying {
-                player.play()
+                player.playFromBeginning()
+                self.playButton.isSelected = self.isPlaying
+                showPlayButton(isShow: false)
             } else {
                 player.pause()
+                playButton.isSelected = isPlaying
             }
+            
         }
     }
   
     var isShowing: Bool = true
-    var player: AVPlayer!
-    var playerLayer: AVPlayerLayer!
+    var player: Player!
     
     var exercise: Exercise?
     
@@ -45,7 +49,6 @@ class DBVideoViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        playerLayer.frame = videoView.bounds
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,28 +71,29 @@ class DBVideoViewController: UIViewController {
     func setVideoUI() {
         togetherButton.layer.cornerRadius = 5
         
-        let path = Bundle.main.path(forResource: "sample", ofType: "mp4")!
-        let url = URL(fileURLWithPath: path)
+        player = Player()
+        player.playerDelegate = self
+        player.playbackDelegate = self
+        player.url = URL(string: exercise!.video_file!)!
+        player.view.frame = videoView.bounds
+        self.addChildViewController(player)
         
-        player = AVPlayer(url: url)
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = .resizeAspect
+        videoView.addSubview(player.view)
         
-        videoView.layer.addSublayer(playerLayer)
         videoView.bringSubview(toFront: playButton)
         videoView.bringSubview(toFront: togetherButton)
         videoView.bringSubview(toFront: backButton)
         let touchReco = UITapGestureRecognizer(target: self, action: #selector(self.playerTouched))
-        touchView.addGestureRecognizer(touchReco)
+        player.view.addGestureRecognizer(touchReco)
     }
     
     func setUI() {
         tableView.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")
         guard let exer = exercise else { return }
-        titleLabel.text = exer.name
+        titleLabel.text = exer.video_name
     }
     
-    func showPlayButton(isShow: Bool) {
+    func showPlayButton(isShow: Bool, completion: (() -> Void)? = nil) {
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.playButton.isEnabled = isShow
             self?.playButton.alpha = isShow ? 1.0 : 0.0
@@ -97,16 +101,34 @@ class DBVideoViewController: UIViewController {
             self?.backButton.alpha = isShow ? 1.0 : 0.0
         }) { [weak self] _ in
             self?.isShowing = isShow
+            completion?()
         }
     }
-    
-    
 }
 
-extension DBVideoViewController {
+extension DBVideoViewController: PlayerDelegate, PlayerPlaybackDelegate {
+    
+    func playerReady(_ player: Player) {}
+    func playerPlaybackStateDidChange(_ player: Player) {}
+    func playerBufferingStateDidChange(_ player: Player) {}
+    func playerBufferTimeDidChange(_ bufferTime: Double) {}
+    
+    public func playerPlaybackWillStartFromBeginning(_ player: Player) {
+        print(#function)
+    }
+    
+    public func playerPlaybackDidEnd(_ player: Player) {
+        print(#function)
+        isPlaying = false
+        showPlayButton(isShow: true)
+    }
+    
+    public func playerCurrentTimeDidChange(_ player: Player) {}
+    
+    public func playerPlaybackWillLoop(_ player: Player) {}
+    
     @IBAction func playButtonPressed(_ sender: UIButton) {
         isPlaying = !sender.isSelected
-        sender.isSelected = !sender.isSelected
     }
     
     @IBAction func togetherButtonPressed(_ sender: UIButton) {
@@ -118,6 +140,7 @@ extension DBVideoViewController {
     }
     
     @objc func playerTouched() {
+        print(#function)
         showPlayButton(isShow: !isShowing)
     }
 }

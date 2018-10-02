@@ -52,6 +52,7 @@ open class User : NSObject {
         slogan = dic["comment"] as? String
         appPushID = dic["appPushId"] as? String
         isSubscribe = dic["is_push"] as? Bool
+        token = dic["token"] as? String
     }
     
     func save() {
@@ -122,6 +123,7 @@ open class User : NSObject {
         if let slogan = self.slogan { data["comment"] = slogan as AnyObject }
         if let list = self.favorite_list { data["favorite_list"] = list as AnyObject }
         if let ispush = self.isSubscribe { data["ispush"] = ispush as AnyObject }
+        if let token = self.token { data["token"] = token as AnyObject }
         
         UserDefaults.standard.set(data, forKey: kSavedUserData)
         UserDefaults.standard.synchronize()
@@ -154,7 +156,7 @@ open class User : NSObject {
         if let wde = self.weekdays_end { data["weekdays_end"] = wde as Int }
         if let wes = self.weekend_start { data["weekend_start"] = wes as Int }
         if let wee = self.weekend_end { data["weekend_end"] = wee as Int }
-//        if let avatar = self.photoUrl { data["avatar"] = avatar as String }
+        if let avatar = self.photoUrl { data["avatar"] = avatar as String }
         if let slogan = self.slogan { data["comment"] = slogan as String }
         if let list = self.favorite_list { data["favorite_list"] = list as String }
         if let ispush = self.isSubscribe { data["ispush"] = ispush as Bool }

@@ -38,6 +38,15 @@ class DBVideoListViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let token = User.me?.token else { return }
+        DBNetworking.getVideoList(token: token) { (result, exercises) in
+            self.tableViewModel.allItems = exercises
+            self.tableViewAll.reloadData()
+        }
+    }
+    
     func setupTableView(){
         tableViewAll.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")
         tableViewLike.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")

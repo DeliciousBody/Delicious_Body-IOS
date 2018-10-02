@@ -17,10 +17,11 @@ class DBNetworking: NSObject {
     static func login(_ id:String, password:String, completion:@escaping (_ result:Int,_ token:String?) -> Void) {
         
         let url = "\(kBaseURL)rest-auth/login/"
-//        let params = ["email" : id, "password" : password]
-        let params = ["email" : "elfqk@g.com", "password" : "elfqk123"]
+        let params = ["email" : id, "password" : password]
+//        let params = ["email" : "elfqk@g.com", "password" : "elfqk123"]
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
             switch response.result {
             case .success:
                 if let json = response.result.value as? [String : Any],
@@ -28,13 +29,13 @@ class DBNetworking: NSObject {
                 {
 
                     print(token)
-                    completion(200, token)
+                    completion(status, token)
                 } else {
-                    completion(999, nil)
+                    completion(status, nil)
                 }
 
             case .failure:
-                completion(999, nil)
+                completion(status, nil)
             }
         }
         
@@ -46,17 +47,18 @@ class DBNetworking: NSObject {
         let params = ["access_token" : accessToken]
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
             switch response.result {
             case .success:
                 if let json = response.result.value as? [String : Any],
                     let token = json["token"] as? String {
-                    completion(200, token)
+                    completion(status, token)
                 } else {
-                    completion(999, nil)
+                    completion(status, nil)
                 }
             case .failure:
                 print(response.result.value)
-                completion(999, nil)
+                completion(status, nil)
             }
         }
         
@@ -68,17 +70,18 @@ class DBNetworking: NSObject {
         let params = ["email" : id, "password1" : password, "password2" : password]
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
             switch response.result {
             case .success:
                 print(response.result.value as! [String : Any])
                 if let json = response.result.value as? [String : Any],
                     let token = json["token"] as? String{
-                    completion(200, token)
+                    completion(status, token)
                 } else {
-                        completion(999, nil)
+                        completion(status, nil)
                 }
             case .failure:
-                completion(999, nil)
+                completion(status, nil)
             }
         }
         
@@ -89,23 +92,24 @@ class DBNetworking: NSObject {
         let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
         print(token)
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
             switch response.result {
             case .success:
                 if let json = response.result.value as? [[String : Any]] {
                     if json.count == 0 {
-                        completion(200, nil)
+                        completion(status, nil)
                         print("유저인포 없음")
                     } else {
-                        completion(200, User(withDic: json.first!))
+                        completion(status, User(withDic: json.first!))
                         print("유저인포 있음")
                     }
                     
                 } else {
-                    completion(999, nil)
+                    completion(status, nil)
                 }
                 
             case .failure:
-                completion(999, nil)
+                completion(status, nil)
             }
         }
     }
@@ -116,12 +120,8 @@ class DBNetworking: NSObject {
         var params = user.toJSON()
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
-            switch response.result {
-            case .success:
-                completion(200)
-            case .failure:
-                completion(400)
-            }
+            let status = response.response?.statusCode ?? 999
+            completion(status)
         }
     }
     
@@ -129,11 +129,29 @@ class DBNetworking: NSObject {
         let url = "\(kBaseURL)userinfo/"
         let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
         Alamofire.request(url, method: .put, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            completion(status)
+        }
+    }
+    
+    static func getVideoList(token: String, completion:@escaping (_ result: Int, _ exercises: [Exercise]) -> Void) {
+        let url = "\(kBaseURL)video/"
+        let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
             switch response.result {
             case .success:
-                completion(200)
+                if let json = response.result.value as? [[String : Any]] {
+                    var arr = [Exercise]()
+                    for dic in json {
+                        arr.append(Exercise(withDic: dic))
+                    }
+                    completion(status, arr)
+                } else {
+                    completion(status, [])
+                }
             case .failure:
-                completion(400)
+                completion(status, [])
             }
         }
     }
