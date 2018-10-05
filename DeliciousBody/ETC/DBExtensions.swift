@@ -44,6 +44,19 @@ extension UIView {
         UIGraphicsEndImageContext()
         return imageView
     }
+    
+    func shake() {
+        let midX = center.x
+        let midY = center.y
+        
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.04
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = CGPoint(x: midX - 5, y: midY)
+        animation.toValue = CGPoint(x: midX + 5, y: midY)
+        layer.add(animation, forKey: "position")
+    }
 }
 
 extension CALayer {

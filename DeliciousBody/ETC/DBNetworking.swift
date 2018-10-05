@@ -155,4 +155,26 @@ class DBNetworking: NSObject {
             }
         }
     }
+    
+    static func getRecommendList(token: String, completion:@escaping (_ result: Int, _ items: [CardViewModelItem]) -> Void) {
+        let url = "\(kBaseURL)recommend/"
+        let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            switch response.result {
+            case .success:
+                if let json = response.result.value as? [[String : Any]] {
+                    var arr = [CardViewModelItem]()
+                    for dic in json {
+                        arr.append(CardViewModelItem(withDic: dic))
+                    }
+                    completion(status, arr)
+                } else {
+                    completion(status, [])
+                }
+            case .failure:
+                completion(status, [])
+            }
+        }
+    }
 }

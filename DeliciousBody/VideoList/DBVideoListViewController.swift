@@ -40,6 +40,7 @@ class DBVideoListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
         guard let token = User.me?.token else { return }
         DBNetworking.getVideoList(token: token) { (result, exercises) in
             self.tableViewModel.allItems = exercises

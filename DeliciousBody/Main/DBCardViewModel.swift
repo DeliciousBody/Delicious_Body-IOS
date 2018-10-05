@@ -56,16 +56,22 @@ struct Exercise {
 }
 
 class CardViewModelItem {
-    var title: String {
-        return "title"
-    }
+    var list_name: String
+    var time: Int
+    var list_image: String
+    
     var opened = false
+    
     var rowCount: Int {
         return exercises.count
     }
     var exercises: [Exercise]
-    init(exercises: [Exercise]) {
-        self.exercises = exercises
+    init(withDic dic: [String : Any]) {
+        self.list_name = dic["list_name"] as! String
+        self.time = dic["time"] as! Int
+        self.list_image = dic["list_image"] as! String
+        exercises = [Exercise()]
+//        for data in
     }
 }
 
@@ -75,12 +81,12 @@ class CardViewModel: NSObject {
    
     override init() {
         super.init()
-        items.append(CardViewModelItem(exercises: [Exercise(),Exercise()]))
-        items.append(CardViewModelItem(exercises: [Exercise()]))
-        items.append(CardViewModelItem(exercises: [Exercise(),Exercise()]))
-        items.append(CardViewModelItem(exercises: [Exercise()]))
-        items.append(CardViewModelItem(exercises: [Exercise(),Exercise()]))
-        items.append(CardViewModelItem(exercises: [Exercise()]))
+    }
+    
+    init(withDic dict: [[String : Any]]) {
+        for item in dict {
+            items.append(CardViewModelItem(withDic: item))
+        }
     }
 }
 

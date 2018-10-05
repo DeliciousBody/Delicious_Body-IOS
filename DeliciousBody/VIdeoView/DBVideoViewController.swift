@@ -70,11 +70,16 @@ class DBVideoViewController: UIViewController {
     
     func setVideoUI() {
         togetherButton.layer.cornerRadius = 5
-        
+        guard let exer = exercise else { return }
         player = Player()
         player.playerDelegate = self
         player.playbackDelegate = self
-        player.url = URL(string: exercise!.video_file!)!
+        
+        if let path = exer.video_file,
+            let url = URL(string: path) {
+            player.url = url
+        }
+        
         player.view.frame = videoView.bounds
         self.addChildViewController(player)
         

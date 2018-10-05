@@ -47,6 +47,12 @@ class DBMainViewController: UIViewController {
             
         }
         setupUI()
+        if let token = User.me?.token {
+            DBNetworking.getRecommendList(token: token) { (result, items) in
+                self.tableViewModel.items = items
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

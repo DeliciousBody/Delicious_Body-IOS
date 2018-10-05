@@ -22,6 +22,7 @@
 		ED3135A92161CFE30080B159 /* DBValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135A82161CFE30080B159 /* DBValidator.swift */; };
 		ED3135AB2161D5650080B159 /* DBDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AA2161D5650080B159 /* DBDescViewController.swift */; };
 		ED3135AD21625D010080B159 /* DBSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AC21625D010080B159 /* DBSecret.swift */; };
+		ED3135AF21675FE80080B159 /* DBSettingEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AE21675FE80080B159 /* DBSettingEditViewController.swift */; };
 		ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47159620997C6500F3C251 /* DBAlarmViewController.swift */; };
 		ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */; };
 		ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */; };
@@ -105,6 +106,7 @@
 		ED3135A82161CFE30080B159 /* DBValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValidator.swift; sourceTree = "<group>"; };
 		ED3135AA2161D5650080B159 /* DBDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDescViewController.swift; sourceTree = "<group>"; };
 		ED3135AC21625D010080B159 /* DBSecret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSecret.swift; sourceTree = "<group>"; };
+		ED3135AE21675FE80080B159 /* DBSettingEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingEditViewController.swift; sourceTree = "<group>"; };
 		ED47159620997C6500F3C251 /* DBAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAlarmViewController.swift; sourceTree = "<group>"; };
 		ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin4ViewController.swift; sourceTree = "<group>"; };
 		ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin5ViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				ED5576A4214605A000F22CBC /* DBSettingSloganViewController.swift */,
 				ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */,
 				ED5576AA21589B0700F22CBC /* DBSettingFilterViewController.swift */,
+				ED3135AE21675FE80080B159 /* DBSettingEditViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */,
 				ED5576A12144258900F22CBC /* DBProfileImageView.swift in Sources */,
 				ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */,
+				ED3135AF21675FE80080B159 /* DBSettingEditViewController.swift in Sources */,
 				EDF721D9206BF78700CCAFEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
