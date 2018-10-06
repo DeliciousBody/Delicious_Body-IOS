@@ -124,7 +124,8 @@ open class User : NSObject {
         if let list = self.favorite_list { data["favorite_list"] = list as AnyObject }
         if let ispush = self.isSubscribe { data["ispush"] = ispush as AnyObject }
         if let token = self.token { data["token"] = token as AnyObject }
-        
+        if let isSubscribe = self.isSubscribe { data["isSubscribe"] = isSubscribe as AnyObject }
+        data["push_id"] = User.fetchDeviceKey() as AnyObject
         UserDefaults.standard.set(data, forKey: kSavedUserData)
         UserDefaults.standard.synchronize()
         
@@ -136,9 +137,9 @@ open class User : NSObject {
         var defaultHeaders = [String:String]()
         
         if let token = User.fetchToken() {
-            defaultHeaders["Authorization"] = "token " + token
+            defaultHeaders["Authorization"] = "JWT " + token
         }
-        defaultHeaders["app_push_id"] = User.fetchDeviceKey()
+        defaultHeaders["PushToken"] = User.fetchDeviceKey()
         
         return defaultHeaders
     }
@@ -160,6 +161,8 @@ open class User : NSObject {
         if let slogan = self.slogan { data["comment"] = slogan as String }
         if let list = self.favorite_list { data["favorite_list"] = list as String }
         if let ispush = self.isSubscribe { data["ispush"] = ispush as Bool }
+        if let isSubscribe = self.isSubscribe { data["isSubscribe"] = isSubscribe as Bool }
+        data["push_id"] = User.fetchDeviceKey()
         return data
     }
 }

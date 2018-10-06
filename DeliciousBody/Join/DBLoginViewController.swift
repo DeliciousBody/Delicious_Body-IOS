@@ -91,7 +91,6 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
         KOSession.shared().open { (error) in
             if KOSession.shared().isOpen() {
                 let token = KOSession.shared().token.accessToken
-                let user = User()
                 DBNetworking.kakaologin(token, completion: { (result, token) in
                     if let jwtToken = token {
                         DBNetworking.getUserInfo(token: jwtToken, completion: { (result, user) in
@@ -110,7 +109,7 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                                     if let profile = data as? KOTalkProfile {
                                         user.photoUrl = profile.profileImageURL
                                         user.name = profile.nickName
-                                        DBNetworking.createUserInfo(token: user.token!, user: user, completion: { (result) in
+                                        DBNetworking.createUserInfo(token: jwtToken, user: user, completion: { (result) in
                                             if result == 201 {
                                                 User.me = user
                                                 user.save()

@@ -75,8 +75,7 @@ class DBSettingEditViewController: DBViewController {
             let params:  [String : Any] = ["age" : age,
                           "is_man" : self.currentGender == .male,
                           "activity_level" : self.currentLevel]
-            DBNetworking.updateUserInfo(token: me.token!,
-                                        params: params)
+            DBNetworking.updateUserInfo(params: params)
             { (result) in
                 if result == 200 {
                     me.age = age

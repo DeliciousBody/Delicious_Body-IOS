@@ -48,7 +48,7 @@ class DBMainViewController: UIViewController {
         }
         setupUI()
         if let token = User.me?.token {
-            DBNetworking.getRecommendList(token: token) { (result, items) in
+            DBNetworking.getRecommendList() { (result, items) in
                 self.tableViewModel.items = items
                 self.tableView.reloadData()
             }
@@ -57,7 +57,6 @@ class DBMainViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
         showImage(false)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -68,7 +67,6 @@ class DBMainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
         showImage(true)
     }
     

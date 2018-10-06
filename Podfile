@@ -9,7 +9,9 @@ target 'DeliciousBody' do
   pod 'Kingfisher', '~> 4.0'
   pod 'Alamofire'
   pod 'Player'
-
+  pod 'SwiftGifOrigin'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 end
 
 

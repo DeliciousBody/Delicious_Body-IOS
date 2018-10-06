@@ -18,7 +18,7 @@ class DBNetworking: NSObject {
         
         let url = "\(kBaseURL)rest-auth/login/"
         let params = ["email" : id, "password" : password]
-//        let params = ["email" : "elfqk@g.com", "password" : "elfqk123"]
+        //        let params = ["email" : "elfqk@g.com", "password" : "elfqk123"]
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
@@ -27,13 +27,13 @@ class DBNetworking: NSObject {
                 if let json = response.result.value as? [String : Any],
                     let token = json["token"] as? String
                 {
-
+                    
                     print(token)
                     completion(status, token)
                 } else {
                     completion(status, nil)
                 }
-
+                
             case .failure:
                 completion(status, nil)
             }
@@ -57,7 +57,6 @@ class DBNetworking: NSObject {
                     completion(status, nil)
                 }
             case .failure:
-                print(response.result.value)
                 completion(status, nil)
             }
         }
@@ -78,7 +77,7 @@ class DBNetworking: NSObject {
                     let token = json["token"] as? String{
                     completion(status, token)
                 } else {
-                        completion(status, nil)
+                    completion(status, nil)
                 }
             case .failure:
                 completion(status, nil)
@@ -87,10 +86,14 @@ class DBNetworking: NSObject {
         
     }
     
-    static func getUserInfo(token: String,  completion:@escaping (_ result: Int, _ user: User?) -> Void) {
+    static func getUserInfo(token: String? = nil, completion:@escaping (_ result: Int, _ user: User?) -> Void) {
         let url = "\(kBaseURL)userinfo/"
-        let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
-        print(token)
+        var headers: HTTPHeaders?
+        if let token = token {
+            headers = ["Authorization" : "JWT \(token)"]
+        } else {
+            headers = User.me?.httpHeaders()
+        }
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
             switch response.result {
@@ -116,8 +119,8 @@ class DBNetworking: NSObject {
     
     static func createUserInfo(token: String, user: User,  completion:@escaping (_ result: Int) -> Void) {
         let url = "\(kBaseURL)userinfo/"
-        let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
-        var params = user.toJSON()
+        var headers: HTTPHeaders? = ["Authorization" : "JWT \(token)"]
+        let params = user.toJSON()
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
@@ -125,18 +128,18 @@ class DBNetworking: NSObject {
         }
     }
     
-    static func updateUserInfo(token: String, params: [String : Any],  completion:@escaping (_ result: Int) -> Void) {
+    static func updateUserInfo(params: [String : Any],  completion:@escaping (_ result: Int) -> Void) {
         let url = "\(kBaseURL)userinfo/"
-        let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
         Alamofire.request(url, method: .put, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
             completion(status)
         }
     }
     
-    static func getVideoList(token: String, completion:@escaping (_ result: Int, _ exercises: [Exercise]) -> Void) {
+    static func getVideoList(completion:@escaping (_ result: Int, _ exercises: [Exercise]) -> Void) {
         let url = "\(kBaseURL)video/"
-        let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
             switch response.result {
@@ -156,9 +159,9 @@ class DBNetworking: NSObject {
         }
     }
     
-    static func getRecommendList(token: String, completion:@escaping (_ result: Int, _ items: [CardViewModelItem]) -> Void) {
+    static func getRecommendList(completion:@escaping (_ result: Int, _ items: [CardViewModelItem]) -> Void) {
         let url = "\(kBaseURL)recommend/"
-        let headers: HTTPHeaders = ["Authorization" : "JWT \(token)"]
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
             switch response.result {

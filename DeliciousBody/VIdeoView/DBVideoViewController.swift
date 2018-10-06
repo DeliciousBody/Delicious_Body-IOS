@@ -64,7 +64,6 @@ class DBVideoViewController: UIViewController {
     
     func setNaviBar(isShow: Bool) {
         guard let bar = self.navigationController?.navigationBar else { return }
-        bar.prefersLargeTitles = !isShow
         bar.layer.zPosition = -1
     }
     

@@ -110,7 +110,7 @@ class DBJoin1ViewController: DBViewController, UITextFieldDelegate{
                 if result == 201, let token = data{
                     user.token = token
                    
-                    DBNetworking.updateUserInfo(token: token, params: ["name" : user.name!], completion: { (result) in
+                    DBNetworking.updateUserInfo(params: ["name" : user.name!], completion: { (result) in
                         if result == 200 {
                             self.performSegue(withIdentifier: "next", sender: nil)
                         }

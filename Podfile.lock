@@ -1,23 +1,67 @@
 PODS:
   - Alamofire (4.5.1)
+  - Firebase/Core (4.6.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.11)
+  - Firebase/Messaging (4.6.0):
+    - Firebase/Core
+    - FirebaseMessaging (= 2.0.6)
+  - FirebaseAnalytics (4.0.5):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.11):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (2.0.6)
+  - FirebaseMessaging (2.0.6):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/Logger (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
+    - GoogleToolboxForMac/Defines (= 2.1.3)
   - Kingfisher (4.3.1)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - Player (0.8.4)
+  - Protobuf (3.5.0)
   - RangeSeekSlider (1.8.0)
   - SkyFloatingLabelTextField (3.4.0)
+  - SwiftGifOrigin (1.6.1)
 
 DEPENDENCIES:
   - Alamofire
+  - Firebase/Core
+  - Firebase/Messaging
   - Kingfisher (~> 4.0)
   - Player
   - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider.git`, branch `swift_4`)
   - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftGifOrigin
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - GoogleToolboxForMac
     - Kingfisher
+    - nanopb
     - Player
+    - Protobuf
     - SkyFloatingLabelTextField
+    - SwiftGifOrigin
 
 EXTERNAL SOURCES:
   RangeSeekSlider:
@@ -31,11 +75,20 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
+  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
+  FirebaseMessaging: 75d83375b0f7a9911568d7bdd1a1a8261cbcbdef
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Player: e45514e9e5fb8ff18f50eb2ba6f84dac9b6a0024
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
   SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
 
-PODFILE CHECKSUM: b0ab45f8e342606a4c9bbe4a14052ab10bd9918a
+PODFILE CHECKSUM: af3f2d4647c0535b961c4881a5e8a7d80b49c4a1
 
 COCOAPODS: 1.5.0

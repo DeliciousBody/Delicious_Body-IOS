@@ -23,6 +23,9 @@
 		ED3135AB2161D5650080B159 /* DBDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AA2161D5650080B159 /* DBDescViewController.swift */; };
 		ED3135AD21625D010080B159 /* DBSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AC21625D010080B159 /* DBSecret.swift */; };
 		ED3135AF21675FE80080B159 /* DBSettingEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135AE21675FE80080B159 /* DBSettingEditViewController.swift */; };
+		ED3135B12168A50B0080B159 /* DBIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3135B02168A50B0080B159 /* DBIndicator.swift */; };
+		ED3135B32168A5C00080B159 /* indicator.gif in Resources */ = {isa = PBXBuildFile; fileRef = ED3135B22168A5C00080B159 /* indicator.gif */; };
+		ED3135B52168AA650080B159 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED3135B42168AA650080B159 /* GoogleService-Info.plist */; };
 		ED47159720997C6500F3C251 /* DBAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47159620997C6500F3C251 /* DBAlarmViewController.swift */; };
 		ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */; };
 		ED52403120BE656300FAB237 /* DBJoin5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */; };
@@ -92,6 +95,7 @@
 		75E0B7A9D952DF050B6EAC66 /* Pods_DeliciousBodyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliciousBodyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C085F8346AC0D738ED3D24 /* Pods-DeliciousBody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliciousBody.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody.debug.xcconfig"; sourceTree = "<group>"; };
 		C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliciousBody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED03CE2C2168BCE6009E6029 /* DeliciousBody.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeliciousBody.entitlements; sourceTree = "<group>"; };
 		ED07CEB42129A28000C7CAF0 /* DBMainCardExtendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainCardExtendCell.swift; sourceTree = "<group>"; };
 		ED07CEB62129B58B00C7CAF0 /* DBCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCardViewModel.swift; sourceTree = "<group>"; };
 		ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRoundButton.swift; sourceTree = "<group>"; };
@@ -107,6 +111,9 @@
 		ED3135AA2161D5650080B159 /* DBDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDescViewController.swift; sourceTree = "<group>"; };
 		ED3135AC21625D010080B159 /* DBSecret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSecret.swift; sourceTree = "<group>"; };
 		ED3135AE21675FE80080B159 /* DBSettingEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingEditViewController.swift; sourceTree = "<group>"; };
+		ED3135B02168A50B0080B159 /* DBIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBIndicator.swift; sourceTree = "<group>"; };
+		ED3135B22168A5C00080B159 /* indicator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicator.gif; sourceTree = "<group>"; };
+		ED3135B42168AA650080B159 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED47159620997C6500F3C251 /* DBAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBAlarmViewController.swift; sourceTree = "<group>"; };
 		ED52402E20BE655C00FAB237 /* DBJoin4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin4ViewController.swift; sourceTree = "<group>"; };
 		ED52403020BE656300FAB237 /* DBJoin5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin5ViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +231,7 @@
 		ED8757062081DE5D00B91100 /* Resouce */ = {
 			isa = PBXGroup;
 			children = (
+				ED3135B22168A5C00080B159 /* indicator.gif */,
 				ED5576AE215C8D3400F22CBC /* sample.mp4 */,
 			);
 			path = Resouce;
@@ -267,6 +275,7 @@
 				ED55769E214419FC00F22CBC /* DBRecordCell.swift */,
 				ED5576A02144258900F22CBC /* DBProfileImageView.swift */,
 				ED5576A62148243100F22CBC /* DBSettingCell.swift */,
+				ED3135B02168A50B0080B159 /* DBIndicator.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -378,6 +387,7 @@
 		EDF721D7206BF78700CCAFEC /* DeliciousBody */ = {
 			isa = PBXGroup;
 			children = (
+				ED03CE2C2168BCE6009E6029 /* DeliciousBody.entitlements */,
 				ED8757132082092100B91100 /* ETC */,
 				EDEE0C7120B9A3E9001BB163 /* Main */,
 				EDEE0C7020B9A3DE001BB163 /* VideoView */,
@@ -389,6 +399,7 @@
 				ED875710208208B400B91100 /* StoryBoards */,
 				ED87570F208208A900B91100 /* XIBs */,
 				EDF721E4206BF78700CCAFEC /* Info.plist */,
+				ED3135B42168AA650080B159 /* GoogleService-Info.plist */,
 				ED8757142082092B00B91100 /* Supportings */,
 				ED8757062081DE5D00B91100 /* Resouce */,
 			);
@@ -456,7 +467,15 @@
 				TargetAttributes = {
 					EDF721D4206BF78700CCAFEC = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					EDF721E8206BF78800CCAFEC = {
 						CreatedOnToolsVersion = 9.2;
@@ -495,8 +514,10 @@
 				EDF721E3206BF78700CCAFEC /* LaunchScreen.storyboard in Resources */,
 				ED87570E208205F400B91100 /* DBVideoSectionHeader.xib in Resources */,
 				EDFB0F8C20B523C600175138 /* DBTextField.xib in Resources */,
+				ED3135B32168A5C00080B159 /* indicator.gif in Resources */,
 				ED8757082081F33B00B91100 /* Main.storyboard in Resources */,
 				EDDB787320A937AD0086DDDB /* Sample.storyboard in Resources */,
+				ED3135B52168AA650080B159 /* GoogleService-Info.plist in Resources */,
 				EDF721E0206BF78700CCAFEC /* Assets.xcassets in Resources */,
 				EDC9FBBD2098511D00A61BAA /* VideoList.storyboard in Resources */,
 				EDEE0C7320B9A49B001BB163 /* Join.storyboard in Resources */,
@@ -542,18 +563,26 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -580,6 +609,7 @@
 				EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */,
 				ED557696213FD69700F22CBC /* DBVideoSearchViewController.swift in Sources */,
 				ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */,
+				ED3135B12168A50B0080B159 /* DBIndicator.swift in Sources */,
 				EDE8AB52207CA24500A6D180 /* DBMainViewController.swift in Sources */,
 				EDEBB22120C4F6560024DE36 /* DBBodyView.swift in Sources */,
 				ED5576A72148243100F22CBC /* DBSettingCell.swift in Sources */,
@@ -688,9 +718,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: changmin lee (3TCM7SEF29)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -747,9 +779,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: changmin lee (3TCM7SEF29)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -773,14 +807,16 @@
 			baseConfigurationReference = C2C085F8346AC0D738ED3D24 /* Pods-DeliciousBody.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = DeliciousBody/DeliciousBody.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: changmin lee (3TCM7SEF29)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DeliciousBody/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -792,8 +828,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = changmin.DeliciousBody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f0de9296-a6ad-4bd7-8bf2-bdcf423ad447";
+				PROVISIONING_PROFILE_SPECIFIER = Delicious_Body;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -802,14 +840,16 @@
 			baseConfigurationReference = 075C6EDD0BFE5846E74A6C1B /* Pods-DeliciousBody.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = DeliciousBody/DeliciousBody.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: changmin lee (3TCM7SEF29)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 47RZ4GF77T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DeliciousBody/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -821,8 +861,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = changmin.DeliciousBody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5ee6c841-1033-44cf-8e0e-01d3c8bb34a9";
+				PROVISIONING_PROFILE_SPECIFIER = Delicious_Body;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

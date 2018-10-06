@@ -63,7 +63,7 @@ class DBSettingViewController: UIViewController {
 //                print("error")
 //            }
 //        })
-        DBNetworking.updateUserInfo(token: token, params: me.toJSON()) { (result) in
+        DBNetworking.updateUserInfo(params: me.toJSON()) { (result) in
             if result == 200 || result == 201 {
 //                me.save()
                     print("success")
