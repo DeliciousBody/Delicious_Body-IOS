@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B0720BFBE2B4D7E1C5EF376B /* Pods_DeliciousBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */; };
+		ED03CE2E216A5892009E6029 /* DBHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03CE2D216A5892009E6029 /* DBHistoryManager.swift */; };
+		ED03CE30216A6799009E6029 /* DBSettingDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED03CE2F216A6799009E6029 /* DBSettingDescViewController.swift */; };
 		ED07CEB52129A28000C7CAF0 /* DBMainCardExtendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB42129A28000C7CAF0 /* DBMainCardExtendCell.swift */; };
 		ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB62129B58B00C7CAF0 /* DBCardViewModel.swift */; };
 		ED07CEB9212A98F300C7CAF0 /* DBRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */; };
@@ -96,6 +98,8 @@
 		C2C085F8346AC0D738ED3D24 /* Pods-DeliciousBody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliciousBody.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeliciousBody/Pods-DeliciousBody.debug.xcconfig"; sourceTree = "<group>"; };
 		C9498113CF9A71672A675330 /* Pods_DeliciousBody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliciousBody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED03CE2C2168BCE6009E6029 /* DeliciousBody.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeliciousBody.entitlements; sourceTree = "<group>"; };
+		ED03CE2D216A5892009E6029 /* DBHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHistoryManager.swift; sourceTree = "<group>"; };
+		ED03CE2F216A6799009E6029 /* DBSettingDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingDescViewController.swift; sourceTree = "<group>"; };
 		ED07CEB42129A28000C7CAF0 /* DBMainCardExtendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMainCardExtendCell.swift; sourceTree = "<group>"; };
 		ED07CEB62129B58B00C7CAF0 /* DBCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCardViewModel.swift; sourceTree = "<group>"; };
 		ED07CEB8212A98F300C7CAF0 /* DBRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBRoundButton.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */,
 				ED5576AA21589B0700F22CBC /* DBSettingFilterViewController.swift */,
 				ED3135AE21675FE80080B159 /* DBSettingEditViewController.swift */,
+				ED03CE2F216A6799009E6029 /* DBSettingDescViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				ED3135A6215DF6A90080B159 /* DBNetworking.swift */,
 				ED3135A82161CFE30080B159 /* DBValidator.swift */,
 				ED3135AC21625D010080B159 /* DBSecret.swift */,
+				ED03CE2D216A5892009E6029 /* DBHistoryManager.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -568,6 +574,8 @@
 				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -580,6 +588,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -606,6 +616,7 @@
 				ED5576A92148288800F22CBC /* DBSettingInfoViewController.swift in Sources */,
 				ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */,
 				EDA38354212542F000A39574 /* DBUser.swift in Sources */,
+				ED03CE30216A6799009E6029 /* DBSettingDescViewController.swift in Sources */,
 				EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */,
 				ED557696213FD69700F22CBC /* DBVideoSearchViewController.swift in Sources */,
 				ED218EFF2081CDD20082366F /* DBVideoViewController.swift in Sources */,
@@ -633,6 +644,7 @@
 				ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */,
 				ED5576A5214605A000F22CBC /* DBSettingSloganViewController.swift in Sources */,
 				EDE14E95212C01F500083181 /* DBLoginViewController.swift in Sources */,
+				ED03CE2E216A5892009E6029 /* DBHistoryManager.swift in Sources */,
 				EDA383522125400700A39574 /* DBStartViewController.swift in Sources */,
 				ED55769A214233E400F22CBC /* DBVideoFilterViewController.swift in Sources */,
 				EDE14E99212C10A600083181 /* DBExtensions.swift in Sources */,

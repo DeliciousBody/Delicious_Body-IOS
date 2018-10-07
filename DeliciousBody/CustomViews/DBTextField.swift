@@ -14,6 +14,21 @@ import SkyFloatingLabelTextField
     @IBOutlet weak var innerTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var checkImage: UIImageView!
     
+    override var tag: Int {
+        didSet {
+            innerTextField.tag = tag
+        }
+    }
+    
+    var text: String? {
+        get {
+            return innerTextField.text
+        }
+        set {
+            innerTextField.text = self.text
+        }
+    }
+    
     @IBInspectable var placeholder: String? {
         didSet {
             innerTextField.placeholder = placeholder
@@ -48,7 +63,7 @@ import SkyFloatingLabelTextField
     
     var isValidateEmail: Bool {
         get{
-            if let text = innerTextField.text {
+            if let text = text {
                 return DBValidater.isValidEmail(testStr: text)  
             } else {
                 return false

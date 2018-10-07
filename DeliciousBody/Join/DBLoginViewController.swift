@@ -49,8 +49,8 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonPressed(_ sender: DBRoundButton) {
-        guard let email = emailTextField.innerTextField.text,
-            let password = pwTextField.innerTextField.text else {
+        guard let email = emailTextField.text,
+            let password = pwTextField.text else {
                 sender.shake()
                 return
         }
@@ -67,6 +67,7 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                         if let user = user {
                             User.me = user
                             user.token = JWTtoken
+                            user.id = email
                             user.save()
                             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                             let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
@@ -79,7 +80,7 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                     self.pwTextField.innerTextField.errorMessage = " "
                 }
             } else {
-                self.emailTextField.innerTextField.errorMessage = "이메일 또는 비밀번호가 올바르지 않습니다."
+                self.emailTextField.innerTextField.errorMessage = "로그인 시도 중 오류가 발생하였습니다."
                 self.pwTextField.innerTextField.errorMessage = " "
                 sender.shake()
             }
@@ -94,10 +95,14 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                 DBNetworking.kakaologin(token, completion: { (result, token) in
                     if let jwtToken = token {
                         DBNetworking.getUserInfo(token: jwtToken, completion: { (result, user) in
-                            guard result == 200 else { return }
+                            guard result == 200 else {
+                                self.showAlert(title: "오류", content: "로그인에 실패하였습니다.")
+                                return
+                            }
                             if let user = user {
                                 User.me = user
                                 user.token = jwtToken
+                                user.id = "카카오톡"
                                 user.save()
                                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                                 let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
@@ -109,22 +114,27 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                                     if let profile = data as? KOTalkProfile {
                                         user.photoUrl = profile.profileImageURL
                                         user.name = profile.nickName
+                                        user.id = "카카오톡"
                                         DBNetworking.createUserInfo(token: jwtToken, user: user, completion: { (result) in
                                             if result == 201 {
                                                 User.me = user
                                                 user.save()
-                                                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                                                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
+                                                let storyBoard = UIStoryboard(name: "Join", bundle: nil)
+                                                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBJoinNavigationController")
                                                 self.present(mainViewController, animated: true, completion: nil)
+                                            } else {
+                                                self.showAlert(title: "오류", content: "UserInfo 생성에 실패하였습니다.")
                                             }
                                         })
-                                        
                                     } else {
-                                        print(error.debugDescription)
+                                        self.showAlert(title: "오류", content: "로그인에 실패하였습니다.")
                                     }
                                 })
                             }
                         })
+                    }
+                    else {
+                        self.showAlert(title: "오류", content: "로그인에 실패하였습니다.")
                     }
                 })
             } else {

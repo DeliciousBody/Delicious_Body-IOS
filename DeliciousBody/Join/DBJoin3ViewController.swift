@@ -16,6 +16,10 @@ class DBJoin3ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let id = segue.identifier else {
             return

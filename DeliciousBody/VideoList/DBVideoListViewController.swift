@@ -75,6 +75,13 @@ class DBVideoListViewController: UIViewController {
     @IBAction func searchButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "search", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "search" {
+            let vc = segue.destination as! DBVideoSearchViewController
+            vc.allList = tableViewModel.allItems
+        }
+    }
     @IBAction func acitoin(_ sender: UIButton) {
         guard sender.tag != option else {
             return

@@ -27,7 +27,7 @@ class DBJoin5ViewController: DBViewController {
 
     @IBAction func confirmButtonPressed(_ sender: Any) {
         guard let me = User.me else { return }
-        me.slogan = inputTextField.innerTextField.text
+        me.slogan = inputTextField.text ?? "Workout hard Play hard!"
         DBNetworking.updateUserInfo(params: me.toJSON()) { (result) in
             if result == 200 {
                 User.me?.save()
@@ -39,6 +39,10 @@ class DBJoin5ViewController: DBViewController {
                 print("error")
             }
         }
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

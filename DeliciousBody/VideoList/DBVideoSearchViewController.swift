@@ -17,10 +17,12 @@ class DBVideoSearchViewController: UIViewController {
     
     @IBOutlet weak var keywordLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
+    var allList: [Exercise] = []
     var result: [Exercise] = [] {
         didSet {
             countLabel.text = "\(result.count)"
             resultView.alpha = result.count == 0 ? 0 : 1
+            emptyImageView.alpha = result.count == 0 ? 1 : 0
             tableView.reloadData()
         }
     }
@@ -36,7 +38,7 @@ class DBVideoSearchViewController: UIViewController {
         inputTextField.attributedPlaceholder = NSAttributedString(string: "운동 부위 / 이름을 검색하세요.  예) 목, 거북목", attributes:attributes as [NSAttributedStringKey : Any])
         inputTextField.addTarget(self, action: #selector(textfieldDidChanging(sender:)), for: .editingChanged)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
-        self.view.addGestureRecognizer(tapGesture)
+//        self.view.addGestureRecognizer(tapGesture)
 //        self.result = [Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise()]
     }
     
@@ -60,10 +62,11 @@ class DBVideoSearchViewController: UIViewController {
 
 extension DBVideoSearchViewController: UITextFieldDelegate {
     @objc func textfieldDidChanging(sender: UITextField) {
-        keywordLabel.text = sender.text
-        if (sender.text?.count)! == 5 {
-            result = [Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise()]
-        }
+        guard let text = sender.text else { return }
+        keywordLabel.text = text
+        result = allList.filter({ (exer) -> Bool in
+            exer.video_name!.contains(text)
+        })
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -86,10 +89,20 @@ extension DBVideoSearchViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerCell", for: indexPath) as! DBExerCell
+        let item = result[indexPath.row]
+        cell.exerTitleLabel.text = item.video_name
+        cell.exerImageView.kf.setImage(with: URL(string: item.video_thumbnail!))
         return cell
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         inputTextField.resignFirstResponder()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBVideoViewController") as! DBVideoViewController
+        mainViewController.exercise = result[indexPath.row]
+        self.present(mainViewController, animated: true, completion: nil)
     }
 }

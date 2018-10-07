@@ -34,6 +34,11 @@ PODS:
   - Player (0.8.4)
   - Protobuf (3.5.0)
   - RangeSeekSlider (1.8.0)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
   - SkyFloatingLabelTextField (3.4.0)
   - SwiftGifOrigin (1.6.1)
 
@@ -44,6 +49,7 @@ DEPENDENCIES:
   - Kingfisher (~> 4.0)
   - Player
   - RangeSeekSlider (from `https://github.com/WorldDownTown/RangeSeekSlider.git`, branch `swift_4`)
+  - RealmSwift
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftGifOrigin
 
@@ -60,6 +66,8 @@ SPEC REPOS:
     - nanopb
     - Player
     - Protobuf
+    - Realm
+    - RealmSwift
     - SkyFloatingLabelTextField
     - SwiftGifOrigin
 
@@ -86,9 +94,11 @@ SPEC CHECKSUMS:
   Player: e45514e9e5fb8ff18f50eb2ba6f84dac9b6a0024
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   RangeSeekSlider: 650b11fa1edcb92e1e0ede797669d98622570fb5
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
 
-PODFILE CHECKSUM: af3f2d4647c0535b961c4881a5e8a7d80b49c4a1
+PODFILE CHECKSUM: 8993d601837b34ca51135e7a4c377e014547b5b6
 
 COCOAPODS: 1.5.0

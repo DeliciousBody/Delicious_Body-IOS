@@ -20,7 +20,7 @@ class DBIndicator: UIView {
     lazy var filterView: UIView = {
         let filterView = UIView(frame: UIScreen.main.bounds)
         filterView.backgroundColor = filterColor.withAlphaComponent(filterAlpha)
-        filterView.isUserInteractionEnabled = false
+        filterView.isUserInteractionEnabled = true
         return filterView
     }()
     
@@ -34,14 +34,22 @@ class DBIndicator: UIView {
     }()
     
     func show() {
+        filterView.alpha = 0
         self.addSubview(filterView)
         self.filterView.addSubview(gifImage)
         self.filterView.bringSubview(toFront: self.gifImage)
         UIApplication.shared.keyWindow?.addSubview(filterView)
+        UIView.animate(withDuration: 0.1, animations: {
+            self.filterView.alpha = 1
+        })
     }
     
     func stop() {
-        self.filterView.removeFromSuperview()
+        UIView.animate(withDuration: 0.1, animations: {
+            self.filterView.alpha = 0
+        }) { completion in
+            self.filterView.removeFromSuperview()
+        }
     }
     
 }

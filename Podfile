@@ -12,6 +12,8 @@ target 'DeliciousBody' do
   pod 'SwiftGifOrigin'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'RealmSwift'
+  
 end
 
 

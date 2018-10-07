@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -74,7 +75,7 @@
                                     <constraint firstItem="ctO-Ev-xyo" firstAttribute="leading" secondItem="idZ-s8-bqX" secondAttribute="trailing" id="ylW-FQ-p05"/>
                                 </constraints>
                             </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-UP-0Kt">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-UP-0Kt">
                                 <rect key="frame" x="137.5" y="553" width="100" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="aTm-cN-WSP"/>
@@ -641,6 +642,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tba-1v-dCh" customClass="KOLoginButton">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="33"/>
+                                        <connections>
+                                            <action selector="kakaoJoinPressed:" destination="DqJ-fX-5d0" eventType="touchUpInside" id="bJy-t4-UVu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.85098039219999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -693,7 +697,6 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAT-Jv-bKM">
                                 <rect key="frame" x="35" y="486" width="20" height="20"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.91764705879999997" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="9WW-jt-UKr"/>
                                     <constraint firstAttribute="width" constant="20" id="O4M-gV-VTx"/>
@@ -883,7 +886,7 @@
         <!--Desc View Controller-->
         <scene sceneID="Iw2-DV-tci">
             <objects>
-                <viewController id="hHR-zN-SRh" customClass="DBDescViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="DBDescViewController" storyboardIdentifier="DBDescViewController" id="hHR-zN-SRh" customClass="DBDescViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gK1-aY-o2U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -950,7 +953,7 @@
         <!--Navigation Controller-->
         <scene sceneID="zGS-VD-OMs">
             <objects>
-                <navigationController id="x1F-Yp-UGr" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DBJoinNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x1F-Yp-UGr" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9LC-SZ-rYg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1328,6 +1331,9 @@
                     <navigationItem key="navigationItem" id="Wcp-AZ-LjX">
                         <barButtonItem key="leftBarButtonItem" image="barbutton_back" id="hda-nj-rsw">
                             <color key="tintColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="Vwe-R4-wkf" id="Loz-xh-aV9"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -1354,7 +1360,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Avv-7G-yId" kind="show" id="10F-jt-KqB"/>
+                                    <action selector="confirmButtonPressed:" destination="jLL-MO-Yp1" eventType="touchUpInside" id="jgA-Wh-Nv3"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1d3-fa-wY5">
@@ -1369,102 +1375,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRc-JM-u3E">
                                 <rect key="frame" x="0.0" y="197" width="375" height="420"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZw-7g-Xma">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="180"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주말" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kB5-qC-DjP">
-                                                <rect key="frame" x="38" y="40" width="42" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="42" id="SNd-yY-I3B"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
-                                                <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdC-fO-rqJ" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
-                                                <rect key="frame" x="24" y="95" width="327" height="65"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oth-0P-Ung">
-                                                        <rect key="frame" x="14" y="44" width="26" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21" id="0J6-b6-oZS"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                                        <color key="textColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvH-sV-b9s">
-                                                        <rect key="frame" x="289" y="44" width="24" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21" id="b5i-y0-zq0"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
-                                                        <color key="textColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="tintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="rvH-sV-b9s" secondAttribute="trailing" constant="14" id="SuO-JQ-4zx"/>
-                                                    <constraint firstAttribute="bottom" secondItem="oth-0P-Ung" secondAttribute="bottom" id="YI3-iw-vch"/>
-                                                    <constraint firstAttribute="bottom" secondItem="rvH-sV-b9s" secondAttribute="bottom" id="foj-ZQ-bJD"/>
-                                                    <constraint firstAttribute="height" constant="65" id="nTP-Hb-cwz"/>
-                                                    <constraint firstItem="oth-0P-Ung" firstAttribute="leading" secondItem="pdC-fO-rqJ" secondAttribute="leading" constant="14" id="vYE-W7-boW"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                        <real key="value" value="24"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedMinValue">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
-                                                        <real key="value" value="18"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="step">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBetweenHandles">
-                                                        <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                        <real key="value" value="4"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="handleBorderColor">
-                                                        <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="maxLabelColor">
-                                                        <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="minLabelColor">
-                                                        <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
-                                                        <color key="value" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityLabel" value="1"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityLabel" value="2"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityHint" value="3"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityHint" value="4"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="handleDiameter">
-                                                        <real key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="180" id="0S1-DV-ZWp"/>
-                                            <constraint firstAttribute="trailing" secondItem="pdC-fO-rqJ" secondAttribute="trailing" constant="24" id="0si-0f-6Je"/>
-                                            <constraint firstItem="pdC-fO-rqJ" firstAttribute="leading" secondItem="wZw-7g-Xma" secondAttribute="leading" constant="24" id="5U7-bm-9fa"/>
-                                            <constraint firstAttribute="bottom" secondItem="pdC-fO-rqJ" secondAttribute="bottom" constant="20" id="P1R-SC-86E"/>
-                                            <constraint firstItem="kB5-qC-DjP" firstAttribute="top" secondItem="wZw-7g-Xma" secondAttribute="top" constant="40" id="g8L-xy-cpK"/>
-                                            <constraint firstItem="kB5-qC-DjP" firstAttribute="leading" secondItem="wZw-7g-Xma" secondAttribute="leading" constant="38" id="yXp-NX-9yk"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcL-Hs-aGc">
                                         <rect key="frame" x="0.0" y="20" width="375" height="180"/>
                                         <subviews>
@@ -1515,10 +1425,10 @@
                                                         <real key="value" value="24"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="selectedMinValue">
-                                                        <real key="value" value="10"/>
+                                                        <real key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
-                                                        <real key="value" value="18"/>
+                                                        <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="step">
                                                         <real key="value" value="1"/>
@@ -1539,7 +1449,7 @@
                                                         <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
-                                                        <color key="value" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityLabel" value="1"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityLabel" value="2"/>
@@ -1559,6 +1469,102 @@
                                             <constraint firstItem="5y9-y5-1CY" firstAttribute="top" secondItem="zcL-Hs-aGc" secondAttribute="top" constant="40" id="sTs-4D-ieK"/>
                                             <constraint firstAttribute="height" constant="180" id="sgc-nv-FcY"/>
                                             <constraint firstItem="Gkb-Jz-hun" firstAttribute="leading" secondItem="zcL-Hs-aGc" secondAttribute="leading" constant="24" id="tva-Fh-wdt"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZw-7g-Xma">
+                                        <rect key="frame" x="0.0" y="200" width="375" height="180"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주말" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kB5-qC-DjP">
+                                                <rect key="frame" x="38" y="40" width="42" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="42" id="SNd-yY-I3B"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdC-fO-rqJ" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
+                                                <rect key="frame" x="24" y="95" width="327" height="65"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oth-0P-Ung">
+                                                        <rect key="frame" x="14" y="44" width="26" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="0J6-b6-oZS"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                        <color key="textColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvH-sV-b9s">
+                                                        <rect key="frame" x="289" y="44" width="24" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="b5i-y0-zq0"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                        <color key="textColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="tintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="rvH-sV-b9s" secondAttribute="trailing" constant="14" id="SuO-JQ-4zx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="oth-0P-Ung" secondAttribute="bottom" id="YI3-iw-vch"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rvH-sV-b9s" secondAttribute="bottom" id="foj-ZQ-bJD"/>
+                                                    <constraint firstAttribute="height" constant="65" id="nTP-Hb-cwz"/>
+                                                    <constraint firstItem="oth-0P-Ung" firstAttribute="leading" secondItem="pdC-fO-rqJ" secondAttribute="leading" constant="14" id="vYE-W7-boW"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedMinValue">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="step">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBetweenHandles">
+                                                        <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="handleBorderColor">
+                                                        <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="maxLabelColor">
+                                                        <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="minLabelColor">
+                                                        <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityLabel" value="1"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityLabel" value="2"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityHint" value="3"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityHint" value="4"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="handleDiameter">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="0S1-DV-ZWp"/>
+                                            <constraint firstAttribute="trailing" secondItem="pdC-fO-rqJ" secondAttribute="trailing" constant="24" id="0si-0f-6Je"/>
+                                            <constraint firstItem="pdC-fO-rqJ" firstAttribute="leading" secondItem="wZw-7g-Xma" secondAttribute="leading" constant="24" id="5U7-bm-9fa"/>
+                                            <constraint firstAttribute="bottom" secondItem="pdC-fO-rqJ" secondAttribute="bottom" constant="20" id="P1R-SC-86E"/>
+                                            <constraint firstItem="kB5-qC-DjP" firstAttribute="top" secondItem="wZw-7g-Xma" secondAttribute="top" constant="40" id="g8L-xy-cpK"/>
+                                            <constraint firstItem="kB5-qC-DjP" firstAttribute="leading" secondItem="wZw-7g-Xma" secondAttribute="leading" constant="38" id="yXp-NX-9yk"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1592,8 +1598,16 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="Scv-aB-Xiw"/>
                         <barButtonItem key="leftBarButtonItem" image="barbutton_back" id="4Is-Ve-Ofy">
                             <color key="tintColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="jLL-MO-Yp1" id="Aho-Pz-0EU"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="slider_Week" destination="Gkb-Jz-hun" id="6NA-cq-tye"/>
+                        <outlet property="slider_Weekend" destination="pdC-fO-rqJ" id="aGD-se-HwX"/>
+                        <segue destination="Avv-7G-yId" kind="show" identifier="next" id="0v9-KQ-evp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxt-OV-uIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1667,6 +1681,9 @@
                     <navigationItem key="navigationItem" id="4xC-1h-llA">
                         <barButtonItem key="leftBarButtonItem" image="barbutton_back" id="JSR-V8-s0l">
                             <color key="tintColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="Avv-7G-yId" id="nN8-yf-oUn"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1695,6 +1712,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dvP-p8-8V9"/>
-        <segue reference="pR4-mM-ZgB"/>
+        <segue reference="3hJ-Ji-Lw7"/>
     </inferredMetricsTieBreakers>
 </document>

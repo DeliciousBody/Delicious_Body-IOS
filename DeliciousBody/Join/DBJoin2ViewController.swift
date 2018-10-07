@@ -45,6 +45,11 @@ class DBJoin2ViewController: DBViewController {
             vc.contentString = kJoinTitles[segue.identifier!]
         }
     }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func genderButtonPressed(_ sender: UIButton) {
         guard sender.tag != currentGender.rawValue else { return }
         currentGender = Gender(rawValue: sender.tag)!

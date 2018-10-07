@@ -72,7 +72,6 @@ class DBNetworking: NSObject {
             let status = response.response?.statusCode ?? 999
             switch response.result {
             case .success:
-                print(response.result.value as! [String : Any])
                 if let json = response.result.value as? [String : Any],
                     let token = json["token"] as? String{
                     completion(status, token)
@@ -119,8 +118,9 @@ class DBNetworking: NSObject {
     
     static func createUserInfo(token: String, user: User,  completion:@escaping (_ result: Int) -> Void) {
         let url = "\(kBaseURL)userinfo/"
-        var headers: HTTPHeaders? = ["Authorization" : "JWT \(token)"]
+        let headers: HTTPHeaders? = ["Authorization" : "JWT \(token)"]
         let params = user.toJSON()
+        print("//\(token)//")
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999

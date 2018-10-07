@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DBSettingInfoViewController: UIViewController {
+class DBSettingInfoViewController: DBViewController {
     let data: [[SettingOption]] = [[.email, .passwd], [.version, .useDesc, .pSetting, .pDesc], [.logout, .signOut]]
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,6 +34,16 @@ class DBSettingInfoViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "desc" {
+            let vc = segue.destination as! DBSettingDescViewController
+            if sender as! Int == 0 {
+                vc.title = "이용약관"
+                vc.descript = kUseDesc
+            }
+        }
     }
 }
 
@@ -71,7 +81,9 @@ extension DBSettingInfoViewController: UITableViewDataSource, UITableViewDelegat
         if section == 0 {
             
         } else if section == 1 {
-            
+            if row == 1 {
+                self.performSegue(withIdentifier: "desc", sender: 0)
+            }
         } else {
             if row == 0 {
                 User.removeSavedUser()

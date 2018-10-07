@@ -55,7 +55,7 @@ class DBPasswdViewController: DBViewController {
         imageView2.FadeIntWithrotate()
         
         
-        let emailStr = textField.innerTextField.text! as NSString
+        let emailStr = textField.text! as NSString
         let size = emailStr.size(withAttributes: [NSAttributedStringKey.font: UIFont.textFieldFont]).width + 10
         
         UIView.animate(withDuration: 0.08, delay: 0, options: .curveEaseIn, animations: {

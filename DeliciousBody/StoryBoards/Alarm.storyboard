@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -113,10 +114,10 @@
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedMinValue">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
-                                                <real key="value" value="18"/>
+                                                <real key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="step">
                                                 <real key="value" value="1"/>
@@ -137,7 +138,7 @@
                                                 <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
-                                                <color key="value" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityLabel" value="1"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityLabel" value="2"/>
@@ -218,10 +219,10 @@
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedMinValue">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedMaxValue">
-                                                <real key="value" value="18"/>
+                                                <real key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="step">
                                                 <real key="value" value="1"/>
@@ -242,7 +243,7 @@
                                                 <color key="value" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="handleColor">
-                                                <color key="value" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="minLabelAccessibilityLabel" value="1"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="maxLabelAccessibilityLabel" value="2"/>
@@ -285,10 +286,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="알람" id="BEw-b3-nfj"/>
                     <connections>
+                        <outlet property="masterSwitch" destination="42M-sn-kiK" id="snK-dj-PV9"/>
                         <outlet property="slider_Week" destination="X2a-iY-3E7" id="2Py-kX-1Qf"/>
                         <outlet property="slider_Weekend" destination="diT-f0-JLx" id="oAK-pE-sts"/>
                         <outlet property="view_Week" destination="Wm6-Su-Axp" id="wFT-jX-U2K"/>
                         <outlet property="view_Weekend" destination="DCg-18-mSq" id="hK8-8A-Nru"/>
+                        <outlet property="weekdaySwitch" destination="unO-Nc-lH2" id="EgT-fR-4xi"/>
+                        <outlet property="weekendSwitch" destination="FYR-6D-14z" id="drb-rY-zLE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmr-Ve-1Kl" userLabel="First Responder" sceneMemberID="firstResponder"/>
