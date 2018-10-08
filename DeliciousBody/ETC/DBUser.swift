@@ -144,7 +144,7 @@ open class User : NSObject {
         if let token = User.fetchToken() {
             defaultHeaders["Authorization"] = "JWT " + token
         }
-        defaultHeaders["PushToken"] = User.fetchDeviceKey()
+        defaultHeaders["pushtoken"] = User.fetchDeviceKey()
         
         return defaultHeaders
     }

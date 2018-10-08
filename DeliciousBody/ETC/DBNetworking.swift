@@ -89,7 +89,8 @@ class DBNetworking: NSObject {
         let url = "\(kBaseURL)userinfo/"
         var headers: HTTPHeaders?
         if let token = token {
-            headers = ["Authorization" : "JWT \(token)"]
+            headers = ["Authorization" : "JWT \(token)",
+                "PushToken" : User.fetchDeviceKey()]
         } else {
             headers = User.me?.httpHeaders()
         }
@@ -178,6 +179,15 @@ class DBNetworking: NSObject {
             case .failure:
                 completion(status, [])
             }
+        }
+    }
+    
+    static func logout(completion:@escaping (_ result: Int) -> Void) {
+        let url = "\(kBaseURL)rest-auth/logout/"
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            completion(status)
         }
     }
 }

@@ -301,7 +301,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rLX-iD-rOD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_login" translatesAutoresizingMaskIntoConstraints="NO" id="rLX-iD-rOD">
                                 <rect key="frame" x="100" y="457" width="275" height="210"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="OPr-wr-mGb"/>
@@ -538,7 +538,7 @@
                                     <action selector="buttonPressed:" destination="eBQ-3L-tKS" eventType="touchUpInside" id="OmO-t8-M8q"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-Hp-Dgb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_forget" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-Hp-Dgb">
                                 <rect key="frame" x="0.0" y="396" width="292" height="271"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="271" id="g5I-Bd-Lb6"/>
@@ -1696,6 +1696,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background_forget" width="292" height="271"/>
+        <image name="background_login" width="276" height="210"/>
         <image name="barbutton_back" width="24" height="24"/>
         <image name="barbutton_cancel" width="24" height="24"/>
         <image name="cancel_white_btn" width="24" height="24"/>
@@ -1712,6 +1714,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dvP-p8-8V9"/>
-        <segue reference="3hJ-Ji-Lw7"/>
+        <segue reference="pR4-mM-ZgB"/>
     </inferredMetricsTieBreakers>
 </document>

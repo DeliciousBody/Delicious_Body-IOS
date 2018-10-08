@@ -86,11 +86,15 @@ extension DBSettingInfoViewController: UITableViewDataSource, UITableViewDelegat
             }
         } else {
             if row == 0 {
-                User.removeSavedUser()
-                self.performSegue(withIdentifier: "Join", sender: nil)
-//                self.dismiss(animated: true) {
-//                    NotificationCenter.default.post(name: Foundation.Notification.Name(rawValue: kDidLogoutNotification), object: nil)
-//                }
+                let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: {action in
+                    DBNetworking.logout(completion: { (result) in
+                        User.removeSavedUser()
+                        self.performSegue(withIdentifier: "Join", sender: nil)
+                    })
+                }))
+                alert.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
         }
     }
