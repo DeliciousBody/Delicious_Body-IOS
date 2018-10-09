@@ -138,8 +138,39 @@ class DBNetworking: NSObject {
         }
     }
     
+    static func deleteUserInfo(completion:@escaping (_ result: Int) -> Void) {
+        let url = "\(kBaseURL)userinfo/"
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
+        Alamofire.request(url, method: .delete, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            completion(status)
+        }
+    }
+    
     static func getVideoList(completion:@escaping (_ result: Int, _ exercises: [Exercise]) -> Void) {
         let url = "\(kBaseURL)video/"
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            switch response.result {
+            case .success:
+                if let json = response.result.value as? [[String : Any]] {
+                    var arr = [Exercise]()
+                    for dic in json {
+                        arr.append(Exercise(withDic: dic))
+                    }
+                    completion(status, arr)
+                } else {
+                    completion(status, [])
+                }
+            case .failure:
+                completion(status, [])
+            }
+        }
+    }
+    
+    static func getVideoList(byListID id: Int, completion:@escaping (_ result: Int, _ exercises: [Exercise]) -> Void) {
+        let url = "\(kBaseURL)videolist/\(id)"
         let headers: HTTPHeaders? = User.me?.httpHeaders()
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리버스 런지 리치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52k-if-YoQ">
-                        <rect key="frame" x="119" y="27" width="92.5" height="22"/>
+                        <rect key="frame" x="119" y="9" width="92.5" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="rcz-n1-CSG"/>
                         </constraints>
@@ -43,7 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초급 | 근력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEJ-Bh-r2A">
-                        <rect key="frame" x="119" y="49" width="51.5" height="22"/>
+                        <rect key="frame" x="119" y="31" width="51.5" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="iCb-pr-NNu"/>
                         </constraints>
@@ -63,6 +64,15 @@
                             <action selector="likeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j96-ft-Rna"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zg-6U-AdW">
+                        <rect key="frame" x="119" y="67" width="0.0" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="uKZ-NQ-8Km"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
+                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ffp-t4-7L0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="7KH-eH-0d4"/>
@@ -71,12 +81,14 @@
                     <constraint firstItem="ffp-t4-7L0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fsk-iB-bZT"/>
                     <constraint firstItem="R5J-GG-Z5x" firstAttribute="centerY" secondItem="ffp-t4-7L0" secondAttribute="centerY" id="Hkp-8y-ccb"/>
                     <constraint firstItem="HEJ-Bh-r2A" firstAttribute="leading" secondItem="R5J-GG-Z5x" secondAttribute="trailing" constant="15" id="N6R-Ct-Z14"/>
-                    <constraint firstItem="52k-if-YoQ" firstAttribute="top" secondItem="R5J-GG-Z5x" secondAttribute="top" constant="18" id="Nfs-MH-oEH"/>
+                    <constraint firstItem="52k-if-YoQ" firstAttribute="top" secondItem="R5J-GG-Z5x" secondAttribute="top" id="Nfs-MH-oEH"/>
                     <constraint firstItem="R5J-GG-Z5x" firstAttribute="height" secondItem="ffp-t4-7L0" secondAttribute="height" id="dH6-IA-Qxw"/>
                     <constraint firstItem="R5J-GG-Z5x" firstAttribute="width" secondItem="ffp-t4-7L0" secondAttribute="width" id="exH-Mg-sbx"/>
                     <constraint firstItem="be9-M0-qZb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gt5-aZ-wkc"/>
                     <constraint firstAttribute="trailing" secondItem="be9-M0-qZb" secondAttribute="trailing" constant="22" id="nMS-bg-Rgi"/>
                     <constraint firstItem="HEJ-Bh-r2A" firstAttribute="top" secondItem="52k-if-YoQ" secondAttribute="bottom" id="vXy-r6-QSc"/>
+                    <constraint firstItem="9zg-6U-AdW" firstAttribute="leading" secondItem="52k-if-YoQ" secondAttribute="leading" id="yXk-sw-CJV"/>
+                    <constraint firstItem="9zg-6U-AdW" firstAttribute="bottom" secondItem="R5J-GG-Z5x" secondAttribute="bottom" id="ytM-rS-B2M"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -84,7 +96,9 @@
                 <outlet property="exerCategoryLabel" destination="R5J-GG-Z5x" id="RQ2-Go-5Mi"/>
                 <outlet property="exerDiscLabel" destination="HEJ-Bh-r2A" id="H8r-Lc-enV"/>
                 <outlet property="exerImageView" destination="ffp-t4-7L0" id="u6I-vf-824"/>
+                <outlet property="exerTimeLabel" destination="9zg-6U-AdW" id="BKK-P9-WXP"/>
                 <outlet property="exerTitleLabel" destination="52k-if-YoQ" id="3km-9n-xY1"/>
+                <outlet property="likeButton" destination="be9-M0-qZb" id="WiG-oI-iah"/>
             </connections>
             <point key="canvasLocation" x="32" y="54"/>
         </tableViewCell>

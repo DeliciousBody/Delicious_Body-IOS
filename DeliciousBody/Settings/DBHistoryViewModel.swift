@@ -19,7 +19,7 @@ class HistoryViewModelItem {
 }
 
 class HistroyViewModel: NSObject {
-    var item = HistoryViewModelItem(exercises: [Exercise(),Exercise(),Exercise(),Exercise(),Exercise()])
+    var item = HistoryViewModelItem(exercises: [])
     var handler: ((Exercise) -> Void)?
     
     override init() {

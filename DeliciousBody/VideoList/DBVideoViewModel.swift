@@ -14,7 +14,7 @@ class VideoViewModel: NSObject {
     var allItems: [Exercise] = []
     var likeItems:  [Exercise] = []
     var handler: ((Exercise) -> Void)?
-    
+    var likeHandler: ((Int) -> ())?
     override init() {
         super.init()
     }
@@ -29,8 +29,10 @@ extension VideoViewModel: UITableViewDataSource, UITableViewDelegate {
         let option = tableView.tag
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerCell", for: indexPath) as! DBExerCell
         let item = option == 0 ? allItems[indexPath.row] : likeItems[indexPath.row]
-        cell.exerTitleLabel.text = item.video_name
-        cell.exerImageView.kf.setImage(with: URL(string: item.video_thumbnail!))
+        cell.configure(exer: item)
+        cell.likeHandler = { id in
+            self.likeHandler?(id)
+        }
         return cell
     }
     

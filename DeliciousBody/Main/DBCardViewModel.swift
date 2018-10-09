@@ -8,50 +8,30 @@
 import UIKit
 import Foundation
 struct Exercise {
-    var video_id: Int?
-    var video_name: String?
+    var video_id: Int
+    var video_name: String
     var level: Int?
-    var part1: Bool?
-    var part2: Bool?
-    var part3: Bool?
-    var part4: Bool?
-    var part5: Bool?
-    var part6: Bool?
-    var part7: Bool?
-    var part8: Bool?
-    var time: Int?
-    var description: String?
-    var video_url: String?
-    var video_file: String?
-    var video_thumbnail: String?
-    var created_at: String?
-    var updated_at: String?
-    var with_list: String?
-    
-    init() {
-        video_name = "ex"
-    }
+    var main_part: Int
+    var sub_part: Int
+    var time: Int
+    var description: String
+    var video_url: String
+    var video_file: String
+    var video_thumbnail: String
+    var with_list: Int?
     
     init(withDic dic: [String : Any]) {
-        video_id = dic["video_id"] as? Int
-        video_name = dic["video_name"] as? String
+        video_id = dic["video_id"] as! Int
+        video_name = dic["video_name"] as! String
         level = dic["level"] as? Int
-        part1 = dic["part1"] as? Bool
-        part2 = dic["part2"] as? Bool
-        part3 = dic["part3"] as? Bool
-        part4 = dic["part4"] as? Bool
-        part5 = dic["part5"] as? Bool
-        part6 = dic["part6"] as? Bool
-        part7 = dic["part7"] as? Bool
-        part8 = dic["part8"] as? Bool
-        time = dic["time"] as? Int
-        description = dic["description"] as? String
-        video_url = dic["video_url"] as? String
-        video_file = dic["video_file"] as? String
-        video_thumbnail = dic["video_thumbnail"] as? String
-        created_at = dic["created_at"] as? String
-        updated_at = dic["updated_at"] as? String
-        with_list = dic["with_list"] as? String
+        main_part = dic["main_part"] as! Int
+        sub_part = dic["sub_part"] as! Int
+        time = dic["time"] as! Int
+        description = dic["description"] as! String
+        video_url = dic["video_url"] as! String
+        video_file = dic["video_file"] as! String
+        video_thumbnail = dic["video_thumbnail"] as! String
+        with_list = dic["with_list"] as? Int
     }
 }
 
@@ -60,18 +40,23 @@ class CardViewModelItem {
     var time: Int
     var list_image: String
     
+    
     var opened = false
     
     var rowCount: Int {
         return exercises.count
     }
-    var exercises: [Exercise]
+    var exercises: [Exercise] = []
     init(withDic dic: [String : Any]) {
         self.list_name = dic["list_name"] as! String
         self.time = dic["time"] as! Int
         self.list_image = dic["list_image"] as! String
-        exercises = [Exercise()]
-//        for data in
+        
+        let count = dic["list_count"] as! Int
+        let list = dic["video_list"] as! [String : Any]
+        for i in 1 ... count {
+            exercises.append(Exercise(withDic: list["video\(i)"] as! [String : Any]))
+        }
     }
 }
 
@@ -98,8 +83,7 @@ extension CardViewModel: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[tableView.tag]
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerCell", for: indexPath) as! DBExerCell
-//        let exercise = item.exercises[indexPath.row]
-//        cell.textLabel?.text = exercise.name
+        cell.configure(exer: item.exercises[indexPath.row])
         return cell
     }
     

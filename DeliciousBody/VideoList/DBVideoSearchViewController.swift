@@ -65,7 +65,7 @@ extension DBVideoSearchViewController: UITextFieldDelegate {
         guard let text = sender.text else { return }
         keywordLabel.text = text
         result = allList.filter({ (exer) -> Bool in
-            exer.video_name!.contains(text)
+            exer.video_name.contains(text)
         })
     }
     
@@ -90,8 +90,7 @@ extension DBVideoSearchViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerCell", for: indexPath) as! DBExerCell
         let item = result[indexPath.row]
-        cell.exerTitleLabel.text = item.video_name
-        cell.exerImageView.kf.setImage(with: URL(string: item.video_thumbnail!))
+        cell.configure(exer: item)
         return cell
     }
     

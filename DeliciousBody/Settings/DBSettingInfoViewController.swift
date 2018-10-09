@@ -95,6 +95,16 @@ extension DBSettingInfoViewController: UITableViewDataSource, UITableViewDelegat
                 }))
                 alert.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
                 self.present(alert, animated: true)
+            } else {
+                let alert = UIAlertController(title: "탈퇴", message: "계정을 탈퇴하시겠습니까?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: {action in
+                    DBNetworking.deleteUserInfo(completion: { (result) in
+                        User.removeSavedUser()
+                        self.performSegue(withIdentifier: "Join", sender: nil)
+                    })
+                }))
+                alert.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
         }
     }

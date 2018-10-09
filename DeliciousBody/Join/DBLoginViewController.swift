@@ -80,7 +80,7 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                     self.pwTextField.innerTextField.errorMessage = " "
                 }
             } else {
-                self.emailTextField.innerTextField.errorMessage = "로그인 시도 중 오류가 발생하였습니다."
+                self.emailTextField.innerTextField.errorMessage = "로그인에 실패하였습니다."
                 self.pwTextField.innerTextField.errorMessage = " "
                 sender.shake()
             }

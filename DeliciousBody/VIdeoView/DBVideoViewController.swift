@@ -20,13 +20,14 @@ class DBVideoViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var likeButton: DBButton!
     
     @IBOutlet weak var descLabel: UITextViewFixed!
     @IBOutlet var tableView: UITableView!
     var isPlaying: Bool = false {
         didSet {
             if isPlaying {
-                player.playFromBeginning()
+                player.playFromCurrentTime()
                 self.playButton.isSelected = self.isPlaying
                 showPlayButton(isShow: false)
             } else {
@@ -74,8 +75,7 @@ class DBVideoViewController: UIViewController {
         player.playerDelegate = self
         player.playbackDelegate = self
         
-        if let path = exer.video_file,
-            let url = URL(string: path) {
+        if let url = URL(string: exer.video_file) {
             player.url = url
         }
         
@@ -93,8 +93,9 @@ class DBVideoViewController: UIViewController {
     
     func setUI() {
         tableView.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")
-        guard let exer = exercise else { return }
+        guard let exer = exercise, let me = User.me else { return }
         titleLabel.text = exer.video_name
+        likeButton.isSelected = me.isFavoriteVideo(id: exer.video_id)
     }
     
     func showPlayButton(isShow: Bool, completion: (() -> Void)? = nil) {
@@ -136,11 +137,24 @@ extension DBVideoViewController: PlayerDelegate, PlayerPlaybackDelegate {
     }
     
     @IBAction func togetherButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        if let url = exercise?.video_url {
+            UIApplication.shared.open(URL(string: "\(url)")!, options: [:], completionHandler: nil)
+        }
     }
      
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func likeButtonPressed(_ sender: UIButton) {
+        if let me = User.me, let exer = exercise {
+            me.setFavoriteVideo(id: exer.video_id, isLike: !sender.isSelected)
+            DBNetworking.updateUserInfo(params: ["favorite_list" : me.favorite_list ?? []]) { (result) in
+                if result == 200 {
+                    me.save()
+                }
+            }
+        }
     }
     
     @objc func playerTouched() {
@@ -190,7 +204,8 @@ extension DBVideoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath) as! DBDescCell
+            cell.descTextView.text = exercise?.description
             return cell
             
         } else {

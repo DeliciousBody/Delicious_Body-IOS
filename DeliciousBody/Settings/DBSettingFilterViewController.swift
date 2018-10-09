@@ -23,7 +23,7 @@ class DBSettingFilterViewController: DBViewController {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .default
         if let me = User.me {
-            let list = me.interested_part?.split(separator: ";").flatMap{Int($0)} ?? []
+            let list = me.interested_part?.split(separator: ";").compactMap{Int($0)} ?? []
             bodyView.setSelected(types: list)
         }
     }

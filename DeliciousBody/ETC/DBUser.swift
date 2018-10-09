@@ -36,6 +36,10 @@ open class User : NSObject {
     open var weekend_start: Int = 8
     open var weekend_end: Int = 22
     
+    var favorite_array: [Int] {
+        return favorite_list == nil ? [] : favorite_list!.split(separator: ";").compactMap({Int($0)})
+    }
+    
     public convenience override init() {
         self.init(withDic:  ["token" : "sampleTOKEN" as AnyObject] )
     }
@@ -59,6 +63,24 @@ open class User : NSObject {
         is_push_weekend = dic["is_push_weekend"] as? Bool ?? true
         is_subscription = dic["is_subscription"] as? Bool
         token = dic["token"] as? String
+    }
+    
+    func setFavoriteVideo(id: Int, isLike: Bool) {
+        var arr = favorite_array
+        if isLike {
+            if !arr.contains(id) {
+                arr.append(id)
+            }
+        } else {
+            if arr.contains(id), let index = arr.index(of: id){
+                arr.remove(at: index)
+            }
+        }
+        favorite_list = arr.map{"\($0)"}.joined(separator: ";")
+    }
+    
+    func isFavoriteVideo(id: Int) -> Bool {
+        return favorite_array.contains(id)
     }
     
     func save() {

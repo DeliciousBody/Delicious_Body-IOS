@@ -36,15 +36,27 @@ class DBVideoListViewController: UIViewController {
         self.navigationController?.delegate = self
         setupTableView()
         setupUI()
+        
         DBNetworking.getVideoList() { (result, exercises) in
             self.tableViewModel.allItems = exercises
-            self.tableViewAll.reloadData()
+            self.reloadTableViewData()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
+        self.reloadTableViewData()
+    }
+    
+    func reloadTableViewData() {
+        if let me = User.me {
+            self.tableViewModel.likeItems = self.tableViewModel.allItems.filter({ (exer) -> Bool in
+                return me.isFavoriteVideo(id: exer.video_id)
+            })
+            self.tableViewLike.reloadData()
+            self.tableViewAll.reloadData()
+        }
     }
     
     func setupTableView(){
@@ -60,6 +72,11 @@ class DBVideoListViewController: UIViewController {
             let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBVideoViewController") as! DBVideoViewController
             mainViewController.exercise = exercise
             self.present(mainViewController, animated: true, completion: nil)
+        }
+        if let me = User.me{
+            tableViewModel.likeHandler = { id in
+                self.reloadTableViewData()
+            }
         }
     }
     

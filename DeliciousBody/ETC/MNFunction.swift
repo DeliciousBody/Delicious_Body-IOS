@@ -94,6 +94,20 @@ extension UIStoryboard {
     }
 }
 
+func secToString(sec: Int) -> String{
+    var str = ""
+    let min = (sec % 3600) / 60
+    let sec = (sec % 3600) % 60
+    if min != 0 {
+        str.append("\(min)분")
+    }
+    if sec != 0 {
+        str.append(" \(sec)초")
+    }
+    
+    return str
+}
+
 extension String {
     func toInt()->Int? {
         return Int(self)

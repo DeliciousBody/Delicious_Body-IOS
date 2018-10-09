@@ -26,7 +26,7 @@ class DBMainViewController: UIViewController {
     
     var titleLabel = UILabel()
     
-    let imageView = DBProfileImageView(image: UIImage(named: "sample"))
+    let imageView = DBProfileImageView(image: UIImage(named: "profile"))
     var snapShot = UIView()
     var nameSnapShot = UIView()
     var originFrame = CGRect()
@@ -137,11 +137,14 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if !tableViewModel.items[indexPath.section].opened {
+        let item = tableViewModel.items[indexPath.section]
+        if !item.opened {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DBMainCardCell
+            cell.configure(item: item)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! DBMainCardExtendCell
+            cell.configure(item: item)
             cell.tableView.tag = indexPath.section
             cell.tableView.dataSource = tableViewModel
             cell.tableView.delegate = tableViewModel
@@ -153,13 +156,7 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-//
-//            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: .curveEaseOut, animations: {
-//                    self.tableView.contentOffset.y += 30
-//
-//            }, completion: nil)
-//
-//            return
+
         }
         tableViewModel.items[indexPath.section].opened = !tableViewModel.items[indexPath.section].opened
         
