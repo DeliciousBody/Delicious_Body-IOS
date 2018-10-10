@@ -10,10 +10,13 @@ import UIKit
 
 class DBJoin3ViewController: UIViewController {
 
+    @IBOutlet weak var bodyView: DBBodyView!
+    var filter: [BodyType] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        bodyView.handler = { filter in
+            self.filter = filter
+        }
     }
 
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -30,5 +33,13 @@ class DBJoin3ViewController: UIViewController {
             vc.contentString = kJoinTitles[segue.identifier!]
         }
     }
-
+    @IBAction func confirmButtonPressed(_ sender: Any) {
+        if let me = User.me {
+            let data = filter.map{"\($0.rawValue)"}.joined(separator: ";")
+            me.interested_part = data
+        }
+        performSegue(withIdentifier: "next", sender: nil)
+        
+    }
+    
 }

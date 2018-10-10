@@ -18,9 +18,11 @@ let kJoinTitles = ["join2":"맞춤 운동을 추천받으시려면\n저에게 �
 let kJoinDescStrings = ["이동시간 이외의 활동량이 거의 없으며\n같은 자세로 오래 계시는분", "약간의 신체활동은 있으나 주기적인\n운동은 안하시는 분", "오래 서 계시거나, 반복적인 신체활동을\n해야하는 일을 하시는분"]
 let kDidLogoutNotification = "kDidLogoutNotification"
 enum BodyType: Int {
-    case neck = 1, chest, abdomen, thigh, calf, arm, back, hip
+    case body = 0, neck, chest, abdomen, thigh, calf, arm, back, hip
     func description() -> String {
         switch self {
+        case .body:
+            return "전신"
         case .neck:
             return "어깨, 목"
         case .chest:
@@ -37,6 +39,31 @@ enum BodyType: Int {
             return "등"
         case .hip:
             return "엉덩이"
+        }
+    }
+    
+    static func getString(option: Int) -> String {
+        switch option {
+        case 0:
+            return "전신"
+        case 1:
+            return "어깨, 목"
+        case 2:
+            return "가슴"
+        case 3:
+            return "복부, 허리"
+        case 4:
+            return "허벅지, 무릎"
+        case 5:
+            return "종아리, 발목"
+        case 6:
+            return "손목, 팔"
+        case 7:
+            return "등"
+        case 8:
+            return "엉덩이"
+        default:
+            return ""
         }
     }
 }

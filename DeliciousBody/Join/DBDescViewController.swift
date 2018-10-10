@@ -17,7 +17,7 @@ class DBDescViewController: DBViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
-        titleLabel.text = option == 0 ? "개인 정보 정책" : "이용 약관"
-        textView.text = option == 0 ? kPrivateDesc : kUseDesc
+        titleLabel.text = option == 0 ? "개인 정보 보호 방침" : "이용 약관"
+        textView.attributedText = option == 0 ? kPrivateDesc : kUserDesc
     }
 }

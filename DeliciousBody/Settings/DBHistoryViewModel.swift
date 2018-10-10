@@ -24,6 +24,7 @@ class HistroyViewModel: NSObject {
     
     override init() {
         super.init()
+        item.exercises = [Exercise(),Exercise(),Exercise(),Exercise(),Exercise()]
     }
 }
 

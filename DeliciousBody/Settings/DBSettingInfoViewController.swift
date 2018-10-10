@@ -9,12 +9,14 @@
 import UIKit
 
 class DBSettingInfoViewController: DBViewController {
-    let data: [[SettingOption]] = [[.email, .passwd], [.version, .useDesc, .pSetting, .pDesc], [.logout, .signOut]]
+    var data: [[SettingOption]] = [[.email, .passwd], [.version, .useDesc, .pDesc], [.logout, .signOut]]
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let me = User.me, me.id == "카카오톡" {
+            data[0].remove(at: 1)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +43,10 @@ class DBSettingInfoViewController: DBViewController {
             let vc = segue.destination as! DBSettingDescViewController
             if sender as! Int == 0 {
                 vc.title = "이용약관"
-                vc.descript = kUseDesc
+                vc.descript = kUserDesc
+            } else {
+                vc.title = "개인 정보 보호 방침"
+                vc.descript = kPrivateDesc
             }
         }
     }
@@ -77,35 +82,29 @@ extension DBSettingInfoViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = indexPath.section
         let row = indexPath.row
-        
-        if section == 0 {
-            
-        } else if section == 1 {
-            if row == 1 {
-                self.performSegue(withIdentifier: "desc", sender: 0)
-            }
-        } else {
-            if row == 0 {
-                let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: {action in
-                    DBNetworking.logout(completion: { (result) in
-                        User.removeSavedUser()
-                        self.performSegue(withIdentifier: "Join", sender: nil)
-                    })
-                }))
-                alert.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
-            } else {
-                let alert = UIAlertController(title: "탈퇴", message: "계정을 탈퇴하시겠습니까?", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: {action in
-                    DBNetworking.deleteUserInfo(completion: { (result) in
-                        User.removeSavedUser()
-                        self.performSegue(withIdentifier: "Join", sender: nil)
-                    })
-                }))
-                alert.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
-            }
+        switch data[section][row] {
+        case .passwd:
+            self.performSegue(withIdentifier: "password", sender: nil)
+        case .version:
+            self.performSegue(withIdentifier: "version", sender: nil)
+        case .useDesc:
+            self.performSegue(withIdentifier: "desc", sender: 0)
+        case .pDesc:
+            self.performSegue(withIdentifier: "desc", sender: 1)
+        case .logout:
+            let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: {action in
+                DBNetworking.logout(completion: { (result) in
+                    User.removeSavedUser()
+                    self.performSegue(withIdentifier: "Join", sender: nil)
+                })
+            }))
+            alert.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        case .signOut:
+            self.performSegue(withIdentifier: "signout", sender: nil)
+        default:
+            return
         }
     }
 }

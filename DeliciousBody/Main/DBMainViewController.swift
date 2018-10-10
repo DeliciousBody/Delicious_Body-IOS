@@ -39,7 +39,8 @@ class DBMainViewController: UIViewController {
             let index = IndexPath(row: 0, section: indexPath.section)
             let cell = tableView.cellForRow(at: index) as! DBMainCardExtendCell
             let cellFrame = tableView.rectForRow(at: index)
-            self.originFrame = CGRect(x: 20, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
+            
+            self.originFrame = CGRect(x: (SCREEN_WIDTH - 335) / 2, y: cellFrame.origin.y - tableView.contentOffset.y + 10, width: 335, height: cellFrame.height - 20)
             self.snapShot = cell.tableView.takeSnapshot()
             self.nameSnapShot = cell.nameLabel.takeSnapshot()
             self.selectedImage = cell.thumbnailView.image ?? UIImage()
@@ -169,7 +170,7 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
         if tableViewModel.items[indexPath.section].opened {
             var height = cardHeight
             height += CGFloat(tableViewModel.items[indexPath.section].rowCount) * subCellHeight
-            height += closeHeight + 20
+            height += closeHeight + 20 + 20
             return height
         } else {
             return cardHeight + 20

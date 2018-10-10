@@ -85,6 +85,20 @@ class DBNetworking: NSObject {
         
     }
     
+    static func editPassword(password1: String, password2: String, password3: String, completion:@escaping (_ result: Int) -> Void) {
+        
+        let url = "\(kBaseURL)rest-auth/password/change/"
+        let params = ["old_password" : password1,
+                      "new_password1" : password2,
+                      "new_password2" : password3]
+        let headers = User.me?.httpHeaders()
+        
+        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            completion(status)
+        }
+    }
+    
     static func getUserInfo(token: String? = nil, completion:@escaping (_ result: Int, _ user: User?) -> Void) {
         let url = "\(kBaseURL)userinfo/"
         var headers: HTTPHeaders?
@@ -170,7 +184,7 @@ class DBNetworking: NSObject {
     }
     
     static func getVideoList(byListID id: Int, completion:@escaping (_ result: Int, _ exercises: [Exercise]) -> Void) {
-        let url = "\(kBaseURL)videolist/\(id)"
+        let url = "\(kBaseURL)videolist/\(id)/"
         let headers: HTTPHeaders? = User.me?.httpHeaders()
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
@@ -209,6 +223,25 @@ class DBNetworking: NSObject {
                 }
             case .failure:
                 completion(status, [])
+            }
+        }
+    }
+    
+    static func getVersion(completion:@escaping (_ result: Int, _ version: String?) -> Void) {
+        let url = "\(kBaseURL)version/"
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            switch response.result {
+            case .success:
+                if let json = response.result.value as? [String : Any],
+                    let version = json["version"] as? String {
+                    completion(status, version)
+                } else {
+                    completion(status, nil)
+                }
+            case .failure:
+                completion(status, nil)
             }
         }
     }

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -127,20 +128,20 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="fTV-hj-ReW" id="01m-2l-EOz"/>
-                                    <segue destination="I0j-pi-RGW" kind="show" id="TOU-y7-jhA"/>
+                                    <segue destination="I0j-pi-RGW" kind="show" identifier="filter" id="TOU-y7-jhA"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="allButton" destination="hGn-wP-3nn" id="wBo-fb-RAO"/>
+                        <outlet property="filterBarButton" destination="6qT-ib-TVr" id="mgi-k7-3s5"/>
                         <outlet property="likeButton" destination="2jj-cD-VYx" id="8FR-KL-Au7"/>
                         <outlet property="scrollView" destination="67S-nf-xYx" id="u4P-nK-hWY"/>
                         <outlet property="tabbarView" destination="EFT-Sq-rmx" id="O2N-48-mIO"/>
                         <outlet property="tableViewAll" destination="hA3-EM-ZAV" id="mFj-ai-152"/>
                         <outlet property="tableViewLike" destination="WwX-aB-AQb" id="AOZ-VB-eLn"/>
                         <segue destination="sVc-s4-OxW" kind="show" identifier="search" id="lJs-1E-GjF"/>
-                        <segue destination="I0j-pi-RGW" kind="show" id="p3v-Qe-dOL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1He-Kb-fL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -387,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e41-dn-cpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168.8" y="869.41529235382313"/>
+            <point key="canvasLocation" x="1169" y="1037"/>
         </scene>
         <!--Video-->
         <scene sceneID="9Ki-dV-xeV">
@@ -430,7 +431,4 @@
         <image name="tabbar_video_selected" width="26" height="26"/>
         <image name="tabbar_video_unselected" width="26" height="26"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="TOU-y7-jhA"/>
-    </inferredMetricsTieBreakers>
 </document>

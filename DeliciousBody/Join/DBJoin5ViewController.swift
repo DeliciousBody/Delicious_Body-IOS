@@ -28,7 +28,9 @@ class DBJoin5ViewController: DBViewController {
     @IBAction func confirmButtonPressed(_ sender: Any) {
         guard let me = User.me else { return }
         me.slogan = inputTextField.text ?? "Workout hard Play hard!"
+        DBIndicator.shared.show()
         DBNetworking.updateUserInfo(params: me.toJSON()) { (result) in
+            DBIndicator.shared.stop()
             if result == 200 {
                 User.me?.save()
                 

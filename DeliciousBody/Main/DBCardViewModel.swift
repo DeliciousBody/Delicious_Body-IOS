@@ -20,6 +20,36 @@ struct Exercise {
     var video_thumbnail: String
     var with_list: Int?
     
+    
+    init() {
+        video_id = 1
+        video_name = "Sample"
+        main_part = 1
+        sub_part = 1
+        time = 1
+        description = "sample"
+        video_url = ""
+        video_file = ""
+        video_thumbnail = ""
+    }
+    
+    var main_partString: String {
+        return BodyType(rawValue: main_part)?.description() ?? ""
+    }
+    
+    var levelString: String {
+        switch self.level {
+        case 1:
+            return "초급"
+        case 2:
+            return "중급"
+        case 3:
+            return "고급"
+        default:
+            return ""
+        }
+    }
+    
     init(withDic dic: [String : Any]) {
         video_id = dic["video_id"] as! Int
         video_name = dic["video_name"] as! String
@@ -51,11 +81,9 @@ class CardViewModelItem {
         self.list_name = dic["list_name"] as! String
         self.time = dic["time"] as! Int
         self.list_image = dic["list_image"] as! String
-        
-        let count = dic["list_count"] as! Int
-        let list = dic["video_list"] as! [String : Any]
-        for i in 1 ... count {
-            exercises.append(Exercise(withDic: list["video\(i)"] as! [String : Any]))
+        let list = dic["video_list"] as! [[String : Any]]
+        for dict in list{
+            exercises.append(Exercise(withDic: dict))
         }
     }
 }

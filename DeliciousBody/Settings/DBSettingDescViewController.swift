@@ -11,10 +11,10 @@ import UIKit
 class DBSettingDescViewController: DBViewController {
 
     @IBOutlet weak var textView: UITextView!
-    var descript: String = ""
+    var descript: NSMutableAttributedString!
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = descript
+        textView.attributedText = descript
         // Do any additional setup after loading the view.
     }
     

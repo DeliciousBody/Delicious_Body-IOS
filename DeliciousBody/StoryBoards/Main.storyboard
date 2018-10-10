@@ -4,7 +4,9 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,10 +18,25 @@
                     <view key="view" contentMode="scaleToFill" id="eAg-69-Zmb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzg-7U-KVV">
+                                <rect key="frame" x="112" y="280" width="150" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3yT-Kj-Sml"/>
+                                    <constraint firstAttribute="width" constant="150" id="NIW-M0-yYE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kzg-7U-KVV" firstAttribute="centerX" secondItem="eAg-69-Zmb" secondAttribute="centerX" id="F3j-AF-6Lo"/>
+                            <constraint firstItem="Kzg-7U-KVV" firstAttribute="centerY" secondItem="eAg-69-Zmb" secondAttribute="centerY" multiplier="0.9" id="f6M-f0-v4S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2bg-NP-KaM"/>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="Kzg-7U-KVV" id="EaD-2h-5Ny"/>
                         <segue destination="w5N-ig-gwW" kind="show" identifier="Main" animates="NO" id="GfK-VV-6Ib"/>
                         <segue destination="JNC-gG-3aI" kind="show" identifier="Login" animates="NO" id="1v6-ht-ZyP"/>
                     </connections>
@@ -43,7 +60,6 @@
                         <segue destination="gxY-aJ-F8H" kind="relationship" relationship="viewControllers" id="9Wv-UQ-TZK"/>
                         <segue destination="gB8-r3-4aE" kind="relationship" relationship="viewControllers" id="LiJ-H1-eGV"/>
                         <segue destination="QhK-He-0pt" kind="relationship" relationship="viewControllers" id="X25-lX-a2d"/>
-                        <segue destination="R5m-g6-V1a" kind="relationship" relationship="viewControllers" id="jHy-01-Mje"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHC-57-tsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -87,16 +103,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdM-8I-cyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-246" y="44"/>
-        </scene>
-        <!--Sample-->
-        <scene sceneID="uv1-Gs-8Hh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Sample" id="R5m-g6-V1a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fz9-wS-aEN"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dsq-N0-qcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-239" y="98"/>
         </scene>
         <!--Setting-->
         <scene sceneID="MYH-9L-gtt">

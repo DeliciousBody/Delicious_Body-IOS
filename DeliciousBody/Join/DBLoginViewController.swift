@@ -59,8 +59,9 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
             sender.shake()
             return
         }
-            
+        DBIndicator.shared.show()
         DBNetworking.login(email, password: password) { (result, token) in
+            DBIndicator.shared.stop()
             if result == 200 {
                 if let JWTtoken = token {
                     DBNetworking.getUserInfo(token: JWTtoken, completion: { (result, user) in
@@ -94,7 +95,9 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                 let token = KOSession.shared().token.accessToken
                 DBNetworking.kakaologin(token, completion: { (result, token) in
                     if let jwtToken = token {
+                        DBIndicator.shared.show()
                         DBNetworking.getUserInfo(token: jwtToken, completion: { (result, user) in
+                            DBIndicator.shared.stop()
                             guard result == 200 else {
                                 self.showAlert(title: "오류", content: "로그인에 실패하였습니다.")
                                 return

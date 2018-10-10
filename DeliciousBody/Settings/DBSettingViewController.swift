@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class DBSettingViewController: UIViewController {
+class DBSettingViewController: DBViewController {
     
     var sampleData: [(BodyType, Int)] = []
     var max = 20
@@ -24,10 +24,13 @@ class DBSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-        sampleData = [(.neck, 20), (.chest, 18), (.abdomen, 14), (.thigh, 3), (.calf, 10), (.arm, 6), (.back, 16), (.hip, 10)]
+        sampleData = [(.neck, 20), (.chest, 18), (.abdomen, 14), (.thigh, 3), (.calf, 10), (.arm, 6), (.back, 16), (.hip, 10), (.body, 10)]
         
         historyCollectionView.dataSource = historyViewModel
         historyCollectionView.delegate = historyViewModel
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
     }
     

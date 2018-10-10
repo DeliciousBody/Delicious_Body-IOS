@@ -35,6 +35,7 @@ class DBExerCell: UITableViewCell {
         exerTitleLabel.text = exer.video_name
         exerTimeLabel.text = secToString(sec: exer.time)
         videoID = exer.video_id
+        exerDiscLabel.text = "\(exer.main_partString) | \(exer.levelString)"
         if let me = User.me {
             likeButton.isSelected = me.isFavoriteVideo(id: exer.video_id)
         }

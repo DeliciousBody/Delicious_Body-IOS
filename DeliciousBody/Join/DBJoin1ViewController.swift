@@ -181,27 +181,27 @@ class DBJoin1ViewController: DBViewController, UITextFieldDelegate{
         
         let user = User()
         user.name = nameTextField.text
+        user.is_subscription = self.isChecked
         User.me = user
         
         if let email = emailTextField.text,
             let passwd = passwdTextField.text {
-            
+            DBIndicator.shared.show()
             DBNetworking.register(email, password: passwd) { (result, data) in
                 if result == 201, let token = data{
                     user.token = token
                     user.id = email
                     user.save()
-                    DBNetworking.updateUserInfo(params:
-                        ["name" : user.name!,
-                         "is_subscription" : self.isChecked
-                        ],
-                                                completion: { (result) in
-                                                    if result == 200 {
-                                                        self.performSegue(withIdentifier: "next", sender: nil)
-                                                    } else {
-                                                        self.showAlert(title: "오류", content: "로그인에 실패하였습니다.")
-                                                    }
+                    DBNetworking.createUserInfo(token: token, user: user, completion: { (result) in
+                        DBIndicator.shared.stop()
+                        if result == 201 {
+                            self.performSegue(withIdentifier: "next", sender: nil)
+                        } else {
+                            self.showAlert(title: "오류", content: "로그인에 실패하였습니다.")
+                        }
                     })
+                } else {
+                    DBIndicator.shared.stop()
                 }
             }
             

@@ -11,6 +11,7 @@ import UIKit
 class DBVideoListViewController: UIViewController {
     var tableViewModel = VideoViewModel()
     
+    @IBOutlet weak var filterBarButton: UIBarButtonItem!
     @IBOutlet var tableViewAll: UITableView!
     @IBOutlet var tableViewLike: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -31,6 +32,17 @@ class DBVideoListViewController: UIViewController {
         }
     }
     
+    var exercises: [Exercise] = []
+    var filter: [BodyType] = [] {
+        didSet {
+            if filter.count == 0 {
+                filterBarButton.image = UIImage(named: "barbutton_filter")
+            } else {
+                filterBarButton.image = UIImage(named: "barbutton_filter_selected")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.delegate = self
@@ -38,6 +50,7 @@ class DBVideoListViewController: UIViewController {
         setupUI()
         
         DBNetworking.getVideoList() { (result, exercises) in
+            self.exercises = exercises
             self.tableViewModel.allItems = exercises
             self.reloadTableViewData()
         }
@@ -51,7 +64,7 @@ class DBVideoListViewController: UIViewController {
     
     func reloadTableViewData() {
         if let me = User.me {
-            self.tableViewModel.likeItems = self.tableViewModel.allItems.filter({ (exer) -> Bool in
+            self.tableViewModel.likeItems = exercises.filter({ (exer) -> Bool in
                 return me.isFavoriteVideo(id: exer.video_id)
             })
             self.tableViewLike.reloadData()
@@ -97,6 +110,19 @@ class DBVideoListViewController: UIViewController {
         if segue.identifier == "search" {
             let vc = segue.destination as! DBVideoSearchViewController
             vc.allList = tableViewModel.allItems
+        } else if segue.identifier == "filter" {
+            let vc = segue.destination as! DBVideoFilterViewController
+            vc.filter = filter
+            vc.filterHandler = { filter in
+                self.filter = filter
+                let filterInt = filter.map{ $0.rawValue }
+                if filterInt.count == 0 {
+                    self.tableViewModel.allItems = self.exercises
+                } else {
+                    self.tableViewModel.allItems = self.exercises.filter({ return filterInt.contains($0.main_part) || filterInt.contains($0.sub_part)})
+                }
+                self.tableViewAll.reloadData()
+            }
         }
     }
     @IBAction func acitoin(_ sender: UIButton) {

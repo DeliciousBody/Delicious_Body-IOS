@@ -101,7 +101,7 @@ class DBGuideViewController: DBViewController {
     
     func setupGuideView() {
         
-        let imageArr: [UIImage] = [#imageLiteral(resourceName: "guide1"),#imageLiteral(resourceName: "guide2"),#imageLiteral(resourceName: "guide3"),#imageLiteral(resourceName: "guide4"),#imageLiteral(resourceName: "guide5")]
+        let imageArr: [UIImage] = [#imageLiteral(resourceName: "guide1"),#imageLiteral(resourceName: "guide4"),#imageLiteral(resourceName: "guide3"),#imageLiteral(resourceName: "guide2"),#imageLiteral(resourceName: "guide5")]
         for i in 0...4 {
             let imageView = UIImageView(frame: CGRect(x: i == 0 ? 0 : SCREEN_WIDTH, y: guideImageY, width: SCREEN_WIDTH, height: guideImageHeight))
             imageView.alpha = i == 0 ? 1 : 0

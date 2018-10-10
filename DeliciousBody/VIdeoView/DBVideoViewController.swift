@@ -42,6 +42,7 @@ class DBVideoViewController: UIViewController {
     var player: Player!
     
     var exercise: Exercise?
+    var withList: [Exercise]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +62,7 @@ class DBVideoViewController: UIViewController {
         super.viewDidAppear(animated)
         setNaviBar(isShow: true)
         setUI()
+        setData()
     }
     
     func setNaviBar(isShow: Bool) {
@@ -75,11 +77,8 @@ class DBVideoViewController: UIViewController {
         player.playerDelegate = self
         player.playbackDelegate = self
         
-        if let url = URL(string: exer.video_file) {
-            player.url = url
-        }
-        
-        player.view.frame = videoView.bounds
+        player.view.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH * 9 / 16)
+        player.view.backgroundColor = UIColor.themeBlue84102255
         self.addChildViewController(player)
         
         videoView.addSubview(player.view)
@@ -96,6 +95,22 @@ class DBVideoViewController: UIViewController {
         guard let exer = exercise, let me = User.me else { return }
         titleLabel.text = exer.video_name
         likeButton.isSelected = me.isFavoriteVideo(id: exer.video_id)
+        subtitleLabel.text = "\(exer.main_partString) | \(exer.levelString)"
+    }
+    
+    func setData() {
+        if let exer = exercise, let withID = exer.with_list {
+            if let url = URL(string: exer.video_file) {
+                player.url = url
+            }
+            
+            DBNetworking.getVideoList(byListID: withID, completion: { (result, exercises) in
+                if result == 200 {
+                    self.withList = exercises
+                    self.tableView.reloadData()
+                }
+            })
+        }
     }
     
     func showPlayButton(isShow: Bool, completion: (() -> Void)? = nil) {
@@ -187,7 +202,7 @@ extension DBVideoViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 3
+            return withList?.count ?? 0
         default:
             return 0
         }
@@ -210,10 +225,19 @@ extension DBVideoViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "exerCell", for: indexPath) as! DBExerCell
-            cell.likeHandler = { num in
-                print(num)
+            if let list = withList {
+                cell.configure(exer: list[indexPath.row])
             }
+
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let list = withList{
+            exercise = list[indexPath.row]
+            setUI()
+            setData()
         }
     }
 }
