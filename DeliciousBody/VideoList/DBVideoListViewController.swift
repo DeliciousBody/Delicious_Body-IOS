@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DBVideoListViewController: UIViewController {
+class DBVideoListViewController: UIViewController, UIViewControllerTransitioningDelegate {
     var tableViewModel = VideoViewModel()
     
     @IBOutlet weak var filterBarButton: UIBarButtonItem!
@@ -20,6 +20,8 @@ class DBVideoListViewController: UIViewController {
     @IBOutlet weak var allButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     var tabbarLine = UIView()
+    
+    let interactor = Interactor()
     
     let kTabbarPadding: CGFloat = 23
     let kTabbarLineHeight: CGFloat = 2
@@ -81,10 +83,7 @@ class DBVideoListViewController: UIViewController {
         tableViewLike.dataSource = tableViewModel
         
         tableViewModel.handler = { exercise in
-            let storyBoard = UIStoryboard(name: "Home", bundle: nil)
-            let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBVideoViewController") as! DBVideoViewController
-            mainViewController.exercise = exercise
-            self.present(mainViewController, animated: true, completion: nil)
+            self.performSegue(withIdentifier: "video", sender: exercise)
         }
         if User.me != nil{
             tableViewModel.likeHandler = { id in
@@ -123,8 +122,22 @@ class DBVideoListViewController: UIViewController {
                 }
                 self.tableViewAll.reloadData()
             }
+        } else {
+            let vc = segue.destination as! DBVideoViewController
+            vc.exercise = sender as? Exercise
+            vc.transitioningDelegate = self
+            vc.interactor = interactor
         }
     }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissAnimator()
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+    
     @IBAction func acitoin(_ sender: UIButton) {
         guard sender.tag != option else {
             return

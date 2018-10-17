@@ -142,11 +142,20 @@
                         <outlet property="tableViewAll" destination="hA3-EM-ZAV" id="mFj-ai-152"/>
                         <outlet property="tableViewLike" destination="WwX-aB-AQb" id="AOZ-VB-eLn"/>
                         <segue destination="sVc-s4-OxW" kind="show" identifier="search" id="lJs-1E-GjF"/>
+                        <segue destination="tWX-yG-8tm" kind="presentation" identifier="video" id="UyM-ER-LH4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1He-Kb-fL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="480.80000000000001" y="215.44227886056973"/>
+        </scene>
+        <!--DBVideoViewController-->
+        <scene sceneID="MqV-TS-259">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="DBVideoViewController" id="tWX-yG-8tm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbx-td-4C4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="58"/>
         </scene>
         <!--운동 검색-->
         <scene sceneID="YrH-Bp-RpT">
@@ -314,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqV-hg-4ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168.8" y="214.54272863568218"/>
+            <point key="canvasLocation" x="1628" y="215"/>
         </scene>
         <!--필터-->
         <scene sceneID="BUc-d4-f8Y">

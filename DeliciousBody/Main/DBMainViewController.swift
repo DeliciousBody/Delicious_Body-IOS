@@ -32,6 +32,8 @@ class DBMainViewController: DBViewController {
     var originFrame = CGRect()
     var selectedImage = UIImage()
     
+    let interactor = Interactor()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewModel.handler = { indexPath, exercise in
@@ -45,7 +47,6 @@ class DBMainViewController: DBViewController {
             self.nameSnapShot = cell.nameLabel.takeSnapshot()
             self.selectedImage = cell.thumbnailView.image ?? UIImage()
             self.performSegue(withIdentifier: "pushVideo", sender: exercise)
-            
         }
         setupUI()
         
@@ -122,9 +123,10 @@ class DBMainViewController: DBViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationViewController = segue.destination as! DBVideoViewController
-        destinationViewController.transitioningDelegate = self
-        destinationViewController.exercise = sender as? Exercise
+        let vc = segue.destination as! DBVideoViewController
+        vc.transitioningDelegate = self
+        vc.exercise = sender as? Exercise
+        vc.interactor = interactor
     }
 }
 

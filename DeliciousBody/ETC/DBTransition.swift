@@ -139,8 +139,8 @@ class CardDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
             else { return }
         
         toVC.view.alpha = 1
-        containerView.addSubview(toVC.view)
-        
+        containerView.insertSubview(toVC.view, belowSubview: fromVC.view)
+
         fromVC.view.alpha = 0
         let shadowView = UIView(frame: fromVC.view.frame)
         shadowView.layer.applyMainShadow()
@@ -182,7 +182,6 @@ class CardDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 maskView.frame = self.originFrame
                 maskView.layer.cornerRadius = 15
                 imageV.frame = CGRect(x: 0, y: 0, width: self.originFrame.width, height: 180)
-                
                 self.tableViewSnap.frame.origin = CGPoint(x: 0, y: 180)
                 self.nameSnap.frame.origin = CGPoint(x: 16, y: 116)
             })
@@ -202,6 +201,7 @@ class CardDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
             }
             if transitionContext.transitionWasCancelled {
                 toVC.view.removeFromSuperview()
+                fromVC.view.alpha = 1
             }
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }

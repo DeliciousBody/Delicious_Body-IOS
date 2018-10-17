@@ -82,4 +82,8 @@ extension DBMainViewController: UIViewControllerTransitioningDelegate {
             return CardDismissTransition(snapShots: [self.snapShot, self.nameSnapShot], originFrame: originFrame, thumbnailImage: self.selectedImage)
         }
     }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
 }

@@ -24,6 +24,9 @@ class DBVideoViewController: UIViewController {
     
     @IBOutlet weak var descLabel: UITextViewFixed!
     @IBOutlet var tableView: UITableView!
+    
+    var interactor:Interactor? = nil
+    
     var isPlaying: Bool = false {
         didSet {
             if isPlaying {
@@ -59,11 +62,42 @@ class DBVideoViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         setNaviBar(isShow: true)
         setUI()
         setData()
         DBHistoryManager.addHistory(exercise: exercise)
+    }
+    
+    @objc func pangestureHandler(_ sender: UIPanGestureRecognizer) {
+        let percentThreshold:CGFloat = 0.3
+        
+        let translation = sender.translation(in: view)
+        let verticalMovement = translation.y / view.bounds.height
+        let downwardMovement = fmaxf(Float(verticalMovement), 0.0)
+        let downwardMovementPercent = fminf(downwardMovement, 1.0)
+        let progress = CGFloat(downwardMovementPercent)
+        
+        guard let interactor = interactor else { return }
+        
+        switch sender.state {
+        case .began:
+            interactor.hasStarted = true
+            dismiss(animated: true, completion: nil)
+        case .changed:
+            interactor.shouldFinish = progress > percentThreshold
+            interactor.update(progress)
+        case .cancelled:
+            interactor.hasStarted = false
+            interactor.cancel()
+        case .ended:
+            interactor.hasStarted = false
+            interactor.shouldFinish
+                ? interactor.finish()
+                : interactor.cancel()
+        default:
+            break
+        }
     }
     
     func setNaviBar(isShow: Bool) {
@@ -79,7 +113,7 @@ class DBVideoViewController: UIViewController {
         player.playbackDelegate = self
         
         player.view.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH * 9 / 16)
-        player.view.backgroundColor = UIColor.themeBlue84102255
+        player.view.backgroundColor = UIColor.subGray190
         self.addChildViewController(player)
         
         videoView.addSubview(player.view)
@@ -89,6 +123,9 @@ class DBVideoViewController: UIViewController {
         videoView.bringSubview(toFront: backButton)
         let touchReco = UITapGestureRecognizer(target: self, action: #selector(self.playerTouched))
         player.view.addGestureRecognizer(touchReco)
+        
+        let panReco = UIPanGestureRecognizer(target: self, action: #selector(self.pangestureHandler(_:)))
+        player.view.addGestureRecognizer(panReco)
     }
     
     func setUI() {
@@ -102,7 +139,9 @@ class DBVideoViewController: UIViewController {
     func setData() {
         if let exer = exercise {
             if let url = URL(string: exer.video_file) {
-                player.url = url
+                if player.url == nil {
+                    player.url = url
+                }
             }
             
             DBNetworking.getVideoList(byListID: exer.with_list, completion: { (result, exercises) in

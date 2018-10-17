@@ -84,6 +84,7 @@
 		EDFB0F9020B56E0C00175138 /* DBJoin1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */; };
 		EDFE7200216E2E1400104181 /* DBSettingPasswdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE71FF216E2E1400104181 /* DBSettingPasswdViewController.swift */; };
 		EDFE72022177497E00104181 /* DBHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE72012177497E00104181 /* DBHistoryCell.swift */; };
+		EDFE72042177A18600104181 /* DBDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE72032177A18600104181 /* DBDismissAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin1ViewController.swift; sourceTree = "<group>"; };
 		EDFE71FF216E2E1400104181 /* DBSettingPasswdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingPasswdViewController.swift; sourceTree = "<group>"; };
 		EDFE72012177497E00104181 /* DBHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHistoryCell.swift; sourceTree = "<group>"; };
+		EDFE72032177A18600104181 /* DBDismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DBDismissAnimator.swift; path = DeliciousBody/VIdeoView/DBDismissAnimator.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				ED218EFE2081CDD20082366F /* DBVideoViewController.swift */,
+				EDFE72032177A18600104181 /* DBDismissAnimator.swift */,
 			);
 			path = VideoView;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				ED2C03C820BBE00D00980783 /* DBJoin2ViewController.swift in Sources */,
 				ED07CEB72129B58B00C7CAF0 /* DBCardViewModel.swift in Sources */,
 				ED5576A5214605A000F22CBC /* DBSettingSloganViewController.swift in Sources */,
+				EDFE72042177A18600104181 /* DBDismissAnimator.swift in Sources */,
 				EDE14E95212C01F500083181 /* DBLoginViewController.swift in Sources */,
 				ED03CE2E216A5892009E6029 /* DBHistoryManager.swift in Sources */,
 				EDA383522125400700A39574 /* DBStartViewController.swift in Sources */,
