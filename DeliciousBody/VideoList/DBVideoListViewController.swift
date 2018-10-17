@@ -86,7 +86,7 @@ class DBVideoListViewController: UIViewController {
             mainViewController.exercise = exercise
             self.present(mainViewController, animated: true, completion: nil)
         }
-        if let me = User.me{
+        if User.me != nil{
             tableViewModel.likeHandler = { id in
                 self.reloadTableViewData()
             }

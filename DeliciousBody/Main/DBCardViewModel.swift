@@ -7,30 +7,24 @@
 //
 import UIKit
 import Foundation
-struct Exercise {
-    var video_id: Int
-    var video_name: String
-    var level: Int?
-    var main_part: Int
-    var sub_part: Int
-    var time: Int
-    var description: String
-    var video_url: String
-    var video_file: String
-    var video_thumbnail: String
-    var with_list: Int?
-    
-    
-    init() {
-        video_id = 1
-        video_name = "Sample"
-        main_part = 1
-        sub_part = 1
-        time = 1
-        description = "sample"
-        video_url = ""
-        video_file = ""
-        video_thumbnail = ""
+import RealmSwift
+
+class Exercise: Object {
+    @objc dynamic var video_id: Int = 0
+    @objc dynamic var video_name: String = ""
+    @objc dynamic var level: Int = 1
+    @objc dynamic var main_part: Int = 1
+    @objc dynamic var sub_part: Int = 1
+    @objc dynamic var time: Int = 1
+    @objc dynamic var descript: String = ""
+    @objc dynamic var video_url: String = ""
+    @objc dynamic var video_file: String = ""
+    @objc dynamic var video_thumbnail: String = ""
+    @objc dynamic var with_list: Int = 1
+    @objc dynamic var updatedat: Date = Date()
+
+    override static func primaryKey() -> String? {
+        return "video_id"
     }
     
     var main_partString: String {
@@ -50,18 +44,19 @@ struct Exercise {
         }
     }
     
-    init(withDic dic: [String : Any]) {
+    convenience init(withDic dic: [String : Any]) {
+        self.init()
         video_id = dic["video_id"] as! Int
         video_name = dic["video_name"] as! String
-        level = dic["level"] as? Int
+        level = dic["level"] as! Int
         main_part = dic["main_part"] as! Int
         sub_part = dic["sub_part"] as! Int
         time = dic["time"] as! Int
-        description = dic["description"] as! String
+        descript = dic["description"] as! String
         video_url = dic["video_url"] as! String
         video_file = dic["video_file"] as! String
         video_thumbnail = dic["video_thumbnail"] as! String
-        with_list = dic["with_list"] as? Int
+        with_list = dic["with_list"] as! Int
     }
 }
 
@@ -69,7 +64,6 @@ class CardViewModelItem {
     var list_name: String
     var time: Int
     var list_image: String
-    
     
     var opened = false
     

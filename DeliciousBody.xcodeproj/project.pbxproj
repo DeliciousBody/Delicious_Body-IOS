@@ -83,6 +83,7 @@
 		EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0F8D20B5253A00175138 /* DBTextField.swift */; };
 		EDFB0F9020B56E0C00175138 /* DBJoin1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */; };
 		EDFE7200216E2E1400104181 /* DBSettingPasswdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE71FF216E2E1400104181 /* DBSettingPasswdViewController.swift */; };
+		EDFE72022177497E00104181 /* DBHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFE72012177497E00104181 /* DBHistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +181,7 @@
 		EDFB0F8D20B5253A00175138 /* DBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTextField.swift; sourceTree = "<group>"; };
 		EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin1ViewController.swift; sourceTree = "<group>"; };
 		EDFE71FF216E2E1400104181 /* DBSettingPasswdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingPasswdViewController.swift; sourceTree = "<group>"; };
+		EDFE72012177497E00104181 /* DBHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 				ED5576A02144258900F22CBC /* DBProfileImageView.swift */,
 				ED5576A62148243100F22CBC /* DBSettingCell.swift */,
 				ED3135B02168A50B0080B159 /* DBIndicator.swift */,
+				EDFE72012177497E00104181 /* DBHistoryCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -601,6 +605,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +642,7 @@
 				EDC0295420B9BAC900A2E2D0 /* DBViewController.swift in Sources */,
 				ED2C03CE20BBE19200980783 /* DBConstants.swift in Sources */,
 				EDFB0F9020B56E0C00175138 /* DBJoin1ViewController.swift in Sources */,
+				EDFE72022177497E00104181 /* DBHistoryCell.swift in Sources */,
 				ED87571620820A2300B91100 /* DBMainViewExtension.swift in Sources */,
 				EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */,
 				ED3135AD21625D010080B159 /* DBSecret.swift in Sources */,

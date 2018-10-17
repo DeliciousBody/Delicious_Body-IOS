@@ -63,6 +63,7 @@ class DBVideoViewController: UIViewController {
         setNaviBar(isShow: true)
         setUI()
         setData()
+        DBHistoryManager.addHistory(exercise: exercise)
     }
     
     func setNaviBar(isShow: Bool) {
@@ -72,7 +73,7 @@ class DBVideoViewController: UIViewController {
     
     func setVideoUI() {
         togetherButton.layer.cornerRadius = 5
-        guard let exer = exercise else { return }
+        guard exercise != nil else { return }
         player = Player()
         player.playerDelegate = self
         player.playbackDelegate = self
@@ -99,12 +100,12 @@ class DBVideoViewController: UIViewController {
     }
     
     func setData() {
-        if let exer = exercise, let withID = exer.with_list {
+        if let exer = exercise {
             if let url = URL(string: exer.video_file) {
                 player.url = url
             }
             
-            DBNetworking.getVideoList(byListID: withID, completion: { (result, exercises) in
+            DBNetworking.getVideoList(byListID: exer.with_list, completion: { (result, exercises) in
                 if result == 200 {
                     self.withList = exercises
                     self.tableView.reloadData()
@@ -220,7 +221,7 @@ extension DBVideoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "descCell", for: indexPath) as! DBDescCell
-            cell.descTextView.text = exercise?.description
+            cell.descTextView.text = exercise?.descript
             return cell
             
         } else {

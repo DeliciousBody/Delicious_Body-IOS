@@ -130,7 +130,7 @@
                                             <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="DIz-Dd-8wq">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="DIz-Dd-8wq" customClass="DBHistoryCell" customModule="DeliciousBody" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="0.0" width="152" height="144"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -151,6 +151,9 @@
                                                             </constraints>
                                                             <state key="normal" image="cellLike_unselected_s"/>
                                                             <state key="selected" image="cellLike_selected_s"/>
+                                                            <connections>
+                                                                <action selector="likeButtonPressed:" destination="DIz-Dd-8wq" eventType="touchUpInside" id="ig9-UT-d3y"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리버스 런지 리치" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geN-M0-xhL">
                                                             <rect key="frame" x="0.0" y="100" width="79" height="18"/>
@@ -185,6 +188,12 @@
                                                     <constraint firstItem="kzG-cX-xqH" firstAttribute="top" secondItem="DIz-Dd-8wq" secondAttribute="top" id="i0V-TF-Fij"/>
                                                     <constraint firstItem="kzG-cX-xqH" firstAttribute="leading" secondItem="DIz-Dd-8wq" secondAttribute="leading" id="sEv-sN-pGA"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="likeButton" destination="Q0q-s5-zS8" id="zEl-x0-eWM"/>
+                                                    <outlet property="subtitleLabel" destination="456-Dd-iW2" id="W7A-Pg-jBd"/>
+                                                    <outlet property="thumbnailImage" destination="kzG-cX-xqH" id="0iH-IQ-dTe"/>
+                                                    <outlet property="titleLabel" destination="geN-M0-xhL" id="p3f-DT-kYZ"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>

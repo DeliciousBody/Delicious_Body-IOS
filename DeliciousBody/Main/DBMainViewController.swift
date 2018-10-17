@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-class DBMainViewController: UIViewController {
+class DBMainViewController: DBViewController {
     var tableViewModel = CardViewModel()
     
     let ImageSizeForLargeState: CGFloat = 60
@@ -79,7 +79,7 @@ class DBMainViewController: UIViewController {
     
     func setupUI() {
         guard let me = User.me else { return }
-        let title = "\(me.name ?? "")님,\n\(me.slogan ?? "")"
+        let title = "\(me.name ?? "")님,\n\(me.slogan)"
         titleLabel.text = title
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 24)
@@ -117,7 +117,7 @@ class DBMainViewController: UIViewController {
     
     func refreshLabels() {
         guard let me = User.me else { return }
-        let title = "\(me.name ?? "")님,\n\(me.slogan ?? "")"
+        let title = "\(me.name ?? "")님,\n\(me.slogan)"
         titleLabel.text = title
     }
     

@@ -37,7 +37,7 @@ class DBVideoSearchViewController: UIViewController {
         ]
         inputTextField.attributedPlaceholder = NSAttributedString(string: "운동 부위 / 이름을 검색하세요.  예) 목, 거북목", attributes:attributes as [NSAttributedStringKey : Any])
         inputTextField.addTarget(self, action: #selector(textfieldDidChanging(sender:)), for: .editingChanged)
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
 //        self.view.addGestureRecognizer(tapGesture)
 //        self.result = [Exercise(),Exercise(),Exercise(),Exercise(),Exercise(),Exercise()]
     }

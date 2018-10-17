@@ -30,8 +30,7 @@ class CardTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
-        guard let fromVC = transitionContext.viewController(forKey: .from),
-            let toVC = transitionContext.viewController(forKey: .to),
+        guard let toVC = transitionContext.viewController(forKey: .to),
             let toVCSnap = toVC.view.snapshotView(afterScreenUpdates: true)
             else { return }
         

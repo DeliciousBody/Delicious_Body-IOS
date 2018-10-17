@@ -41,8 +41,13 @@ class DBSettingViewController: DBViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         setupUI()
+        setData()
     }
     
+    func setData() {
+        historyViewModel.reload()
+        historyCollectionView.reloadData()
+    }
     func setupUI() {
         guard let me = User.me else { return }
         if let urlStr = me.photoUrl , let url = URL(string: urlStr) {

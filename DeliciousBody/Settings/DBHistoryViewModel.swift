@@ -24,13 +24,19 @@ class HistroyViewModel: NSObject {
     
     override init() {
         super.init()
-        item.exercises = [Exercise(),Exercise(),Exercise(),Exercise(),Exercise()]
+        item.exercises = []
+    }
+    
+    func reload() {
+        item.exercises = DBHistoryManager.loadHistory()
     }
 }
 
 extension HistroyViewModel: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DBHistoryCell
+        let exer = item.exercises[indexPath.row]
+        cell.configure(exer: exer)
         return cell
     }
     

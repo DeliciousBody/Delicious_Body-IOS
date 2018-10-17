@@ -22,8 +22,7 @@ class DBVideoSearchTransition : NSObject, UIViewControllerAnimatedTransitioning 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView
         guard let fromVC = transitionContext.viewController(forKey: .from),
-            let toVC = transitionContext.viewController(forKey: .to),
-            let fromVCSnap = fromVC.view.snapshotView(afterScreenUpdates: true)
+            let toVC = transitionContext.viewController(forKey: .to)
             else { return }
         
         let duration = transitionDuration(using: transitionContext)

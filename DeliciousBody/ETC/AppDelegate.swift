@@ -10,16 +10,18 @@ import UIKit
 import KakaoOpenSDK
 import Firebase
 import UserNotifications
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
+    var exer: Exercise?
     var gcmMessageIDKey = "test"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-
+        
         Messaging.messaging().delegate = self
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -37,17 +39,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         
-       
+        
         if let user = User.fetchUserFromSavedData() {
             User.me = user
         } else {
-//            let user = User()
-//            user.save()
+            //            let user = User()
+            //            user.save()
         }
         
         return true
     }
-
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if KOSession.isKakaoAccountLoginCallback(url) {
             return KOSession.handleOpen(url)
@@ -68,26 +70,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // [START receive_message]
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        // If you are receiving a notification message while your app is in the background,
-        // this callback will not be fired till the user taps on the notification launching the application.
-        // TODO: Handle data of notification
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
+        print(#function)
         // Print full message.
         print(userInfo)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
+        print(#function)
         // Print full message.
         print(userInfo)
         
@@ -143,10 +133,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
-        }
-        
+        print(#function)
         // Print full message.
         print(userInfo)
         
@@ -157,14 +144,20 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+        let userInfo = response.notification.request.content.userInfo as! [String : Any]
+        //알람 받아서 앱 실행 시 호출c
+        
+        let exerString = userInfo["video"] as! NSString
+        let data = exerString.data(using: String.Encoding.utf8.rawValue)!
+        let json = try? JSON(data: data)
+        
+        if let exer = json?.dictionaryObject {
+            self.exer = Exercise(withDic: exer)
+            print("[[exer saved]]")
         }
         
-        // Print full message.
-        print(userInfo)
+
+        
         
         completionHandler()
     }

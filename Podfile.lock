@@ -41,6 +41,7 @@ PODS:
     - Realm (= 3.0.2)
   - SkyFloatingLabelTextField (3.4.0)
   - SwiftGifOrigin (1.6.1)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - RealmSwift
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftGifOrigin
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -70,6 +72,7 @@ SPEC REPOS:
     - RealmSwift
     - SkyFloatingLabelTextField
     - SwiftGifOrigin
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
   RangeSeekSlider:
@@ -98,7 +101,8 @@ SPEC CHECKSUMS:
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 8993d601837b34ca51135e7a4c377e014547b5b6
+PODFILE CHECKSUM: 83e7cd1d6bfb52111faa26c64da5064f8251f1ce
 
 COCOAPODS: 1.5.0

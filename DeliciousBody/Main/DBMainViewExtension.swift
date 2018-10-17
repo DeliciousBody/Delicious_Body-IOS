@@ -20,7 +20,6 @@ extension DBMainViewController {
             
             return max(0, coef)
         }()
-        print(coeff)
         let yTrans: CGFloat = {
             if offset < minOffset { return 0 }
             return -(offset - minOffset)

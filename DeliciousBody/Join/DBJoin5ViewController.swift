@@ -38,7 +38,7 @@ class DBJoin5ViewController: DBViewController {
                 let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBMainTabbarController")
                 self.present(mainViewController, animated: true, completion: nil)
             } else {
-                print("error")
+                self.showAlert(title: "오류", content: "회원가입 중 오류가 발생하였습니다.")
             }
         }
     }
