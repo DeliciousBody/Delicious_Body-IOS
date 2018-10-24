@@ -136,10 +136,13 @@ class DBVideoViewController: UIViewController {
         subtitleLabel.text = "\(exer.main_partString) | \(exer.levelString)"
     }
     
-    func setData() {
+    func setData(refresh: Bool = false) {
         if let exer = exercise {
             if let url = URL(string: exer.video_file) {
                 if player.url == nil {
+                    player.url = url
+                }
+                if refresh {
                     player.url = url
                 }
             }
@@ -167,7 +170,7 @@ class DBVideoViewController: UIViewController {
 }
 
 extension DBVideoViewController: PlayerDelegate, PlayerPlaybackDelegate {
-    
+    func player(_ player: Player, didFailWithError error: Error?) {}
     func playerReady(_ player: Player) {}
     func playerPlaybackStateDidChange(_ player: Player) {}
     func playerBufferingStateDidChange(_ player: Player) {}
@@ -277,7 +280,7 @@ extension DBVideoViewController: UITableViewDelegate, UITableViewDataSource {
         if let list = withList{
             exercise = list[indexPath.row]
             setUI()
-            setData()
+            setData(refresh: true)
         }
     }
 }

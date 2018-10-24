@@ -14,7 +14,7 @@ target 'DeliciousBody' do
   pod 'Firebase/Messaging'
   pod 'RealmSwift'
   pod 'SwiftyJSON', '~> 4.0'
-  
+  pod 'Windless', '~> 0.1.5'
 end
 
 

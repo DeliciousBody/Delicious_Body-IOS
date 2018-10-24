@@ -27,6 +27,24 @@ class DBSettingEditViewController: DBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setKeyboardHide()
+        setData()
+    }
+    
+    func setData() {
+        guard let me = User.me ,
+        let age = me.age,
+        let gender = me.sex,
+        let level = me.activity_level else { return }
+        ageTextField.text = "\(age)"
+        maleButton.isSelected = gender
+        femaleButton.isSelected = !gender
+        
+        currentLevel = level
+        for btn in levelButtons {
+            btn.isSelected = currentLevel == btn.tag
+        }
+        self.thumbnailView.image = UIImage(named: self.thumbnailNames[self.currentLevel - 1])
+        self.descLabel.text = kJoinDescStrings[self.currentLevel - 1]
     }
     
     override func viewWillAppear(_ animated: Bool) {

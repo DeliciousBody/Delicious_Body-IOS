@@ -31,7 +31,6 @@ class DBSettingViewController: DBViewController {
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

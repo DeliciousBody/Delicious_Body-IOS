@@ -51,6 +51,8 @@ class DBMainViewController: DBViewController {
         setupUI()
         
         DBNetworking.getRecommendList() { (result, items) in
+            self.tableViewModel.items = []
+            self.tableView.reloadData()
             self.tableViewModel.items = items
             self.tableView.reloadData()
         }    
@@ -141,6 +143,12 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = tableViewModel.items[indexPath.section]
+        
+        if item.list_name == "default" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath) as! DBMainDefaultCardCell
+            cell.configure()
+            return cell
+        }
         if !item.opened {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DBMainCardCell
             cell.configure(item: item)
@@ -166,6 +174,10 @@ extension DBMainViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()
+        
+        if tableViewModel.items[indexPath.section].opened {
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

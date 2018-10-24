@@ -80,6 +80,12 @@ class CardViewModelItem {
             exercises.append(Exercise(withDic: dict))
         }
     }
+    
+    init() {
+        list_name = "default"
+        time = 0
+        list_image = ""
+    }
 }
 
 class CardViewModel: NSObject {
@@ -88,6 +94,7 @@ class CardViewModel: NSObject {
    
     override init() {
         super.init()
+        items = [CardViewModelItem(),CardViewModelItem(),CardViewModelItem()]
     }
     
     init(withDic dict: [[String : Any]]) {
