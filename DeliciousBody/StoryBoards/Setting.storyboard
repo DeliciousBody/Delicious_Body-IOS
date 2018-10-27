@@ -355,11 +355,20 @@
                         <outlet property="nameLabel" destination="ooS-WD-6Bi" id="VSO-BE-7CF"/>
                         <outlet property="profileImageView" destination="T6i-sG-BaT" id="Wfo-ZI-pNK"/>
                         <outlet property="sloganLabel" destination="1Nr-D4-hpW" id="aH1-TL-ddM"/>
+                        <segue destination="fQW-2Q-OZA" kind="presentation" identifier="video" id="l8x-UZ-K2X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tge-7Q-pla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="413.60000000000002" y="-138.0809595202399"/>
+        </scene>
+        <!--DBVideoViewController-->
+        <scene sceneID="WZj-4A-nke">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="DBVideoViewController" id="fQW-2Q-OZA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJD-3W-stS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1098" y="-134"/>
         </scene>
         <!--Setting Slogan View Controller-->
         <scene sceneID="8O3-GI-K3k">

@@ -80,6 +80,7 @@
 		EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */; };
 		EDF721FD206C01CA00CCAFEC /* MNFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721FC206C01C900CCAFEC /* MNFunction.swift */; };
 		EDFAC1922184BA110028D347 /* DBCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAC1912184BA110028D347 /* DBCache.swift */; };
+		EDFAC1942184C80D0028D347 /* DBHistoryTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAC1932184C80D0028D347 /* DBHistoryTransition.swift */; };
 		EDFB0F8C20B523C600175138 /* DBTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDFB0F8B20B523C600175138 /* DBTextField.xib */; };
 		EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0F8D20B5253A00175138 /* DBTextField.swift */; };
 		EDFB0F9020B56E0C00175138 /* DBJoin1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */; };
@@ -180,6 +181,7 @@
 		EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGuideViewController.swift; sourceTree = "<group>"; };
 		EDF721FC206C01C900CCAFEC /* MNFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFunction.swift; sourceTree = "<group>"; };
 		EDFAC1912184BA110028D347 /* DBCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCache.swift; sourceTree = "<group>"; };
+		EDFAC1932184C80D0028D347 /* DBHistoryTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHistoryTransition.swift; sourceTree = "<group>"; };
 		EDFB0F8B20B523C600175138 /* DBTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBTextField.xib; sourceTree = "<group>"; };
 		EDFB0F8D20B5253A00175138 /* DBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTextField.swift; sourceTree = "<group>"; };
 		EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin1ViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				EDE14E98212C10A600083181 /* DBExtensions.swift */,
 				EDA38353212542F000A39574 /* DBUser.swift */,
 				ED607C182137B4A80095CB39 /* DBTransition.swift */,
+				EDFAC1932184C80D0028D347 /* DBHistoryTransition.swift */,
 				ED3135A6215DF6A90080B159 /* DBNetworking.swift */,
 				ED3135A82161CFE30080B159 /* DBValidator.swift */,
 				ED3135AC21625D010080B159 /* DBSecret.swift */,
@@ -630,6 +633,7 @@
 			files = (
 				ED999A4B209A2A720058FE0B /* DBFonts.swift in Sources */,
 				ED999A4D209A2AD40058FE0B /* DBColors.swift in Sources */,
+				EDFAC1942184C80D0028D347 /* DBHistoryTransition.swift in Sources */,
 				ED52402F20BE655C00FAB237 /* DBJoin4ViewController.swift in Sources */,
 				EDC9FBBF2098525B00A61BAA /* DBVideoListViewController.swift in Sources */,
 				ED55769F214419FC00F22CBC /* DBRecordCell.swift in Sources */,

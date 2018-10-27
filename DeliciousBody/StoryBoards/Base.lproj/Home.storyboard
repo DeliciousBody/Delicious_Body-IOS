@@ -473,17 +473,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usu-Ys-y2g">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idm-o2-sby">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QJB-FQ-7pF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idm-o2-sby">
                                         <rect key="frame" x="164.5" y="82.5" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="cBY-Rr-tHb"/>
                                             <constraint firstAttribute="height" constant="46" id="yIZ-rm-Zrd"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="PLAY" image="play_btn">
+                                        <state key="normal" backgroundImage="play_btn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <state key="selected" title="STOP" image="pause_btn">
+                                        <state key="selected" backgroundImage="pause_btn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -528,8 +531,12 @@
                                     <constraint firstItem="idm-o2-sby" firstAttribute="centerX" secondItem="usu-Ys-y2g" secondAttribute="centerX" id="3cc-fy-eXn"/>
                                     <constraint firstAttribute="trailing" secondItem="Aue-5b-Gzs" secondAttribute="trailing" constant="16" id="7VZ-Bf-WRE"/>
                                     <constraint firstAttribute="width" secondItem="usu-Ys-y2g" secondAttribute="height" multiplier="16:9" id="Gu6-mK-rdj"/>
+                                    <constraint firstAttribute="trailing" secondItem="QJB-FQ-7pF" secondAttribute="trailing" id="VEr-2T-och"/>
                                     <constraint firstItem="idm-o2-sby" firstAttribute="centerY" secondItem="usu-Ys-y2g" secondAttribute="centerY" id="Vfk-7S-zOw"/>
+                                    <constraint firstItem="QJB-FQ-7pF" firstAttribute="leading" secondItem="usu-Ys-y2g" secondAttribute="leading" id="aFy-uY-MO0"/>
+                                    <constraint firstItem="QJB-FQ-7pF" firstAttribute="top" secondItem="usu-Ys-y2g" secondAttribute="top" id="fiH-pw-8w9"/>
                                     <constraint firstAttribute="trailing" secondItem="2RY-4Z-EQg" secondAttribute="trailing" constant="15" id="jCR-0F-jpS"/>
+                                    <constraint firstAttribute="bottom" secondItem="QJB-FQ-7pF" secondAttribute="bottom" id="kKB-Uk-PQS"/>
                                     <constraint firstItem="Aue-5b-Gzs" firstAttribute="top" secondItem="usu-Ys-y2g" secondAttribute="top" constant="34" id="ltX-2s-9s5"/>
                                 </constraints>
                             </view>
@@ -640,6 +647,7 @@
                         <outlet property="playButton" destination="idm-o2-sby" id="AEx-oY-7a2"/>
                         <outlet property="subtitleLabel" destination="UNn-nV-EBi" id="dnz-PX-Wvf"/>
                         <outlet property="tableView" destination="Cyy-J3-3eF" id="Xss-8G-H3C"/>
+                        <outlet property="thumbnailView" destination="QJB-FQ-7pF" id="aFa-mE-sqI"/>
                         <outlet property="titleLabel" destination="ZD4-FG-ivn" id="y9Q-jp-c9W"/>
                         <outlet property="togetherButton" destination="2RY-4Z-EQg" id="snG-xd-0Yd"/>
                         <outlet property="videoView" destination="usu-Ys-y2g" id="wDA-cW-yb6"/>

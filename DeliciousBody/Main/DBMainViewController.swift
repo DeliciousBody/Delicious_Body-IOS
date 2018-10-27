@@ -129,6 +129,7 @@ class DBMainViewController: DBViewController {
         vc.transitioningDelegate = self
         vc.exercise = sender as? Exercise
         vc.interactor = interactor
+        vc.thumbnailImage = self.selectedImage
     }
 }
 

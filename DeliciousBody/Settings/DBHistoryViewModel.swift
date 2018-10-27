@@ -20,7 +20,7 @@ class HistoryViewModelItem {
 
 class HistroyViewModel: NSObject {
     var item = HistoryViewModelItem(exercises: [])
-    var handler: ((Exercise) -> Void)?
+    var handler: ((IndexPath, Exercise) -> Void)?
     
     override init() {
         super.init()
@@ -42,5 +42,9 @@ extension HistroyViewModel: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return item.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.handler?(IndexPath(row: indexPath.row, section: 0), item.exercises[indexPath.row])
     }
 }

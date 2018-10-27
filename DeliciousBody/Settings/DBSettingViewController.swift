@@ -14,6 +14,12 @@ class DBSettingViewController: DBViewController {
     var max = 20
     let historyViewModel = HistroyViewModel()
     
+    var originFrame = CGRect()
+    var selectedImage = UIImage()
+    
+    let Padding: CGFloat = 20
+    let CellWidth: CGFloat = 169
+    
     @IBOutlet weak var profileImageView: DBProfileImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sloganLabel: UILabel!
@@ -28,6 +34,12 @@ class DBSettingViewController: DBViewController {
         
         historyCollectionView.dataSource = historyViewModel
         historyCollectionView.delegate = historyViewModel
+        historyViewModel.handler = { indexPath, exercise in
+            guard let collectionView = self.historyCollectionView else { return }
+            self.originFrame = CGRect(x: self.Padding + (self.CellWidth * CGFloat(indexPath.row)) - collectionView.contentOffset.x , y: 262, width: 152, height: 90)
+            self.selectedImage = DBCache.shared.loadImage(key: "\(exercise.video_id)img") ?? #imageLiteral(resourceName: "sample_history")
+            self.performSegue(withIdentifier: "video", sender: exercise)
+        }
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -58,6 +70,16 @@ class DBSettingViewController: DBViewController {
         editInfoBtn.makeRound()
         editTypeBtn.makeRound()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "video" {
+            let vc = segue.destination as! DBVideoViewController
+            let exer = sender as! Exercise
+            vc.exercise = exer
+            vc.thumbnailImage = DBCache.shared.loadImage(key: "\(exer.video_id)img") ?? #imageLiteral(resourceName: "sample_history")
+            vc.transitioningDelegate = self
+        }
+    }
 }
 
 extension DBSettingViewController: UICollectionViewDataSource {
@@ -71,5 +93,11 @@ extension DBSettingViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sampleData.count
+    }
+}
+
+extension DBSettingViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return HistoryTransition(originFrame: self.originFrame, thumbnailImage: self.selectedImage)
     }
 }

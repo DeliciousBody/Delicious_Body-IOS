@@ -16,7 +16,7 @@ class DBVideoViewController: UIViewController {
     @IBOutlet var playButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet var videoView: UIView!
-    @IBOutlet var touchView: UIView!
+    @IBOutlet var thumbnailView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -46,7 +46,7 @@ class DBVideoViewController: UIViewController {
     
     var exercise: Exercise?
     var withList: [Exercise]?
-    
+    var thumbnailImage: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         setVideoUI()
@@ -113,7 +113,7 @@ class DBVideoViewController: UIViewController {
         player.playbackDelegate = self
         
         player.view.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH * 9 / 16)
-        player.view.backgroundColor = UIColor.subGray190
+        player.view.backgroundColor = UIColor.clear
         self.addChildViewController(player)
         
         videoView.addSubview(player.view)
@@ -130,6 +130,7 @@ class DBVideoViewController: UIViewController {
     
     func setUI() {
         tableView.register(UINib(nibName: "DBExerCell", bundle: nil) , forCellReuseIdentifier: "exerCell")
+        thumbnailView.image = thumbnailImage
         guard let exer = exercise, let me = User.me else { return }
         titleLabel.text = exer.video_name
         likeButton.isSelected = me.isFavoriteVideo(id: exer.video_id)
@@ -158,9 +159,9 @@ class DBVideoViewController: UIViewController {
     
     func showPlayButton(isShow: Bool, completion: (() -> Void)? = nil) {
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
-            self?.playButton.isEnabled = isShow
+            self?.backButton.isUserInteractionEnabled = isShow
+            self?.playButton.isUserInteractionEnabled = isShow
             self?.playButton.alpha = isShow ? 1.0 : 0.0
-            self?.backButton.isEnabled = isShow
             self?.backButton.alpha = isShow ? 1.0 : 0.0
         }) { [weak self] _ in
             self?.isShowing = isShow
@@ -176,6 +177,7 @@ extension DBVideoViewController: PlayerDelegate, PlayerPlaybackDelegate {
             if let image = image, let exer = self.exercise {
                 DBCache.shared.saveImage(key: "\(exer.video_id)img", image: image)
             }
+            self.thumbnailView.removeFromSuperview()
         }
     }
     func playerPlaybackStateDidChange(_ player: Player) {}
