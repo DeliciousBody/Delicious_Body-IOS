@@ -9,7 +9,6 @@
 import UIKit
 
 class DBSettingEditViewController: DBViewController {
-   
     var currentGender: Gender = .male
     var currentLevel: Int = 1
     
@@ -43,6 +42,7 @@ class DBSettingEditViewController: DBViewController {
         for btn in levelButtons {
             btn.isSelected = currentLevel == btn.tag
         }
+        
         self.thumbnailView.image = UIImage(named: self.thumbnailNames[self.currentLevel - 1])
         self.descLabel.text = kJoinDescStrings[self.currentLevel - 1]
     }
@@ -82,8 +82,6 @@ class DBSettingEditViewController: DBViewController {
                 self.descLabel.alpha = 1
             })
         }
-        
-        
     }
     
     @IBAction func confirmButtonPressed(_ sender: Any) {
@@ -109,5 +107,4 @@ class DBSettingEditViewController: DBViewController {
             ageView.shake()
         }
     }
-    
 }

@@ -254,4 +254,14 @@ class DBNetworking: NSObject {
             completion(status)
         }
     }
+    
+    static func pushCheck(completion:((_ result: Int) -> Void)?) {
+        let url = "\(kBaseURL)userinfo/push/"
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            print(status)
+            completion?(status)
+        }
+    }
 }

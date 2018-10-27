@@ -30,7 +30,9 @@ class DBHistoryCell: UICollectionViewCell {
     }
     
     func configure(exer: Exercise) {
-        thumbnailImage.kf.setImage(with: URL(string: exer.video_thumbnail))
+//        thumbnailImage.kf.setImage(with: URL(string: exer.video_thumbnail))
+        
+        thumbnailImage.image = DBCache.shared.loadImage(key: "\(exer.video_id)img") ?? #imageLiteral(resourceName: "sample_history")
         titleLabel.text = exer.video_name
         videoID = exer.video_id
         subtitleLabel.text = "\(exer.main_partString) | \(exer.levelString)"

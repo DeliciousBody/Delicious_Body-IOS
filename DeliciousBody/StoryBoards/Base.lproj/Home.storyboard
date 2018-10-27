@@ -473,14 +473,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usu-Ys-y2g">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idm-o2-sby">
-                                        <rect key="frame" x="165.5" y="89" width="44" height="33"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idm-o2-sby">
+                                        <rect key="frame" x="164.5" y="82.5" width="46" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="cBY-Rr-tHb"/>
+                                            <constraint firstAttribute="height" constant="46" id="yIZ-rm-Zrd"/>
+                                        </constraints>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="PLAY">
+                                        <state key="normal" title="PLAY" image="play_btn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <state key="selected" title="STOP">
+                                        <state key="selected" title="STOP" image="pause_btn">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -660,6 +663,8 @@
         <image name="cellLike_selected" width="48" height="48"/>
         <image name="cellLike_unselected" width="48" height="48"/>
         <image name="deliciousLogo" width="335" height="64"/>
+        <image name="pause_btn" width="92" height="92"/>
+        <image name="play_btn" width="92" height="92"/>
         <image name="sample_card" width="993" height="546"/>
         <image name="smallLogo" width="149" height="152"/>
         <image name="tabbar_home_selected" width="52" height="52"/>

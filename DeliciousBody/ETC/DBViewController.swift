@@ -21,6 +21,11 @@ class DBViewController: UIViewController {
             let vc = UIStoryboard.viewController(storyBoard: "Home", withID: "DBVideoViewController") as! DBVideoViewController
             vc.exercise = exer
             AppDelegate.exer = nil
+            
+            if User.me != nil {
+                DBNetworking.pushCheck(completion: nil)
+            }
+            
             self.present(vc, animated: true, completion: nil)
         }
     }

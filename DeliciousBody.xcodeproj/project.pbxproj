@@ -79,6 +79,7 @@
 		EDF721EE206BF78800CCAFEC /* DeliciousBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721ED206BF78800CCAFEC /* DeliciousBodyTests.swift */; };
 		EDF721F9206C001000CCAFEC /* DBGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */; };
 		EDF721FD206C01CA00CCAFEC /* MNFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF721FC206C01C900CCAFEC /* MNFunction.swift */; };
+		EDFAC1922184BA110028D347 /* DBCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAC1912184BA110028D347 /* DBCache.swift */; };
 		EDFB0F8C20B523C600175138 /* DBTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDFB0F8B20B523C600175138 /* DBTextField.xib */; };
 		EDFB0F8E20B5253A00175138 /* DBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0F8D20B5253A00175138 /* DBTextField.swift */; };
 		EDFB0F9020B56E0C00175138 /* DBJoin1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */; };
@@ -178,6 +179,7 @@
 		EDF721EF206BF78800CCAFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDF721F8206C001000CCAFEC /* DBGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGuideViewController.swift; sourceTree = "<group>"; };
 		EDF721FC206C01C900CCAFEC /* MNFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MNFunction.swift; sourceTree = "<group>"; };
+		EDFAC1912184BA110028D347 /* DBCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCache.swift; sourceTree = "<group>"; };
 		EDFB0F8B20B523C600175138 /* DBTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBTextField.xib; sourceTree = "<group>"; };
 		EDFB0F8D20B5253A00175138 /* DBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTextField.swift; sourceTree = "<group>"; };
 		EDFB0F8F20B56E0C00175138 /* DBJoin1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBJoin1ViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				ED3135A82161CFE30080B159 /* DBValidator.swift */,
 				ED3135AC21625D010080B159 /* DBSecret.swift */,
 				ED03CE2D216A5892009E6029 /* DBHistoryManager.swift */,
+				EDFAC1912184BA110028D347 /* DBCache.swift */,
 			);
 			path = ETC;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				ED5576A12144258900F22CBC /* DBProfileImageView.swift in Sources */,
 				ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */,
 				ED3135AF21675FE80080B159 /* DBSettingEditViewController.swift in Sources */,
+				EDFAC1922184BA110028D347 /* DBCache.swift in Sources */,
 				EDF721D9206BF78700CCAFEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

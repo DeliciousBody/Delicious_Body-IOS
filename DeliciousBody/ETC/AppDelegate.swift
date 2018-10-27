@@ -155,10 +155,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             self.exer = Exercise(withDic: exer)
             print("[[exer saved]]")
         }
-        
-
-        
-        
         completionHandler()
     }
 }

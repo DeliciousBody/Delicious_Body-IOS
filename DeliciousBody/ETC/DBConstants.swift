@@ -7,7 +7,9 @@
 //
 
 import Foundation
-
+var documentsUrl: URL {
+    return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+}
 let kJoinTitles = ["join2":"맞춤 운동을 추천받으시려면\n저에게 당신을 알려주세요 :)",
                    "join3":"운동이 필요한 부위를\n저에게 알려주세요 :)",
                    "join4":"당신의 활동 시간을\n저에게 알려주세요 :)",

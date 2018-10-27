@@ -171,7 +171,13 @@ class DBVideoViewController: UIViewController {
 
 extension DBVideoViewController: PlayerDelegate, PlayerPlaybackDelegate {
     func player(_ player: Player, didFailWithError error: Error?) {}
-    func playerReady(_ player: Player) {}
+    func playerReady(_ player: Player) {
+        player.takeSnapshot { (image, error) in
+            if let image = image, let exer = self.exercise {
+                DBCache.shared.saveImage(key: "\(exer.video_id)img", image: image)
+            }
+        }
+    }
     func playerPlaybackStateDidChange(_ player: Player) {}
     func playerBufferingStateDidChange(_ player: Player) {}
     func playerBufferTimeDidChange(_ bufferTime: Double) {}

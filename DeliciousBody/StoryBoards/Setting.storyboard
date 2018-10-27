@@ -135,7 +135,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="152" height="144"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_history" translatesAutoresizingMaskIntoConstraints="NO" id="kzG-cX-xqH">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample_history" translatesAutoresizingMaskIntoConstraints="NO" id="kzG-cX-xqH">
                                                             <rect key="frame" x="0.0" y="0.0" width="152" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="90" id="V9v-Gr-9KI"/>

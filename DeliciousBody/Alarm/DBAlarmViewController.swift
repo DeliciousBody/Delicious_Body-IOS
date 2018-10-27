@@ -135,6 +135,7 @@ class DBAlarmViewController: UIViewController {
         slider.colorBetweenHandles = sender.isOn ? UIColor.themeBlue : UIColor.subGray216
         slider.maxLabelColor = sender.isOn ? UIColor.themeBlue : UIColor.subGray216
         slider.minLabelColor = sender.isOn ? UIColor.themeBlue : UIColor.subGray216
+        slider.isUserInteractionEnabled = sender.isOn
         slider.layoutSubviews()
         if sender.tag == 0 {
             me.is_push_weekdays = sender.isOn
