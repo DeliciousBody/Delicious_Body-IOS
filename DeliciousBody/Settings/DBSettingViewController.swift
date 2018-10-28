@@ -20,6 +20,8 @@ class DBSettingViewController: DBViewController {
     let Padding: CGFloat = 20
     let CellWidth: CGFloat = 169
     
+    let interactor = Interactor()
+    
     @IBOutlet weak var profileImageView: DBProfileImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sloganLabel: UILabel!
@@ -36,7 +38,7 @@ class DBSettingViewController: DBViewController {
         historyCollectionView.delegate = historyViewModel
         historyViewModel.handler = { indexPath, exercise in
             guard let collectionView = self.historyCollectionView else { return }
-            self.originFrame = CGRect(x: self.Padding + (self.CellWidth * CGFloat(indexPath.row)) - collectionView.contentOffset.x , y: 262, width: 152, height: 90)
+            self.originFrame = CGRect(x: self.Padding + (self.CellWidth * CGFloat(indexPath.row)) - collectionView.contentOffset.x , y: 242, width: 152, height: 90)
             self.selectedImage = DBCache.shared.loadImage(key: "\(exercise.video_id)img") ?? #imageLiteral(resourceName: "sample_history")
             self.performSegue(withIdentifier: "video", sender: exercise)
         }
@@ -77,6 +79,7 @@ class DBSettingViewController: DBViewController {
             let exer = sender as! Exercise
             vc.exercise = exer
             vc.thumbnailImage = DBCache.shared.loadImage(key: "\(exer.video_id)img") ?? #imageLiteral(resourceName: "sample_history")
+            vc.interactor = interactor
             vc.transitioningDelegate = self
         }
     }
@@ -99,5 +102,16 @@ extension DBSettingViewController: UICollectionViewDataSource {
 extension DBSettingViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return HistoryTransition(originFrame: self.originFrame, thumbnailImage: self.selectedImage)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let _ = dismissed as? DBVideoViewController else {
+            return nil
+        }
+        return HistoryDismissTransition(originFrame: originFrame, thumbnailImage: self.selectedImage)
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
     }
 }

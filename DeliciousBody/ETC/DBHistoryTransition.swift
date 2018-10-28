@@ -69,3 +69,63 @@ class HistoryTransition: NSObject, UIViewControllerAnimatedTransitioning {
         }
     }
 }
+
+class HistoryDismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
+    private var originFrame: CGRect
+    private let thumbnailImage: UIImage
+    
+    private var removeViews = [UIView]()
+    
+    init(originFrame: CGRect, thumbnailImage: UIImage) {
+        self.originFrame = originFrame
+        self.thumbnailImage = thumbnailImage
+    }
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.3
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let containerView = transitionContext.containerView
+        guard let fromVC = transitionContext.viewController(forKey: .from),
+            let toVC = transitionContext.viewController(forKey: .to),
+            let fromVCSnap = fromVC.view.snapshotView(afterScreenUpdates: true),
+            let toVCSnap = toVC.view.snapshotView(afterScreenUpdates: true)
+            else { return }
+        
+        toVC.view.alpha = 0
+        containerView.addSubview(toVC.view)
+        
+        toVCSnap.alpha = 0
+        containerView.addSubview(toVCSnap)
+        
+        let imageV = UIImageView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH * 9 / 16))
+        imageV.image = thumbnailImage
+        containerView.addSubview(imageV)
+        
+        removeViews = [imageV, toVCSnap]
+        
+        let duration = transitionDuration(using: transitionContext)
+        
+        UIView.animateKeyframes(withDuration: duration, delay: 0, options: [], animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1, animations: {
+                imageV.frame = self.originFrame
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 3/5, animations: {
+                toVCSnap.alpha = 1
+            })
+            
+        }) { (finish) in
+            toVC.view.alpha = 1
+            for view in self.removeViews {
+                view.removeFromSuperview()
+            }
+            if transitionContext.transitionWasCancelled {
+                toVC.view.removeFromSuperview()
+                fromVC.view.alpha = 1
+            }
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        }
+    }
+}
