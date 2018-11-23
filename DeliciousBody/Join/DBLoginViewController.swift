@@ -118,7 +118,7 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                                         user.photoUrl = profile.profileImageURL
                                         user.name = profile.nickName
                                         user.id = "카카오톡"
-                                        DBNetworking.createUserInfo(token: jwtToken, user: user, completion: { (result) in
+                                        DBNetworking.createUserInfo(token: jwtToken, params: user.toJSON(), completion: { (result) in
                                             if result == 201 {
                                                 User.me = user
                                                 user.save()

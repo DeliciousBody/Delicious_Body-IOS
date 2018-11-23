@@ -145,7 +145,7 @@ class DBJoin1ViewController: DBViewController, UITextFieldDelegate{
                                     if let profile = data as? KOTalkProfile {
                                         user.photoUrl = profile.profileImageURL
                                         user.name = profile.nickName
-                                        DBNetworking.createUserInfo(token: jwtToken, user: user, completion: { (result) in
+                                        DBNetworking.createUserInfo(token: jwtToken, params: user.toJSON(), completion: { (result) in
                                             if result == 201 {
                                                 User.me = user
                                                 user.id = "카카오톡"
@@ -185,23 +185,22 @@ class DBJoin1ViewController: DBViewController, UITextFieldDelegate{
         User.me = user
         
         if let email = emailTextField.text,
-            let passwd = passwdTextField.text {
+            let passwd = passwdTextField.text,
+            let name = nameTextField.text {
             DBIndicator.shared.show()
-            DBNetworking.register(email, password: passwd) { (result, data) in
+            DBNetworking.register(email, password: passwd, name: name) { (result, data) in
                 if result == 201, let token = data{
                     user.token = token
                     user.id = email
                     user.save()
-                    DBNetworking.createUserInfo(token: token, user: user, completion: { (result) in
-                        DBIndicator.shared.stop()
-                        if result == 201 {
-                            self.performSegue(withIdentifier: "next", sender: nil)
-                        } else {
-                            self.showAlert(title: "오류", content: "로그인에 실패하였습니다.")
-                        }
-                    })
+
+                    self.performSegue(withIdentifier: "next", sender: nil)
+                } else if result == 400 {
+                    DBIndicator.shared.stop()
+                    self.showAlert(title: "오류", content: "이미 가입된 이메일입니다.")
                 } else {
                     DBIndicator.shared.stop()
+                    self.showAlert(title: "오류", content: "회원가입에 실패하였습니다.")
                 }
             }
             

@@ -45,7 +45,6 @@
 		ED5576A92148288800F22CBC /* DBSettingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */; };
 		ED5576AB21589B0700F22CBC /* DBSettingFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5576AA21589B0700F22CBC /* DBSettingFilterViewController.swift */; };
 		ED5576AD215B562800F22CBC /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5576AC215B562800F22CBC /* KakaoOpenSDK.framework */; };
-		ED5576AF215C8D3400F22CBC /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ED5576AE215C8D3400F22CBC /* sample.mp4 */; };
 		ED607C192137B4A80095CB39 /* DBTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C182137B4A80095CB39 /* DBTransition.swift */; };
 		ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED607C1A213D406B0095CB39 /* Setting.storyboard */; };
 		ED607C1D213EA5300095CB39 /* DBVideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */; };
@@ -142,7 +141,6 @@
 		ED5576A82148288800F22CBC /* DBSettingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingInfoViewController.swift; sourceTree = "<group>"; };
 		ED5576AA21589B0700F22CBC /* DBSettingFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSettingFilterViewController.swift; sourceTree = "<group>"; };
 		ED5576AC215B562800F22CBC /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
-		ED5576AE215C8D3400F22CBC /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
 		ED607C182137B4A80095CB39 /* DBTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTransition.swift; sourceTree = "<group>"; };
 		ED607C1A213D406B0095CB39 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		ED607C1C213EA5300095CB39 /* DBVideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBVideoViewModel.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				ED3135B22168A5C00080B159 /* indicator.gif */,
-				ED5576AE215C8D3400F22CBC /* sample.mp4 */,
 			);
 			path = Resouce;
 			sourceTree = "<group>";
@@ -535,7 +532,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED5576AF215C8D3400F22CBC /* sample.mp4 in Resources */,
 				ED607C1B213D406B0095CB39 /* Setting.storyboard in Resources */,
 				EDBE9AD2209950A40090EF2B /* Alarm.storyboard in Resources */,
 				EDF721E3206BF78700CCAFEC /* LaunchScreen.storyboard in Resources */,

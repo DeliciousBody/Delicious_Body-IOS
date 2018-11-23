@@ -29,9 +29,10 @@ class DBJoin5ViewController: DBViewController {
         guard let me = User.me else { return }
         me.slogan = inputTextField.text ?? "Workout hard Play hard!"
         DBIndicator.shared.show()
-        DBNetworking.updateUserInfo(params: me.toJSON()) { (result) in
+        
+        DBNetworking.createUserInfo(params: me.toJSON(), completion: { (result) in
             DBIndicator.shared.stop()
-            if result == 200 {
+            if result == 201 {
                 User.me?.save()
                 
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -40,7 +41,7 @@ class DBJoin5ViewController: DBViewController {
             } else {
                 self.showAlert(title: "오류", content: "회원가입 중 오류가 발생하였습니다.")
             }
-        }
+        })
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

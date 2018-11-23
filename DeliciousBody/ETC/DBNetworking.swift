@@ -18,7 +18,6 @@ class DBNetworking: NSObject {
         
         let url = "\(kBaseURL)rest-auth/login/"
         let params = ["email" : id, "password" : password]
-        //        let params = ["email" : "elfqk@g.com", "password" : "elfqk123"]
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
@@ -63,10 +62,10 @@ class DBNetworking: NSObject {
         
     }
     
-    static func register(_ id:String, password:String, completion:@escaping (_ result: Int,_ token: String?) -> Void) {
+    static func register(_ id:String, password:String, name:String, completion:@escaping (_ result: Int,_ token: String?) -> Void) {
         
         let url = "\(kBaseURL)rest-auth/registration/"
-        let params = ["email" : id, "password1" : password, "password2" : password]
+        let params = ["email" : id, "password1" : password, "password2" : password, "first_name" : name]
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
@@ -131,11 +130,9 @@ class DBNetworking: NSObject {
         }
     }
     
-    static func createUserInfo(token: String, user: User,  completion:@escaping (_ result: Int) -> Void) {
+    static func createUserInfo(token: String? = nil, params: [String : Any], completion:@escaping (_ result: Int) -> Void) {
         let url = "\(kBaseURL)userinfo/"
-        let headers: HTTPHeaders? = ["Authorization" : "JWT \(token)"]
-        let params = user.toJSON()
-        print("//\(token)//")
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999

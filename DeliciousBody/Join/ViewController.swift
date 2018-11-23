@@ -12,20 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+    
     @IBAction func test(_ sender: Any) {
         guard let me = User.me else { return }
         
         DBNetworking.updateUserInfo(params: me.toJSON()) { (result) in
             if result == 200 || result == 201 {
                 print("success")
-               
             } else {
                 print("error")
             }
         }
     }
-    
 }
 
