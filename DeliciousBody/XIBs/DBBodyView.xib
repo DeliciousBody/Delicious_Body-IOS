@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,11 +35,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="377"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="340"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baO-Zl-Nyd">
-                    <rect key="frame" x="254" y="165.5" width="46" height="46"/>
+                    <rect key="frame" x="254" y="147" width="46" height="46"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="6XT-ha-fNB"/>
                         <constraint firstAttribute="width" constant="46" id="kmL-YU-EHV"/>
@@ -50,31 +50,31 @@
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGZ-OK-bKm">
-                    <rect key="frame" x="50" y="0.0" width="200" height="377"/>
+                    <rect key="frame" x="50" y="0.0" width="200" height="340"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body_back_0" translatesAutoresizingMaskIntoConstraints="NO" id="rCe-S9-fOE">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="5bJ-dX-Lz2"/>
-                                <constraint firstAttribute="height" constant="377" id="Ym9-qw-oAN"/>
+                                <constraint firstAttribute="height" constant="340" id="Ym9-qw-oAN"/>
+                                <constraint firstAttribute="width" secondItem="rCe-S9-fOE" secondAttribute="height" multiplier="200:377" id="jw4-h7-DHe"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body_back_1" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-cG-HbV">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="377" id="Ehy-Vt-Ykd"/>
-                                <constraint firstAttribute="width" constant="200" id="rCQ-23-VYS"/>
+                                <constraint firstAttribute="width" secondItem="bSG-cG-HbV" secondAttribute="height" multiplier="200:377" id="TOu-em-9AY"/>
+                                <constraint firstAttribute="height" constant="340" id="zlq-oF-eUq"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body_back_2" translatesAutoresizingMaskIntoConstraints="NO" id="joZ-7u-ufh">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="377" id="6Xh-Kr-JAT"/>
-                                <constraint firstAttribute="width" constant="200" id="z0S-UU-pKz"/>
+                                <constraint firstAttribute="width" secondItem="joZ-7u-ufh" secondAttribute="height" multiplier="200:377" id="guf-29-7yv"/>
+                                <constraint firstAttribute="height" constant="340" id="lo7-l6-v5p"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-nK-jXc">
-                            <rect key="frame" x="56" y="58" width="87" height="109"/>
+                            <rect key="frame" x="57" y="54" width="87" height="109"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -82,7 +82,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HU-Yn-QGh">
-                            <rect key="frame" x="56" y="175" width="87" height="50"/>
+                            <rect key="frame" x="56" y="159" width="87" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -102,59 +102,52 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOK-mV-Cf6">
-                    <rect key="frame" x="50" y="0.0" width="200" height="377"/>
+                    <rect key="frame" x="50" y="0.0" width="200" height="340"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body0" translatesAutoresizingMaskIntoConstraints="NO" id="Pc0-yM-GsE">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="377" id="3TV-fw-A1x"/>
-                                <constraint firstAttribute="width" constant="200" id="OGb-9x-oF3"/>
+                                <constraint firstAttribute="width" secondItem="Pc0-yM-GsE" secondAttribute="height" multiplier="200:377" id="LOb-6s-Xqr"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body1" translatesAutoresizingMaskIntoConstraints="NO" id="YeK-IE-O6C">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="0By-Jf-bWM"/>
-                                <constraint firstAttribute="height" constant="377" id="81Y-Z0-n1L"/>
+                                <constraint firstAttribute="width" secondItem="YeK-IE-O6C" secondAttribute="height" multiplier="200:377" id="nqC-uh-O9p"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body2" translatesAutoresizingMaskIntoConstraints="NO" id="171-ow-LHf">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="sBE-Dd-beM"/>
-                                <constraint firstAttribute="height" constant="377" id="tQk-hW-H64"/>
+                                <constraint firstAttribute="width" secondItem="171-ow-LHf" secondAttribute="height" multiplier="200:377" id="yZA-wW-ByT"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body3" translatesAutoresizingMaskIntoConstraints="NO" id="WtD-Bh-80y">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="1fe-oR-Ogb"/>
-                                <constraint firstAttribute="height" constant="377" id="bre-Ru-x5T"/>
+                                <constraint firstAttribute="width" secondItem="WtD-Bh-80y" secondAttribute="height" multiplier="200:377" id="zh4-3f-jJR"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body4" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-Un-RfQ">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="377" id="HS7-o9-ulm"/>
-                                <constraint firstAttribute="width" constant="200" id="gw9-dp-Q5I"/>
+                                <constraint firstAttribute="width" secondItem="Fqb-Un-RfQ" secondAttribute="height" multiplier="200:377" id="DyG-St-c8z"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body5" translatesAutoresizingMaskIntoConstraints="NO" id="yPc-gy-sjB">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="Ifl-Gr-uWF"/>
-                                <constraint firstAttribute="height" constant="377" id="YbI-f7-jcR"/>
+                                <constraint firstAttribute="width" secondItem="yPc-gy-sjB" secondAttribute="height" multiplier="200:377" id="nEi-r9-rpC"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body6" translatesAutoresizingMaskIntoConstraints="NO" id="kdt-ro-h4h">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="377"/>
+                            <rect key="frame" x="10" y="0.0" width="180" height="340"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="200" id="f3V-zN-Qqr"/>
-                                <constraint firstAttribute="height" constant="377" id="jn3-tk-29U"/>
+                                <constraint firstAttribute="width" secondItem="kdt-ro-h4h" secondAttribute="height" multiplier="200:377" id="SG9-mU-sLE"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxU-rI-UfO">
-                            <rect key="frame" x="50" y="51" width="101" height="37"/>
+                            <rect key="frame" x="63" y="43" width="75" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -162,7 +155,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Te-Fa-iDl">
-                            <rect key="frame" x="63" y="89" width="71" height="44"/>
+                            <rect key="frame" x="65" y="74" width="71" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -170,7 +163,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ioe-y7-tLU">
-                            <rect key="frame" x="63" y="133" width="71" height="54"/>
+                            <rect key="frame" x="64" y="111" width="71" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -178,7 +171,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cax-N7-sFs">
-                            <rect key="frame" x="63" y="188" width="71" height="94"/>
+                            <rect key="frame" x="63" y="195" width="71" height="56"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -186,7 +179,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZL-GO-URC">
-                            <rect key="frame" x="63" y="283" width="71" height="94"/>
+                            <rect key="frame" x="63" y="252" width="71" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -194,7 +187,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lo-Xj-mLK">
-                            <rect key="frame" x="26" y="89" width="35" height="128"/>
+                            <rect key="frame" x="26" y="89" width="35" height="102"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -202,7 +195,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqc-2o-fGF">
-                            <rect key="frame" x="137" y="89" width="40" height="129"/>
+                            <rect key="frame" x="137" y="89" width="40" height="101"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -218,14 +211,21 @@
                         <constraint firstItem="Fqb-Un-RfQ" firstAttribute="centerX" secondItem="EOK-mV-Cf6" secondAttribute="centerX" id="EvU-FJ-7YD"/>
                         <constraint firstItem="kdt-ro-h4h" firstAttribute="centerY" secondItem="EOK-mV-Cf6" secondAttribute="centerY" id="Fnk-N2-GxO"/>
                         <constraint firstItem="Pc0-yM-GsE" firstAttribute="centerY" secondItem="EOK-mV-Cf6" secondAttribute="centerY" id="GTv-Bm-5y7"/>
+                        <constraint firstItem="kdt-ro-h4h" firstAttribute="height" secondItem="EOK-mV-Cf6" secondAttribute="height" id="KYG-Qu-YJa"/>
+                        <constraint firstItem="YeK-IE-O6C" firstAttribute="height" secondItem="EOK-mV-Cf6" secondAttribute="height" id="LtT-zR-47n"/>
+                        <constraint firstItem="Pc0-yM-GsE" firstAttribute="height" secondItem="EOK-mV-Cf6" secondAttribute="height" id="NL2-5j-ovK"/>
                         <constraint firstItem="WtD-Bh-80y" firstAttribute="centerY" secondItem="EOK-mV-Cf6" secondAttribute="centerY" id="T0b-Wa-1ho"/>
                         <constraint firstItem="Fqb-Un-RfQ" firstAttribute="centerY" secondItem="EOK-mV-Cf6" secondAttribute="centerY" id="Txg-Hl-F67"/>
                         <constraint firstItem="171-ow-LHf" firstAttribute="centerX" secondItem="EOK-mV-Cf6" secondAttribute="centerX" id="agW-1y-NlA"/>
                         <constraint firstAttribute="width" constant="200" id="bls-JW-BkN"/>
                         <constraint firstItem="YeK-IE-O6C" firstAttribute="centerY" secondItem="EOK-mV-Cf6" secondAttribute="centerY" id="d0Q-Ld-2pG"/>
+                        <constraint firstItem="WtD-Bh-80y" firstAttribute="height" secondItem="EOK-mV-Cf6" secondAttribute="height" id="h8o-80-egg"/>
                         <constraint firstItem="yPc-gy-sjB" firstAttribute="centerY" secondItem="EOK-mV-Cf6" secondAttribute="centerY" id="j5M-MJ-vqP"/>
                         <constraint firstItem="YeK-IE-O6C" firstAttribute="centerX" secondItem="EOK-mV-Cf6" secondAttribute="centerX" id="kWv-tH-jJq"/>
                         <constraint firstItem="171-ow-LHf" firstAttribute="centerY" secondItem="EOK-mV-Cf6" secondAttribute="centerY" id="mVS-DI-b3Q"/>
+                        <constraint firstItem="Fqb-Un-RfQ" firstAttribute="height" secondItem="EOK-mV-Cf6" secondAttribute="height" id="pGg-p9-zUt"/>
+                        <constraint firstItem="171-ow-LHf" firstAttribute="height" secondItem="EOK-mV-Cf6" secondAttribute="height" id="tpr-me-7iK"/>
+                        <constraint firstItem="yPc-gy-sjB" firstAttribute="height" secondItem="EOK-mV-Cf6" secondAttribute="height" id="u2h-vW-Fp5"/>
                         <constraint firstItem="yPc-gy-sjB" firstAttribute="centerX" secondItem="EOK-mV-Cf6" secondAttribute="centerX" id="wzV-Zg-yGa"/>
                     </constraints>
                 </view>
@@ -241,7 +241,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZB8-0k-qpA" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
-                    <rect key="frame" x="239" y="148" width="45" height="16"/>
+                    <rect key="frame" x="229" y="123" width="45" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="10"/>
@@ -252,7 +252,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUB-qu-2ei" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
-                    <rect key="frame" x="49" y="92" width="27" height="16"/>
+                    <rect key="frame" x="49" y="71" width="27" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="10"/>
@@ -263,7 +263,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6X-Ia-Gwb" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
-                    <rect key="frame" x="13" y="140" width="55" height="16"/>
+                    <rect key="frame" x="15" y="126" width="55" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="10"/>
@@ -274,7 +274,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsT-Ww-rsW" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
-                    <rect key="frame" x="30" y="246" width="65" height="16"/>
+                    <rect key="frame" x="30" y="217" width="65" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="10"/>
@@ -285,7 +285,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IJ-0z-eYj" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
-                    <rect key="frame" x="30" y="307" width="65" height="16"/>
+                    <rect key="frame" x="30" y="283" width="65" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="10"/>
@@ -296,7 +296,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSQ-e7-V74" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
-                    <rect key="frame" x="199" y="249" width="40" height="16"/>
+                    <rect key="frame" x="200" y="204" width="40" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="10"/>
@@ -307,7 +307,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vup-0N-17r" customClass="DBRoundButton" customModule="DeliciousBody" customModuleProvider="target">
-                    <rect key="frame" x="231" y="95" width="24" height="16"/>
+                    <rect key="frame" x="216" y="64" width="24" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="10"/>
@@ -331,7 +331,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="106" y="88.5"/>
+            <point key="canvasLocation" x="105.59999999999999" y="88.15592203898052"/>
         </view>
     </objects>
     <resources>
