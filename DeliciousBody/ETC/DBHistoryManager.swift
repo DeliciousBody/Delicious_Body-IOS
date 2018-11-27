@@ -29,6 +29,8 @@ class DBHistoryManager: NSObject {
     
     static func resetHistory() {
         let realm = try! Realm()
-        realm.deleteAll()
+        try! realm.write {
+            realm.deleteAll()
+        }
     }
 }

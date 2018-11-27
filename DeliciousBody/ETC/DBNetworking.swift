@@ -130,11 +130,11 @@ class DBNetworking: NSObject {
         }
     }
     
-    static func createUserInfo(token: String? = nil, params: [String : Any], completion:@escaping (_ result: Int) -> Void) {
+    static func createUserInfo(user: User, completion:@escaping (_ result: Int) -> Void) {
         let url = "\(kBaseURL)userinfo/"
-        let headers: HTTPHeaders? = User.me?.httpHeaders()
-        
-        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+        let headers: HTTPHeaders? = user.httpHeaders()
+
+        Alamofire.request(url, method: .post, parameters: user.toJSON(), encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             let status = response.response?.statusCode ?? 999
             completion(status)
         }

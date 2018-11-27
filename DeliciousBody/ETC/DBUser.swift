@@ -108,6 +108,7 @@ open class User : NSObject {
         UserDefaults.standard.removeObject(forKey: "DeviceKey")
         UserDefaults.standard.removeObject(forKey: kSavedUserData)
         UserDefaults.standard.synchronize()
+        DBHistoryManager.resetHistory()
     }
     
     open static func fetchToken() -> String? {

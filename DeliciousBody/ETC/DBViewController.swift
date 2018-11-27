@@ -13,10 +13,6 @@ class DBViewController: UIViewController {
     @IBAction func pop(segue: UIStoryboardSegue) {}
     override func viewDidLoad() {
         NotificationCenter.default.addObserver(self, selector: #selector(DBStartViewController.appDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-    }
-    
-    @objc func appDidBecomeActive() {
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         if let AppDelegate = UIApplication.shared.delegate as? AppDelegate, let exer = AppDelegate.exer {
             let vc = UIStoryboard.viewController(storyBoard: "Home", withID: "DBVideoViewController") as! DBVideoViewController
             vc.exercise = exer
@@ -25,7 +21,19 @@ class DBViewController: UIViewController {
             if User.me != nil {
                 DBNetworking.pushCheck(completion: nil)
             }
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func appDidBecomeActive() {
+        if let AppDelegate = UIApplication.shared.delegate as? AppDelegate, let exer = AppDelegate.exer {
+            let vc = UIStoryboard.viewController(storyBoard: "Home", withID: "DBVideoViewController") as! DBVideoViewController
+            vc.exercise = exer
+            AppDelegate.exer = nil
             
+            if User.me != nil {
+                DBNetworking.pushCheck(completion: nil)
+            }
             self.present(vc, animated: true, completion: nil)
         }
     }
