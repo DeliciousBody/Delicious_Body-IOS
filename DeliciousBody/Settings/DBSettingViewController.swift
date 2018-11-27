@@ -38,7 +38,7 @@ class DBSettingViewController: DBViewController {
         historyCollectionView.delegate = historyViewModel
         historyViewModel.handler = { indexPath, exercise in
             guard let collectionView = self.historyCollectionView else { return }
-            self.originFrame = CGRect(x: self.Padding + (self.CellWidth * CGFloat(indexPath.row)) - collectionView.contentOffset.x , y: 242, width: 152, height: 90)
+            self.originFrame = CGRect(x: self.Padding + (self.CellWidth * CGFloat(indexPath.row)) - collectionView.contentOffset.x , y: SCREEN_WIDTH * 180 / 375 + 64, width: 152, height: 90)
             self.selectedImage = DBCache.shared.loadImage(key: "\(exercise.video_id)img") ?? #imageLiteral(resourceName: "sample_history")
             self.performSegue(withIdentifier: "video", sender: exercise)
         }

@@ -118,17 +118,14 @@ class DBLoginViewController: DBViewController, UITextFieldDelegate {
                                         user.photoUrl = profile.profileImageURL
                                         user.name = profile.nickName
                                         user.id = "카카오톡"
-                                        DBNetworking.createUserInfo(token: jwtToken, params: user.toJSON(), completion: { (result) in
-                                            if result == 201 {
-                                                User.me = user
-                                                user.save()
-                                                let storyBoard = UIStoryboard(name: "Join", bundle: nil)
-                                                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBJoinNavigationController")
-                                                self.present(mainViewController, animated: true, completion: nil)
-                                            } else {
-                                                self.showAlert(title: "오류", content: "UserInfo 생성에 실패하였습니다.")
-                                            }
-                                        })
+                                        
+                                        User.me = user
+                                        user.save()
+                                        
+                                        let storyBoard = UIStoryboard(name: "Join", bundle: nil)
+                                        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBJoinNavigationController")
+                                        self.present(mainViewController, animated: true, completion: nil)
+                                        
                                     } else {
                                         self.showAlert(title: "오류", content: "로그인에 실패하였습니다.")
                                     }

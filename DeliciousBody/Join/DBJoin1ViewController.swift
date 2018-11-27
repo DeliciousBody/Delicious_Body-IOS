@@ -145,18 +145,15 @@ class DBJoin1ViewController: DBViewController, UITextFieldDelegate{
                                     if let profile = data as? KOTalkProfile {
                                         user.photoUrl = profile.profileImageURL
                                         user.name = profile.nickName
-                                        DBNetworking.createUserInfo(token: jwtToken, params: user.toJSON(), completion: { (result) in
-                                            if result == 201 {
-                                                User.me = user
-                                                user.id = "카카오톡"
-                                                user.save()
-                                                let storyBoard = UIStoryboard(name: "Join", bundle: nil)
-                                                let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBJoinNavigationController")
-                                                self.present(mainViewController, animated: true, completion: nil)
-                                            }
-                                        })
+                                        User.me = user
+                                        user.id = "카카오톡"
+                                        user.save()
+                                        
+                                        let storyBoard = UIStoryboard(name: "Join", bundle: nil)
+                                        let mainViewController = storyBoard.instantiateViewController(withIdentifier: "DBJoinNavigationController")
+                                        self.present(mainViewController, animated: true, completion: nil)
                                     } else {
-                                        print(error.debugDescription)
+                                        self.showAlert(title: "오류", content: "카카오 로그인에 실패하였습니다..")
                                     }
                                 })
                             }

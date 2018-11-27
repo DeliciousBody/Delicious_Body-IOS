@@ -102,6 +102,7 @@ extension DBSettingInfoViewController: UITableViewDataSource, UITableViewDelegat
             alert.addAction(UIAlertAction(title: "닫기", style: .cancel, handler: nil))
             self.present(alert, animated: true)
         case .signOut:
+            DBHistoryManager.resetHistory()
             self.performSegue(withIdentifier: "signout", sender: nil)
         default:
             return

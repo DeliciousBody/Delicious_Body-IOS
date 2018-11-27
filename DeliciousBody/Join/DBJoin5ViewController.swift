@@ -30,7 +30,7 @@ class DBJoin5ViewController: DBViewController {
         me.slogan = inputTextField.text ?? "Workout hard Play hard!"
         DBIndicator.shared.show()
         
-        DBNetworking.createUserInfo(params: me.toJSON(), completion: { (result) in
+        DBNetworking.createUserInfo(user: me, completion: { (result) in
             DBIndicator.shared.stop()
             if result == 201 {
                 User.me?.save()
