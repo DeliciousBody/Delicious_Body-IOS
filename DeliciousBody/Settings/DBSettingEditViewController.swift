@@ -35,8 +35,8 @@ class DBSettingEditViewController: DBViewController {
         let gender = me.sex,
         let level = me.activity_level else { return }
         ageTextField.text = "\(age)"
-        maleButton.isSelected = gender
-        femaleButton.isSelected = !gender
+        maleButton.isSelected = gender == 1
+        femaleButton.isSelected = gender == 2
         
         currentLevel = level
         for btn in levelButtons {
@@ -96,7 +96,7 @@ class DBSettingEditViewController: DBViewController {
             { (result) in
                 if result == 200 {
                     me.age = age
-                    me.sex = self.currentGender == .male
+                    me.sex = self.currentGender == .male ? 1 : 2
                     me.activity_level = self.currentLevel
                     me.save()
                 }

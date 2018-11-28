@@ -49,21 +49,6 @@ extension DBMainViewController {
     }
     
     func showImage(_ show: Bool) {
-//        guard let height = navigationController?.navigationBar.frame.height else { return }
-//        if show {
-//            navigationController?.navigationBar.layer.zPosition = 0
-//        }
-//
-//        let coeff: CGFloat = {
-//            let delta = height - NavBarHeightSmallState
-//            let diff = (NavBarHeightLargeState - NavBarHeightSmallState)
-//            return delta / diff
-//        }()
-//
-//        UIView.animate(withDuration: 0.3) {
-//            self.imageView.alpha = show ? 1.0 : 0.0
-//            self.titleLabel.alpha = coeff
-//        }
     }
 }
 

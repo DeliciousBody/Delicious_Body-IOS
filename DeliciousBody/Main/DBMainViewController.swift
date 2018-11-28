@@ -33,9 +33,11 @@ class DBMainViewController: DBViewController {
     var selectedImage = UIImage()
     
     let interactor = Interactor()
+    let refreshControl: UIRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableViewModel.handler = { indexPath, exercise in
             guard let tableView = self.tableView else { return }
             let index = IndexPath(row: 0, section: indexPath.section)
@@ -55,7 +57,7 @@ class DBMainViewController: DBViewController {
             self.tableView.reloadData()
             self.tableViewModel.items = items
             self.tableView.reloadData()
-        }    
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,6 +80,23 @@ class DBMainViewController: DBViewController {
         if UIDevice.current.orientation.isPortrait {
             moveAndResizeImageForPortrait()
         }
+        
+        refreshControl.addTarget(self, action:
+            #selector(DBMainViewController.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        self.tableView.refreshControl = refreshControl
+        refreshControl.frame.origin.y += 20
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        DBNetworking.getRecommendList() {
+            (result, items) in
+            self.tableViewModel.items = []
+            self.tableView.reloadData()
+            self.tableViewModel.items = items
+            self.tableView.reloadData()
+            refreshControl.endRefreshing()
+        }
     }
     
     func setupUI() {
@@ -93,6 +112,7 @@ class DBMainViewController: DBViewController {
         imageView.layer.cornerRadius =  ImageSizeForLargeState / 2
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
         
         if let urlStr = me.photoUrl , let url = URL(string: urlStr) {
             imageView.kf.setImage(with: url)
@@ -103,7 +123,7 @@ class DBMainViewController: DBViewController {
         NSLayoutConstraint.activate([
             imageView.leftAnchor.constraint(equalTo: view.leftAnchor,
                                             constant:ImageRightMargin),
-            imageView.topAnchor.constraint(equalTo: view.topAnchor,
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
                                            constant: ImageTopMarginForLargeState),
             imageView.heightAnchor.constraint(equalToConstant: ImageSizeForLargeState),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
@@ -112,7 +132,7 @@ class DBMainViewController: DBViewController {
         NSLayoutConstraint.activate([
             titleLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor,
                                              constant:ImageRightMargin),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor,
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
                                             constant: ImageTopMarginForLargeState),
             titleLabel.heightAnchor.constraint(equalToConstant: ImageSizeForLargeState),
             ])

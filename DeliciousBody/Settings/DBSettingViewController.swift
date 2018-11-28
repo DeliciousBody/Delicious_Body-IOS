@@ -10,7 +10,7 @@ import Kingfisher
 
 class DBSettingViewController: DBViewController {
     
-    var sampleData: [(BodyType, Int)] = []
+    var sampleData: [(BodyType, Int)] = [(.neck, 0), (.chest, 0), (.abdomen, 0), (.thigh, 0), (.calf, 0), (.arm, 0), (.back, 0), (.hip, 0), (.body, 0)]
     var max = 20
     let historyViewModel = HistroyViewModel()
     
@@ -26,13 +26,13 @@ class DBSettingViewController: DBViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var historyCollectionView: UICollectionView!
+    @IBOutlet weak var recordCollectionView: UICollectionView!
     
     @IBOutlet weak var editInfoBtn: UIButton!
     @IBOutlet weak var editTypeBtn : UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-        sampleData = [(.neck, 20), (.chest, 18), (.abdomen, 14), (.thigh, 3), (.calf, 10), (.arm, 6), (.back, 16), (.hip, 10), (.body, 10)]
         
         historyCollectionView.dataSource = historyViewModel
         historyCollectionView.delegate = historyViewModel
@@ -58,8 +58,16 @@ class DBSettingViewController: DBViewController {
     }
     
     func setData() {
+        guard let me = User.me else { return }
+        
         historyViewModel.reload()
         historyCollectionView.reloadData()
+        
+        for i in 0 ..< 9 {
+            sampleData[i] = (BodyType(rawValue: i)!, me.records[i])
+        }
+        
+        recordCollectionView.reloadData()
     }
     func setupUI() {
         guard let me = User.me else { return }

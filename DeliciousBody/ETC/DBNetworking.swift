@@ -261,4 +261,13 @@ class DBNetworking: NSObject {
             completion?(status)
         }
     }
+    
+    static func typeCheck(type: Int, completion:((_ result: Int) -> Void)?) {
+        let url = "\(kBaseURL)userinfo/type/\(type)/"
+        let headers: HTTPHeaders? = User.me?.httpHeaders()
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            completion?(status)
+        }
+    }
 }

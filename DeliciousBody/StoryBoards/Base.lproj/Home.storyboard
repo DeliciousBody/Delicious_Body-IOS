@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XFK-uy-2yh">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="F8p-uO-bCQ">
@@ -49,14 +49,14 @@
             <objects>
                 <viewController restorationIdentifier="DBGuideViewController" storyboardIdentifier="DBGuideViewController" id="QLq-gv-sjA" customClass="DBGuideViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Oy-tW-eYz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttV-3W-Goz">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA7-iW-DQb">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="xv0-UJ-UpP"/>
                                         </constraints>
@@ -65,7 +65,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-cr-jdx">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="60"/>
+                                        <rect key="frame" x="207" y="0.0" width="207" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="ptF-GE-mlj"/>
                                         </constraints>
@@ -74,7 +74,7 @@
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiN-50-BHp">
-                                        <rect key="frame" x="187" y="15" width="1" height="30"/>
+                                        <rect key="frame" x="206.5" y="15" width="1" height="30"/>
                                         <color key="backgroundColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="RlM-FE-o6h"/>
@@ -98,7 +98,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-g0-094">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="836"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,7 +124,7 @@
         <!--Home-->
         <scene sceneID="mrZ-bt-ZVQ">
             <objects>
-                <viewController restorationIdentifier="MainVC" storyboardIdentifier="MainVC" id="XFK-uy-2yh" customClass="DBMainViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MainVC" storyboardIdentifier="MainVC" automaticallyAdjustsScrollViewInsets="NO" id="XFK-uy-2yh" customClass="DBMainViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YQd-mw-UaY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +134,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3qY-Kj-JRK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1451"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1417"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="TGE-8C-jgv">
@@ -460,24 +460,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4Z-P2-LQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160.8" y="695.80209895052474"/>
+            <point key="canvasLocation" x="1364" y="649"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="Jak-0K-CZX">
             <objects>
                 <viewController storyboardIdentifier="DBVideoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tWI-iN-Ss8" customClass="DBVideoViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="anJ-Vz-dRw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usu-Ys-y2g">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QJB-FQ-7pF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idm-o2-sby">
-                                        <rect key="frame" x="164.5" y="82.5" width="46" height="46"/>
+                                        <rect key="frame" x="184" y="93.5" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="cBY-Rr-tHb"/>
                                             <constraint firstAttribute="height" constant="46" id="yIZ-rm-Zrd"/>
@@ -494,7 +494,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aue-5b-Gzs">
-                                        <rect key="frame" x="327" y="34" width="32" height="32"/>
+                                        <rect key="frame" x="366" y="34" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="9yA-rO-Ofd"/>
                                             <constraint firstAttribute="height" constant="32" id="Ne7-5K-32f"/>
@@ -511,7 +511,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RY-4Z-EQg">
-                                        <rect key="frame" x="277" y="170" width="83" height="26"/>
+                                        <rect key="frame" x="316" y="192" width="83" height="26"/>
                                         <color key="backgroundColor" red="0.28827553989999999" green="0.35192441940000002" blue="0.88710510730000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="SrM-nG-LKn"/>
@@ -541,10 +541,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cyy-J3-3eF">
-                                <rect key="frame" x="0.0" y="211" width="375" height="456"/>
+                                <rect key="frame" x="0.0" y="233" width="414" height="629"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Onh-g9-Bz2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="허리 근육 강화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZD4-FG-ivn">
@@ -590,10 +590,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="descCell" id="cPL-eb-anr" customClass="DBDescCell" customModule="DeliciousBody" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="103" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cPL-eb-anr" id="wzX-Zk-MFd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxc-O3-6fJ" customClass="UITextViewFixed" customModule="DeliciousBody" customModuleProvider="target">
@@ -660,7 +660,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1853.5999999999999" y="694.90254872563719"/>
+            <point key="canvasLocation" x="2122" y="649"/>
         </scene>
     </scenes>
     <resources>

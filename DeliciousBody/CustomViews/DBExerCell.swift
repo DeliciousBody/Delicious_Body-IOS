@@ -31,7 +31,10 @@ class DBExerCell: UITableViewCell {
     }
     
     func configure(exer: Exercise) {
-        exerImageView.kf.setImage(with: URL(string: exer.video_thumbnail))
+        if let url = URL(string: exer.video_thumbnail) {
+            let image = ImageResource(downloadURL: url, cacheKey: exer.video_thumbnail)
+            exerImageView.kf.setImage(with: image)
+        }
         exerTitleLabel.text = exer.video_name
         exerTimeLabel.text = secToString(sec: exer.time)
         videoID = exer.video_id
@@ -40,8 +43,6 @@ class DBExerCell: UITableViewCell {
             likeButton.isSelected = me.isFavoriteVideo(id: exer.video_id)
         }
     }
-    
-    
 }
 
 class DBDescCell: UITableViewCell {

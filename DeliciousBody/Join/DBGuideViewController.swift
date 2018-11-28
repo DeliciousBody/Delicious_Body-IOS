@@ -14,7 +14,7 @@ class DBGuideViewController: DBViewController {
     @IBOutlet var guideViews: [UIView]!
     
     let guideImageHeight: CGFloat = SCREEN_WIDTH * 0.88
-    let guideImageY: CGFloat = SCREEN_WIDTH * 188 / 375 + 15
+    var guideImageY: CGFloat = SCREEN_WIDTH * 188 / 375 + 15
     
     var imageViews = [UIImageView]()
     var currentPage = 0 {
@@ -100,7 +100,7 @@ class DBGuideViewController: DBViewController {
     }
     
     func setupGuideView() {
-        
+        guideImageY = (SCREEN_HEIGHT - 60 + guideImageY) / 2 - guideImageHeight / 2 - 16
         let imageArr: [UIImage] = [#imageLiteral(resourceName: "guide1"),#imageLiteral(resourceName: "guide4"),#imageLiteral(resourceName: "guide3"),#imageLiteral(resourceName: "guide2"),#imageLiteral(resourceName: "guide5")]
         for i in 0...4 {
             let imageView = UIImageView(frame: CGRect(x: i == 0 ? 0 : SCREEN_WIDTH, y: guideImageY, width: SCREEN_WIDTH, height: guideImageHeight))

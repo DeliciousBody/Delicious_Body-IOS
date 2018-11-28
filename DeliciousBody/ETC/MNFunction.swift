@@ -12,7 +12,7 @@ import UIKit
 let SCREEN_WIDTH  = UIScreen.main.bounds.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.height
 let NaviBar_Height = 44
-let StatusBar_Height = 20
+let StatusBar_Height = UIApplication.shared.statusBarFrame.size.height
 
 func getHeightOfStatusNNaviBar(_ vc: UIViewController) -> CGFloat {
     let height = vc.navigationController?.navigationBar.frame.size.height ?? 0

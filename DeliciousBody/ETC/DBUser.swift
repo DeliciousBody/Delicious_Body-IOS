@@ -18,7 +18,7 @@ open class User : NSObject {
     open var id: String?
     open var name: String?
     open var age: Int?
-    open var sex: Bool?
+    open var sex: Int?
     open var activity_level: Int?
     open var interested_part: String?
     open var favorite_list: String?
@@ -36,6 +36,8 @@ open class User : NSObject {
     open var weekend_start: Int = 8
     open var weekend_end: Int = 22
     
+    open var records: [Int] = [0,0,0,0,0,0,0,0,0]
+    
     var favorite_array: [Int] {
         return favorite_list == nil ? [] : favorite_list!.split(separator: ";").compactMap({Int($0)})
     }
@@ -48,7 +50,7 @@ open class User : NSObject {
         id = dic["id"] as? String
         name = dic["name"] as? String
         age = dic["age"] as? Int
-        sex = dic["is_man"] as? Bool
+        sex = dic["sex"] as? Int
         activity_level = dic["activity_level"] as? Int
         interested_part = dic["interested_part"] as? String
         weekdays_start = dic["weekdays_start"] as? Int ?? 8
@@ -63,6 +65,10 @@ open class User : NSObject {
         is_push_weekend = dic["is_push_weekend"] as? Bool ?? true
         is_subscription = dic["is_subscription"] as? Bool
         token = dic["token"] as? String
+        
+        for i in 0 ..< 9 {
+            records[i] = dic["part\(i)"] as? Int ?? 0
+        }
     }
     
     func setFavoriteVideo(id: Int, isLike: Bool) {
@@ -139,7 +145,7 @@ open class User : NSObject {
         if let id = self.id { data["id"] = id as AnyObject }
         if let name = self.name { data["name"] = name as AnyObject }
         if let age = self.age { data["age"] = age as AnyObject }
-        if let sex = self.sex { data["is_man"] = sex as AnyObject }
+        if let sex = self.sex { data["sex"] = sex as AnyObject }
         if let lv = self.activity_level { data["activity_level"] = lv as AnyObject }
         if let parts = self.interested_part { data["interested_part"] = parts as AnyObject }
         if let avatar = self.photoUrl { data["avatar"] = avatar as AnyObject }
@@ -154,6 +160,11 @@ open class User : NSObject {
         data["weekend_start"] = weekend_start as AnyObject
         data["weekend_end"] = weekend_end as AnyObject
         data["push_id"] = User.fetchDeviceKey() as AnyObject
+        
+        for i in 0 ..< 9 {
+            data["part\(i)"] = records[i] as AnyObject
+        }
+        
         UserDefaults.standard.set(data, forKey: kSavedUserData)
         UserDefaults.standard.synchronize()
         
@@ -178,7 +189,7 @@ open class User : NSObject {
 //        if let id = self.id { data["id"] = id as String }
         if let name = self.name { data["name"] = name as String }
         if let age = self.age { data["age"] = age as Int }
-        if let sex = self.sex { data["is_man"] = sex as Bool }
+        if let sex = self.sex { data["sex"] = sex as Int }
         if let lv = self.activity_level { data["activity_level"] = lv as Int }
         if let parts = self.interested_part { data["interested_part"] = parts as String }
         if let avatar = self.photoUrl { data["avatar"] = avatar as String }
@@ -193,6 +204,10 @@ open class User : NSObject {
         data["weekend_start"] = weekend_start as Int
         data["weekend_end"] = weekend_end as Int
         data["phone_model"] = UIDevice.modelName
+        
+        for i in 0 ..< 9 {
+            data["part\(i)"] = records[i] as Int
+        }
         print(data)
         return data
     }

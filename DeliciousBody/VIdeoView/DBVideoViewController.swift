@@ -154,6 +154,15 @@ class DBVideoViewController: UIViewController {
                     self.tableView.reloadData()
                 }
             })
+            
+            if let me = User.me {
+                DBNetworking.typeCheck(type: exer.main_part) { (result) in
+                    if result == 200 {
+                        me.records[exer.main_part] += 1
+                        me.save()
+                    }
+                }
+            }
         }
     }
     
@@ -203,7 +212,7 @@ extension DBVideoViewController: PlayerDelegate, PlayerPlaybackDelegate {
     }
     
     @IBAction func togetherButtonPressed(_ sender: UIButton) {
-        if let url = exercise?.video_url {
+        if let url = exercise?.video_url, url != ""{
             UIApplication.shared.open(URL(string: "\(url)")!, options: [:], completionHandler: nil)
         }
     }

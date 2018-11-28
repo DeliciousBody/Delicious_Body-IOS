@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DAz-eu-Ix2">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,29 +15,29 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="fTV-hj-ReW" customClass="DBVideoListViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aLe-Se-L8t">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67S-nf-xYx">
-                                <rect key="frame" x="0.0" y="50" width="320" height="410"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="630"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ctz-qu-wnp" userLabel="contentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="640" height="410"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="750" height="630"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hA3-EM-ZAV">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <view key="tableHeaderView" contentMode="scaleToFill" id="hJ8-ue-rCU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </tableView>
                                             <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WwX-aB-AQb">
-                                                <rect key="frame" x="320" y="0.0" width="320" height="410"/>
+                                                <rect key="frame" x="375" y="0.0" width="375" height="630"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Atd-yb-lHm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
@@ -69,10 +69,10 @@
                                 </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFT-Sq-rmx">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-wP-3nn">
-                                        <rect key="frame" x="22" y="0.0" width="138" height="50"/>
+                                        <rect key="frame" x="22" y="0.0" width="165.66666666666666" height="50"/>
                                         <state key="normal" image="icon_allVideo_unselected"/>
                                         <state key="selected" image="icon_allVideo_selected"/>
                                         <connections>
@@ -80,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jj-cD-VYx">
-                                        <rect key="frame" x="160" y="0.0" width="138" height="50"/>
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="165.33333333333337" height="50"/>
                                         <state key="normal" image="cellLike_unselected"/>
                                         <state key="selected" image="cellLike_selected"/>
                                         <connections>
@@ -160,14 +160,14 @@
             <objects>
                 <viewController id="sVc-s4-OxW" customClass="DBVideoSearchViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0TZ-Z3-NKk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUu-Y6-djV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
                                     <view tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odv-lP-hoU">
-                                        <rect key="frame" x="0.0" y="48" width="320" height="2"/>
+                                        <rect key="frame" x="0.0" y="48" width="375" height="2"/>
                                         <color key="backgroundColor" red="0.33677113060000002" green="0.38131809230000002" blue="0.86278921369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="5FA-VZ-3dI"/>
@@ -181,7 +181,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="운동 부위 / 이름을 검색하세요.  예) 목, 거북목" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-Tc-XII">
-                                        <rect key="frame" x="64" y="15.5" width="231" height="19"/>
+                                        <rect key="frame" x="64" y="15.666666666666671" width="286" height="19"/>
                                         <color key="textColor" red="0.3294117647" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -204,17 +204,17 @@
                                 </constraints>
                             </view>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pw" translatesAutoresizingMaskIntoConstraints="NO" id="9dU-28-gko">
-                                <rect key="frame" x="128.5" y="220" width="63" height="64"/>
+                                <rect key="frame" x="156" y="330" width="63" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="63" id="VFw-7f-qUa"/>
                                     <constraint firstAttribute="height" constant="64" id="vra-Hi-yD8"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iDC-HE-g0G">
-                                <rect key="frame" x="0.0" y="85" width="320" height="370"/>
+                                <rect key="frame" x="0.0" y="85" width="375" height="556"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="oJf-0W-zeI">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -224,10 +224,10 @@
                                 </connections>
                             </tableView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLH-st-xvW">
-                                <rect key="frame" x="0.0" y="50" width="320" height="35"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-41-TBo">
-                                        <rect key="frame" x="24" y="7.5" width="0.0" height="20"/>
+                                        <rect key="frame" x="24" y="7.6666666666666572" width="0.0" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="7nl-Ym-W4I"/>
                                             <constraint firstAttribute="height" constant="20" id="Zsz-hL-pOp"/>
@@ -237,7 +237,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 관련 운동 검색 결과입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40k-GA-RIR">
-                                        <rect key="frame" x="24" y="7.5" width="130" height="20"/>
+                                        <rect key="frame" x="24" y="7.6666666666666572" width="130" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="3hm-z3-00d"/>
                                         </constraints>
@@ -246,7 +246,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKz-iO-Uy1">
-                                        <rect key="frame" x="285.5" y="7.5" width="10.5" height="20"/>
+                                        <rect key="frame" x="340.66666666666669" y="7.6666666666666572" width="10.333333333333314" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Acu-pY-Nnt"/>
                                         </constraints>
@@ -255,7 +255,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoC-dj-p7K">
-                                        <rect key="frame" x="275.5" y="7.5" width="8" height="20"/>
+                                        <rect key="frame" x="330.66666666666669" y="7.6666666666666572" width="8" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="RaH-Gl-fwn"/>
                                         </constraints>
@@ -264,7 +264,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 운동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0U-Ua-eWy">
-                                        <rect key="frame" x="226.5" y="7.5" width="45" height="20"/>
+                                        <rect key="frame" x="281.66666666666669" y="7.6666666666666572" width="45" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="b3W-tT-cRb"/>
                                         </constraints>
@@ -328,11 +328,11 @@
             <objects>
                 <viewController id="I0j-pi-RGW" customClass="DBVideoFilterViewController" customModule="DeliciousBody" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bX0-HL-Mvb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IlA-WX-rut" customClass="DBBodyView" customModule="DeliciousBody" customModuleProvider="target">
-                                <rect key="frame" x="10" y="100.5" width="300" height="340"/>
+                                <rect key="frame" x="37.666666666666657" y="143" width="300" height="340"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="340" id="54j-i0-1wr"/>
@@ -340,10 +340,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQD-mD-ljn">
-                                <rect key="frame" x="55.5" y="0.0" width="209" height="96.5"/>
+                                <rect key="frame" x="83" y="0.0" width="209" height="139"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueu-L3-6gm">
-                                        <rect key="frame" x="54" y="0.0" width="155" height="96.5"/>
+                                        <rect key="frame" x="54" y="0.0" width="155" height="139"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="155" id="wpw-b3-r6c"/>
                                         </constraints>
@@ -354,7 +354,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_smile" translatesAutoresizingMaskIntoConstraints="NO" id="901-HM-fpe">
-                                        <rect key="frame" x="0.0" y="24" width="38" height="49"/>
+                                        <rect key="frame" x="0.0" y="45" width="38" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="QhD-yO-nwy"/>
                                         </constraints>
@@ -405,10 +405,10 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="3zz-0v-dUr">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.25882352939999997" green="0.28235294119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.3294117647" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -424,18 +424,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="barbutton_filter" width="48" height="48"/>
-        <image name="barbutton_refresh" width="48" height="48"/>
-        <image name="barbutton_search" width="48" height="48"/>
-        <image name="cellLike_selected" width="48" height="48"/>
-        <image name="cellLike_unselected" width="48" height="48"/>
-        <image name="icon_allVideo_selected" width="48" height="48"/>
-        <image name="icon_allVideo_unselected" width="48" height="48"/>
+        <image name="barbutton_filter" width="72" height="72"/>
+        <image name="barbutton_refresh" width="72" height="72"/>
+        <image name="barbutton_search" width="72" height="72"/>
+        <image name="cellLike_selected" width="72" height="72"/>
+        <image name="cellLike_unselected" width="72" height="72"/>
+        <image name="icon_allVideo_selected" width="72" height="72"/>
+        <image name="icon_allVideo_unselected" width="72" height="72"/>
         <image name="icon_pw" width="63" height="64"/>
-        <image name="icon_search_active" width="48" height="48"/>
-        <image name="icon_search_default" width="48" height="48"/>
+        <image name="icon_search_active" width="72" height="72"/>
+        <image name="icon_search_default" width="72" height="72"/>
         <image name="logo_smile" width="34" height="41"/>
-        <image name="tabbar_video_selected" width="52" height="52"/>
-        <image name="tabbar_video_unselected" width="52" height="52"/>
+        <image name="tabbar_video_selected" width="78" height="78"/>
+        <image name="tabbar_video_unselected" width="78" height="78"/>
     </resources>
 </document>

@@ -190,8 +190,9 @@ extension DBVideoListViewController: UINavigationControllerDelegate {
         guard toVC is DBVideoSearchViewController || fromVC is DBVideoSearchViewController else {
             return nil
         }
+        
         var originFrame = tabbarLine.frame
-        originFrame.origin.y += 64
+        originFrame.origin.y += CGFloat(StatusBar_Height) + self.navigationController!.navigationBar.frame.size.height
         switch operation {
         case .push:
             return DBVideoSearchTransition(isPresenting: true, originFrame: originFrame)

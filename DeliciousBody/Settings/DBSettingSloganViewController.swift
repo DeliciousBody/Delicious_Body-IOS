@@ -8,8 +8,13 @@
 
 import UIKit
 
-class DBSettingSloganViewController: UIViewController {
+class DBSettingSloganViewController: DBViewController {
     @IBOutlet weak var inputTextField: DBTextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setKeyboardHide()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -87,7 +87,7 @@ class DBJoin2ViewController: DBViewController {
             return
         }
         
-        me.sex = currentGender == .male
+        me.sex = currentGender == .male ? 1 : 2
         me.activity_level = currentLevel
         
         performSegue(withIdentifier: "next", sender: nil)
