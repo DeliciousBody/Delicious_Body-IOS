@@ -23,11 +23,12 @@ class DBAlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSlider()
         setData()
+        setSlider()
     }
     
     func setSlider() {
+        guard let me = User.me else { return }
         slider_Week.numberFormatter = {
             let formatter = NumberFormatter()
             formatter.positiveSuffix = "시"
@@ -48,6 +49,21 @@ class DBAlarmViewController: UIViewController {
         
         setHandleShadow(slider: slider_Week)
         setHandleShadow(slider: slider_Weekend)
+        
+        let switches: [UISwitch] = [weekdaySwitch, weekendSwitch]
+        for sender in switches {
+            let slider: RangeSeekSlider = sender.tag == 0 ? slider_Week : slider_Weekend
+            slider.colorBetweenHandles = sender.isOn ? UIColor.themeBlue : UIColor.subGray216
+            slider.maxLabelColor = sender.isOn ? UIColor.themeBlue : UIColor.subGray216
+            slider.minLabelColor = sender.isOn ? UIColor.themeBlue : UIColor.subGray216
+            slider.isUserInteractionEnabled = sender.isOn
+            slider.layoutSubviews()
+            if sender.tag == 0 {
+                me.is_push_weekdays = sender.isOn
+            } else {
+                me.is_push_weekend = sender.isOn
+            }
+        }
     }
     
     func setData() {

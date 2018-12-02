@@ -275,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_login" translatesAutoresizingMaskIntoConstraints="NO" id="rLX-iD-rOD">
-                                <rect key="frame" x="100" y="568" width="275" height="210"/>
+                                <rect key="frame" x="100" y="602" width="275" height="210"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rLX-iD-rOD" secondAttribute="height" multiplier="55:42" id="uoT-sa-hCs"/>
                                 </constraints>
@@ -406,6 +406,7 @@
                             <constraint firstItem="rLX-iD-rOD" firstAttribute="trailing" secondItem="PpS-9U-ung" secondAttribute="trailing" id="BCb-a2-e52"/>
                             <constraint firstItem="iUg-f3-OCr" firstAttribute="centerX" secondItem="PpS-9U-ung" secondAttribute="centerX" id="Gut-iK-0ZN"/>
                             <constraint firstItem="rLX-iD-rOD" firstAttribute="width" secondItem="Ow2-hs-cMk" secondAttribute="width" multiplier="275:375" id="GvI-qw-czW"/>
+                            <constraint firstAttribute="bottom" secondItem="rLX-iD-rOD" secondAttribute="bottom" id="HG9-qV-GYB"/>
                             <constraint firstItem="nAi-7j-Y3V" firstAttribute="top" secondItem="PpS-9U-ung" secondAttribute="top" constant="14" id="Hmr-3S-fgW"/>
                             <constraint firstItem="ddU-EG-1cC" firstAttribute="top" secondItem="NlF-wa-Ur6" secondAttribute="bottom" constant="4" id="KDb-8J-dHe"/>
                             <constraint firstItem="NlF-wa-Ur6" firstAttribute="top" secondItem="PpS-9U-ung" secondAttribute="top" constant="40" id="Lvn-ae-451"/>
@@ -415,7 +416,6 @@
                             <constraint firstItem="SRJ-nk-Gcy" firstAttribute="centerX" secondItem="Ow2-hs-cMk" secondAttribute="centerX" id="dXN-dJ-3cn"/>
                             <constraint firstItem="hfk-CV-4kU" firstAttribute="top" secondItem="SRJ-nk-Gcy" secondAttribute="bottom" constant="8" id="eBK-pi-Sf8"/>
                             <constraint firstItem="bPt-Fd-2qh" firstAttribute="centerX" secondItem="Ow2-hs-cMk" secondAttribute="centerX" id="f1I-wb-qBP"/>
-                            <constraint firstItem="rLX-iD-rOD" firstAttribute="bottom" secondItem="PpS-9U-ung" secondAttribute="bottom" id="fUZ-8H-QtJ"/>
                             <constraint firstItem="ddU-EG-1cC" firstAttribute="centerX" secondItem="Ow2-hs-cMk" secondAttribute="centerX" id="fVu-zw-Q4L"/>
                             <constraint firstItem="bPt-Fd-2qh" firstAttribute="width" secondItem="Ow2-hs-cMk" secondAttribute="width" multiplier="300:375" id="hHV-mP-Odm"/>
                             <constraint firstItem="iUg-f3-OCr" firstAttribute="top" secondItem="Gqc-x3-URe" secondAttribute="bottom" constant="12" id="kD0-9h-Rdj"/>
@@ -449,7 +449,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_forget" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-Hp-Dgb">
-                                <rect key="frame" x="0.0" y="448" width="355.33333333333331" height="330"/>
+                                <rect key="frame" x="0.0" y="482" width="355.33333333333331" height="330"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WeW-Hp-Dgb" secondAttribute="height" multiplier="292:271" id="exm-4J-jz3"/>
                                 </constraints>
@@ -487,6 +487,7 @@
                                 <rect key="frame" x="37.666666666666657" y="295.33333333333331" width="300" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="I8M-jb-oSI"/>
                                     <constraint firstAttribute="width" secondItem="4sl-gl-QeP" secondAttribute="height" multiplier="300:40" id="sp4-vF-aJ8"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -546,18 +547,17 @@
                             <constraint firstItem="SMp-UV-hMq" firstAttribute="centerX" secondItem="sZu-z6-2gd" secondAttribute="centerX" id="CKK-dg-OKJ"/>
                             <constraint firstItem="0us-H0-zg3" firstAttribute="height" secondItem="Y85-Ee-gut" secondAttribute="height" id="DxY-Y2-RKk"/>
                             <constraint firstItem="MXo-xN-6Id" firstAttribute="trailing" secondItem="QFt-km-K7p" secondAttribute="trailing" constant="20" id="Ema-9J-JDZ"/>
-                            <constraint firstItem="4sl-gl-QeP" firstAttribute="width" secondItem="sZu-z6-2gd" secondAttribute="width" multiplier="300:375" id="LUu-Jm-wLV"/>
                             <constraint firstItem="cRW-yd-CzT" firstAttribute="centerX" secondItem="sZu-z6-2gd" secondAttribute="centerX" id="PiX-JN-BR1"/>
                             <constraint firstItem="cRW-yd-CzT" firstAttribute="centerY" secondItem="SMp-UV-hMq" secondAttribute="centerY" id="Rsp-i6-QiK"/>
                             <constraint firstItem="SMp-UV-hMq" firstAttribute="top" secondItem="MXo-xN-6Id" secondAttribute="top" constant="40" id="STm-za-3y8"/>
                             <constraint firstItem="0us-H0-zg3" firstAttribute="centerY" secondItem="Y85-Ee-gut" secondAttribute="centerY" id="X6g-fD-sMs"/>
                             <constraint firstItem="LD9-je-IeZ" firstAttribute="top" secondItem="4sl-gl-QeP" secondAttribute="bottom" constant="28" id="gdo-Ut-4Ap"/>
                             <constraint firstItem="LD9-je-IeZ" firstAttribute="centerX" secondItem="sZu-z6-2gd" secondAttribute="centerX" id="i6I-nY-y8k"/>
-                            <constraint firstItem="WeW-Hp-Dgb" firstAttribute="bottom" secondItem="MXo-xN-6Id" secondAttribute="bottom" id="sOk-De-E4A"/>
                             <constraint firstItem="4sl-gl-QeP" firstAttribute="centerX" secondItem="MXo-xN-6Id" secondAttribute="centerX" id="tmS-S1-7bA"/>
                             <constraint firstItem="orC-Wl-nQu" firstAttribute="centerX" secondItem="LD9-je-IeZ" secondAttribute="centerX" id="uPq-yl-aV8"/>
                             <constraint firstItem="WeW-Hp-Dgb" firstAttribute="leading" secondItem="MXo-xN-6Id" secondAttribute="leading" id="vhB-ki-Ir8"/>
                             <constraint firstItem="WeW-Hp-Dgb" firstAttribute="height" secondItem="sZu-z6-2gd" secondAttribute="height" multiplier="271:667" id="xAI-27-dYX"/>
+                            <constraint firstAttribute="bottom" secondItem="WeW-Hp-Dgb" secondAttribute="bottom" id="xl5-Fm-VLK"/>
                             <constraint firstItem="Y85-Ee-gut" firstAttribute="centerX" secondItem="sZu-z6-2gd" secondAttribute="centerX" id="xxX-lB-G0d"/>
                             <constraint firstItem="Y85-Ee-gut" firstAttribute="top" secondItem="SMp-UV-hMq" secondAttribute="bottom" id="zhK-E7-gyO"/>
                             <constraint firstItem="orC-Wl-nQu" firstAttribute="top" secondItem="LD9-je-IeZ" secondAttribute="bottom" constant="9" id="zkW-jf-7K4"/>
@@ -565,13 +565,16 @@
                         <viewLayoutGuide key="safeArea" id="MXo-xN-6Id"/>
                     </view>
                     <connections>
+                        <outlet property="backImageView" destination="WeW-Hp-Dgb" id="sGu-xJ-D3h"/>
                         <outlet property="buttonWidthConst" destination="Xd7-LG-iku" id="TeT-IU-I9z"/>
                         <outlet property="confirmLabel" destination="0us-H0-zg3" id="Rvu-FG-ugu"/>
                         <outlet property="imageView1" destination="SMp-UV-hMq" id="h8s-HA-SVX"/>
                         <outlet property="imageView2" destination="cRW-yd-CzT" id="JeG-ZW-sgf"/>
+                        <outlet property="loginLabel" destination="orC-Wl-nQu" id="WFe-AZ-40k"/>
                         <outlet property="resetButton" destination="LD9-je-IeZ" id="lSx-D7-Wdp"/>
                         <outlet property="resetLabel" destination="Y85-Ee-gut" id="Gb9-Ri-Fqy"/>
                         <outlet property="textField" destination="4sl-gl-QeP" id="65v-mc-RBf"/>
+                        <outlet property="textFieldWidth" destination="I8M-jb-oSI" id="bAf-2W-a9c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rb-di-xuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1669,7 +1672,7 @@
         <image name="midLine" width="300" height="7"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6zP-Md-Xvi"/>
-        <segue reference="3hJ-Ji-Lw7"/>
+        <segue reference="LPs-S2-6yl"/>
+        <segue reference="pR4-mM-ZgB"/>
     </inferredMetricsTieBreakers>
 </document>

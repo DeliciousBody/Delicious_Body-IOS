@@ -37,7 +37,6 @@ class DBVideoViewController: UIViewController {
                 player.pause()
                 playButton.isSelected = isPlaying
             }
-            
         }
     }
   
@@ -150,7 +149,7 @@ class DBVideoViewController: UIViewController {
             
             DBNetworking.getVideoList(byListID: exer.with_list, completion: { (result, exercises) in
                 if result == 200 {
-                    self.withList = exercises
+                    self.withList = exercises.filter{ $0.video_id != exer.video_id }
                     self.tableView.reloadData()
                 }
             })

@@ -223,9 +223,6 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="amM-gs-usU">
                                         <rect key="frame" x="0.0" y="48" width="375" height="105"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="105" id="89L-1p-bWN"/>
-                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jVD-GJ-7SZ">
                                             <size key="itemSize" width="330" height="35"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -291,12 +288,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="FND-Nb-wug"/>
                                     <constraint firstItem="ZIv-bS-DAn" firstAttribute="centerY" secondItem="GRM-Jt-vdm" secondAttribute="centerY" id="H5B-Pk-mQu"/>
                                     <constraint firstAttribute="trailing" secondItem="amM-gs-usU" secondAttribute="trailing" id="Hf3-Vn-Ucd"/>
                                     <constraint firstItem="amM-gs-usU" firstAttribute="top" secondItem="GRM-Jt-vdm" secondAttribute="bottom" constant="8" id="KGq-Nr-wuq"/>
                                     <constraint firstItem="GRM-Jt-vdm" firstAttribute="leading" secondItem="yBX-il-onz" secondAttribute="leading" constant="20" id="Ltj-px-lPm"/>
                                     <constraint firstItem="ZIv-bS-DAn" firstAttribute="leading" secondItem="GRM-Jt-vdm" secondAttribute="trailing" constant="8" id="Qjo-ys-fQ3"/>
+                                    <constraint firstAttribute="bottom" secondItem="amM-gs-usU" secondAttribute="bottom" constant="47" id="ZKY-IR-593"/>
                                     <constraint firstItem="GRM-Jt-vdm" firstAttribute="top" secondItem="yBX-il-onz" secondAttribute="top" constant="16" id="gTf-Ou-CxB"/>
                                     <constraint firstItem="amM-gs-usU" firstAttribute="leading" secondItem="yBX-il-onz" secondAttribute="leading" id="rKB-32-MCf"/>
                                 </constraints>
@@ -318,6 +315,7 @@
                             <constraint firstItem="T6i-sG-BaT" firstAttribute="leading" secondItem="rT9-7q-Til" secondAttribute="leading" constant="20" id="JiT-cD-pi1"/>
                             <constraint firstItem="T6i-sG-BaT" firstAttribute="width" secondItem="d1L-OO-KBs" secondAttribute="width" multiplier="70:375" id="KrW-Lk-IPs"/>
                             <constraint firstItem="rT9-7q-Til" firstAttribute="trailing" secondItem="yBX-il-onz" secondAttribute="trailing" id="NTI-hP-Rt3"/>
+                            <constraint firstItem="rT9-7q-Til" firstAttribute="bottom" secondItem="yBX-il-onz" secondAttribute="bottom" constant="8" id="O7d-ak-0gU"/>
                             <constraint firstItem="1Nr-D4-hpW" firstAttribute="leading" secondItem="ooS-WD-6Bi" secondAttribute="leading" id="P10-RP-dhS"/>
                             <constraint firstItem="DAS-sm-D4a" firstAttribute="centerX" secondItem="d1L-OO-KBs" secondAttribute="centerX" id="QQl-1n-fKN"/>
                             <constraint firstItem="ooS-WD-6Bi" firstAttribute="leading" secondItem="T6i-sG-BaT" secondAttribute="trailing" constant="20" id="RWM-gd-fW3"/>

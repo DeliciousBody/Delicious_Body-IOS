@@ -270,4 +270,21 @@ class DBNetworking: NSObject {
             completion?(status)
         }
     }
+    
+    static func resetEmail(_ email: String, completion:@escaping (_ result:Int) -> Void) {
+        
+        let url = "\(kBaseURL)rest-auth/password/reset/"
+        let params = ["email" : email]
+        
+        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            let status = response.response?.statusCode ?? 999
+            switch response.result {
+            case .success:
+                completion(status)
+            case .failure:
+                completion(status)
+            }
+        }
+        
+    }
 }
